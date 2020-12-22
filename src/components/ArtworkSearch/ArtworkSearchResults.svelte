@@ -2,7 +2,7 @@
   import { fade } from "svelte/transition";
   export let searchResults;
   export let onSelected;
-  let selected;
+  export let selected;
 
   function handleSelect(result) {
     selected = result;
@@ -32,12 +32,18 @@
     border-color: var(--primary);
     opacity: 1;
   }
+
+  button {
+    background-color: none;
+    border: none;
+    padding: 0;
+  }
 </style>
 
 {#if searchResults.resultCount}
   <ul class="grid">
     {#each searchResults.results as result, i}
-      <li in:fade={{ delay: i * 100 }} class:selected={result == selected}>
+      <li in:fade={{ delay: i * 100 }} class:selected={result === selected}>
         <button on:click={() => handleSelect(result)}>
           <img src={result.artworkUrl100} alt={result.collectionName} />
         </button>

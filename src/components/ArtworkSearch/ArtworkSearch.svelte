@@ -3,11 +3,10 @@
   import ArtworkSearchResults from "./ArtworkSearchResults.svelte";
   export let query;
   export let onSelected;
-  let selected;
+  export let selected;
   $: search = query ? artworkSearch(query) : null;
 
   function handleSelected(selectedResult) {
-    selected = selectedResult;
     onSelected(selectedResult);
   }
 </script>
@@ -22,7 +21,10 @@
   {#await search}
     <p>loading...</p>
   {:then searchResults}
-    <ArtworkSearchResults {searchResults} onSelected={handleSelected} />
+    <ArtworkSearchResults
+      {searchResults}
+      onSelected={handleSelected}
+      {selected} />
   {:catch error}
     <p style="color: red">{error.message}</p>
   {/await}
