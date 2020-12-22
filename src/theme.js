@@ -11,9 +11,10 @@ export const theme = {
   primary: getColour(colours.primary),
   primaryDark: getColour(colours.primary, 35),
   primaryDarkest: getColour(colours.primary, 30),
+  primaryContrast: "white",
   neutralDark: getColour(colours.neutral, 27),
   neutralMedium: getColour(colours.neutral),
   neutralLight: getColour(colours.neutral, 80),
-  neutralLightest: getColour(colours.neutral, 98),
+  neutralLightest: getColour(colours.neutral, 95),
   contentPaddingHorizontal: "1rem",
 };

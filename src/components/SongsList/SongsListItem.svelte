@@ -35,7 +35,7 @@
     content: "";
     width: 100%;
     height: 1px;
-    background-color: var(--neutralLight);
+    background-color: var(--primaryContrast);
   }
   .list-item > :global(a) {
     padding: 1rem;
@@ -44,7 +44,7 @@
   }
   .list-item > :global(a):hover,
   .list-item > :global(a):focus {
-    background-color: var(--neutralLightest);
+    background-color: var(--primaryContrastest);
   }
   .artwork {
     height: 3.5rem;

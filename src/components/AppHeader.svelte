@@ -10,7 +10,7 @@
     top: 0;
     z-index: 2;
     background-color: var(--primary);
-    color: var(--neutralLightest);
+    color: var(--primaryContrast);
     align-items: center;
   }
 

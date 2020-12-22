@@ -20,7 +20,7 @@
     padding: 0.5rem 0.5rem 1.5rem;
     margin-bottom: 1.5rem;
     background-color: var(--primary);
-    color: var(--neutralLightest);
+    color: var(--primaryContrast);
   }
   .wrapper {
     display: flex;
@@ -47,7 +47,7 @@
     z-index: 1;
     height: 5.5rem;
     border-radius: 50%;
-    border: 0.25rem solid var(--neutralLightest);
+    border: 0.25rem solid var(--primaryContrast);
     overflow: hidden;
   }
   .back {
