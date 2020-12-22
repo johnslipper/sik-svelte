@@ -6,7 +6,7 @@
     padding: 0;
   }
   button:focus {
-    outline: 0.15rem solid var(--primary);
+    outline: var(--focusOutline);
   }
   button:hover,
   button:active {

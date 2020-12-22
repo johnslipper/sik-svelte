@@ -17,4 +17,6 @@ export const theme = {
   neutralLight: getColour(colours.neutral, 80),
   neutralLightest: getColour(colours.neutral, 95),
   contentPaddingHorizontal: "1rem",
+  focusOutlineShadow: `0 0 0 0.15rem ${getColour(colours.primary, 30)}`,
+  focusOutline: `0.15rem solid ${getColour(colours.primary, 30)}`,
 };

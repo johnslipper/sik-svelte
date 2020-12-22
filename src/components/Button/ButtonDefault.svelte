@@ -10,7 +10,7 @@
     font-size: 1rem;
   }
   button:focus {
-    box-shadow: 0 0 0 0.15rem var(--primaryDarkest);
+    box-shadow: var(--focusOutlineShadow);
   }
   button:active {
     color: var(--primary);
