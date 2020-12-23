@@ -20,4 +20,7 @@ export const theme = {
   focusOutlineShadow: `0 0 0 0.15rem ${getColour(colours.primary, 30)}`,
   focusOutline: `0.15rem solid ${getColour(colours.primary, 30)}`,
   headerTopOffset: "3rem",
+  inputPadding: "0.5rem",
+  inputBorderRadius: "0.15rem",
+  inputBorderColour: getColour(colours.neutral),
 };

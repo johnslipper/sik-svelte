@@ -11,6 +11,9 @@
   input {
     outline: none;
     font-size: 1rem;
+    padding: var(--inputPadding);
+    border: 1px solid var(--inputBorderColour);
+    border-radius: var(--inputBorderRadius);
   }
   input:focus {
     box-shadow: var(--focusOutlineShadow);
