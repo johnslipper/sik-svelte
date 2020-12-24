@@ -1,7 +1,7 @@
 <script>
   import { fly, fade } from "svelte/transition";
   import { backOut } from "svelte/easing";
-  import BackLink from "./BackLink.svelte";
+  import HomeLink from "../HomeLink.svelte";
   import AlbumArtwork from "../AlbumArtwork.svelte";
   export let title;
   export let artist;
@@ -57,7 +57,7 @@
 
 <header>
   <div class="back" in:fade={{ delay: animationDelay + 50 }}>
-    <BackLink />
+    <HomeLink />
   </div>
   <div class="wrapper">
     <div
