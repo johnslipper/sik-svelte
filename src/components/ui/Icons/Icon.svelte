@@ -14,9 +14,8 @@
   }
 </style>
 
-<div style="width:{size};height:{size}">
+<div class="icon" style="width:{size};height:{size}">
   <svg
-    class="icon"
     viewBox="0 0 250 250"
     {fill}
     width="100%"
