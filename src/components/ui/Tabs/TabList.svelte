@@ -5,11 +5,8 @@
 <style>
   .tab-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    font-size: 0.85rem;
   }
 </style>
 

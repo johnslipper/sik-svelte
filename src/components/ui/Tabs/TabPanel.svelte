@@ -8,6 +8,14 @@
   registerPanel(panel);
 </script>
 
+<style>
+  .panel {
+    padding: var(--contentPaddingHorizontal);
+  }
+</style>
+
 {#if $selectedPanel === panel}
-  <slot />
+  <div class="panel">
+    <slot />
+  </div>
 {/if}

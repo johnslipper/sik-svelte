@@ -25,14 +25,13 @@
 
 <style>
   .panels {
-    padding: var(--contentPaddingHorizontal);
     padding-bottom: 5rem;
   }
   .tab-list {
-    background-color: var(--primary);
-  }
-  .text {
-    font-size: 0.8em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 </style>
 
@@ -55,13 +54,13 @@
       <TabList>
         <Tab>
           <div class="icon" in:fly={iconTransition}>
-            <Icon size="1.5em" d={microphoneOutlinedIcon} />
+            <Icon size="2rem" d={microphoneOutlinedIcon} />
           </div>
           <div class="text">Lyrics</div>
         </Tab>
         <Tab>
           <div class="icon" in:fly={iconTransition}>
-            <Icon size="1.5em" d={musicNoteOutlinedIcon} />
+            <Icon size="2rem" d={musicNoteOutlinedIcon} />
           </div>
           <div class="text">Chords</div>
         </Tab>

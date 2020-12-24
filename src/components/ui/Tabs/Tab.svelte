@@ -18,7 +18,6 @@
     padding: 0.5rem 0.75rem;
     color: var(--primaryContrast);
     background-color: var(--primary);
-    font-size: 1rem;
   }
 
   button::after {
