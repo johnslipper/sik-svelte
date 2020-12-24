@@ -1,7 +1,7 @@
 <script>
   import { Link } from "svelte-routing";
-  import Icon from "./ui/Icons/Icon.svelte";
-  import { leftArrowIcon } from "./ui/Icons/icons.js";
+  import Icon from "../ui/Icons/Icon.svelte";
+  import { leftArrowIcon } from "../ui/Icons/icons.js";
 </script>
 
 <style>
