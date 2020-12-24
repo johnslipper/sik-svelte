@@ -5,7 +5,7 @@
   import SongHeader from "./SongHeader.svelte";
   import SongLyrics from "./SongLyrics.svelte";
   import SongChords from "./SongChords.svelte";
-  import { Tab, Tabs, TabList, TabPanel } from "../Tabs/tabs.js";
+  import { Tab, Tabs, TabList, TabPanel } from "../Tabs";
   import Icon from "../Icons/Icon.svelte";
   import {
     musicNoteOutlinedIcon,
