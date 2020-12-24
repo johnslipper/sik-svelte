@@ -14,12 +14,14 @@
   }
 </style>
 
-<svg
-  class="icon"
-  viewBox="0 0 250 250"
-  {fill}
-  width={size}
-  height={size}
-  xmlns="http://www.w3.org/2000/svg">
-  <path {d} />
-</svg>
+<div style="width:{size};height:{size}">
+  <svg
+    class="icon"
+    viewBox="0 0 250 250"
+    {fill}
+    width="100%"
+    height="100%"
+    xmlns="http://www.w3.org/2000/svg">
+    <path {d} />
+  </svg>
+</div>
