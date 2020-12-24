@@ -1,7 +1,7 @@
 <script>
   export let id;
-  export let name;
-  export let placeholder;
+  export let name = "";
+  export let placeholder = "";
   export let maxlength = 255;
   export let disabled = false;
   export let value;
