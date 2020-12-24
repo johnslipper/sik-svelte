@@ -1,3 +1,7 @@
+<script>
+  export let type = "button";
+</script>
+
 <style>
   button {
     color: var(--primaryContrast);
@@ -18,6 +22,6 @@
   }
 </style>
 
-<button on:click>
+<button {type} on:click>
   <slot>Button</slot>
 </button>
