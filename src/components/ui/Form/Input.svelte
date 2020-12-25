@@ -4,6 +4,7 @@
   export let placeholder = "";
   export let maxlength = 255;
   export let disabled = false;
+  export let required = false;
   export let value;
 </script>
 
@@ -27,4 +28,5 @@
   {placeholder}
   {maxlength}
   {disabled}
+  {required}
   bind:value />
