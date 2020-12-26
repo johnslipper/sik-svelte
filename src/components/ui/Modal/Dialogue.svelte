@@ -26,6 +26,11 @@
     font-size: 2rem;
   }
 
+  .message {
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+  }
+
   .buttons {
     display: flex;
     justify-content: space-between;
@@ -36,7 +41,7 @@
   <h2>{title}</h2>
 {/if}
 
-{message}
+<div class="message">{message}</div>
 
 <div class="buttons">
   {#if cancelText}
