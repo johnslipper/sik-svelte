@@ -4,6 +4,14 @@
   export let songs = [];
 </script>
 
+<style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+</style>
+
 <ul>
   {#each songs as song}
     <li in:fade>

@@ -17,6 +17,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, 100px);
     gap: 0.25rem;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
   button,
   li {
