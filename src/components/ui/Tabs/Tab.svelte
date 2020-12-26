@@ -18,6 +18,12 @@
     padding: 0.5rem 0.75rem;
     color: var(--primaryContrast);
     background-color: var(--primary);
+    outline: none;
+  }
+
+  button:focus {
+    z-index: 1;
+    box-shadow: var(--focusOutlineShadow);
   }
 
   button::after {
