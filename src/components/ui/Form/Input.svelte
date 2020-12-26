@@ -11,6 +11,7 @@
 <style>
   input {
     outline: none;
+    width: 100%;
     font-size: 1rem;
     padding: var(--inputPadding);
     border: 1px solid var(--inputBorderColour);

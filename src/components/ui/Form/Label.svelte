@@ -4,10 +4,12 @@
 
 <style>
   label {
-    display: block;
     text-transform: uppercase;
     font-size: 0.75em;
-    color: var(--neutralMedium);
+    color: var(--neutralDark);
+    background-color: var(--neutralLightest);
+    padding: 0.25rem 0.5rem;
+    line-height: 1.5;
   }
 </style>
 

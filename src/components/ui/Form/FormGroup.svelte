@@ -6,5 +6,8 @@
 </style>
 
 <div class="group">
-  <slot />
+  <div class="input">
+    <slot />
+  </div>
+  <slot name="feedback" />
 </div>
