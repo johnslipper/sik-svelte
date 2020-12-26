@@ -3,8 +3,6 @@
   import AppHeader from "./app/AppHeader.svelte";
   import SongsList from "./app/SongsList/SongsList.svelte";
   import Song from "./app/Song/Song.svelte";
-  import SongEdit from "./app/SongEdit/SongEdit.svelte";
-  import HomeLink from "./app/HomeLink.svelte";
   import songs from "../songs.js";
   import { theme } from "../theme.js";
   export let url = ""; //This property is necessary declare to avoid ignore the Router
