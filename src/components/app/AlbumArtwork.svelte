@@ -15,6 +15,6 @@
   }
 </style>
 
-{#if artwork.url}
+{#if artwork && artwork.url}
   <img src={artwork.url} alt="{artwork.album || album || 'album'} artwork" />
 {:else}<img src={dataPrefix + placeholderSVG} alt="placeholder artwork" />{/if}
