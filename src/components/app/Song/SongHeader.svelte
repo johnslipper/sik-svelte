@@ -3,6 +3,7 @@
   import { backOut } from "svelte/easing";
   import HomeLink from "../HomeLink.svelte";
   import AlbumArtwork from "../AlbumArtwork.svelte";
+  import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   export let title;
   export let artist;
   export let album;
@@ -57,7 +58,9 @@
 
 <header>
   <div class="back" in:fade={{ delay: animationDelay + 50 }}>
-    <HomeLink />
+    <HomeLink>
+      <VisuallyHidden>back to songs</VisuallyHidden>
+    </HomeLink>
   </div>
   <div class="wrapper">
     <div
