@@ -1,5 +1,6 @@
 <script>
   import { blur } from "svelte/transition";
+  import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   export let lyrics;
   function nl2br(text) {
     return text.replaceAll("\n", "<br>");
@@ -20,7 +21,9 @@
 </style>
 
 <section in:blur={{ delay: 150 }}>
-  <h2 class="visually-hidden">Lyrics</h2>
+  <VisuallyHidden>
+    <h2>Lyrics</h2>
+  </VisuallyHidden>
   <div class="lyrics">
     {#if lyrics}
       {@html formattedLyrics}

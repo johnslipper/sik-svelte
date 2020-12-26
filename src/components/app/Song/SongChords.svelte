@@ -1,5 +1,6 @@
 <script>
   import { blur } from "svelte/transition";
+  import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   export let chords;
 </script>
 
@@ -14,7 +15,9 @@
 </style>
 
 <section in:blur={{ delay: 150 }}>
-  <h2 class="visually-hidden">Chords</h2>
+  <VisuallyHidden>
+    <h2>Chords</h2>
+  </VisuallyHidden>
   {#if chords}
     {#each chords as section}
       <h3>{section.title}</h3>

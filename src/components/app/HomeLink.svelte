@@ -1,6 +1,7 @@
 <script>
   import { Link } from "svelte-routing";
   import Icon from "../ui/Icons/Icon.svelte";
+  import VisuallyHidden from "../ui/VisuallyHidden.svelte";
   import { leftArrowIcon } from "../ui/Icons/icons.js";
 </script>
 
@@ -15,6 +16,6 @@
 <div class="link">
   <Link to="/">
     <Icon d={leftArrowIcon} />
-    <span class="visually-hidden">back to songs</span>
+    <VisuallyHidden><span>back to songs</span></VisuallyHidden>
   </Link>
 </div>
