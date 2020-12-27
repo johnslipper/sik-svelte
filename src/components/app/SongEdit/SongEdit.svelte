@@ -5,6 +5,7 @@
   import ArtworkSearch from "../ArtworkSearch/ArtworkSearch.svelte";
   import AlbumArtwork from "../AlbumArtwork/AlbumArtwork.svelte";
   import AlbumArtworkAdd from "../AlbumArtwork/AlbumArtworkAdd.svelte";
+  import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import { Button } from "../../ui/Button";
   import {
     Input,
@@ -122,7 +123,9 @@
 <Fieldset>
   <Legend>Lyrics</Legend>
   <div class="wrapper" in:fade>
-    <Label htmlFor="songLyrics">Lyrics</Label>
+    <VisuallyHidden>
+      <Label htmlFor="songLyrics">Lyrics</Label>
+    </VisuallyHidden>
     <Textarea id="songLyrics" bind:value={song.lyrics} />
   </div>
 </Fieldset>
