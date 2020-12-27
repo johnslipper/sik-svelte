@@ -12,6 +12,22 @@
     .join(";");
 </script>
 
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+  :global(main) {
+    color: var(--bodyColor);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  }
+  :global(a) {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+</style>
+
 <Router {url}>
   <main style={cssVarStyles}>
     <Route path="/">
