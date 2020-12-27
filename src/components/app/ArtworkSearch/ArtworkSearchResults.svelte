@@ -42,6 +42,10 @@
     border: none;
     padding: 0;
   }
+
+  img {
+    max-width: 100%;
+  }
 </style>
 
 {#if searchResults.resultCount}
