@@ -2,7 +2,7 @@
   import { fly, fade } from "svelte/transition";
   import { backOut } from "svelte/easing";
   import HomeLink from "../HomeLink.svelte";
-  import AlbumArtwork from "../AlbumArtwork.svelte";
+  import AlbumArtwork from "../AlbumArtwork/AlbumArtwork.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   export let title;
   export let artist;

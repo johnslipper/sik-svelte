@@ -1,7 +1,7 @@
 <script>
   import { Link } from "svelte-routing";
   import { fly, fade } from "svelte/transition";
-  import AlbumArtwork from "../AlbumArtwork.svelte";
+  import AlbumArtwork from "../AlbumArtwork/AlbumArtwork.svelte";
   export let id;
   export let title;
   export let artist;
