@@ -47,13 +47,13 @@
   .selection {
     position: sticky;
     bottom: 0rem;
-    padding: 1rem;
     background-color: var(--primaryContrast);
   }
   .content {
     display: flex;
-    gap: 0.25rem;
-    justify-content: space-between;
+  }
+  .content :global(button) {
+    border-radius: 0;
   }
 </style>
 
