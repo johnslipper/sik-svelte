@@ -35,16 +35,16 @@
     content: "";
     width: 100%;
     height: 1px;
-    background-color: var(--primaryContrast);
+    background-color: var(--neutralLightest);
   }
   .list-item > :global(a) {
     padding: 1rem;
     display: flex;
     gap: 1rem;
+    transition: background-color 150ms;
   }
-  .list-item > :global(a):hover,
   .list-item > :global(a):focus {
-    background-color: var(--primaryContrastest);
+    background-color: var(--neutralLightest);
   }
   .artwork {
     height: 3.5rem;
