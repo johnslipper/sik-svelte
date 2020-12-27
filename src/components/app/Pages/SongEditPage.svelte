@@ -15,7 +15,7 @@
     <div slot="start" in:fade>
       <Link to="/song/{id}">
         <span>Cancel</span>
-        <VisuallyHidden>adding song</VisuallyHidden>
+        <VisuallyHidden>editing song</VisuallyHidden>
       </Link>
     </div>
   </AppHeader>
