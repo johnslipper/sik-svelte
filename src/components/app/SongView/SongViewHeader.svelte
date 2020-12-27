@@ -79,8 +79,7 @@
     </div>
     <div
       class="text"
-      in:fly={{ delay: animationDelay + 250, duration: 200, x: 50, easing: backOut }}
-      out:fade>
+      in:fly={{ delay: animationDelay + 250, duration: 200, x: 50, easing: backOut }}>
       {#if title}
         <div class="title">{title}</div>
       {/if}
