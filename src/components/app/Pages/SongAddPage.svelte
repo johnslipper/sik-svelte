@@ -1,5 +1,5 @@
 <script>
-  import { fade } from "svelte/transition";
+  import { fade, fly } from "svelte/transition";
   import { Link } from "svelte-routing";
   import Modal from "svelte-simple-modal";
   import AppHeader from "../../ui/AppHeader.svelte";
@@ -16,5 +16,7 @@
       </Link>
     </div>
   </AppHeader>
-  <SongEdit />
+  <div class="page" in:fly={{ y: 1000 }}>
+    <SongEdit />
+  </div>
 </Modal>
