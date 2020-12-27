@@ -1,4 +1,5 @@
 <script>
+  import Heading from "../ui/Heading.svelte";
   export let title;
 </script>
 
@@ -13,14 +14,6 @@
     color: var(--primaryContrast);
     align-items: center;
   }
-
-  h1 {
-    margin: 0;
-    padding: 0.75rem 0.5rem;
-    font-size: 1.2rem;
-    text-align: center;
-  }
-
   header :global(a) {
     padding: 1rem var(--contentPaddingHorizontal);
     display: inline-block;
@@ -33,6 +26,8 @@
 
   .center {
     grid-column: 2;
+    text-align: center;
+    padding: 0.75rem 0.5rem;
   }
 
   .end {
@@ -47,7 +42,7 @@
   </div>
   <div class="center">
     {#if title}
-      <h1 class="center">{title}</h1>
+      <Heading text={title} fontSize={'1.2rem'} />
     {/if}
   </div>
   <div class="end">
