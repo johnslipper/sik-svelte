@@ -30,11 +30,13 @@
   li {
     border: 3px solid transparent;
     opacity: 0.75;
+    transition: transform 150ms ease-out;
   }
 
   li.selected {
     border-color: var(--primary);
     opacity: 1;
+    transform: scale(1.1);
   }
 
   button {
