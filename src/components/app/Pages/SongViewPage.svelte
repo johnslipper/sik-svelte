@@ -2,9 +2,9 @@
   import { fly } from "svelte/transition";
   import { elasticOut } from "svelte/easing";
   import songs from "../../../songs.js";
-  import SongHeader from "./SongHeader.svelte";
-  import SongLyrics from "./SongLyrics.svelte";
-  import SongChords from "./SongChords.svelte";
+  import SongHeader from "../Song/SongHeader.svelte";
+  import SongLyrics from "../Song/SongLyrics.svelte";
+  import SongChords from "../Song/SongChords.svelte";
   import { Tab, Tabs, TabList, TabPanel } from "../../ui/Tabs";
   import Icon from "../../ui/Icons/Icon.svelte";
   import {

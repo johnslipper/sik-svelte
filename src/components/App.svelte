@@ -3,9 +3,9 @@
   import { Router, Route } from "svelte-routing";
   import SongAddPage from "./app/Pages/SongAddPage.svelte";
   import SongEditPage from "./app/Pages/SongEditPage.svelte";
+  import SongViewPage from "./app/Pages/SongViewPage.svelte";
   import AppHeader from "./ui/AppHeader.svelte";
   import SongsList from "./app/SongsList/SongsList.svelte";
-  import Song from "./app/Song/Song.svelte";
   import AddSongLink from "./app/AddSongLink.svelte";
   import VisuallyHidden from "./ui/VisuallyHidden.svelte";
   import songs from "../songs.js";
@@ -48,7 +48,7 @@
     </Route>
 
     <Route path="/song/:id" let:params>
-      <Song id={params.id} />
+      <SongViewPage id={params.id} />
     </Route>
 
     <Route path="/add">
