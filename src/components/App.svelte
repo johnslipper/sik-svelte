@@ -1,6 +1,6 @@
 <script>
   import { Router, Route } from "svelte-routing";
-  import AppHeader from "./app/AppHeader.svelte";
+  import AppHeader from "./ui/AppHeader.svelte";
   import SongsList from "./app/SongsList/SongsList.svelte";
   import Song from "./app/Song/Song.svelte";
   import songs from "../songs.js";
