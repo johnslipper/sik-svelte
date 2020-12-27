@@ -3,7 +3,7 @@
   import Modal from "svelte-simple-modal";
   import AppHeader from "../../ui/AppHeader.svelte";
   import SongEdit from "../SongEdit/SongEdit.svelte";
-  import HomeLink from "../Links/HomeLink.svelte";
+  import SongLink from "../Links/SongLink.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   export let id;
   import songs from "../../../songs.js";
@@ -13,10 +13,10 @@
 <Modal>
   <AppHeader title="Edit song">
     <div slot="start" in:fade>
-      <HomeLink>
+      <SongLink {id}>
         <VisuallyHidden>back to</VisuallyHidden>
-        <span>Songs</span>
-      </HomeLink>
+        <span>Song</span>
+      </SongLink>
     </div>
   </AppHeader>
   <SongEdit {song} />
