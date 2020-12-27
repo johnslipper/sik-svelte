@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w --host 0.0.0.0",
-    "start": "sirv public -s --single"
+    "dev": "rollup -c -w",
+    "start": "sirv public -s --H 0.0.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",
