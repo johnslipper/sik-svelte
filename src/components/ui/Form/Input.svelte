@@ -14,7 +14,7 @@
     width: 100%;
     font-size: 1rem;
     padding: var(--inputPadding);
-    border: 1px solid var(--inputBorderColour);
+    border: 1px solid var(--inputBorderColor);
     border-radius: var(--inputBorderRadius);
     color: var(--bodyColor);
   }

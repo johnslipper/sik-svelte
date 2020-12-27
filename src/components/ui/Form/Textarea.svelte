@@ -13,7 +13,7 @@
     font-size: 1rem;
     padding: var(--inputPadding);
     min-height: 6rem;
-    border: 1px solid var(--inputBorderColour);
+    border: 1px solid var(--inputBorderColor);
     border-radius: var(--inputBorderRadius);
   }
   textarea:focus {
@@ -48,7 +48,7 @@
     font-size: 1rem;
     padding: var(--inputPadding);
     min-height: 6rem;
-    border: 1px solid var(--inputBorderColour);
+    border: 1px solid var(--inputBorderColor);
     font: inherit;
 
     /* Place on top of each other */
