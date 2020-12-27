@@ -1,5 +1,5 @@
 <script>
-  export let album;
+  export let album = "";
   export let artwork = {
     album: "",
     url: "",
