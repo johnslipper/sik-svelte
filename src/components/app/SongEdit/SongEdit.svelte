@@ -77,8 +77,6 @@
     /* iTunes artwork size */
     width: 100px;
     height: 100px;
-    border-radius: 0.15rem;
-    border: 2px dashed var(--neutralLight);
   }
   .artwork :global(button) {
     display: grid;
