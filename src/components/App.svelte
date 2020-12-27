@@ -2,6 +2,7 @@
   import { fade } from "svelte/transition";
   import { Router, Route } from "svelte-routing";
   import SongAddPage from "./app/Pages/SongAddPage.svelte";
+  import SongEditPage from "./app/Pages/SongEditPage.svelte";
   import AppHeader from "./ui/AppHeader.svelte";
   import SongsList from "./app/SongsList/SongsList.svelte";
   import Song from "./app/Song/Song.svelte";
@@ -52,6 +53,10 @@
 
     <Route path="/add">
       <SongAddPage />
+    </Route>
+
+    <Route path="/song/:id/edit" let:params>
+      <SongEditPage id={params.id} />
     </Route>
   </main>
 </Router>
