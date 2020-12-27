@@ -2,7 +2,7 @@
   import { fly, fade } from "svelte/transition";
   import { backOut } from "svelte/easing";
   import HomeLink from "../Links/HomeLink.svelte";
-  import EditSongLink from "../Links/EditSongLink.svelte";
+  import SongEditLink from "../Links/SongEditLink.svelte";
   import AlbumArtwork from "../AlbumArtwork/AlbumArtwork.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   export let id;
@@ -92,10 +92,10 @@
       {/if}
     </div>
     <div class="end" in:fade={{ delay: animationDelay + 50 }}>
-      <EditSongLink {id}>
+      <SongEditLink {id}>
         <span>Edit</span>
         <VisuallyHidden>song</VisuallyHidden>
-      </EditSongLink>
+      </SongEditLink>
     </div>
   </div>
 </header>

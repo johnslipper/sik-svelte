@@ -2,17 +2,17 @@
   import { fade } from "svelte/transition";
   import AppHeader from "../../ui/AppHeader.svelte";
   import SongsList from "../SongsList/SongsList.svelte";
-  import AddSongLink from "../Links/AddSongLink.svelte";
+  import SongAddLink from "../Links/SongAddLink.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import songs from "../../../songs.js";
 </script>
 
 <AppHeader title="Songs I Know">
   <div slot="end" in:fade>
-    <AddSongLink>
+    <SongAddLink>
       <span>Add</span>
       <VisuallyHidden>Song</VisuallyHidden>
-    </AddSongLink>
+    </SongAddLink>
   </div>
 </AppHeader>
 <SongsList {songs} />
