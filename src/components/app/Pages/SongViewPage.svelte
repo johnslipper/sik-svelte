@@ -37,6 +37,7 @@
 
 <div>
   <SongHeader
+    id={song.id}
     title={song.title}
     artist={song.artist}
     album={song.album}

@@ -2,8 +2,10 @@
   import { fly, fade } from "svelte/transition";
   import { backOut } from "svelte/easing";
   import HomeLink from "../Links/HomeLink.svelte";
+  import EditSongLink from "../Links/EditSongLink.svelte";
   import AlbumArtwork from "../AlbumArtwork/AlbumArtwork.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
+  export let id;
   export let title;
   export let artist;
   export let album;
@@ -27,6 +29,7 @@
     display: flex;
     gap: 0.75rem;
     margin-bottom: -2.5rem;
+    width: 100%;
   }
   .text {
     display: flex;
@@ -51,13 +54,19 @@
     border: 0.25rem solid var(--primaryContrast);
     overflow: hidden;
   }
-  .back {
+  .start {
     margin-top: 1rem;
+  }
+
+  .end {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
   }
 </style>
 
 <header>
-  <div class="back" in:fade={{ delay: animationDelay + 50 }}>
+  <div class="start" in:fade={{ delay: animationDelay + 50 }}>
     <HomeLink>
       <VisuallyHidden>back to songs</VisuallyHidden>
     </HomeLink>
@@ -81,6 +90,12 @@
       {#if album}
         <div class="album">{album}</div>
       {/if}
+    </div>
+    <div class="end" in:fade={{ delay: animationDelay + 50 }}>
+      <EditSongLink {id}>
+        <span>Edit</span>
+        <VisuallyHidden>song</VisuallyHidden>
+      </EditSongLink>
     </div>
   </div>
 </header>
