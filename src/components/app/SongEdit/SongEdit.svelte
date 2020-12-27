@@ -1,5 +1,6 @@
 <script>
   import { getContext } from "svelte";
+  import { fade } from "svelte/transition";
   import Dialogue from "../../ui/Modal/Dialogue.svelte";
   import ArtworkSearch from "../ArtworkSearch/ArtworkSearch.svelte";
   import AlbumArtwork from "../AlbumArtwork/AlbumArtwork.svelte";
@@ -88,7 +89,7 @@
 
 <Fieldset>
   <Legend>Details</Legend>
-  <div class="wrapper">
+  <div class="wrapper" in:fade>
     <div class="details">
       <div class="artwork">
         <Button on:click={openSearchModal}>
@@ -120,7 +121,7 @@
 </Fieldset>
 <Fieldset>
   <Legend>Lyrics</Legend>
-  <div class="wrapper">
+  <div class="wrapper" in:fade>
     <Label htmlFor="songLyrics">Lyrics</Label>
     <Textarea id="songLyrics" bind:value={song.lyrics} />
   </div>
