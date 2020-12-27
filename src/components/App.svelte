@@ -1,14 +1,9 @@
 <script>
-  import { fade } from "svelte/transition";
   import { Router, Route } from "svelte-routing";
+  import HomePage from "./app/Pages/HomePage.svelte";
   import SongAddPage from "./app/Pages/SongAddPage.svelte";
   import SongEditPage from "./app/Pages/SongEditPage.svelte";
   import SongViewPage from "./app/Pages/SongViewPage.svelte";
-  import AppHeader from "./ui/AppHeader.svelte";
-  import SongsList from "./app/SongsList/SongsList.svelte";
-  import AddSongLink from "./app/AddSongLink.svelte";
-  import VisuallyHidden from "./ui/VisuallyHidden.svelte";
-  import songs from "../songs.js";
   import { theme } from "../theme.js";
   export let url = ""; //This property is necessary declare to avoid ignore the Router
 
@@ -36,15 +31,7 @@
 <Router {url}>
   <main style={cssVarStyles}>
     <Route path="/">
-      <AppHeader title="Songs I Know">
-        <div slot="end" in:fade>
-          <AddSongLink>
-            <span>Add</span>
-            <VisuallyHidden>Song</VisuallyHidden>
-          </AddSongLink>
-        </div>
-      </AppHeader>
-      <SongsList {songs} />
+      <HomePage />
     </Route>
 
     <Route path="/song/:id" let:params>
