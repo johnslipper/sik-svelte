@@ -1,7 +1,7 @@
 <script>
   import { Link } from "svelte-routing";
-  import Icon from "../ui/Icons/Icon.svelte";
-  import { leftArrowIcon } from "../ui/Icons/icons.js";
+  import Icon from "../../ui/Icons/Icon.svelte";
+  import { plusIcon } from "../../ui/Icons/icons.js";
 </script>
 
 <style>
@@ -14,8 +14,8 @@
 </style>
 
 <div class="link">
-  <Link to="/">
-    <Icon d={leftArrowIcon} />
+  <Link to="/add">
+    <Icon d={plusIcon} />
     <slot />
   </Link>
 </div>

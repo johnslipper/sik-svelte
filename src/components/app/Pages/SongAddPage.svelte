@@ -3,7 +3,7 @@
   import Modal from "svelte-simple-modal";
   import AppHeader from "../../ui/AppHeader.svelte";
   import SongEdit from "../SongEdit/SongEdit.svelte";
-  import HomeLink from "../HomeLink.svelte";
+  import HomeLink from "../Links/HomeLink.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
 </script>
 
