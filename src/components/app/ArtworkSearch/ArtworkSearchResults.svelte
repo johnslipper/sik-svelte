@@ -22,7 +22,8 @@
     margin: 0;
   }
   button,
-  li {
+  li,
+  img {
     display: block;
   }
 
