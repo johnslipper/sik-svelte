@@ -1,12 +1,10 @@
 <script>
   import { fade } from "svelte/transition";
   import { Router, Route } from "svelte-routing";
-  import Modal from "svelte-simple-modal";
+  import SongAddPage from "./app/Pages/SongAddPage.svelte";
   import AppHeader from "./ui/AppHeader.svelte";
   import SongsList from "./app/SongsList/SongsList.svelte";
   import Song from "./app/Song/Song.svelte";
-  import SongEdit from "./app/SongEdit/SongEdit.svelte";
-  import HomeLink from "./app/HomeLink.svelte";
   import AddSongLink from "./app/AddSongLink.svelte";
   import VisuallyHidden from "./ui/VisuallyHidden.svelte";
   import songs from "../songs.js";
@@ -53,17 +51,7 @@
     </Route>
 
     <Route path="/add">
-      <Modal>
-        <AppHeader title="Add song">
-          <div slot="start" in:fade>
-            <HomeLink>
-              <VisuallyHidden>back to</VisuallyHidden>
-              <span>Songs</span>
-            </HomeLink>
-          </div>
-        </AppHeader>
-        <SongEdit />
-      </Modal>
+      <SongAddPage />
     </Route>
   </main>
 </Router>
