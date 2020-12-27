@@ -25,7 +25,7 @@
     open(
       ArtworkSearch,
       {
-        queryInput: `${song.artist} ${song.title} ${song.album}`,
+        queryInput: `${song.artist} ${song.title} ${song.album}`.trim(),
         onSelected: handleSelected,
       },
       {
