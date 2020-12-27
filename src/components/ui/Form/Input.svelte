@@ -16,6 +16,7 @@
     padding: var(--inputPadding);
     border: 1px solid var(--inputBorderColour);
     border-radius: var(--inputBorderRadius);
+    color: var(--bodyColor);
   }
   input:focus {
     box-shadow: var(--focusOutlineShadow);
