@@ -1,4 +1,5 @@
 <script>
+  import { fade } from "svelte/transition";
   import Heading from "../ui/Heading.svelte";
   export let title;
 </script>
@@ -42,7 +43,9 @@
   </div>
   <div class="center">
     {#if title}
-      <Heading text={title} fontSize={'1.2rem'} />
+      <div in:fade>
+        <Heading text={title} fontSize={'1.2rem'} />
+      </div>
     {/if}
   </div>
   <div class="end">
