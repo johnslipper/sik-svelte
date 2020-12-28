@@ -4,10 +4,14 @@
   import SongsList from "../SongsList/SongsList.svelte";
   import SongAddLink from "../Links/SongAddLink.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
+  import Logo from "../../app/Logo.svelte";
   import songs from "../../../songs.js";
 </script>
 
-<AppHeader title="Songs I Know">
+<AppHeader>
+  <div slot="center">
+    <Logo />
+  </div>
   <div slot="end" in:fade>
     <SongAddLink>
       <span>Add</span>
