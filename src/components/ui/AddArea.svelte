@@ -18,6 +18,7 @@
     border-radius: 0.15rem;
     border: 2px dashed var(--neutralLight);
     text-align: center;
+    font-size: 1em;
   }
 </style>
 
