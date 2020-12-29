@@ -47,7 +47,7 @@
         <Heading text={title} fontSize={'1.2rem'} />
       </div>
     {/if}
-    <slot name="center" />
+    <slot />
   </div>
   <div class="end">
     <slot name="end" />

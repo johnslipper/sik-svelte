@@ -9,9 +9,7 @@
 </script>
 
 <AppHeader>
-  <div slot="center">
-    <Logo />
-  </div>
+  <Logo />
   <div slot="end" in:fade>
     <SongAddLink>
       <span>Add</span>
