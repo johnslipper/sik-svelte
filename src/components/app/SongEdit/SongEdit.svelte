@@ -27,7 +27,7 @@
     open(
       ArtworkSearch,
       {
-        queryInput: `${song.artist} ${song.title} ${song.album}`.trim(),
+        queryInput: getInputQuery(song),
         onSelected: handleSelected,
       },
       {
@@ -35,6 +35,10 @@
       }
     );
   };
+
+  function getInputQuery({ artist = "", title = "", album = "" }) {
+    return `${artist} ${title} ${album}`.trim();
+  }
 
   function handleSelected(result) {
     song.artwork = {
