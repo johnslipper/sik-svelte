@@ -1,7 +1,7 @@
 <script>
   import { fade } from "svelte/transition";
   import Heading from "../ui/Heading.svelte";
-  export let title;
+  export let title = "";
 </script>
 
 <style>
