@@ -4,7 +4,7 @@
   import Dialogue from "../../ui/Modal/Dialogue.svelte";
   import ArtworkSearch from "../Artwork/ArtworkSearch.svelte";
   import ArtworkView from "../Artwork/ArtworkView.svelte";
-  import AlbumArtworkAdd from "../AlbumArtwork/AlbumArtworkAdd.svelte";
+  import AddArea from "../../ui/AddArea.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import { Button } from "../../ui/Button";
   import {
@@ -77,16 +77,10 @@
     align-items: flex-start;
     gap: 1.5rem;
   }
-  .artwork {
+  .artwork :global(button) {
     /* iTunes artwork size */
     width: 100px;
     height: 100px;
-  }
-  .artwork :global(button) {
-    display: grid;
-    width: 100%;
-    height: 100%;
-    align-items: center;
   }
 </style>
 
