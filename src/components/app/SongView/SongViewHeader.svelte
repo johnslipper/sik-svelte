@@ -3,7 +3,7 @@
   import { backOut } from "svelte/easing";
   import HomeLink from "../Links/HomeLink.svelte";
   import SongEditLink from "../Links/SongEditLink.svelte";
-  import AlbumArtwork from "../AlbumArtwork/AlbumArtwork.svelte";
+  import ArtworkView from "../Artwork/ArtworkView.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   export let id;
   export let title;
@@ -75,7 +75,7 @@
     <div
       class="artwork"
       in:fly={{ delay: animationDelay, duration: 300, x: -100, easing: backOut }}>
-      <AlbumArtwork {album} {artwork} />
+      <ArtworkView {album} {artwork} />
     </div>
     <div
       class="text"

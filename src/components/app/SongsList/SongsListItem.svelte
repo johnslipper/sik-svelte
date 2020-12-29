@@ -1,7 +1,7 @@
 <script>
   import { Link } from "svelte-routing";
   import { fly, fade } from "svelte/transition";
-  import AlbumArtwork from "../AlbumArtwork/AlbumArtwork.svelte";
+  import ArtworkView from "../Artwork/ArtworkView.svelte";
   export let id;
   export let title;
   export let artist;
@@ -72,7 +72,7 @@
 <div class="list-item">
   <Link to="/song/{id}" on:click={handleClick}>
     <div class="artwork" out:transitionOut={{ x: -50 }}>
-      <AlbumArtwork {album} {artwork} />
+      <ArtworkView {album} {artwork} />
     </div>
 
     <div class="text" out:transitionOut={{ x: 100 }}>

@@ -2,8 +2,8 @@
   import { getContext } from "svelte";
   import { fade } from "svelte/transition";
   import Dialogue from "../../ui/Modal/Dialogue.svelte";
-  import ArtworkSearch from "../ArtworkSearch/ArtworkSearch.svelte";
-  import AlbumArtwork from "../AlbumArtwork/AlbumArtwork.svelte";
+  import ArtworkSearch from "../Artwork/ArtworkSearch.svelte";
+  import ArtworkView from "../Artwork/ArtworkView.svelte";
   import AlbumArtworkAdd from "../AlbumArtwork/AlbumArtworkAdd.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import { Button } from "../../ui/Button";
@@ -99,7 +99,7 @@
           {#if !song.artwork}
             <AlbumArtworkAdd />
           {:else}
-            <AlbumArtwork artwork={song.artwork} />
+            <ArtworkView artwork={song.artwork} />
           {/if}
         </Button>
       </div>
