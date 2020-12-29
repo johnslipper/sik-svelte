@@ -22,13 +22,18 @@
     {#each chords as section}
       <h3>{section.title}</h3>
       {#if section.chords}
-        <div class="section">{section.chords}</div>
-      {/if}
-
-      {#if section.chordList}
-        {#each section.chordList as list}
-          <div class="section">{list}</div>
-        {/each}
+        <div class="section">
+          {#each section.chords as chord}
+            <div class="chord">
+              {#if chord.name}
+                <div class="name">{chord.name}</div>
+              {/if}
+              {#if chord.voicing}
+                <div class="name">{chord.voicing}</div>
+              {/if}
+            </div>
+          {/each}
+        </div>
       {/if}
     {/each}
   {:else}

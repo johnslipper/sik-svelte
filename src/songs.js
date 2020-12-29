@@ -16,15 +16,51 @@ const songs = [
     chordSections: [
       {
         title: "Intro/Verse",
-        chords: "Am F Dm G",
+        chords: [
+          {
+            name: "Am",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "Dm",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "C F G",
+        chords: [
+          {
+            name: "C",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
       {
         title: "Interlude",
-        chords: "Am F Am G",
+        chords: [
+          {
+            name: "Am",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "Am",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
     ],
   },
@@ -42,7 +78,23 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "D Bm Am G C",
+        chords: [
+          {
+            name: "D",
+          },
+          {
+            name: "Bm",
+          },
+          {
+            name: "Am",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "C",
+          },
+        ],
       },
     ],
   },
@@ -55,11 +107,34 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "G D C",
+        chords: [
+          {
+            name: "G",
+          },
+          {
+            name: "D",
+          },
+          {
+            name: "C",
+          },
+        ],
       },
       {
         title: "Post-Verse",
-        chords: "Am D C G",
+        chords: [
+          {
+            name: "Am",
+          },
+          {
+            name: "D",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
     ],
     notes: {
@@ -80,15 +155,60 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "C G F",
+        chords: [
+          {
+            name: "C",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "F",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "C F Am E F G",
+        chords: [
+          {
+            name: "C",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "Am",
+          },
+          {
+            name: "E",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
       {
         title: "Bridge",
-        chords: "Em Am F C A#",
+        chords: [
+          {
+            name: "Em",
+          },
+          {
+            name: "Am",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "A#",
+          },
+        ],
       },
     ],
   },
@@ -101,11 +221,28 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "F G Am",
+        chords: [
+          {
+            name: "F",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "Am",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "F G",
+        chords: [
+          {
+            name: "F",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
     ],
   },
@@ -122,11 +259,37 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "C F G",
+        chords: [
+          {
+            name: "C",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
       {
         title: "Interlude",
-        chords: "F C Em Dm G",
+        chords: [
+          {
+            name: "F",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "Em",
+          },
+          {
+            name: "Dm",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
     ],
   },
@@ -143,11 +306,19 @@ const songs = [
     chordSections: [
       {
         title: "Intro/Verse",
-        chordList: [
-          "%0/0.9/1.11/3.11/4.X/X.X/X",
-          "%9/1.9/1.11/3.11/4.X/X.X/X",
-          "%5/1.5/1.7/3.7/4.X/X.X/X",
-          "%9/1.9/1.11/3.11/4.X/X.X/X",
+        chords: [
+          {
+            voicing: "%0/0.9/1.11/3.11/4.X/X.X/X",
+          },
+          {
+            voicing: "%9/1.9/1.11/3.11/4.X/X.X/X",
+          },
+          {
+            voicing: "%5/1.5/1.7/3.7/4.X/X.X/X",
+          },
+          {
+            voicing: "%9/1.9/1.11/3.11/4.X/X.X/X",
+          },
         ],
       },
     ],
@@ -161,11 +332,31 @@ const songs = [
     chordSections: [
       {
         title: "Verse/Chorus",
-        chords: "Em Em9 Cmaj7 A7",
+        chords: [
+          {
+            name: "Em",
+          },
+          {
+            name: "Em9",
+          },
+          {
+            name: "Cmaj7",
+          },
+          {
+            name: "A7",
+          },
+        ],
       },
       {
         title: "Interlude",
-        chords: "Cmaj7 A7",
+        chords: [
+          {
+            name: "Cmaj7",
+          },
+          {
+            name: "A7",
+          },
+        ],
       },
     ],
   },
@@ -178,11 +369,34 @@ const songs = [
     chordSections: [
       {
         title: "Verse/Chorus",
-        chords: "B A G F# E",
+        chords: [
+          {
+            name: "B",
+          },
+          {
+            name: "A",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "F#",
+          },
+          {
+            name: "E",
+          },
+        ],
       },
       {
         title: "Bridge",
-        chords: "F# E",
+        chords: [
+          {
+            name: "F#",
+          },
+          {
+            name: "E",
+          },
+        ],
       },
     ],
   },
@@ -195,15 +409,54 @@ const songs = [
     chordSections: [
       {
         title: "Intro/Chorus",
-        chords: "Am7 G7 D7",
+        chords: [
+          {
+            name: "Am7",
+          },
+          {
+            name: "G7",
+          },
+          {
+            name: "D7",
+          },
+        ],
       },
       {
         title: "Verse",
-        chords: "G D7 Am7 C7",
+        chords: [
+          {
+            name: "G",
+          },
+          {
+            name: "D7",
+          },
+          {
+            name: "Am7",
+          },
+          {
+            name: "C7",
+          },
+        ],
       },
       {
         title: "Bridge",
-        chords: "Am D Bm Em G",
+        chords: [
+          {
+            name: "Am",
+          },
+          {
+            name: "D",
+          },
+          {
+            name: "Bm",
+          },
+          {
+            name: "Em",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
     ],
   },
@@ -216,15 +469,54 @@ const songs = [
     chordSections: [
       {
         title: "Intro/Verse",
-        chords: "Dm F A# C",
+        chords: [
+          {
+            name: "Dm",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "A#",
+          },
+          {
+            name: "C",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "F C Dm A A#",
+        chords: [
+          {
+            name: "F",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "Dm",
+          },
+          {
+            name: "A",
+          },
+          {
+            name: "A#",
+          },
+        ],
       },
       {
         title: "Interlude",
-        chords: "F C A#",
+        chords: [
+          {
+            name: "F",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "A#",
+          },
+        ],
       },
     ],
   },
@@ -237,15 +529,69 @@ const songs = [
     chordSections: [
       {
         title: "Intro",
-        chords: "Gb Dbm Ebm Bbm7 B Abm7",
+        chords: [
+          {
+            name: "Gb",
+          },
+          {
+            name: "Dbm",
+          },
+          {
+            name: "Ebm",
+          },
+          {
+            name: "Bbm7",
+          },
+          {
+            name: "B",
+          },
+          {
+            name: "Abm7",
+          },
+        ],
       },
       {
         title: "Verse",
-        chords: "Gb B G B Db Db7",
+        chords: [
+          {
+            name: "Gb",
+          },
+          {
+            name: "B",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "B",
+          },
+          {
+            name: "Db",
+          },
+          {
+            name: "Db7",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "Gb Bbm7 B7 Ab7 G7",
+        chords: [
+          {
+            name: "Gb",
+          },
+          {
+            name: "Bbm7",
+          },
+          {
+            name: "B7",
+          },
+          {
+            name: "Ab7",
+          },
+          {
+            name: "G7",
+          },
+        ],
       },
     ],
   },
@@ -258,15 +604,60 @@ const songs = [
     chordSections: [
       {
         title: "Intro/Verse",
-        chords: "Am Am7 G G7 F F7 C C7",
+        chords: [
+          {
+            name: "Am",
+          },
+          {
+            name: "Am7",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "G7",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "F7",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "C7",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "E Am",
+        chords: [
+          {
+            name: "E",
+          },
+          {
+            name: "Am",
+          },
+        ],
       },
       {
         title: "Interlude",
-        chords: "C E F G",
+        chords: [
+          {
+            name: "C",
+          },
+          {
+            name: "E",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
     ],
   },
@@ -283,11 +674,37 @@ const songs = [
     chordSections: [
       {
         title: "Intro",
-        chords: "G Em",
+        chords: [
+          {
+            name: "G",
+          },
+          {
+            name: "Em",
+          },
+        ],
       },
       {
         title: "Verse",
-        chords: "G Em C D Em Bm",
+        chords: [
+          {
+            name: "G",
+          },
+          {
+            name: "Em",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "D",
+          },
+          {
+            name: "Em",
+          },
+          {
+            name: "Bm",
+          },
+        ],
       },
     ],
   },
@@ -304,15 +721,51 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "G C Am",
+        chords: [
+          {
+            name: "G",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "Am",
+          },
+        ],
       },
       {
         title: "Bridge",
-        chords: "Am Em F C C7",
+        chords: [
+          {
+            name: "Am",
+          },
+          {
+            name: "Em",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "C7",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "C F D7",
+        chords: [
+          {
+            name: "C",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "D7",
+          },
+        ],
       },
     ],
   },
@@ -325,15 +778,48 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "G Am C",
+        chords: [
+          {
+            name: "G",
+          },
+          {
+            name: "Am",
+          },
+          {
+            name: "C",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "G Dm Am C",
+        chords: [
+          {
+            name: "G",
+          },
+          {
+            name: "Dm",
+          },
+          {
+            name: "Am",
+          },
+          {
+            name: "C",
+          },
+        ],
       },
       {
         title: "Bridge",
-        chords: "F C G",
+        chords: [
+          {
+            name: "F",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
     ],
   },
@@ -346,15 +832,63 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "D G Em Bm E A",
+        chords: [
+          {
+            name: "D",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "Em",
+          },
+          {
+            name: "Bm",
+          },
+          {
+            name: "E",
+          },
+          {
+            name: "A",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "D A Bm G Em",
+        chords: [
+          {
+            name: "D",
+          },
+          {
+            name: "A",
+          },
+          {
+            name: "Bm",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "Em",
+          },
+        ],
       },
       {
         title: "Bridge",
-        chords: "Bm G D A",
+        chords: [
+          {
+            name: "Bm",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "D",
+          },
+          {
+            name: "A",
+          },
+        ],
       },
     ],
   },
@@ -374,16 +908,34 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chordList: [
-          "%2/1.X/X.0/0.2/2.3/3.0/0",
-          "%4/1.X/X.0/0.4/2.5/3.0/0",
-          "%5/1.X/X.0/0.5/2.6/3.0/0",
-          "%7/1.X/X.0/0.7/2.8/3.0/0",
+        chords: [
+          {
+            voicing: "%2/1.X/X.0/0.2/2.3/3.0/0",
+          },
+          {
+            voicing: "%4/1.X/X.0/0.4/2.5/3.0/0",
+          },
+          {
+            voicing: "%5/1.X/X.0/0.5/2.6/3.0/0",
+          },
+          {
+            voicing: "%7/1.X/X.0/0.7/2.8/3.0/0",
+          },
         ],
       },
       {
         title: "Chorus",
-        chords: "D A G",
+        chords: [
+          {
+            name: "D",
+          },
+          {
+            name: "A",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
     ],
   },
@@ -396,11 +948,31 @@ const songs = [
     chordSections: [
       {
         title: "Intro/Verse",
-        chords: "E A",
+        chords: [
+          {
+            name: "E",
+          },
+          {
+            name: "A",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "C Em D C",
+        chords: [
+          {
+            name: "C",
+          },
+          {
+            name: "Em",
+          },
+          {
+            name: "D",
+          },
+          {
+            name: "C",
+          },
+        ],
       },
     ],
   },
@@ -413,15 +985,57 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "Bm G D A",
+        chords: [
+          {
+            name: "Bm",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "D",
+          },
+          {
+            name: "A",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "Bm A G",
+        chords: [
+          {
+            name: "Bm",
+          },
+          {
+            name: "A",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
       {
         title: "Interlude",
-        chords: "B E A G# G F#",
+        chords: [
+          {
+            name: "B",
+          },
+          {
+            name: "E",
+          },
+          {
+            name: "A",
+          },
+          {
+            name: "G#",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "F#",
+          },
+        ],
       },
     ],
   },
@@ -434,15 +1048,45 @@ const songs = [
     chordSections: [
       {
         title: "Intro/Verse",
-        chords: "F G",
+        chords: [
+          {
+            name: "F",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
       {
         title: "Bridge",
-        chords: "C D Em",
+        chords: [
+          {
+            name: "C",
+          },
+          {
+            name: "D",
+          },
+          {
+            name: "Em",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "Em F# G A",
+        chords: [
+          {
+            name: "Em",
+          },
+          {
+            name: "F#",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "A",
+          },
+        ],
       },
     ],
   },
@@ -455,11 +1099,28 @@ const songs = [
     chordSections: [
       {
         title: "Intro/Verse",
-        chords: "Em D",
+        chords: [
+          {
+            name: "Em",
+          },
+          {
+            name: "D",
+          },
+        ],
       },
       {
         title: "Bridge",
-        chords: "C Em A",
+        chords: [
+          {
+            name: "C",
+          },
+          {
+            name: "Em",
+          },
+          {
+            name: "A",
+          },
+        ],
       },
     ],
   },
@@ -472,7 +1133,20 @@ const songs = [
     chordSections: [
       {
         title: "Verse/Chorus",
-        chords: "G Em C D",
+        chords: [
+          {
+            name: "G",
+          },
+          {
+            name: "Em",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "D",
+          },
+        ],
       },
     ],
   },
@@ -485,15 +1159,54 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "E C",
+        chords: [
+          {
+            name: "E",
+          },
+          {
+            name: "C",
+          },
+        ],
       },
       {
         title: "Bridge",
-        chords: "C D A E",
+        chords: [
+          {
+            name: "C",
+          },
+          {
+            name: "D",
+          },
+          {
+            name: "A",
+          },
+          {
+            name: "E",
+          },
+        ],
       },
       {
         title: "Middle 8",
-        chords: "F C G D A E",
+        chords: [
+          {
+            name: "F",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "D",
+          },
+          {
+            name: "A",
+          },
+          {
+            name: "E",
+          },
+        ],
       },
     ],
   },
@@ -513,15 +1226,48 @@ const songs = [
     chordSections: [
       {
         title: "Verse/Chorus",
-        chords: "F Dm C A#",
+        chords: [
+          {
+            name: "F",
+          },
+          {
+            name: "Dm",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "A#",
+          },
+        ],
       },
       {
         title: "Bridge",
-        chords: "A# C Am",
+        chords: [
+          {
+            name: "A#",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "Am",
+          },
+        ],
       },
       {
         title: "Middle 8",
-        chords: "Dm A# C",
+        chords: [
+          {
+            name: "Dm",
+          },
+          {
+            name: "A#",
+          },
+          {
+            name: "C",
+          },
+        ],
       },
     ],
   },
@@ -534,11 +1280,28 @@ const songs = [
     chordSections: [
       {
         title: "Verse/Chorus",
-        chords: "A C G A#",
+        chords: [
+          {
+            name: "A",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "A#",
+          },
+        ],
       },
       {
         title: "Solo",
-        chords: "Em",
+        chords: [
+          {
+            name: "Em",
+          },
+        ],
       },
     ],
   },
@@ -551,11 +1314,31 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "D F",
+        chords: [
+          {
+            name: "D",
+          },
+          {
+            name: "F",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "F C D# A#",
+        chords: [
+          {
+            name: "F",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "D#",
+          },
+          {
+            name: "A#",
+          },
+        ],
       },
     ],
   },
@@ -568,7 +1351,17 @@ const songs = [
     chordSections: [
       {
         title: "Verse/Chorus",
-        chords: "D Bm C",
+        chords: [
+          {
+            name: "D",
+          },
+          {
+            name: "Bm",
+          },
+          {
+            name: "C",
+          },
+        ],
       },
     ],
   },
@@ -581,11 +1374,37 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "F Am",
+        chords: [
+          {
+            name: "F",
+          },
+          {
+            name: "Am",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "F Am C G Bm D",
+        chords: [
+          {
+            name: "F",
+          },
+          {
+            name: "Am",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "Bm",
+          },
+          {
+            name: "D",
+          },
+        ],
       },
     ],
   },
@@ -598,7 +1417,11 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chordList: ["%X/X.X/X.5/3.0/0.3/1.X/X"],
+        chords: [
+          {
+            voicing: "%X/X.X/X.5/3.0/0.3/1.X/X",
+          },
+        ],
       },
     ],
   },
@@ -611,15 +1434,45 @@ const songs = [
     chordSections: [
       {
         title: "Intro/Pre-Verse",
-        chords: "D C",
+        chords: [
+          {
+            name: "D",
+          },
+          {
+            name: "C",
+          },
+        ],
       },
       {
         title: "Verse",
-        chords: "Bm F# G",
+        chords: [
+          {
+            name: "Bm",
+          },
+          {
+            name: "F#",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "D Am C D",
+        chords: [
+          {
+            name: "D",
+          },
+          {
+            name: "Am",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "D",
+          },
+        ],
       },
     ],
   },
@@ -632,11 +1485,34 @@ const songs = [
     chordSections: [
       {
         title: "Intro/Verse",
-        chords: "D G",
+        chords: [
+          {
+            name: "D",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
       {
         title: "Bridge",
-        chords: "F# Bm C G Am",
+        chords: [
+          {
+            name: "F#",
+          },
+          {
+            name: "Bm",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "Am",
+          },
+        ],
       },
     ],
   },
@@ -649,15 +1525,51 @@ const songs = [
     chordSections: [
       {
         title: "Intro/Verse",
-        chords: "Am F C G Dm",
+        chords: [
+          {
+            name: "Am",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "Dm",
+          },
+        ],
       },
       {
         title: "Bridge",
-        chords: "Am F",
+        chords: [
+          {
+            name: "Am",
+          },
+          {
+            name: "F",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "C G Dm Am",
+        chords: [
+          {
+            name: "C",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "Dm",
+          },
+          {
+            name: "Am",
+          },
+        ],
       },
     ],
   },
@@ -670,11 +1582,40 @@ const songs = [
     chordSections: [
       {
         title: "Intro/Verse",
-        chords: "D F G C",
+        chords: [
+          {
+            name: "D",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "C",
+          },
+        ],
       },
       {
         title: "Bridge",
-        chords: "C Am C D A",
+        chords: [
+          {
+            name: "C",
+          },
+          {
+            name: "Am",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "D",
+          },
+          {
+            name: "A",
+          },
+        ],
       },
     ],
   },
@@ -687,11 +1628,34 @@ const songs = [
     chordSections: [
       {
         title: "Intro/Chorus",
-        chords: "Am F C G",
+        chords: [
+          {
+            name: "Am",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
       {
         title: "Verse",
-        chords: "Am Em G",
+        chords: [
+          {
+            name: "Am",
+          },
+          {
+            name: "Em",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
     ],
   },
@@ -704,15 +1668,54 @@ const songs = [
     chordSections: [
       {
         title: "Intro/Verse/Solo",
-        chords: "D G A D Bm",
+        chords: [
+          {
+            name: "D",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "A",
+          },
+          {
+            name: "D",
+          },
+          {
+            name: "Bm",
+          },
+        ],
       },
       {
         title: "Interlude",
-        chords: "A A#",
+        chords: [
+          {
+            name: "A",
+          },
+          {
+            name: "A#",
+          },
+        ],
       },
       {
         title: "Bridge",
-        chords: "C Em F# A A#",
+        chords: [
+          {
+            name: "C",
+          },
+          {
+            name: "Em",
+          },
+          {
+            name: "F#",
+          },
+          {
+            name: "A",
+          },
+          {
+            name: "A#",
+          },
+        ],
       },
     ],
   },
@@ -725,19 +1728,80 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "E B C#m7 A# A",
+        chords: [
+          {
+            name: "E",
+          },
+          {
+            name: "B",
+          },
+          {
+            name: "C#m7",
+          },
+          {
+            name: "A#",
+          },
+          {
+            name: "A",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "F# E B",
+        chords: [
+          {
+            name: "F#",
+          },
+          {
+            name: "E",
+          },
+          {
+            name: "B",
+          },
+        ],
       },
       {
         title: "Middle 8",
-        chords: "C#m7 C B A F E G",
+        chords: [
+          {
+            name: "C#m7",
+          },
+          {
+            name: "C",
+          },
+          {
+            name: "B",
+          },
+          {
+            name: "A",
+          },
+          {
+            name: "F",
+          },
+          {
+            name: "E",
+          },
+          {
+            name: "G",
+          },
+        ],
       },
       {
         title: "Ending",
-        chords: "A Am7 G F",
+        chords: [
+          {
+            name: "A",
+          },
+          {
+            name: "Am7",
+          },
+          {
+            name: "G",
+          },
+          {
+            name: "F",
+          },
+        ],
       },
     ],
   },
@@ -750,11 +1814,49 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "E A B C#m D",
+        chords: [
+          {
+            name: "E",
+          },
+          {
+            name: "A",
+          },
+          {
+            name: "B",
+          },
+          {
+            name: "C#m",
+          },
+          {
+            name: "D",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "B C#m A E G#m F#m D",
+        chords: [
+          {
+            name: "B",
+          },
+          {
+            name: "C#m",
+          },
+          {
+            name: "A",
+          },
+          {
+            name: "E",
+          },
+          {
+            name: "G#m",
+          },
+          {
+            name: "F#m",
+          },
+          {
+            name: "D",
+          },
+        ],
       },
     ],
   },
@@ -767,11 +1869,37 @@ const songs = [
     chordSections: [
       {
         title: "Verse",
-        chords: "E G# D#m B",
+        chords: [
+          {
+            name: "E",
+          },
+          {
+            name: "G#",
+          },
+          {
+            name: "D#m",
+          },
+          {
+            name: "B",
+          },
+        ],
       },
       {
         title: "Chorus",
-        chords: "A B E C#m",
+        chords: [
+          {
+            name: "A",
+          },
+          {
+            name: "B",
+          },
+          {
+            name: "E",
+          },
+          {
+            name: "C#m",
+          },
+        ],
       },
     ],
   },
