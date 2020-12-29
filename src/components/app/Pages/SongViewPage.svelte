@@ -48,7 +48,7 @@
         <SongLyrics lyrics={song.lyrics} />
       </TabPanel>
       <TabPanel>
-        <SongChords chords={song.chords} />
+        <SongChords chords={song.chordSections} />
       </TabPanel>
     </div>
     <div class="tab-list">
