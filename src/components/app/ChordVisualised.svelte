@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { ChordBox } from "vexchords";
+  import { theme } from "../../theme.js";
   export let tuning = "";
   export let fingering;
   export let strings;
@@ -9,7 +10,7 @@
 
   onMount(() => {
     const tuningSplit = tuning ? tuning.split("") : null;
-    new ChordBox(`#${key}`).draw({
+    new ChordBox(`#${key}`, { defaultColor: theme.bodyColor }).draw({
       chord: getChord(fingering.split(" "), strings.split(" ")),
       tuning: tuningSplit,
       position: position || getPositionFromStrings(strings),
