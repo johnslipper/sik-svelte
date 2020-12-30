@@ -15,12 +15,16 @@
     line-height: 1.2;
   }
 
+  .wrapper {
+    padding: var(--contentPaddingHorizontal);
+  }
+
   .empty {
     color: var(--neutralMedium);
   }
 </style>
 
-<section in:fade={{ delay: 150 }}>
+<section class="wrapper" in:fade={{ delay: 150 }}>
   <VisuallyHidden>
     <h2>Lyrics</h2>
   </VisuallyHidden>
