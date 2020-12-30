@@ -4,16 +4,16 @@
   import { theme } from "../../theme.js";
   export let tuning = "";
   export let fingering;
-  export let strings;
+  export let frets;
   export let position;
   export let key;
 
   onMount(() => {
     const tuningSplit = tuning ? tuning.split("") : null;
     new ChordBox(`#${key}`, { defaultColor: theme.bodyColor }).draw({
-      chord: getChord(fingering.split(" "), strings.split(" ")),
+      chord: getChord(fingering.split(" "), frets.split(" ")),
       tuning: tuningSplit,
-      position: position || getPositionFromStrings(strings),
+      position: position || getPositionFromFrets(frets),
     });
 
     // Add viewbox and fluid heights to allow container to scale responsively
@@ -23,21 +23,21 @@
     svgElement.setAttribute("height", "100%");
   });
 
-  function getChord(fingering, strings) {
-    if (fingering.length !== strings.length) {
+  function getChord(fingering, frets) {
+    if (fingering.length !== frets.length) {
       return;
     }
     return fingering.map((finger, i) => {
       const fingerFormatted = finger === "X" ? null : finger;
-      const stringFormatted =
-        strings[i] === "X" ? strings[i].toLowerCase() : parseInt(strings[i]);
-      return [i + 1, fingerFormatted, stringFormatted];
+      const fretFormatted =
+        frets[i] === "X" ? frets[i].toLowerCase() : parseInt(frets[i]);
+      return [fingering.length - i, fretFormatted, fingerFormatted];
     });
   }
 
-  function getPositionFromStrings(strings) {
+  function getPositionFromFrets(frets) {
     return Math.min(
-      ...strings
+      ...frets
         .split(" ")
         .map((string) => {
           if (string !== "X") {

@@ -310,22 +310,22 @@ const songs = [
           {
             voicing: "%0/0.9/1.11/3.11/4.X/X.X/X",
             fingering: "0 1 3 4 X X",
-            strings: "0 9 11 11 X X",
+            frets: "0 9 11 11 X X",
           },
           {
             voicing: "%9/1.9/1.11/3.11/4.X/X.X/X",
             fingering: "1 1 3 4 X X",
-            strings: "9 9 11 11 X X",
+            frets: "9 9 11 11 X X",
           },
           {
             voicing: "%5/1.5/1.7/3.7/4.X/X.X/X",
             fingering: "1 1 3 4 X X",
-            strings: "5 5 7 7 X X",
+            frets: "5 5 7 7 X X",
           },
           {
             voicing: "%9/1.9/1.11/3.11/4.X/X.X/X",
             fingering: "1 1 3 4 X X",
-            strings: "9 9 11 11 X X",
+            frets: "9 9 11 11 X X",
           },
         ],
       },
@@ -920,22 +920,22 @@ const songs = [
           {
             voicing: "%2/1.X/X.0/0.2/2.3/3.0/0",
             fingering: "1 X 0 2 3 0",
-            strings: "2 X 0 2 3 0",
+            frets: "2 X 0 2 3 0",
           },
           {
             voicing: "%4/1.X/X.0/0.4/2.5/3.0/0",
             fingering: "1 X 0 2 3 0",
-            strings: "4 X 0 4 5 0",
+            frets: "4 X 0 4 5 0",
           },
           {
             voicing: "%5/1.X/X.0/0.5/2.6/3.0/0",
             fingering: "1 X 0 2 3 0",
-            strings: "5 X 0 5 6 0",
+            frets: "5 X 0 5 6 0",
           },
           {
             voicing: "%7/1.X/X.0/0.7/2.8/3.0/0",
             fingering: "1 X 0 2 3 0",
-            strings: "7 X 0 7 8 0",
+            frets: "7 X 0 7 8 0",
           },
         ],
       },
@@ -1437,7 +1437,7 @@ const songs = [
           {
             voicing: "%X/X.X/X.5/3.0/0.3/1.X/X",
             fingering: "X X 3 0 1 X",
-            strings: "X X 5 0 3 X",
+            frets: "X X 5 0 3 X",
           },
         ],
       },
