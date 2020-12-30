@@ -7,6 +7,7 @@
     top: var(--headerTopOffset);
     font-size: 0.85rem;
     background-color: var(--neutralLightest);
+    z-index: 1;
   }
 </style>
 
