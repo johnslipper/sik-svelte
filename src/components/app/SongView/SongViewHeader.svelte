@@ -21,7 +21,6 @@
     top: 0;
     z-index: 2;
     padding: 0.5rem 0.5rem 1.5rem;
-    margin-bottom: 1.5rem;
     background-color: var(--primary);
     color: var(--primaryContrast);
   }
