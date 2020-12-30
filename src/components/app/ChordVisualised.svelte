@@ -4,6 +4,7 @@
   export let tuning = "";
   export let fingering;
   export let strings;
+  export let position;
   export let key;
 
   onMount(() => {
@@ -11,6 +12,7 @@
     new ChordBox(`#${key}`).draw({
       chord: getChord(fingering.split(" "), strings.split(" ")),
       tuning: tuningSplit,
+      position: position || getPositionFromStrings(strings),
     });
 
     // Add viewbox and fluid heights to allow container to scale responsively
@@ -30,6 +32,19 @@
         strings[i] === "X" ? strings[i].toLowerCase() : parseInt(strings[i]);
       return [i + 1, fingerFormatted, stringFormatted];
     });
+  }
+
+  function getPositionFromStrings(strings) {
+    return Math.min(
+      ...strings
+        .split(" ")
+        .map((string) => {
+          if (string !== "X") {
+            return parseInt(string);
+          }
+        })
+        .filter(Boolean)
+    );
   }
 </script>
 
