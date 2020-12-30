@@ -309,23 +309,23 @@ const songs = [
         chords: [
           {
             voicing: "%0/0.9/1.11/3.11/4.X/X.X/X",
-            fingering: "0 1 3 4 X X",
-            frets: "0 9 11 11 X X",
+            fingering: "X 1 3 4 X X",
+            frets: "0 9 11 11 0 0",
           },
           {
             voicing: "%9/1.9/1.11/3.11/4.X/X.X/X",
             fingering: "1 1 3 4 X X",
-            frets: "9 9 11 11 X X",
+            frets: "9 9 11 11 0 0",
           },
           {
             voicing: "%5/1.5/1.7/3.7/4.X/X.X/X",
             fingering: "1 1 3 4 X X",
-            frets: "5 5 7 7 X X",
+            frets: "5 5 7 7 0 0",
           },
           {
             voicing: "%9/1.9/1.11/3.11/4.X/X.X/X",
             fingering: "1 1 3 4 X X",
-            frets: "9 9 11 11 X X",
+            frets: "9 9 11 11 0 0",
           },
         ],
       },
