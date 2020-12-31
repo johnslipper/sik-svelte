@@ -4,7 +4,6 @@
   import Dialogue from "../../ui/Modal/Dialogue.svelte";
   import ArtworkSearch from "../Artwork/ArtworkSearch.svelte";
   import ArtworkView from "../Artwork/ArtworkView.svelte";
-  import ChordView from "../Chord/ChordView.svelte";
   import AddArea from "../../ui/AddArea.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import { Button, ButtonDefault } from "../../ui/Button";
@@ -16,6 +15,7 @@
     Fieldset,
     Legend,
   } from "../../ui/Form";
+  import SongEditChordSections from "./SongEditChordSections.svelte";
   export let song = {
     title: "",
     artist: "",
@@ -107,40 +107,6 @@
   .section {
     border-bottom: 1px solid var(--neutralLightest);
   }
-  .sectionTitle {
-    margin-bottom: 0.5rem;
-    display: flex;
-    gap: 0.25rem;
-    align-items: flex-end;
-  }
-  .chords {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    gap: 0.5rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    list-style: none;
-    padding: var(--contentPaddingHorizontal);
-    color: var(--neutralMedium);
-  }
-  .chord {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  .chordAdd {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-  }
-  .chordAdd :global(button) {
-    width: 100%;
-    height: 7rem;
-    font-size: 0.85rem;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-  }
 </style>
 
 <Fieldset>
@@ -199,34 +165,11 @@
       {#each song.chordSections as section, i}
         <div class="sections">
           <div class="section">
-            <div class="wrapper">
-              <div class="sectionTitle">
-                <FormGroup>
-                  <Label htmlFor="sectionTitle{i}">Title</Label>
-                  <Input id="sectionTitle{i}" bind:value={section.title} />
-                </FormGroup>
-                <ButtonDefault on:click={() => handleRemoveSection(section)}>
-                  Remove
-                </ButtonDefault>
-              </div>
-              <ul class="chords">
-                {#if section.chords}
-                  {#each section.chords as chord, i}
-                    <li class="chord">
-                      <ChordView
-                        {chord}
-                        tuning={song.tuning}
-                        key="songEditChord{i}" />
-                    </li>
-                  {/each}
-                {/if}
-                <li class="chordAdd">
-                  <Button>
-                    <AddArea text="Add chord" />
-                  </Button>
-                </li>
-              </ul>
-            </div>
+            <SongEditChordSections
+              {section}
+              tuning={song.tuning}
+              key={i}
+              onRemoved={handleRemoveSection} />
           </div>
         </div>
       {/each}
