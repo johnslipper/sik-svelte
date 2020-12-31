@@ -4,9 +4,10 @@
   import Dialogue from "../../ui/Modal/Dialogue.svelte";
   import ArtworkSearch from "../Artwork/ArtworkSearch.svelte";
   import ArtworkView from "../Artwork/ArtworkView.svelte";
+  import ChordView from "../Chord/ChordView.svelte";
   import AddArea from "../../ui/AddArea.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  import { Button } from "../../ui/Button";
+  import { Button, ButtonDefault } from "../../ui/Button";
   import {
     Input,
     FormGroup,
@@ -20,6 +21,8 @@
     artist: "",
     album: "",
     lyrics: "",
+    tuning: "",
+    chordSections: [],
   };
   const { open, close } = getContext("simple-modal");
 
@@ -62,6 +65,17 @@
       },
     });
   }
+
+  function handleAddSection() {
+    song.chordSections = song.chordSections || [];
+    song.chordSections = [
+      ...song.chordSections,
+      {
+        title: "",
+        chords: [],
+      },
+    ];
+  }
 </script>
 
 <style>
@@ -82,6 +96,44 @@
     width: 100px;
     height: 100px;
   }
+  .sections {
+    display: grid;
+    gap: 0.5rem;
+  }
+  .section {
+    border-bottom: 1px solid var(--neutralLightest);
+  }
+  .sectionTitle {
+    margin-bottom: 0.5rem;
+  }
+  .chords {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    list-style: none;
+    padding: var(--contentPaddingHorizontal);
+    color: var(--neutralMedium);
+  }
+  .chord {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .chordAdd {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  .chordAdd :global(button) {
+    width: 100%;
+    height: 7rem;
+    font-size: 0.85rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
 </style>
 
 <Fieldset>
@@ -91,7 +143,7 @@
       <div class="artwork">
         <Button on:click={openSearchModal}>
           {#if !song.artwork}
-            <AlbumArtworkAdd />
+            <AddArea text="Add artwork" />
           {:else}
             <ArtworkView artwork={song.artwork} />
           {/if}
@@ -112,6 +164,14 @@
           <Label htmlFor="songAlbum">Album</Label>
           <Input id="songAlbum" bind:value={song.album} />
         </FormGroup>
+
+        <FormGroup>
+          <Label htmlFor="songTuning">Tuning</Label>
+          <Input
+            id="songTuning"
+            bind:value={song.tuning}
+            placeholder="E A D G B E" />
+        </FormGroup>
       </div>
     </div>
   </div>
@@ -123,5 +183,43 @@
       <Label htmlFor="songLyrics">Lyrics</Label>
     </VisuallyHidden>
     <Textarea id="songLyrics" bind:value={song.lyrics} />
+  </div>
+</Fieldset>
+<Fieldset>
+  <Legend>Chords</Legend>
+  <div in:fade>
+    {#if song.chordSections}
+      {#each song.chordSections as section, i}
+        <div class="sections">
+          <div class="section">
+            <div class="wrapper">
+              <div class="sectionTitle">
+                <FormGroup>
+                  <Label htmlFor="sectionTitle{i}">Title</Label>
+                  <Input id="sectionTitle{i}" bind:value={section.title} />
+                </FormGroup>
+              </div>
+              <ul class="chords">
+                {#if section.chords}
+                  {#each section.chords as chord, i}
+                    <li class="chord">
+                      <ChordView {chord} tuning={song.tuning} key="chord{i}" />
+                    </li>
+                  {/each}
+                {/if}
+                <li class="chordAdd">
+                  <Button>
+                    <AddArea text="Add chord" />
+                  </Button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      {/each}
+    {/if}
+    <div class="wrapper">
+      <ButtonDefault on:click={handleAddSection}>Add section</ButtonDefault>
+    </div>
   </div>
 </Fieldset>
