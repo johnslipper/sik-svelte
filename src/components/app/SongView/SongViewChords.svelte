@@ -1,7 +1,7 @@
 <script>
   import { fade } from "svelte/transition";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  import ChordVisualised from "../Chord/ChordVisualised.svelte";
+  import ChordView from "../Chord/ChordView.svelte";
   import Heading from "../../ui/Heading.svelte";
   export let chords;
   export let tuning = "";
@@ -34,24 +34,6 @@
     flex-direction: column;
     text-align: center;
   }
-  .name,
-  .nameOnly {
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-  .nameOnly {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    padding: var(--contentPaddingHorizontal);
-  }
-  .visualised {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
   .empty {
     padding: var(--contentPaddingHorizontal);
   }
@@ -71,21 +53,7 @@
           <ul class="chords">
             {#each section.chords as chord, i}
               <li class="chord">
-                {#if chord.fingering && chord.frets}
-                  <div class="visualised">
-                    <ChordVisualised
-                      key="chord{i}"
-                      fingering={chord.fingering}
-                      frets={chord.frets}
-                      position={chord.position}
-                      {tuning} />
-                  </div>
-                  {#if chord.name}
-                    <div class="name">{chord.name}</div>
-                  {/if}
-                {:else}
-                  <div class="nameOnly">{chord.name}</div>
-                {/if}
+                <ChordView {chord} {tuning} key="chord{i}" />
               </li>
             {/each}
           </ul>
