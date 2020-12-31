@@ -91,8 +91,7 @@
     </div>
     <div class="end" in:fade={{ delay: animationDelay + 50 }}>
       <SongEditLink {id}>
-        <span>Edit</span>
-        <VisuallyHidden>song</VisuallyHidden>
+        <VisuallyHidden>Edit song</VisuallyHidden>
       </SongEditLink>
     </div>
   </div>

@@ -12,8 +12,7 @@
   <Logo />
   <div slot="end" in:fade>
     <SongAddLink>
-      <span>Add</span>
-      <VisuallyHidden>Song</VisuallyHidden>
+      <VisuallyHidden>Add song</VisuallyHidden>
     </SongAddLink>
   </div>
 </AppHeader>
