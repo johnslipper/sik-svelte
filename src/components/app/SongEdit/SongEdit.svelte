@@ -78,7 +78,12 @@
   }
 
   function handleRemoveSection(section) {
-    song.chordSections = song.chordSections.filter((s) => s !== section);
+    open(Dialogue, {
+      message: "Are you sure you want to remove this section of chords?",
+      onOkay: () => {
+        song.chordSections = song.chordSections.filter((s) => s !== section);
+      },
+    });
   }
 </script>
 
