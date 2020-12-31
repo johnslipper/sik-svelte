@@ -303,6 +303,7 @@ const songs = [
       text: "DADGAD tuning",
       type: "warning",
     },
+    tuning: "D A D G A D",
     chordSections: [
       {
         title: "Intro/Verse",
@@ -918,6 +919,7 @@ const songs = [
         title: "Verse",
         chords: [
           {
+            name: "Bob",
             voicing: "%2/1.X/X.0/0.2/2.3/3.0/0",
             fingering: "1 X 0 2 3 0",
             frets: "2 X 0 2 3 0",
