@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { ChordBox } from "vexchords";
-  import { theme } from "../../theme.js";
+  import { theme } from "../../../theme.js";
   export let tuning = "";
   export let fingering;
   export let frets;

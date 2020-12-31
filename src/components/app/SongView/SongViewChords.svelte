@@ -1,7 +1,7 @@
 <script>
   import { fade } from "svelte/transition";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  import ChordVisualised from "../ChordVisualised.svelte";
+  import ChordVisualised from "../Chord/ChordVisualised.svelte";
   import Heading from "../../ui/Heading.svelte";
   export let chords;
   export let tuning = "";
