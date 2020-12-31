@@ -82,9 +82,6 @@
       {#if artist}
         <div class="artist">{artist}</div>
       {/if}
-      {#if album}
-        <div class="album">{album}</div>
-      {/if}
     </div>
   </Link>
 </div>
