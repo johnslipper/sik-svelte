@@ -27,11 +27,12 @@
   .panels {
     padding-bottom: 5rem;
   }
-  .tab-list {
+  .tabList {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 1;
   }
 </style>
 
@@ -51,7 +52,7 @@
         <SongChords chords={song.chordSections} tuning={song.tuning} />
       </TabPanel>
     </div>
-    <div class="tab-list">
+    <div class="tabList">
       <TabList>
         <Tab>
           <div class="icon" in:fly={iconTransition}>
