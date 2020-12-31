@@ -1,6 +1,7 @@
 const colors = {
   primary: [329, 78, 44],
   neutral: [236, 8, 50],
+  danger: [343, 100, 41],
 };
 
 function getColor([h, s, l, a], lightness, alpha) {
@@ -15,6 +16,7 @@ export const theme = {
   neutralDark: getColor(colors.neutral, 27),
   neutralMedium: getColor(colors.neutral),
   neutralLight: getColor(colors.neutral, 80),
+  danger: getColor(colors.danger),
   neutralLightest: getColor(colors.neutral, 95),
   contentPaddingHorizontal: "1rem",
   focusOutlineShadow: `0 0 0 0.15rem ${getColor(colors.primary, 20)}`,
