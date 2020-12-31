@@ -53,7 +53,8 @@
     border: 0.25rem solid var(--primaryContrast);
     overflow: hidden;
   }
-  .start {
+  .start,
+  .end {
     margin-top: 1rem;
   }
 
@@ -61,6 +62,7 @@
     display: flex;
     justify-content: flex-end;
     flex-grow: 1;
+    margin-right: 0.25em;
   }
 </style>
 
