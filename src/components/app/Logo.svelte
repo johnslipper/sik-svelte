@@ -14,7 +14,7 @@
 
 <div class="logo" style="height: {height}">
   <svg viewBox="0 0 1125 491" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <desc>Songs I Know</desc>
+    <title>Songs I Know</title>
     <path
       fill-rule="evenodd"
       clip-rule="evenodd"
