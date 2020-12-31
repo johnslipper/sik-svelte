@@ -213,7 +213,10 @@
                 {#if section.chords}
                   {#each section.chords as chord, i}
                     <li class="chord">
-                      <ChordView {chord} tuning={song.tuning} key="chord{i}" />
+                      <ChordView
+                        {chord}
+                        tuning={song.tuning}
+                        key="songEditChord{i}" />
                     </li>
                   {/each}
                 {/if}

@@ -53,7 +53,7 @@
           <ul class="chords">
             {#each section.chords as chord, i}
               <li class="chord">
-                <ChordView {chord} {tuning} key="chord{i}" />
+                <ChordView {chord} {tuning} key="songViewChord{i}" />
               </li>
             {/each}
           </ul>
