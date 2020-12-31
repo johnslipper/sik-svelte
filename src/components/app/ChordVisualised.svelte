@@ -9,7 +9,7 @@
   export let key;
 
   onMount(() => {
-    const tuningSplit = tuning ? tuning.split("") : null;
+    const tuningSplit = tuning ? tuning.split(" ") : null;
     const fingeringArray = fingering.split(" ");
     const fretsArray = processFrets(frets.split(" "));
     const calculatedPosition = position || getPositionFromFrets(fretsArray);
