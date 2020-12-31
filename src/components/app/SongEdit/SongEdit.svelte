@@ -76,6 +76,10 @@
       },
     ];
   }
+
+  function handleRemoveSection(section) {
+    song.chordSections = song.chordSections.filter((s) => s !== section);
+  }
 </script>
 
 <style>
@@ -105,6 +109,9 @@
   }
   .sectionTitle {
     margin-bottom: 0.5rem;
+    display: flex;
+    gap: 0.25rem;
+    align-items: flex-end;
   }
   .chords {
     display: grid;
@@ -198,6 +205,9 @@
                   <Label htmlFor="sectionTitle{i}">Title</Label>
                   <Input id="sectionTitle{i}" bind:value={section.title} />
                 </FormGroup>
+                <ButtonDefault on:click={() => handleRemoveSection(section)}>
+                  Remove
+                </ButtonDefault>
               </div>
               <ul class="chords">
                 {#if section.chords}
