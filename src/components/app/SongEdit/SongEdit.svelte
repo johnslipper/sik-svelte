@@ -1,6 +1,7 @@
 <script>
   import { fade } from "svelte/transition";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
+  import Dropdown from "../../ui/Dropdown.svelte";
   import { Label, Textarea, Fieldset, Legend } from "../../ui/Form";
   import SongEditDetails from "./SongEditDetails.svelte";
   import SongEditChords from "./SongEditChords.svelte";
