@@ -28,4 +28,6 @@ export const theme = {
   inputPadding: "0.5rem",
   inputBorderRadius: "0.15rem",
   inputBorderColor: getColor(colors.neutral),
+  dropdownZindex: 2,
+  dropdownBackgroundColor: "white",
 };
