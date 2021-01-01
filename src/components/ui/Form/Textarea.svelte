@@ -21,11 +21,11 @@
   }
 
   /* Auto growing textarea (https://css-tricks.com/the-cleanest-trick-for-autogrowing-textareas/) */
-  .grow-wrap {
+  .growWrap {
     /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
     display: grid;
   }
-  .grow-wrap::after {
+  .growWrap::after {
     /* Note the weird space! Needed to preventy jumpy behavior */
     content: attr(data-replicated-value) " ";
 
@@ -35,15 +35,15 @@
     /* Hidden from view, clicks, and screen readers */
     visibility: hidden;
   }
-  .grow-wrap > textarea {
+  .growWrap > textarea {
     /* You could leave this, but after a user resizes, then it ruins the auto sizing */
     resize: none;
 
     /* Firefox shows scrollbar on growth, you can hide like this. */
     overflow: hidden;
   }
-  .grow-wrap > textarea,
-  .grow-wrap::after {
+  .growWrap > textarea,
+  .growWrap::after {
     /* Identical styling required!! */
     font-size: 1rem;
     padding: var(--inputPadding);
@@ -56,7 +56,7 @@
   }
 </style>
 
-<div class="grow-wrap">
+<div class="growWrap">
   <textarea
     {id}
     {name}
