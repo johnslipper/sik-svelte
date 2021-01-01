@@ -1,10 +1,18 @@
 <script>
   import { fade } from "svelte/transition";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
+  import Dropdown from "../../ui/Dropdown.svelte";
   import ChordView from "../Chord/ChordView.svelte";
   import Heading from "../../ui/Heading.svelte";
+  import { speakerIcon } from "../../ui/Icons/icons.js";
+  import Icon from "../../ui/Icons/Icon.svelte";
+  import { Button } from "../../ui/Button";
   export let chords;
   export let tuning = "";
+
+  function handleOnPlay(chord) {
+    // TODO
+  }
 </script>
 
 <style>
@@ -37,6 +45,21 @@
   .empty {
     padding: var(--contentPaddingHorizontal);
   }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem;
+  }
+
+  .actions :global(button) {
+    display: grid;
+    gap: 0.5rem;
+    justify-items: center;
+    padding: 0.75rem;
+  }
 </style>
 
 <section in:fade={{ delay: 150 }}>
@@ -53,7 +76,21 @@
           <ul class="chords">
             {#each section.chords as chord, i}
               <li class="chord">
-                <ChordView {chord} {tuning} key="songViewChord{i}" />
+                <Dropdown position="center">
+                  <ChordView {chord} {tuning} key="songViewChord{i}" />
+                  <div slot="content">
+                    <div class="actions" aria-labelledby="viewChordActionsMenu">
+                      <VisuallyHidden>
+                        <div id="viewChordActionsMenu">Chord actions</div>
+                      </VisuallyHidden>
+                      <Button on:click={() => handleOnPlay(chord)}>
+                        <Icon d={speakerIcon} size="1.5rem" />
+                        <div>Play</div>
+                        <VisuallyHidden>chord</VisuallyHidden>
+                      </Button>
+                    </div>
+                  </div>
+                </Dropdown>
               </li>
             {/each}
           </ul>
