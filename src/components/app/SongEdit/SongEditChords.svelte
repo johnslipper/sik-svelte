@@ -59,6 +59,12 @@
   .section {
     border-bottom: 1px solid var(--neutralLightest);
   }
+  .add {
+    position: sticky;
+    bottom: 0;
+    text-align: center;
+    background-color: var(--neutralLightest);
+  }
 </style>
 
 {#if chordSections && chordSections.length}
@@ -73,7 +79,11 @@
       </div>
     </div>
   {/each}
+{:else}
+  <p class="wrapper">No sections saved</p>
 {/if}
-<div class="wrapper">
-  <ButtonDefault on:click={handleAddSection}>Add section</ButtonDefault>
+<div class="add">
+  <div class="wrapper">
+    <ButtonDefault on:click={handleAddSection}>Add section</ButtonDefault>
+  </div>
 </div>
