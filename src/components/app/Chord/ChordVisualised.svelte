@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, onDestroy } from "svelte";
   import { ChordBox } from "vexchords";
   import { theme } from "../../../theme.js";
   export let tuning = "";
@@ -7,6 +7,7 @@
   export let frets;
   export let position;
   export let key;
+  let chordbox;
 
   onMount(() => {
     const tuningSplit = tuning ? tuning.split(" ") : null;
@@ -15,7 +16,7 @@
     const calculatedPosition = position || getPositionFromFrets(fretsArray);
     const adjustedFrets = adjustFrets(fretsArray, calculatedPosition);
 
-    let chordbox = new ChordBox(`#${key}`, { defaultColor: theme.bodyColor });
+    chordbox = new ChordBox(`#${key}`, { defaultColor: theme.bodyColor });
     chordbox.draw({
       chord: getChord(fingeringArray, adjustedFrets),
       tuning: tuningSplit,
@@ -27,9 +28,9 @@
     svgElement.setAttribute("viewBox", "0 0 100 120");
     svgElement.setAttribute("width", "100%");
     svgElement.setAttribute("height", "100%");
-
-    return () => (chordbox = null);
   });
+
+  onDestroy(() => (chordbox = null));
 
   // Process frets to be integers and lowercase "X"
   function processFrets(frets) {
