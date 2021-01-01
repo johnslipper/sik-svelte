@@ -75,7 +75,7 @@
           {section}
           {tuning}
           key={i}
-          onRemoved={handleRemoveSection} />
+          onRemove={handleRemoveSection} />
       </div>
     </div>
   {/each}

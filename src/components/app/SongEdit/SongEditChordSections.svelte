@@ -6,7 +6,7 @@
   export let section;
   export let tuning;
   export let key;
-  export let onRemoved;
+  export let onRemove;
 
   function handleRemoveChord(section, chord) {
     // TODO: Not working
@@ -66,7 +66,7 @@
       <Label htmlFor="sectionTitle{key}">Title</Label>
       <Input id="sectionTitle{key}" bind:value={section.title} />
     </FormGroup>
-    <ButtonDefault on:click={() => onRemoved(section)}>Remove</ButtonDefault>
+    <ButtonDefault on:click={() => onRemove(section)}>Remove</ButtonDefault>
   </div>
   <ul class="chords">
     {#if section.chords}
