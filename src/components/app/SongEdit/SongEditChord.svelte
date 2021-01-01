@@ -23,7 +23,6 @@
   }
   .actions {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 0.25rem;
@@ -45,22 +44,25 @@
   <Dropdown position="center">
     <ChordView {chord} {tuning} {key} />
     <div slot="content">
-      <div class="actions" aria-labelledby="chordActionsMenu">
+      <div class="actions" aria-labelledby="editChordActionsMenu">
         <VisuallyHidden>
-          <div id="chordActionsMenu">Chord actions</div>
+          <div id="editChordActionsMenu">Chord actions</div>
         </VisuallyHidden>
         <Button on:click={() => onEdit(chord)}>
           <Icon d={pencilIcon} size="1.5rem" />
-          <div>Edit chord</div>
+          <div>Edit</div>
+          <VisuallyHidden>chord</VisuallyHidden>
         </Button>
         <Button on:click={() => onPlay(chord)}>
           <Icon d={speakerIcon} size="1.5rem" />
-          <div>Play chord</div>
+          <div>Play</div>
+          <VisuallyHidden>chord</VisuallyHidden>
         </Button>
         <div class="danger">
           <Button on:click={() => onRemove(section, chord)}>
             <Icon d={crossIcon} size="1.5rem" />
-            <div>Remove chord</div>
+            <div>Remove</div>
+            <VisuallyHidden>chord</VisuallyHidden>
           </Button>
         </div>
       </div>
