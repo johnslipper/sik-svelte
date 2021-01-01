@@ -6,7 +6,7 @@
   import ArtworkView from "../Artwork/ArtworkView.svelte";
   import AddArea from "../../ui/AddArea.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  import { Button, ButtonDefault } from "../../ui/Button";
+  import { Button } from "../../ui/Button";
   import {
     Input,
     FormGroup,
@@ -15,7 +15,7 @@
     Fieldset,
     Legend,
   } from "../../ui/Form";
-  import SongEditChordSections from "./SongEditChordSections.svelte";
+  import SongEditChords from "./SongEditChords.svelte";
   export let song = {
     title: "",
     artist: "",
@@ -65,26 +65,6 @@
       },
     });
   }
-
-  function handleAddSection() {
-    song.chordSections = song.chordSections || [];
-    song.chordSections = [
-      ...song.chordSections,
-      {
-        title: "",
-        chords: [],
-      },
-    ];
-  }
-
-  function handleRemoveSection(section) {
-    open(Dialogue, {
-      message: "Are you sure you want to remove this section of chords?",
-      onOkay: () => {
-        song.chordSections = song.chordSections.filter((s) => s !== section);
-      },
-    });
-  }
 </script>
 
 <style>
@@ -104,13 +84,6 @@
     /* iTunes artwork size */
     width: 100px;
     height: 100px;
-  }
-  .sections {
-    display: grid;
-    gap: 0.5rem;
-  }
-  .section {
-    border-bottom: 1px solid var(--neutralLightest);
   }
 </style>
 
@@ -166,21 +139,6 @@
 <Fieldset>
   <Legend>Chords</Legend>
   <div in:fade>
-    {#if song.chordSections}
-      {#each song.chordSections as section, i}
-        <div class="sections">
-          <div class="section">
-            <SongEditChordSections
-              {section}
-              tuning={song.tuning}
-              key={i}
-              onRemoved={handleRemoveSection} />
-          </div>
-        </div>
-      {/each}
-    {/if}
-    <div class="wrapper">
-      <ButtonDefault on:click={handleAddSection}>Add section</ButtonDefault>
-    </div>
+    <SongEditChords chordSections={song.chordSections} tuning={song.tuning} />
   </div>
 </Fieldset>
