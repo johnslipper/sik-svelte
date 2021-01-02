@@ -1,6 +1,8 @@
 <script>
-  export let tuning = "E A D G B E";
-  const tuningSplit = tuning.split(" ");
+  export let tuning;
+  const tuningSplit = tuning
+    ? tuning.split(" ")
+    : ["E", "A", "D", "G", "B", "E"];
 </script>
 
 <svg
