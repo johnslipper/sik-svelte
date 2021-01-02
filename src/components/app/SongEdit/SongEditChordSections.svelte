@@ -1,12 +1,24 @@
 <script>
+  import { getContext } from "svelte";
   import AddArea from "../../ui/AddArea.svelte";
   import SongEditChord from "./SongEditChord.svelte";
+  import ChordEdit from "../Chord/ChordEdit.svelte";
   import { Input, FormGroup, Label } from "../../ui/Form";
   import { Button, ButtonDefault } from "../../ui/Button";
   export let section;
   export let tuning;
   export let key;
   export let onRemove;
+
+  const { open, close } = getContext("simple-modal");
+
+  const openChordModal = (chord) => {
+    open(ChordEdit, {
+      chord,
+      tuning,
+      onSave: handleSaveChord,
+    });
+  };
 
   function handleRemoveChord(section, chord) {
     // TODO: Not working
@@ -22,6 +34,11 @@
 
   function handlePlayChord(chord) {
     // TODO
+  }
+
+  function handleSaveChord(chord) {
+    // TODO
+    close();
   }
 </script>
 
@@ -84,7 +101,7 @@
       {/each}
     {/if}
     <li class="add">
-      <Button>
+      <Button on:click={openChordModal}>
         <AddArea text="Add chord" />
       </Button>
     </li>
