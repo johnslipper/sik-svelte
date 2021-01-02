@@ -32,12 +32,10 @@
     isSearching = true;
     chordSearch(searchInput)
       .then((results) => {
-        console.log(results);
         if (results.length) {
           const { chordName, strings, fingering } = results[0];
           chord = { name: chordName, frets: strings, fingering };
           showChord = true;
-          console.log(chord);
         }
       })
       .finally(() => (isSearching = false));
