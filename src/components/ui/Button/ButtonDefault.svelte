@@ -7,11 +7,12 @@
     color: inherit;
     background: var(--primaryContrast);
     border: 1px solid var(--neutralMedium);
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
     border-radius: 0.25rem;
     outline: none;
     transition: background-color 150ms, transform 150ms;
-    font-size: 1rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
   }
   button:focus {
     box-shadow: var(--focusOutlineShadow);

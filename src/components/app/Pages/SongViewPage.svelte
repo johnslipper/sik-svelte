@@ -34,6 +34,9 @@
     right: 0;
     z-index: 1;
   }
+  .text {
+    text-transform: uppercase;
+  }
 </style>
 
 <div>
@@ -56,13 +59,13 @@
       <TabList>
         <Tab>
           <div class="icon" in:fly={iconTransition}>
-            <Icon size="2rem" d={microphoneOutlinedIcon} />
+            <Icon size="1.85rem" d={microphoneOutlinedIcon} />
           </div>
           <div class="text">Lyrics</div>
         </Tab>
         <Tab>
           <div class="icon" in:fly={iconTransition}>
-            <Icon size="2rem" d={musicNoteOutlinedIcon} />
+            <Icon size="1.85rem" d={musicNoteOutlinedIcon} />
           </div>
           <div class="text">Chords</div>
         </Tab>

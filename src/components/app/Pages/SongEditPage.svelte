@@ -10,11 +10,18 @@
   const song = songs[id];
 </script>
 
+<style>
+  .headerLink {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+</style>
+
 <Modal>
   <AppHeader title="Edit song">
     <div slot="start" in:fade>
       <Link to="/song/{id}">
-        <span>Cancel</span>
+        <span class="headerLink">Cancel</span>
         <VisuallyHidden>editing song</VisuallyHidden>
       </Link>
     </div>
