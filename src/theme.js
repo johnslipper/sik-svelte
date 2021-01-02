@@ -9,6 +9,7 @@ function getColor([h, s, l, a], lightness, alpha) {
 }
 
 export const theme = {
+  /* Colours */
   primary: getColor(colors.primary),
   primaryDark: getColor(colors.primary, 35),
   primaryDarkest: getColor(colors.primary, 30),
@@ -16,19 +17,25 @@ export const theme = {
   neutralDark: getColor(colors.neutral, 27),
   neutralMedium: getColor(colors.neutral),
   neutralLight: getColor(colors.neutral, 80),
-  danger: getColor(colors.danger),
   neutralLightest: getColor(colors.neutral, 95),
+  danger: getColor(colors.danger),
+  /* General */
   contentPaddingHorizontal: "1rem",
+  headerTopOffset: "3rem",
+  /* Focus outline */
   focusOutlineShadow: `0 0 0 0.15rem ${getColor(colors.primary, 20)}`,
   focusOutline: `0.15rem solid ${getColor(colors.primary, 20)}`,
-  headerTopOffset: "3rem",
+  /* Body text */
   bodyColor: getColor(colors.neutral, 35),
   bodyColorMuted: getColor(colors.neutral),
+  /* Headings */
   headingColor: "inherit",
   headingWeight: "normal",
+  /* Input */
   inputPadding: "0.5rem",
   inputBorderRadius: "0.15rem",
   inputBorderColor: getColor(colors.neutral),
-  dropdownZindex: 2,
+  /* Dropdown */
+  dropdownZndex: 2,
   dropdownBackgroundColor: "white",
 };
