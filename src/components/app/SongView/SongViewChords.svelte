@@ -44,6 +44,7 @@
   }
   .empty {
     padding: var(--contentPaddingHorizontal);
+    color: var(--bodyColorMuted);
   }
 
   .actions {

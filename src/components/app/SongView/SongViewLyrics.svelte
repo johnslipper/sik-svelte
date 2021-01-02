@@ -20,7 +20,7 @@
   }
 
   .empty {
-    color: var(--neutralMedium);
+    color: var(--bodyColorMuted);
   }
 </style>
 

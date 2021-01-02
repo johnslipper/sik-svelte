@@ -61,6 +61,10 @@
     text-align: center;
     background-color: var(--neutralLightest);
   }
+  .empty {
+    text-align: center;
+    color: var(--bodyColorMuted);
+  }
 </style>
 
 {#if chordSections && chordSections.length}
@@ -74,7 +78,9 @@
     </div>
   {/each}
 {:else}
-  <p class="wrapper">No sections saved</p>
+  <div class="wrapper">
+    <p class="empty">No sections saved</p>
+  </div>
 {/if}
 <div class="add">
   <div class="wrapper">

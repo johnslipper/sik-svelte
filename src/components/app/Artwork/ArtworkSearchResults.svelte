@@ -48,6 +48,10 @@
   img {
     max-width: 100%;
   }
+
+  .noResults {
+    color: var(--bodyColorMuted);
+  }
 </style>
 
 {#if searchResults.resultCount}
@@ -61,5 +65,5 @@
     {/each}
   </ul>
 {:else}
-  <p>No results found</p>
+  <p class="noResults">No results found</p>
 {/if}
