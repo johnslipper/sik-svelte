@@ -17,14 +17,16 @@
   let searchInput = "";
 
   onMount(() => {
-    searchInput = isChordNameOnly(chord) ? chord.name : "";
+    searchInput = isChordNameOnly() ? chord.name : "";
+    showChord = chord && !isChordNameOnly();
   });
 
-  function isChordNameOnly(chord) {
-    if (chord.name) {
-      if (!chord.frets || chord.fingering) {
-        return true;
-      }
+  function isChordNameOnly() {
+    if (!chord) {
+      return false;
+    }
+    if (chord.name && !chord.frets && !chord.fingering) {
+      return true;
     }
     return false;
   }
