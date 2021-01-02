@@ -2,6 +2,7 @@
   import ChordVisualised from "./ChordVisualised.svelte";
   import { ButtonPrimary, ButtonDefault } from "../../ui/Button";
   import { Form, FormGroup, Input, Label } from "../../ui/Form";
+  import ChordPreviewPlaceholder from "./ChordPreviewPlaceholder.svelte";
   export let chord;
   export let tuning = "";
   export let onSave;
@@ -20,6 +21,9 @@
   }
   .buttons {
     margin-top: 0.5rem;
+  }
+  .placeholder {
+    opacity: 0.5;
   }
 </style>
 
@@ -55,7 +59,11 @@
           fingering={chord.fingering}
           key="chordEditPreview"
           {tuning} />
-      {:else}Preview here{/if}
+      {:else}
+        <div class="placeholder">
+          <ChordPreviewPlaceholder {tuning} />
+        </div>
+      {/if}
     </div>
   </div>
   <div class="buttons">
