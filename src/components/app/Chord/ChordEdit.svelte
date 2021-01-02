@@ -1,4 +1,5 @@
 <script>
+  import { fade } from "svelte/transition";
   import { onMount } from "svelte";
   import { chordSearch } from "./chordSearch.js";
   import { ButtonPrimary, ButtonDefault } from "../../ui/Button";
@@ -82,7 +83,8 @@
     margin-left: auto;
   }
   .noResults {
-    margin-top: 0.5rem;
+    margin: 0.5rem 0;
+    color: var(--bodyColorMuted);
   }
 </style>
 
@@ -101,7 +103,7 @@
             placeholder="e.g. Fmaj7"
             disabled={isSearching} />
           {#if noResults}
-            <div class="noResults">No results</div>
+            <div class="noResults" in:fade>No results</div>
           {/if}
         </FormGroup>
         <div class="buttons">
