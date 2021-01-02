@@ -101,7 +101,7 @@
       {/each}
     {/if}
     <li class="add">
-      <Button on:click={openChordModal}>
+      <Button on:click={() => openChordModal()}>
         <AddArea text="Add chord" />
       </Button>
     </li>
