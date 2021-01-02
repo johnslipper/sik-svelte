@@ -50,4 +50,21 @@ export const theme = {
   /* Dropdown */
   dropdownZndex: 2,
   dropdownBackgroundColor: "white",
+  /* Button (Default) */
+  buttonPadding: "0.6rem 1rem",
+  buttonBorderRadius: "0.25rem",
+  buttonFontSize: "0.85rem",
+  buttonBorderColor: colors.neutralMedium,
+  buttonBackgroundColor: colors.primaryContrast,
+  buttonColor: "inherit",
+  buttonActiveBorderColor: colors.primary,
+  buttonActiveBackgroundColor: colors.primaryContrast,
+  buttonActiveColor: colors.primary,
+  /* Button (Primary) */
+  buttonPrimaryBorderColor: "transparent",
+  buttonPrimaryBackgroundColor: colors.primary,
+  buttonPrimaryColor: colors.primaryContrast,
+  buttonPrimaryActiveBorderColor: "transparent",
+  buttonPrimaryActiveBackgroundColor: colors.primaryDark,
+  buttonPrimaryActiveColor: colors.primaryContrast,
 };

@@ -4,22 +4,22 @@
 
 <style>
   button {
-    color: inherit;
-    background: var(--primaryContrast);
-    border: 1px solid var(--neutralMedium);
-    padding: 0.6rem 1rem;
-    border-radius: 0.25rem;
+    color: var(--buttonColor);
+    background: var(--buttonBackgroundColor);
+    border: 1px solid var(--buttonBorderColor);
+    padding: var(--buttonPadding);
+    border-radius: var(--buttonBorderRadius);
     outline: none;
     transition: background-color 150ms, transform 150ms;
-    font-size: 0.85rem;
+    font-size: var(--buttonFontSize);
     text-transform: uppercase;
   }
   button:focus {
     box-shadow: var(--focusOutlineShadow);
   }
   button:active {
-    color: var(--primary);
-    border-color: var(--primary);
+    color: var(--buttonActiveColor);
+    border-color: var(--buttonActiveBorderColor);
     transform: scale(0.95);
   }
 </style>
