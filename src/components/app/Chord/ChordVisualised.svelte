@@ -5,7 +5,7 @@
   export let tuning = "";
   export let fingering;
   export let frets;
-  export let position;
+  export let position = 0;
   export let key;
   let chordbox;
 
