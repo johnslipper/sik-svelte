@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from "svelte";
   import { chordSearch } from "./chordSearch.js";
   import { ButtonPrimary, ButtonDefault } from "../../ui/Button";
   import { Form, FormGroup, Input, Label } from "../../ui/Form";
@@ -15,12 +16,26 @@
   let isSearching = false;
   let searchInput = "";
 
+  onMount(() => {
+    searchInput = isChordNameOnly(chord) ? chord.name : "";
+  });
+
+  function isChordNameOnly(chord) {
+    if (chord.name) {
+      if (!chord.frets || chord.fingering) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   function handleChooseCustomChord() {
     showChord = true;
     chord = {};
   }
 
   function handleChooseBack() {
+    searchInput = searchInput || chord.name;
     showChord = false;
     chord = undefined;
   }
@@ -34,7 +49,12 @@
       .then((results) => {
         if (results.length) {
           const { chordName, strings, fingering } = results[0];
-          chord = { name: chordName, frets: strings, fingering };
+          const formattedName = chordName.replaceAll(",", "");
+          chord = {
+            name: formattedName,
+            frets: strings,
+            fingering,
+          };
           showChord = true;
         }
       })
