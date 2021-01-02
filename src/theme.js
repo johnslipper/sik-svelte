@@ -23,6 +23,7 @@ export const theme = {
   focusOutline: `0.15rem solid ${getColor(colors.primary, 20)}`,
   headerTopOffset: "3rem",
   bodyColor: getColor(colors.neutral, 35),
+  bodyColorMuted: getColor(colors.neutral),
   headingColor: "inherit",
   headingWeight: "normal",
   inputPadding: "0.5rem",
