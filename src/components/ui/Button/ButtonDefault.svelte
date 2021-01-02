@@ -4,6 +4,7 @@
 
 <style>
   button {
+    display: inline-block;
     color: var(--buttonColor);
     background: var(--buttonBackgroundColor);
     border: 1px solid var(--buttonBorderColor);

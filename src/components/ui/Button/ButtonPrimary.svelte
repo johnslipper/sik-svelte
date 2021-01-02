@@ -4,6 +4,9 @@
 </script>
 
 <style>
+  .buttonPrimary {
+    display: inline-block;
+  }
   .buttonPrimary :global(button) {
     --buttonBorderColor: var(--buttonPrimaryBorderColor);
     --buttonBackgroundColor: var(--buttonPrimaryBackgroundColor);

@@ -4,6 +4,7 @@
 
 <style>
   button {
+    display: inline-block;
     color: inherit;
     background: none;
     border: none;
