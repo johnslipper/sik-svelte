@@ -30,7 +30,7 @@
   }
 
   function handleEditChord(chord) {
-    // TODO
+    openChordModal(chord);
   }
 
   function handlePlayChord(chord) {
