@@ -30,6 +30,10 @@
         chords: [],
       },
     ];
+    window.setTimeout(
+      () => document.querySelector("#endOfChordSections").scrollIntoView(),
+      50
+    );
   }
 
   function handleRemoveSection(chordSection) {
@@ -77,6 +81,7 @@
         onRemove={handleRemoveSection} />
     </div>
   {/each}
+  <div id="endOfChordSections" />
 {:else}
   <div class="wrapper">
     <p class="empty">No sections saved</p>
