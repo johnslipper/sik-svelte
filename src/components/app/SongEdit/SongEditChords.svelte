@@ -52,10 +52,6 @@
   .wrapper {
     padding: 1rem;
   }
-  .chordSections {
-    display: grid;
-    gap: 0.5rem;
-  }
   .chordSection {
     border-bottom: 1px solid var(--neutralLightest);
   }
@@ -69,14 +65,12 @@
 
 {#if chordSections && chordSections.length}
   {#each chordSections as chordSection, i}
-    <div class="chordSections">
-      <div class="chordSection">
-        <SongEditChordSections
-          {chordSection}
-          {tuning}
-          key={i}
-          onRemove={handleRemoveSection} />
-      </div>
+    <div class="chordSection">
+      <SongEditChordSections
+        {chordSection}
+        {tuning}
+        key={i}
+        onRemove={handleRemoveSection} />
     </div>
   {/each}
 {:else}
