@@ -3,15 +3,13 @@
   import { ButtonPrimary, ButtonDefault } from "../../ui/Button";
   import { Form, FormGroup, Input, Label } from "../../ui/Form";
   import Heading from "../../ui/Heading.svelte";
+  import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import ChordPreview from "./ChordPreview.svelte";
 
-  export let chord = {
-    name: "Fmaj7",
-    frets: "1 X 2 2 1 0",
-    fingering: "1 X 3 4 2 X",
-  };
+  export let chord;
   export let tuning = "";
   export let onSave;
+  export let onCancel;
 
   let showChord = false;
   let isSearching = false;
@@ -19,10 +17,12 @@
 
   function handleChooseCustomChord() {
     showChord = true;
+    chord = {};
   }
 
   function handleChooseBack() {
     showChord = false;
+    chord = undefined;
   }
 
   function handleChooseSearch() {
@@ -49,17 +49,19 @@
     gap: 0.5rem;
   }
   .buttons {
-    display: grid;
+    display: flex;
     gap: 0.25rem;
-    grid-template-columns: 1fr 1fr;
+  }
+  .custom {
+    margin-left: auto;
   }
 </style>
 
 <div class="wrapper">
-  <div class="heading">
-    <Heading text="Edit chord" level="2" fontSize="1.25rem" />
-  </div>
   {#if !showChord}
+    <div class="heading">
+      <Heading text="Add chord" level="2" fontSize="1.25rem" />
+    </div>
     <Form onSubmit={handleChooseSearch}>
       <div class="search">
         <FormGroup>
@@ -72,17 +74,29 @@
         </FormGroup>
         <div class="buttons">
           <ButtonPrimary type="submit" on:click={handleChooseSearch}>
-            {#if isSearching}Searching...{:else}Search chord{/if}
+            {#if isSearching}
+              Searching...
+            {:else}
+              Search
+              <VisuallyHidden>chord</VisuallyHidden>
+            {/if}
           </ButtonPrimary>
-          <ButtonDefault on:click={handleChooseCustomChord}>
-            Custom chord
-          </ButtonDefault>
+          <ButtonDefault on:click={onCancel}>Cancel</ButtonDefault>
+          <div class="custom">
+            <ButtonDefault on:click={handleChooseCustomChord}>
+              Custom
+              <VisuallyHidden>chord</VisuallyHidden>
+            </ButtonDefault>
+          </div>
         </div>
       </div>
     </Form>
   {/if}
 
   {#if showChord}
+    <div class="heading">
+      <Heading text="Edit chord" level="2" fontSize="1.25rem" />
+    </div>
     <ChordPreview {chord} {tuning} {onSave} onCancel={handleChooseBack} />
   {/if}
 </div>

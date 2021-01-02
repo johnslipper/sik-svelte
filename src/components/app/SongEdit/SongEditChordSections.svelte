@@ -17,6 +17,7 @@
       chord,
       tuning,
       onSave: handleSaveChord,
+      onCancel: () => close(),
     });
   };
 
