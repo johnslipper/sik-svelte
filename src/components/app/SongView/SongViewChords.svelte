@@ -75,10 +75,10 @@
         </div>
         {#if section.chords}
           <ul class="chords">
-            {#each section.chords as chord, i}
+            {#each section.chords as chord}
               <li class="chord">
                 <Dropdown position="center">
-                  <ChordView {chord} {tuning} key="songViewChord{i}" />
+                  <ChordView {chord} {tuning} />
                   <div slot="content">
                     <div class="actions" aria-labelledby="viewChordActionsMenu">
                       <VisuallyHidden>

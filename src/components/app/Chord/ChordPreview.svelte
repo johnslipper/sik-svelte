@@ -57,7 +57,6 @@
         <ChordVisualised
           frets={chord.frets}
           fingering={chord.fingering}
-          key="chordEditPreview"
           {tuning} />
       {:else}
         <div class="placeholder">

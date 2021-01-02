@@ -6,17 +6,18 @@
   export let fingering;
   export let frets;
   export let position = 0;
-  export let key;
+  let chordElement;
   let chordbox;
 
   onMount(() => {
+    chordElement.innerHTML = "";
     const tuningSplit = tuning ? tuning.split(" ") : null;
     const fingeringArray = fingering.split(" ");
     const fretsArray = processFrets(frets.split(" "));
     const calculatedPosition = position || getPositionFromFrets(fretsArray);
     const adjustedFrets = adjustFrets(fretsArray, calculatedPosition);
 
-    chordbox = new ChordBox(`#${key}`, { defaultColor: theme.bodyColor });
+    chordbox = new ChordBox(chordElement, { defaultColor: theme.bodyColor });
     chordbox.draw({
       chord: getChord(fingeringArray, adjustedFrets),
       tuning: tuningSplit,
@@ -24,7 +25,7 @@
     });
 
     // Add viewbox and fluid heights to allow container to scale responsively
-    const svgElement = document.querySelector(`#${key} svg`);
+    const svgElement = chordElement.querySelector(`svg`);
     svgElement.setAttribute("viewBox", "0 0 100 120");
     svgElement.setAttribute("width", "100%");
     svgElement.setAttribute("height", "100%");
@@ -75,4 +76,4 @@
   }
 </script>
 
-<div id={key} />
+<div bind:this={chordElement} />

@@ -8,7 +8,6 @@
   export let chord;
   export let chordSection;
   export let tuning;
-  export let key;
   export let onEdit;
   export let onRemove;
   export let onPlay;
@@ -42,7 +41,7 @@
 
 <div class="chord">
   <Dropdown position="center">
-    <ChordView {chord} {tuning} {key} />
+    <ChordView {chord} {tuning} />
     <div slot="content">
       <div class="actions" aria-labelledby="editChordActionsMenu">
         <VisuallyHidden>

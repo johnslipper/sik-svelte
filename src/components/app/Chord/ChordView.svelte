@@ -2,7 +2,6 @@
   import ChordVisualised from "./ChordVisualised.svelte";
   export let chord;
   export let tuning = "";
-  export let key;
 </script>
 
 <style>
@@ -32,7 +31,6 @@
       fingering={chord.fingering}
       frets={chord.frets}
       position={chord.position}
-      {key}
       {tuning} />
   </div>
   {#if chord.name}

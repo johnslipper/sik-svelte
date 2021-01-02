@@ -90,10 +90,9 @@
   </div>
   <ul class="chords">
     {#if chordSection.chords}
-      {#each chordSection.chords as chord, i}
+      {#each chordSection.chords as chord}
         <li>
           <SongEditChord
-            key="songEditChord{i}"
             {chordSection}
             {tuning}
             {chord}
