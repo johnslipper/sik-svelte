@@ -32,19 +32,19 @@
     ];
   }
 
-  function handleRemoveSection(section) {
-    if (section.chords && section.chords.length) {
+  function handleRemoveSection(chordSection) {
+    if (chordSection.chords && chordSection.chords.length) {
       open(Dialogue, {
-        message: "Are you sure you want to remove this section of chords?",
-        onOkay: () => removeSection(section),
+        message: "Are you sure you want to remove this chordSection of chords?",
+        onOkay: () => removeSection(chordSection),
       });
     } else {
-      removeSection(section);
+      removeSection(chordSection);
     }
   }
 
-  function removeSection(section) {
-    chordSections = chordSections.filter((s) => s !== section);
+  function removeSection(chordSection) {
+    chordSections = chordSections.filter((s) => s !== chordSection);
   }
 </script>
 
@@ -52,11 +52,11 @@
   .wrapper {
     padding: 1rem;
   }
-  .sections {
+  .chordSections {
     display: grid;
     gap: 0.5rem;
   }
-  .section {
+  .chordSection {
     border-bottom: 1px solid var(--neutralLightest);
   }
   .add {
@@ -68,11 +68,11 @@
 </style>
 
 {#if chordSections && chordSections.length}
-  {#each chordSections as section, i}
-    <div class="sections">
-      <div class="section">
+  {#each chordSections as chordSection, i}
+    <div class="chordSections">
+      <div class="chordSection">
         <SongEditChordSections
-          {section}
+          {chordSection}
           {tuning}
           key={i}
           onRemove={handleRemoveSection} />

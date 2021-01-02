@@ -5,7 +5,7 @@
   import ChordEdit from "../Chord/ChordEdit.svelte";
   import { Input, FormGroup, Label } from "../../ui/Form";
   import { Button, ButtonDefault } from "../../ui/Button";
-  export let section;
+  export let chordSection;
   export let tuning;
   export let key;
   export let onRemove;
@@ -21,11 +21,11 @@
     });
   };
 
-  function handleRemoveChord(section, chord) {
+  function handleRemoveChord(chordSection, chord) {
     // TODO: Not working
-    section = {
-      ...section,
-      chords: section.chords.filter((c) => c !== chord),
+    chordSection = {
+      ...chordSection,
+      chords: chordSection.chords.filter((c) => c !== chord),
     };
   }
 
@@ -81,18 +81,20 @@
 <div class="wrapper">
   <div class="title">
     <FormGroup>
-      <Label htmlFor="sectionTitle{key}">Title</Label>
-      <Input id="sectionTitle{key}" bind:value={section.title} />
+      <Label htmlFor="chordSectionTitle{key}">Title</Label>
+      <Input id="chordSectionTitle{key}" bind:value={chordSection.title} />
     </FormGroup>
-    <ButtonDefault on:click={() => onRemove(section)}>Remove</ButtonDefault>
+    <ButtonDefault on:click={() => onRemove(chordSection)}>
+      Remove
+    </ButtonDefault>
   </div>
   <ul class="chords">
-    {#if section.chords}
-      {#each section.chords as chord, i}
+    {#if chordSection.chords}
+      {#each chordSection.chords as chord, i}
         <li>
           <SongEditChord
             key="songEditChord{i}"
-            {section}
+            {chordSection}
             {tuning}
             {chord}
             onEdit={handleEditChord}
