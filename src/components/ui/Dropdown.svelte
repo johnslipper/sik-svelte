@@ -37,6 +37,12 @@
   .wrapper {
     position: relative;
   }
+  .button {
+    display: flex;
+  }
+  .button :global(button) {
+    flex-grow: 1;
+  }
   .content {
     position: absolute;
     left: 0;
@@ -59,9 +65,11 @@
 </style>
 
 <div class="wrapper" bind:this={menu}>
-  <Button on:click={() => (show = !show)}>
-    <slot />
-  </Button>
+  <div class="button">
+    <Button on:click={() => (show = !show)}>
+      <slot />
+    </Button>
+  </div>
 
   {#if show}
     <div
