@@ -15,6 +15,7 @@
   let showChord = false;
   let isSearching = false;
   let searchInput = "";
+  let noResults = false;
 
   onMount(() => {
     searchInput = isChordNameOnly() ? chord.name : "";
@@ -47,6 +48,7 @@
       return;
     }
     isSearching = true;
+    noResults = false;
     chordSearch(searchInput)
       .then((results) => {
         if (results.length) {
@@ -58,6 +60,8 @@
             fingering,
           };
           showChord = true;
+        } else {
+          noResults = true;
         }
       })
       .finally(() => (isSearching = false));
@@ -77,6 +81,9 @@
   .custom {
     margin-left: auto;
   }
+  .noResults {
+    margin-top: 0.5rem;
+  }
 </style>
 
 <div class="wrapper">
@@ -93,6 +100,9 @@
             bind:value={searchInput}
             placeholder="e.g. Fmaj7"
             disabled={isSearching} />
+          {#if noResults}
+            <div class="noResults">No results</div>
+          {/if}
         </FormGroup>
         <div class="buttons">
           <ButtonPrimary type="submit" on:click={handleChooseSearch}>
