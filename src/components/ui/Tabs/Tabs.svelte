@@ -1,4 +1,5 @@
 <script context="module">
+  /* Based on: https://svelte.dev/repl/8e68120858e5322272dc9136c4bb79cc?version=3.7.0 */
   export const TABS = {};
 </script>
 

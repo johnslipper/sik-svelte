@@ -1,4 +1,5 @@
 <script>
+  /* Based on: https://codechips.me/tailwind-ui-react-vs-svelte/ */
   import { onMount } from "svelte";
   import { scale } from "svelte/transition";
   import Button from "../ui/Button/Button.svelte";
