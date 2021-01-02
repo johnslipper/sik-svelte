@@ -1,7 +1,19 @@
-const colors = {
+const colorBases = {
   primary: [329, 78, 44],
   neutral: [236, 8, 50],
   danger: [343, 100, 41],
+};
+
+const colors = {
+  primary: getColor(colorBases.primary),
+  primaryDark: getColor(colorBases.primary, 35),
+  primaryDarkest: getColor(colorBases.primary, 30),
+  primaryContrast: "white",
+  neutralDark: getColor(colorBases.neutral, 27),
+  neutralMedium: getColor(colorBases.neutral),
+  neutralLight: getColor(colorBases.neutral, 80),
+  neutralLightest: getColor(colorBases.neutral, 95),
+  danger: getColor(colorBases.danger),
 };
 
 function getColor([h, s, l, a], lightness, alpha) {
@@ -10,31 +22,31 @@ function getColor([h, s, l, a], lightness, alpha) {
 
 export const theme = {
   /* Colours */
-  primary: getColor(colors.primary),
-  primaryDark: getColor(colors.primary, 35),
-  primaryDarkest: getColor(colors.primary, 30),
-  primaryContrast: "white",
-  neutralDark: getColor(colors.neutral, 27),
-  neutralMedium: getColor(colors.neutral),
-  neutralLight: getColor(colors.neutral, 80),
-  neutralLightest: getColor(colors.neutral, 95),
-  danger: getColor(colors.danger),
+  primary: colors.primary,
+  primaryDark: colors.primaryDark,
+  primaryDarkest: colors.primaryDarkest,
+  primaryContrast: colors.primaryContrast,
+  neutralDark: colors.neutralDark,
+  neutralMedium: colors.neutralMedium,
+  neutralLight: colors.neutralLight,
+  neutralLightest: colors.neutralLightest,
+  danger: colors.danger,
   /* General */
   contentPaddingHorizontal: "1rem",
   headerTopOffset: "3rem",
   /* Focus outline */
-  focusOutlineShadow: `0 0 0 0.15rem ${getColor(colors.primary, 20)}`,
-  focusOutline: `0.15rem solid ${getColor(colors.primary, 20)}`,
+  focusOutlineShadow: `0 0 0 0.15rem ${getColor(colorBases.primary, 20)}`,
+  focusOutline: `0.15rem solid ${getColor(colorBases.primary, 20)}`,
   /* Body text */
-  bodyColor: getColor(colors.neutral, 35),
-  bodyColorMuted: getColor(colors.neutral),
+  bodyColor: colors.neutralDark,
+  bodyColorMuted: colors.neutralMedium,
   /* Headings */
   headingColor: "inherit",
   headingWeight: "normal",
   /* Input */
   inputPadding: "0.5rem",
   inputBorderRadius: "0.15rem",
-  inputBorderColor: getColor(colors.neutral),
+  inputBorderColor: colors.neutralMedium,
   /* Dropdown */
   dropdownZndex: 2,
   dropdownBackgroundColor: "white",
