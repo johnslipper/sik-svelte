@@ -5,11 +5,22 @@
     : ["E", "A", "D", "G", "B", "E"];
 </script>
 
+<style>
+  .instructions {
+    margin: 0.75rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+</style>
+
+<div class="instructions">Fill in frets above to display chord preview</div>
 <svg
   xmlns="http://www.w3.org/2000/svg"
   width="100%"
   height="100%"
-  viewbox="0 10 100 110"><rect
+  viewbox="0 26 100 82">
+  <title>Chord preview placeholder</title>
+  <rect
     width="62.5"
     height="3"
     x="21.25"
