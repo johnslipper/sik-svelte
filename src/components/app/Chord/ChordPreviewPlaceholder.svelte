@@ -9,7 +9,7 @@
   xmlns="http://www.w3.org/2000/svg"
   width="100%"
   height="100%"
-  viewbox="0 0 100 120"><rect
+  viewbox="0 10 100 110"><rect
     width="62.5"
     height="3"
     x="21.25"
