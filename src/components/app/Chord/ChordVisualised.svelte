@@ -55,9 +55,6 @@
 
   // Get chord as vexchords nested array
   function getChord(fingering, frets) {
-    if (fingering.length !== frets.length) {
-      return;
-    }
     return frets.map((fret, i) => {
       const fingerFormatted =
         fingering[i] === "X" || fret === 0 ? null : fingering[i];
