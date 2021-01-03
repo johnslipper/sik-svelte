@@ -67,13 +67,12 @@
 
   // Find neck position based on lowest fret (can be overidden by position prop)
   function getPositionFromFrets(frets) {
-    return Math.min(
-      ...frets
-        .map((string) => {
-          if (string !== "x" && string !== 0) {
-            return parseInt(string);
-          }
-        })
+    const filteredFrets = frets
+      .map((string) => {
+        if (string !== "x" && string !== 0) {
+          return parseInt(string);
+        }
+      })
         .filter(Boolean)
     );
   }
