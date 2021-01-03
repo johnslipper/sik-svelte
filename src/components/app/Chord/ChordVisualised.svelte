@@ -70,8 +70,8 @@
           return parseInt(string);
         }
       })
-        .filter(Boolean)
-    );
+      .filter(Boolean);
+    return filteredFrets.length ? Math.min(...filteredFrets) : 0;
   }
 </script>
 
