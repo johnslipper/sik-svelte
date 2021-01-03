@@ -30,11 +30,6 @@
     padding-right: 2rem;
     padding-bottom: 1rem;
   }
-
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-  }
 </style>
 
 {#if title}
@@ -44,10 +39,10 @@
 <div class="message">{message}</div>
 
 <div class="buttons">
-  {#if cancelText}
-    <ButtonDefault on:click={_onCancel}>{cancelText}</ButtonDefault>
-  {/if}
   {#if okayText}
     <ButtonPrimary on:click={_onOkay}>{okayText}</ButtonPrimary>
+  {/if}
+  {#if cancelText}
+    <ButtonDefault on:click={_onCancel}>{cancelText}</ButtonDefault>
   {/if}
 </div>
