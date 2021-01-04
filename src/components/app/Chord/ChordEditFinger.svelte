@@ -7,8 +7,8 @@
 
   let fingeringOptions = getFingeringOptions();
 
-  function getFingeringOptions(totalFingers = 4) {
-    const options = new Array(totalFingers);
+  function getFingeringOptions(totalFingerOptions = 5) {
+    const options = new Array(totalFingerOptions);
     for (let i = 0; i < options.length; i++) {
       if (i === 0) {
         options[i] = { name: "N/A", value: "X" };
