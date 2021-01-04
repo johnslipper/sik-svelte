@@ -19,15 +19,23 @@ const songs = [
         chords: [
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "Dm",
+            frets: "X X 0 2 3 1",
+            fingering: "X X X 2 3 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -36,12 +44,18 @@ const songs = [
         chords: [
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -50,15 +64,23 @@ const songs = [
         chords: [
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -81,18 +103,28 @@ const songs = [
         chords: [
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "Bm",
+            frets: "X 2 4 4 3 2",
+            fingering: "X 1 3 4 2 1",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
         ],
       },
@@ -110,12 +142,18 @@ const songs = [
         chords: [
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
         ],
       },
@@ -124,15 +162,23 @@ const songs = [
         chords: [
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -158,12 +204,18 @@ const songs = [
         chords: [
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
         ],
       },
@@ -172,21 +224,33 @@ const songs = [
         chords: [
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -195,18 +259,28 @@ const songs = [
         chords: [
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
-            name: "A#",
+            name: "Bb",
+            frets: "X 1 3 3 3 1",
+            fingering: "X 1 2 3 4 1",
           },
         ],
       },
@@ -224,12 +298,18 @@ const songs = [
         chords: [
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
         ],
       },
@@ -238,9 +318,13 @@ const songs = [
         chords: [
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -262,12 +346,18 @@ const songs = [
         chords: [
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -276,18 +366,28 @@ const songs = [
         chords: [
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
             name: "Dm",
+            frets: "X X 0 2 3 1",
+            fingering: "X X X 2 3 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -344,15 +444,23 @@ const songs = [
         chords: [
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
             name: "Em9",
+            frets: "0 2 4 0 0 0",
+            fingering: "X 2 4 X X X",
           },
           {
             name: "Cmaj7",
+            frets: "X 3 5 4 5 3",
+            fingering: "X 1 3 2 4 1",
           },
           {
             name: "A7",
+            frets: "X 0 2 0 2 0",
+            fingering: "X X 2 X 3 X",
           },
         ],
       },
@@ -361,9 +469,13 @@ const songs = [
         chords: [
           {
             name: "Cmaj7",
+            frets: "X 3 5 4 5 3",
+            fingering: "X 1 3 2 4 1",
           },
           {
             name: "A7",
+            frets: "X 0 2 0 2 0",
+            fingering: "X X 2 X 3 X",
           },
         ],
       },
@@ -381,18 +493,28 @@ const songs = [
         chords: [
           {
             name: "B",
+            frets: "X 2 4 4 4 2",
+            fingering: "X 1 2 3 4 1",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: " X X 2 3 4 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
-            name: "F#",
+            name: "Gb",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
         ],
       },
@@ -400,10 +522,14 @@ const songs = [
         title: "Bridge",
         chords: [
           {
-            name: "F#",
+            name: "Gb",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
         ],
       },
@@ -421,12 +547,18 @@ const songs = [
         chords: [
           {
             name: "Am7",
+            frets: "X 0 2 0 1 0",
+            fingering: "X X 2 X 1 X",
           },
           {
             name: "G7",
+            frets: "3 2 0 0 0 1",
+            fingering: "3 2 X X X 1",
           },
           {
             name: "D7",
+            frets: "X X 0 2 1 2",
+            fingering: "X X X 2 1 3",
           },
         ],
       },
@@ -435,15 +567,23 @@ const songs = [
         chords: [
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "D7",
+            frets: "X X 0 2 1 2",
+            fingering: "X X X 2 1 3",
           },
           {
             name: "Am7",
+            frets: "X 0 2 0 1 0",
+            fingering: "X X 2 X 1 X",
           },
           {
             name: "C7",
+            frets: "X 3 2 3 1 0",
+            fingering: "X 3 2 4 1 X",
           },
         ],
       },
@@ -452,18 +592,28 @@ const songs = [
         chords: [
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "Bm",
+            frets: "X 2 4 4 3 2",
+            fingering: "X 1 3 4 2 1",
           },
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -481,15 +631,23 @@ const songs = [
         chords: [
           {
             name: "Dm",
+            frets: "X X 0 2 3 1",
+            fingering: "X X X 2 3 1",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
-            name: "A#",
+            name: "Bb",
+            frets: "X 1 3 3 3 1",
+            fingering: "X 1 2 3 4 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
         ],
       },
@@ -498,18 +656,28 @@ const songs = [
         chords: [
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "Dm",
+            frets: "X X 0 2 3 1",
+            fingering: "X X X 2 3 1",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
-            name: "A#",
+            name: "Bb",
+            frets: "X 1 3 3 3 1",
+            fingering: "X 1 2 3 4 1",
           },
         ],
       },
@@ -518,12 +686,18 @@ const songs = [
         chords: [
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
-            name: "A#",
+            name: "Bb",
+            frets: "X 1 3 3 3 1",
+            fingering: "X 1 2 3 4 1",
           },
         ],
       },
@@ -541,21 +715,33 @@ const songs = [
         chords: [
           {
             name: "Gb",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "Dbm",
+            frets: "X 4 6 6 5 4",
+            fingering: "X 1 3 4 2 1",
           },
           {
             name: "Ebm",
+            frets: "X X 1 3 4 2",
+            fingering: "X X 1 3 4 2",
           },
           {
             name: "Bbm7",
+            frets: "X 1 3 1 2 1",
+            fingering: "X 1 3 1 2 1",
           },
           {
             name: "B",
+            frets: "X 2 4 4 4 2",
+            fingering: "X 1 2 3 4 1",
           },
           {
             name: "Abm7",
+            frets: "4 6 4 4 4 4",
+            fingering: "1 3 1 1 1 1",
           },
         ],
       },
@@ -564,21 +750,33 @@ const songs = [
         chords: [
           {
             name: "Gb",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "B",
+            frets: "X 2 4 4 4 2",
+            fingering: "X 1 2 3 4 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "B",
+            frets: "X 2 4 4 4 2",
+            fingering: "X 1 2 3 4 1",
           },
           {
             name: "Db",
+            frets: "X 4 3 1 2 1",
+            fingering: "X 4 3 1 2 1",
           },
           {
             name: "Db7",
+            frets: "X 4 6 4 6 4",
+            fingering: "X 1 3 1 4 1",
           },
         ],
       },
@@ -587,18 +785,28 @@ const songs = [
         chords: [
           {
             name: "Gb",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "Bbm7",
+            frets: "X 1 3 1 2 1",
+            fingering: "X 1 3 1 2 1",
           },
           {
             name: "B7",
+            frets: "X 2 4 2 4 2",
+            fingering: "X 1 3 1 4 1",
           },
           {
             name: "Ab7",
+            frets: "4 6 4 5 7 4",
+            fingering: "1 3 1 2 4 1",
           },
           {
             name: "G7",
+            frets: "3 2 0 0 0 1",
+            fingering: "3 2 X X X 1",
           },
         ],
       },
@@ -616,27 +824,43 @@ const songs = [
         chords: [
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "Am7",
+            frets: "X 0 2 0 1 0",
+            fingering: "X X 2 X 1 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "G7",
+            frets: "3 2 0 0 0 1",
+            fingering: "3 2 X X X 1",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "F7",
+            frets: "1 3 1 2 4 1",
+            fingering: "1 3 1 2 4 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "C7",
+            frets: "X 3 2 3 1 0",
+            fingering: "X 3 2 4 1 X",
           },
         ],
       },
@@ -645,9 +869,13 @@ const songs = [
         chords: [
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
         ],
       },
@@ -656,15 +884,23 @@ const songs = [
         chords: [
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -686,9 +922,13 @@ const songs = [
         chords: [
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
         ],
       },
@@ -697,21 +937,33 @@ const songs = [
         chords: [
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
             name: "Bm",
+            frets: "X 2 4 4 3 2",
+            fingering: "X 1 3 4 2 1",
           },
         ],
       },
@@ -733,12 +985,18 @@ const songs = [
         chords: [
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
         ],
       },
@@ -747,18 +1005,28 @@ const songs = [
         chords: [
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "C7",
+            frets: "X 3 2 3 1 0",
+            fingering: "X 3 2 4 1 X",
           },
         ],
       },
@@ -767,12 +1035,18 @@ const songs = [
         chords: [
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "D7",
+            frets: "X X 0 2 1 2",
+            fingering: "X X X 2 1 3",
           },
         ],
       },
@@ -790,12 +1064,18 @@ const songs = [
         chords: [
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
         ],
       },
@@ -804,15 +1084,23 @@ const songs = [
         chords: [
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "Dm",
+            frets: "X X 0 2 3 1",
+            fingering: "X X X 2 3 1",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
         ],
       },
@@ -821,12 +1109,18 @@ const songs = [
         chords: [
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -844,21 +1138,33 @@ const songs = [
         chords: [
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
             name: "Bm",
+            frets: "X 2 4 4 3 2",
+            fingering: "X 1 3 4 2 1",
           },
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
         ],
       },
@@ -867,18 +1173,28 @@ const songs = [
         chords: [
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
             name: "Bm",
+            frets: "X 2 4 4 3 2",
+            fingering: "X 1 3 4 2 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
         ],
       },
@@ -887,15 +1203,23 @@ const songs = [
         chords: [
           {
             name: "Bm",
+            frets: "X 2 4 4 3 2",
+            fingering: "X 1 3 4 2 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
         ],
       },
@@ -945,12 +1269,18 @@ const songs = [
         chords: [
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -968,9 +1298,13 @@ const songs = [
         chords: [
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
         ],
       },
@@ -979,15 +1313,23 @@ const songs = [
         chords: [
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
         ],
       },
@@ -1005,15 +1347,23 @@ const songs = [
         chords: [
           {
             name: "Bm",
+            frets: "X 2 4 4 3 2",
+            fingering: "X 1 3 4 2 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
         ],
       },
@@ -1022,12 +1372,18 @@ const songs = [
         chords: [
           {
             name: "Bm",
+            frets: "X 2 4 4 3 2",
+            fingering: "X 1 3 4 2 1",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -1036,21 +1392,35 @@ const songs = [
         chords: [
           {
             name: "B",
+            frets: "X 2 4 4 4 2",
+            fingering: "X 1 2 3 4 1",
           },
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2  3 1 X X",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
-            name: "G#",
+            name: "Ab",
+            frets: "4 6 6 5 4 4",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
-            name: "F#",
+            name: "Gb",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
           },
         ],
       },
@@ -1068,9 +1438,13 @@ const songs = [
         chords: [
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -1079,12 +1453,18 @@ const songs = [
         chords: [
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
         ],
       },
@@ -1093,15 +1473,25 @@ const songs = [
         chords: [
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
-            name: "F#",
+            name: "Gb",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
         ],
       },
@@ -1119,9 +1509,13 @@ const songs = [
         chords: [
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
         ],
       },
@@ -1130,12 +1524,18 @@ const songs = [
         chords: [
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
         ],
       },
@@ -1153,15 +1553,23 @@ const songs = [
         chords: [
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
         ],
       },
@@ -1179,9 +1587,13 @@ const songs = [
         chords: [
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
         ],
       },
@@ -1190,15 +1602,23 @@ const songs = [
         chords: [
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "D",
+            frets: "X  X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
         ],
       },
@@ -1207,21 +1627,33 @@ const songs = [
         chords: [
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
         ],
       },
@@ -1246,15 +1678,23 @@ const songs = [
         chords: [
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "Dm",
+            frets: "X X 0 2 3 1",
+            fingering: "X X X 2 3 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
-            name: "A#",
+            name: "Bb",
+            frets: "X 1 3 3 3 1",
+            fingering: "X 1 2 3 4 1",
           },
         ],
       },
@@ -1262,13 +1702,19 @@ const songs = [
         title: "Bridge",
         chords: [
           {
-            name: "A#",
+            name: "Bb",
+            frets: "X 1 3 3 3 1",
+            fingering: "X 1 2 3 4 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
         ],
       },
@@ -1277,12 +1723,18 @@ const songs = [
         chords: [
           {
             name: "Dm",
+            frets: "X X 0 2 3 1",
+            fingering: "X X X 2 3 1",
           },
           {
-            name: "A#",
+            name: "Bb",
+            frets: "X 1 3 3 3 1",
+            fingering: "X 1 2 3 4 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
         ],
       },
@@ -1293,22 +1745,30 @@ const songs = [
     title: "Porch",
     artist: "Pearl Jam",
     lyrics:
-      "What the fuck is this world?\n\nRunning to, you didn't\n\nLeave a message, at least I\n\nCould have heard your voice one last time\n\nDaily minefield, this could\n\nBe my time by you\n\nWould you hit me?\n\nWould you hit me?\nOh\n\nOh, ow\nAll the bills go by, and\n\nInitiatives are taken up\n\nBy the middle\n\nThere ain't gonna be any middle any more\n\nAnd the cross I'm bearing home\n\nAin't indicative of my place\n\nLeft the porch\n\nLeft the porch, oh, oh\nHear my name\n\nTake a good look\n\nThis could be the day\n\nHold my hand\n\nWalk beside me\n\nI just need to say\nHear my name\n\nTake a good look\n\nThis could be the day\n\nHold my hand\n\nLie beside me\n\nI just need to say\n\nI could not take\n\nUh, just one day\n\nI know that I would not ever\n\nTouch you, Hold you, feel you\n\nEver hold\n\nNever again\n\nHey\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n",
+      "What the fuck is this world?\n\nRunning to, you didn't\n\nLeave a message, at least I\n\nCould have heard your voice one last time\n\nDaily minefield, this could\n\nBe my time by you\n\nWould you hit me?\n\nWould you hit me?\nOh\n\nOh, ow\nAll the bills go by, and\n\nInitiatives are taken up\n\nBy the middle\n\nThere ain't gonna be any middle any more\n\nAnd the cross I'm bearing home\n\nAin't indicative of my place\n\nLeft the porch\n\nLeft the porch, oh, oh\nHear my name\n\nTake a good look\n\nThis could be the day\n\nHold my hand\n\nWalk beside me\n\nI just need to say\nHear my name\n\nTake a good look\n\nThis could be the day\n\nHold my hand\n\nLie beside me\n\nI just need to say\n\nI could not take\n\nUh, just one day\n\nI know that I would not ever\n\nTouch you, Hold you, feel you\n\nEver hold\n\nNever again\n\nHey\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n\nYeah\n \nYeah\n",
     chordSections: [
       {
         title: "Verse/Chorus",
         chords: [
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
-            name: "A#",
+            name: "Bb",
+            frets: "X 1 3 3 3 1",
+            fingering: "X 1 2 3 4 1",
           },
         ],
       },
@@ -1317,6 +1777,8 @@ const songs = [
         chords: [
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
         ],
       },
@@ -1334,9 +1796,13 @@ const songs = [
         chords: [
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
         ],
       },
@@ -1345,15 +1811,21 @@ const songs = [
         chords: [
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "D#",
           },
           {
-            name: "A#",
+            name: "Bb",
+            frets: "X 1 3 3 3 1",
+            fingering: "X 1 2 3 4 1",
           },
         ],
       },
@@ -1371,12 +1843,18 @@ const songs = [
         chords: [
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "Bm",
+            frets: "X 2 4 4 3 2",
+            fingering: "X 1 3 4 2 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
         ],
       },
@@ -1394,9 +1872,13 @@ const songs = [
         chords: [
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
         ],
       },
@@ -1405,21 +1887,33 @@ const songs = [
         chords: [
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "Bm",
+            frets: "X 2 4 4 3 2",
+            fingering: "X 1 3 4 2 1",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
         ],
       },
@@ -1456,9 +1950,13 @@ const songs = [
         chords: [
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
         ],
       },
@@ -1467,12 +1965,20 @@ const songs = [
         chords: [
           {
             name: "Bm",
+            frets: "X 2 4 4 3 2",
+            fingering: "X 1 3 4 2 1",
           },
           {
-            name: "F#",
+            name: "Gb",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -1481,15 +1987,23 @@ const songs = [
         chords: [
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
         ],
       },
@@ -1507,9 +2021,13 @@ const songs = [
         chords: [
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -1517,19 +2035,31 @@ const songs = [
         title: "Bridge",
         chords: [
           {
-            name: "F#",
+            name: "Gb",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "Bm",
+            frets: "X 2 4 4 3 2",
+            fingering: "X 1 3 4 2 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
         ],
       },
@@ -1547,18 +2077,28 @@ const songs = [
         chords: [
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "Dm",
+            frets: "X X 0 2 3 1",
+            fingering: "X X X 2 3 1",
           },
         ],
       },
@@ -1567,9 +2107,13 @@ const songs = [
         chords: [
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
         ],
       },
@@ -1578,15 +2122,23 @@ const songs = [
         chords: [
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "Dm",
+            frets: "X X 0 2 3 1",
+            fingering: "X X X 2 3 1",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
         ],
       },
@@ -1604,15 +2156,23 @@ const songs = [
         chords: [
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
         ],
       },
@@ -1621,18 +2181,28 @@ const songs = [
         chords: [
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
         ],
       },
@@ -1650,15 +2220,23 @@ const songs = [
         chords: [
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -1667,12 +2245,18 @@ const songs = [
         chords: [
           {
             name: "Am",
+            frets: "X 0 2 2 1 0",
+            fingering: "X X 2 3 1 X",
           },
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -1690,18 +2274,28 @@ const songs = [
         chords: [
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
           {
             name: "Bm",
+            frets: "X 2 4 4 3 2 ",
+            fingering: "X 1 3 4 2 1",
           },
         ],
       },
@@ -1710,9 +2304,13 @@ const songs = [
         chords: [
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
-            name: "A#",
+            name: "Bb",
+            frets: "X 1 3 3 3 1",
+            fingering: "X 1 2 3 4 1",
           },
         ],
       },
@@ -1721,18 +2319,30 @@ const songs = [
         chords: [
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "Em",
+            frets: "0 2 2 0 0 0",
+            fingering: "X 2 3 X X X",
           },
           {
-            name: "F#",
+            name: "Gb",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
-            name: "A#",
+            name: "Bb",
+            frets: "X 1 3 3 3 1",
+            fingering: "X 1 2 3 4 1",
           },
         ],
       },
@@ -1750,18 +2360,28 @@ const songs = [
         chords: [
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
           {
             name: "B",
+            frets: "X 2 4 4 4 2",
+            fingering: "X 1 2 3 4 1",
           },
           {
-            name: "C#m7",
+            name: "Dbm7",
+            frets: "X 4 2 1 0 0",
+            fingering: "X 4 2 1 X X",
           },
           {
-            name: "A#",
+            name: "Bb",
+            frets: "X 1 3 3 3 1",
+            fingering: "X 1 2 3 4 1",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
         ],
       },
@@ -1769,13 +2389,21 @@ const songs = [
         title: "Chorus",
         chords: [
           {
-            name: "F#",
+            name: "Gb",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
+            frets: "2 4 4 3 2 2",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
           {
             name: "B",
+            frets: "X 2 4 4 4 2",
+            fingering: "X 1 2 3 4 1",
           },
         ],
       },
@@ -1783,25 +2411,39 @@ const songs = [
         title: "Middle 8",
         chords: [
           {
-            name: "C#m7",
+            name: "Dbm7",
+            frets: "X 4 2 1 0 0",
+            fingering: "X 4 2 1 X X",
           },
           {
             name: "C",
+            frets: "X 3 2 0 1 0",
+            fingering: "X 3 2 X 1 X",
           },
           {
             name: "B",
+            frets: "X 2 4 4 4 2",
+            fingering: "X 1 2 3 4 1",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
         ],
       },
@@ -1810,15 +2452,23 @@ const songs = [
         chords: [
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
             name: "Am7",
+            frets: "X 0 2 0 1 0",
+            fingering: "X X 2 X 1 X",
           },
           {
             name: "G",
+            frets: "3 2 0 0 3 3",
+            fingering: "2 1 X X 3 4",
           },
           {
             name: "F",
+            frets: "1 3 3 2 1 1",
+            fingering: "1 3 4 2 1 1",
           },
         ],
       },
@@ -1836,18 +2486,28 @@ const songs = [
         chords: [
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
             name: "B",
+            frets: "X 2 4 4 4 2",
+            fingering: "X 1 2 3 4 1",
           },
           {
-            name: "C#m",
+            name: "Dbm",
+            frets: "X 4 6 6 5 4",
+            fingering: "X 1 3 4 2 1",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
         ],
       },
@@ -1856,24 +2516,38 @@ const songs = [
         chords: [
           {
             name: "B",
+            frets: "X 2 4 4 4 2",
+            fingering: "X 1 2 3 4 1",
           },
           {
-            name: "C#m",
+            name: "Dbm",
+            frets: "X 4 6 6 5 4",
+            fingering: "X 1 3 4 2 1",
           },
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
           {
-            name: "G#m",
+            name: "Abm",
+            frets: "4 6 6 4 4 4",
+            fingering: "1 3 4 1 1 1",
           },
           {
-            name: "F#m",
+            name: "Gbm",
+            frets: "2 4 4 2 2 2",
+            fingering: "1 3 4 1 1 1",
           },
           {
             name: "D",
+            frets: "X X 0 2 3 2",
+            fingering: "X X X 1 3 2",
           },
         ],
       },
@@ -1891,15 +2565,23 @@ const songs = [
         chords: [
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
           {
-            name: "G#",
+            name: "Ab",
+            frets: "4 6 6 5 4 4",
+            fingering: "1 3 4 2 1 1",
           },
           {
-            name: "D#m",
+            name: "Ebm",
+            frets: "X X 1 3 4 2",
+            fingering: "X X 1 3 4 2",
           },
           {
             name: "B",
+            frets: "X 2 4 4 4 2",
+            fingering: "X 1 2 3 4 1",
           },
         ],
       },
@@ -1908,15 +2590,23 @@ const songs = [
         chords: [
           {
             name: "A",
+            frets: "X 0 2 2 2 0",
+            fingering: "X X 2 3 4 X",
           },
           {
             name: "B",
+            frets: "X 2 4 4 4 2",
+            fingering: "X 1 2 3 4 1",
           },
           {
             name: "E",
+            frets: "0 2 2 1 0 0",
+            fingering: "X 2 3 1 X X",
           },
           {
-            name: "C#m",
+            name: "Dbm",
+            frets: "X 4 6 6 5 4",
+            fingering: "X 1 3 4 2 1",
           },
         ],
       },
