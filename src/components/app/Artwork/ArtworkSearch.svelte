@@ -55,6 +55,10 @@
   .content :global(button) {
     border-radius: 0;
   }
+
+  .content :global(.buttonPrimary) {
+    display: flex;
+  }
 </style>
 
 <header>
