@@ -10,6 +10,9 @@
     font-weight: bold;
     font-size: 1.5rem;
   }
+  .name {
+    margin-bottom: 0.5em;
+  }
   .nameOnly {
     display: grid;
     align-items: center;
