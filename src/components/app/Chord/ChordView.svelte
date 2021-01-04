@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    padding: var(--contentPaddingHorizontal);
+    padding: 2rem var(--contentPaddingHorizontal);
   }
   .visualised {
     flex-grow: 1;
