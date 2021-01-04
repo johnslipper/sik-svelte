@@ -920,22 +920,22 @@ const songs = [
         chords: [
           {
             voicing: "%2/1.X/X.0/0.2/2.3/3.0/0",
-            fingering: "1 X 0 2 3 0",
+            fingering: "1 X X 2 3 X",
             frets: "2 X 0 2 3 0",
           },
           {
             voicing: "%4/1.X/X.0/0.4/2.5/3.0/0",
-            fingering: "1 X 0 2 3 0",
+            fingering: "1 X X 2 3 X",
             frets: "4 X 0 4 5 0",
           },
           {
             voicing: "%5/1.X/X.0/0.5/2.6/3.0/0",
-            fingering: "1 X 0 2 3 0",
+            fingering: "1 X X 2 3 X",
             frets: "5 X 0 5 6 0",
           },
           {
             voicing: "%7/1.X/X.0/0.7/2.8/3.0/0",
-            fingering: "1 X 0 2 3 0",
+            fingering: "1 X X 2 3 X",
             frets: "7 X 0 7 8 0",
           },
         ],
@@ -1437,7 +1437,7 @@ const songs = [
         chords: [
           {
             voicing: "%X/X.X/X.5/3.0/0.3/1.X/X",
-            fingering: "X X 3 0 1 X",
+            fingering: "X X 3 X 1 X",
             frets: "X X 5 0 3 X",
           },
         ],
