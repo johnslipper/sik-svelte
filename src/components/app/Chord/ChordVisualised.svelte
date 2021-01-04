@@ -31,7 +31,7 @@
 
     // Add viewbox and fluid heights to allow container to scale responsively
     const svgElement = chordElement.querySelector(`svg`);
-    svgElement.setAttribute("viewBox", "0 10 100 120");
+    svgElement.setAttribute("viewBox", "0 10 100 100");
     svgElement.setAttribute("width", "100%");
     svgElement.setAttribute("height", "100%");
   }
