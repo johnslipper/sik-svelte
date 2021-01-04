@@ -70,6 +70,11 @@
     grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
     gap: 0.25rem;
   }
+  .visualised {
+    max-width: 12rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 </style>
 
 <div in:fade>
@@ -163,10 +168,12 @@
       </div>
       <div class="preview">
         {#if isPreviewPossible}
-          <ChordVisualised
-            frets={previewFrets}
-            fingering={previewFingerings}
-            {tuning} />
+          <div class="visualised">
+            <ChordVisualised
+              frets={previewFrets}
+              fingering={previewFingerings}
+              {tuning} />
+          </div>
         {:else}
           <div class="placeholder">
             <ChordPreviewPlaceholder {tuning} />
