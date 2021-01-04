@@ -9,7 +9,6 @@
     artist: "",
     album: "",
     lyrics: "",
-    tuning: "",
     chordSections: [],
   };
 </script>

@@ -8,7 +8,7 @@
   import Icon from "../../ui/Icons/Icon.svelte";
   import { Button } from "../../ui/Button";
   export let chords;
-  export let tuning = "";
+  export let tuning;
 
   function handleOnPlay(chord) {
     // TODO

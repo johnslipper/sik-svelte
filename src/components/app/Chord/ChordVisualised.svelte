@@ -2,7 +2,7 @@
   import { onMount, onDestroy, afterUpdate } from "svelte";
   import { ChordBox } from "vexchords";
   import { theme } from "../../../theme.js";
-  export let tuning = "";
+  export let tuning;
   export let fingering;
   export let frets;
   export let position = 0;

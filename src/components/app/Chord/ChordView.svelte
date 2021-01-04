@@ -1,7 +1,7 @@
 <script>
   import ChordVisualised from "./ChordVisualised.svelte";
   export let chord;
-  export let tuning = "";
+  export let tuning;
 </script>
 
 <style>

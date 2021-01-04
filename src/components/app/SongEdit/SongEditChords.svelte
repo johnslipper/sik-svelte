@@ -4,7 +4,7 @@
   import Dialogue from "../../ui/Modal/Dialogue.svelte";
   import { ButtonDefault } from "../../ui/Button";
   export let chordSections = [];
-  export let tuning = "";
+  export let tuning;
 
   const { open, close } = getContext("simple-modal");
 
