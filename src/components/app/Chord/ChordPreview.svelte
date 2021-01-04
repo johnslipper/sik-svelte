@@ -4,10 +4,43 @@
   import { ButtonPrimary, ButtonDefault } from "../../ui/Button";
   import { Form, FormGroup, Input, Label } from "../../ui/Form";
   import ChordPreviewPlaceholder from "./ChordPreviewPlaceholder.svelte";
+  import ChordEditFieldset from "./ChordEditFieldset.svelte";
+  import ChordEditFret from "./ChordEditFret.svelte";
+  import ChordEditFinger from "./ChordEditFinger.svelte";
   export let chord;
-  export let tuning = "";
+  export let tuning = "E A D G B E";
   export let onSave;
   export let onCancel;
+
+  let frets = chord.frets ? processChordEntries(chord.frets, "fret") : {};
+  let fingering = chord.fingering
+    ? processChordEntries(chord.fingering, "fingering")
+    : {};
+
+  $: previewFrets = Object.values(frets).join(" ").trim();
+  $: previewFingerings = Object.values(fingering).join(" ").trim();
+
+  $: hasAllFrets = Object.values(frets).length === 6;
+
+  $: tuningFormatted = tuning.split(" ");
+
+  function processChordEntries(entries, key) {
+    return Object.fromEntries(
+      entries.split(" ").map((entry, i) => {
+        return [key + (i + 1), processChordEntry(entry)];
+      })
+    );
+  }
+
+  function processChordEntry(entry) {
+    return entry === "X" ? entry : parseInt(entry);
+  }
+
+  function onSubmit() {
+    chord.frets = previewFrets;
+    chord.fingering = previewFingering;
+    onSave(chord);
+  }
 </script>
 
 <style>
@@ -18,7 +51,7 @@
   .chord {
     display: grid;
     gap: 0.25rem;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
   }
   .buttons {
     margin-top: 0.5rem;
@@ -26,10 +59,15 @@
   .placeholder {
     opacity: 0.5;
   }
+  .fieldsets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    gap: 0.25rem;
+  }
 </style>
 
 <div in:fade>
-  <Form onSubmit={() => onSave(chord)}>
+  <Form {onSubmit}>
     <div class="chord">
       <div class="fields">
         <FormGroup>
@@ -39,26 +77,77 @@
             bind:value={chord.name}
             placeholder="e.g. Fmaj7" />
         </FormGroup>
-        <FormGroup>
-          <Label htmlFor="chordEditFrets">Frets</Label>
-          <Input
-            id="chordEditFrets"
-            bind:value={chord.frets}
-            placeholder="e.g. 1 X 2 2 1 0" />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor="chordEditFingering">Fingering</Label>
-          <Input
-            id="chordEditFingering"
-            bind:value={chord.fingering}
-            placeholder="e.g. 1 X 3 4 2 X" />
-        </FormGroup>
+
+        <div class="fieldsets">
+          <ChordEditFieldset string={tuningFormatted[0]}>
+            <ChordEditFret
+              bind:value={frets.fret1}
+              key="frets1"
+              string={tuningFormatted[0]} />
+            <ChordEditFinger
+              bind:value={fingering.fingering1}
+              key="fingering1"
+              string={tuningFormatted[0]} />
+          </ChordEditFieldset>
+          <ChordEditFieldset string={tuningFormatted[1]}>
+            <ChordEditFret
+              bind:value={frets.fret2}
+              key="frets2"
+              string={tuningFormatted[1]} />
+            <ChordEditFinger
+              bind:value={fingering.fingering2}
+              key="fingering2"
+              string={tuningFormatted[1]} />
+          </ChordEditFieldset>
+          <ChordEditFieldset string={tuningFormatted[2]}>
+            <ChordEditFret
+              bind:value={frets.fret3}
+              key="frets3"
+              string={tuningFormatted[2]} />
+            <ChordEditFinger
+              bind:value={fingering.fingering3}
+              key="fingering3"
+              string={tuningFormatted[2]} />
+          </ChordEditFieldset>
+        </div>
+        <div class="fieldsets">
+          <ChordEditFieldset string={tuningFormatted[3]}>
+            <ChordEditFret
+              bind:value={frets.fret4}
+              key="frets4"
+              string={tuningFormatted[3]} />
+            <ChordEditFinger
+              bind:value={fingering.fingering4}
+              key="fingering4"
+              string={tuningFormatted[3]} />
+          </ChordEditFieldset>
+          <ChordEditFieldset string={tuningFormatted[4]}>
+            <ChordEditFret
+              bind:value={frets.fret5}
+              key="frets5"
+              string={tuningFormatted[4]} />
+            <ChordEditFinger
+              bind:value={fingering.fingering5}
+              key="fingering5"
+              string={tuningFormatted[4]} />
+          </ChordEditFieldset>
+          <ChordEditFieldset string={tuningFormatted[5]}>
+            <ChordEditFret
+              bind:value={frets.fret6}
+              key="frets6"
+              string={tuningFormatted[5]} />
+            <ChordEditFinger
+              bind:value={fingering.fingering6}
+              key="fingering6"
+              string={tuningFormatted[5]} />
+          </ChordEditFieldset>
+        </div>
       </div>
       <div class="preview">
-        {#if chord.fingering && chord.frets}
+        {#if hasAllFrets}
           <ChordVisualised
-            frets={chord.frets}
-            fingering={chord.fingering}
+            frets={previewFrets}
+            fingering={previewFingerings}
             {tuning} />
         {:else}
           <div class="placeholder">

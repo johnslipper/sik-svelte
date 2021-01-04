@@ -9,7 +9,7 @@
   import ChordPreview from "./ChordPreview.svelte";
 
   export let chord;
-  export let tuning = "";
+  export let tuning = "E A D G B E";
   export let onSave;
   export let onCancel;
 
