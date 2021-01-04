@@ -19,9 +19,8 @@
 
   $: previewFrets = Object.values(frets).join(" ").trim();
   $: previewFingerings = Object.values(fingering).join(" ").trim();
-
-  $: hasAllFrets = Object.values(frets).length === 6;
-
+  $: isPreviewPossible =
+    Object.values(frets).filter((fret) => fret.toString().length).length === 6;
   $: tuningFormatted = tuning.split(" ");
 
   function processChordEntries(entries, key) {
@@ -144,7 +143,7 @@
         </div>
       </div>
       <div class="preview">
-        {#if hasAllFrets}
+        {#if isPreviewPossible}
           <ChordVisualised
             frets={previewFrets}
             fingering={previewFingerings}
