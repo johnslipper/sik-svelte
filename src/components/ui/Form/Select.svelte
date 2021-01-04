@@ -13,12 +13,16 @@
     width: 100%;
     font-size: 1rem;
     padding: 0.2rem 0.1rem;
+    background-color: var(--primaryContrast);
     border: 1px solid var(--inputBorderColor);
     border-radius: var(--inputBorderRadius);
     color: var(--bodyColor);
   }
   select:focus {
     box-shadow: var(--focusOutlineShadow);
+  }
+  select[disabled] {
+    background-color: var(--neutralLightest);
   }
 </style>
 
