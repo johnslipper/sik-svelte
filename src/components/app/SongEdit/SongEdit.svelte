@@ -4,13 +4,7 @@
   import { Label, Textarea, Fieldset, Legend } from "../../ui/Form";
   import SongEditDetails from "./SongEditDetails.svelte";
   import SongEditChords from "./SongEditChords.svelte";
-  export let song = {
-    title: "",
-    artist: "",
-    album: "",
-    lyrics: "",
-    chordSections: [],
-  };
+  export let song = {};
 </script>
 
 <style>
