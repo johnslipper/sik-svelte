@@ -26,6 +26,6 @@
   }
 </style>
 
-<select {id} {name} {disabled} {required} bind:value>
+<select {id} {name} {disabled} {required} on:blur bind:value>
   <slot />
 </select>

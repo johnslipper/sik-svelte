@@ -35,6 +35,13 @@
     return entry === "X" ? entry : parseInt(entry);
   }
 
+  function handleFretChange(value, fingerKey) {
+    // TODO: Probably a better way to achieve this
+    if (typeof value === "string" || value < 1) {
+      fingering[`fingering${fingerKey}`] = "X";
+    }
+  }
+
   function onSubmit() {
     chord.frets = previewFrets;
     chord.fingering = previewFingering;
@@ -80,64 +87,76 @@
         <div class="fieldsets">
           <ChordEditFieldset string={tuningFormatted[0]}>
             <ChordEditFret
+              onBlur={handleFretChange}
               bind:value={frets.fret1}
-              key="frets1"
+              key="1"
               string={tuningFormatted[0]} />
             <ChordEditFinger
               bind:value={fingering.fingering1}
-              key="fingering1"
+              fret={frets.fret1}
+              key="1"
               string={tuningFormatted[0]} />
           </ChordEditFieldset>
           <ChordEditFieldset string={tuningFormatted[1]}>
             <ChordEditFret
+              onBlur={handleFretChange}
               bind:value={frets.fret2}
-              key="frets2"
+              key="2"
               string={tuningFormatted[1]} />
             <ChordEditFinger
               bind:value={fingering.fingering2}
-              key="fingering2"
+              fret={frets.fret2}
+              key="2"
               string={tuningFormatted[1]} />
           </ChordEditFieldset>
           <ChordEditFieldset string={tuningFormatted[2]}>
             <ChordEditFret
+              onBlur={handleFretChange}
               bind:value={frets.fret3}
-              key="frets3"
+              key="3"
               string={tuningFormatted[2]} />
             <ChordEditFinger
               bind:value={fingering.fingering3}
-              key="fingering3"
+              fret={frets.fret3}
+              key="3"
               string={tuningFormatted[2]} />
           </ChordEditFieldset>
         </div>
         <div class="fieldsets">
           <ChordEditFieldset string={tuningFormatted[3]}>
             <ChordEditFret
+              onBlur={handleFretChange}
               bind:value={frets.fret4}
-              key="frets4"
+              key="4"
               string={tuningFormatted[3]} />
             <ChordEditFinger
               bind:value={fingering.fingering4}
-              key="fingering4"
+              fret={frets.fret4}
+              key="4"
               string={tuningFormatted[3]} />
           </ChordEditFieldset>
           <ChordEditFieldset string={tuningFormatted[4]}>
             <ChordEditFret
+              onBlur={handleFretChange}
               bind:value={frets.fret5}
-              key="frets5"
+              key="5"
               string={tuningFormatted[4]} />
             <ChordEditFinger
               bind:value={fingering.fingering5}
-              key="fingering5"
+              fret={frets.fret5}
+              key="5"
               string={tuningFormatted[4]} />
           </ChordEditFieldset>
           <ChordEditFieldset string={tuningFormatted[5]}>
             <ChordEditFret
+              onBlur={handleFretChange}
               bind:value={frets.fret6}
-              key="frets6"
+              key="6"
               string={tuningFormatted[5]} />
             <ChordEditFinger
               bind:value={fingering.fingering6}
-              key="fingering6"
+              fret={frets.fret6}
+              key="6"
               string={tuningFormatted[5]} />
           </ChordEditFieldset>
         </div>

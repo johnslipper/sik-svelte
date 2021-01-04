@@ -4,6 +4,7 @@
   export let value;
   export let string;
   export let key;
+  export let onBlur;
 
   let fretOptions = getFretOptions(24);
 
@@ -23,11 +24,11 @@
 </script>
 
 <FormGroup>
-  <Label htmlFor={key}>
+  <Label htmlFor="fret{key}">
     <VisuallyHidden>{string} string</VisuallyHidden>
     Fret
   </Label>
-  <Select id={key} bind:value required>
+  <Select id="fret{key}" bind:value required on:blur={() => onBlur(value, key)}>
     <Option value="" />
     {#each fretOptions as option}
       <Option value={option.value}>{option.name}</Option>

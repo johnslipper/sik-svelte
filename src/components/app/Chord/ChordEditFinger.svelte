@@ -4,6 +4,9 @@
   export let string;
   export let key;
   export let value;
+  export let fret;
+
+  $: fretValid = fret > 0;
 
   let fingeringOptions = getFingeringOptions();
 
@@ -21,11 +24,11 @@
 </script>
 
 <FormGroup>
-  <Label htmlFor={key}>
+  <Label htmlFor="finger{key}">
     <VisuallyHidden>{string} string</VisuallyHidden>
     Finger
   </Label>
-  <Select id={key} bind:value>
+  <Select id="finger{key}" bind:value disabled={!fretValid}>
     <Option value="" />
     {#each fingeringOptions as option}
       <Option value={option.value}>{option.name}</Option>
