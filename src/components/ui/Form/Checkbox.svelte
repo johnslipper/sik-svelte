@@ -15,4 +15,12 @@
   }
 </style>
 
-<input type="checkbox" {id} {name} {disabled} {required} bind:checked on:blur />
+<input
+  type="checkbox"
+  {id}
+  {name}
+  {disabled}
+  {required}
+  bind:checked
+  on:blur
+  on:change />
