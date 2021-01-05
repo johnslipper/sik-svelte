@@ -59,13 +59,13 @@
       <TabList>
         <Tab>
           <div class="icon" in:fly={iconTransition}>
-            <Icon size="1.85rem" d={microphoneOutlinedIcon} />
+            <Icon path={microphoneOutlinedIcon} size="1.85rem" />
           </div>
           <div class="text">Lyrics</div>
         </Tab>
         <Tab>
           <div class="icon" in:fly={iconTransition}>
-            <Icon size="1.85rem" d={musicNoteOutlinedIcon} />
+            <Icon path={musicNoteOutlinedIcon} size="1.85rem" />
           </div>
           <div class="text">Chords</div>
         </Tab>

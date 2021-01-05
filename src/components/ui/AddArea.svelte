@@ -26,7 +26,7 @@
   {#if SLOTS && SLOTS.default}
     <slot />
   {:else}
-    <Icon d={plusIcon} size="1.25rem" />
+    <Icon path={plusIcon} size="1.25rem" />
     {text}
   {/if}
 </div>

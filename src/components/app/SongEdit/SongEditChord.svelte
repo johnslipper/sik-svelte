@@ -48,18 +48,18 @@
           <div id="editChordActionsMenu">Chord actions</div>
         </VisuallyHidden>
         <Button on:click={() => onEdit(chord)}>
-          <Icon d={pencilIcon} size="1.5rem" />
+          <Icon path={pencilIcon} size="1.5rem" />
           <div>Edit</div>
           <VisuallyHidden>chord</VisuallyHidden>
         </Button>
         <Button on:click={() => onPlay(chord)}>
-          <Icon d={speakerIcon} size="1.5rem" />
+          <Icon path={speakerIcon} size="1.5rem" />
           <div>Play</div>
           <VisuallyHidden>chord</VisuallyHidden>
         </Button>
         <div class="danger">
           <Button on:click={() => onRemove(chordSection, chord)}>
-            <Icon d={crossIcon} size="1.5rem" />
+            <Icon path={crossIcon} size="1.5rem" />
             <div>Remove</div>
             <VisuallyHidden>chord</VisuallyHidden>
           </Button>

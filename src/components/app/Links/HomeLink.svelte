@@ -15,7 +15,7 @@
 
 <div class="link">
   <Link to="/">
-    <Icon d={leftArrowIcon} />
+    <Icon path={leftArrowIcon} />
     <slot />
   </Link>
 </div>

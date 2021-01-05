@@ -16,7 +16,7 @@
 
 <div class="link">
   <Link to="/song/{id}/edit">
-    <Icon d={pencilIcon} />
+    <Icon path={pencilIcon} />
     <slot />
   </Link>
 </div>

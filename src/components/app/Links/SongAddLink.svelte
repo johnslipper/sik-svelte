@@ -15,7 +15,7 @@
 
 <div class="link">
   <Link to="/add">
-    <Icon d={plusIcon} />
+    <Icon path={plusIcon} />
     <slot />
   </Link>
 </div>

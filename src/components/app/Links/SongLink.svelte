@@ -16,7 +16,7 @@
 
 <div class="link">
   <Link to="/song/{id}">
-    <Icon d={leftArrowIcon} />
+    <Icon path={leftArrowIcon} />
     <slot />
   </Link>
 </div>

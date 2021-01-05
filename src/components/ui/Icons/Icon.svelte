@@ -3,7 +3,7 @@
   export let size = "1em"; // default 1em match the parent element
 
   // default heart icon
-  export let d =
+  export let path =
     "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z";
 </script>
 
@@ -21,6 +21,6 @@
     width="100%"
     height="100%"
     xmlns="http://www.w3.org/2000/svg">
-    <path {d} />
+    <path d={path} />
   </svg>
 </div>

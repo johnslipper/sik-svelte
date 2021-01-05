@@ -85,7 +85,7 @@
                         <div id="viewChordActionsMenu">Chord actions</div>
                       </VisuallyHidden>
                       <Button on:click={() => handleOnPlay(chord)}>
-                        <Icon d={speakerIcon} size="1.5rem" />
+                        <Icon path={speakerIcon} size="1.5rem" />
                         <div>Play</div>
                         <VisuallyHidden>chord</VisuallyHidden>
                       </Button>
