@@ -1,5 +1,5 @@
 <script>
-  import { FieldsetDefault, Legend } from "../../ui/Form";
+  import { FieldsetDefault, LegendDefault } from "../../ui/Form";
   export let string;
 </script>
 
@@ -11,7 +11,7 @@
 </style>
 
 <FieldsetDefault>
-  <Legend>{string}</Legend>
+  <LegendDefault>{string}</LegendDefault>
   <div class="fields">
     <slot />
   </div>
