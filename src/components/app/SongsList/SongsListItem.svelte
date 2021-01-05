@@ -51,6 +51,7 @@
     height: 3.5rem;
     border-radius: 50%;
     overflow: hidden;
+    box-shadow: 0px 0px 0px 2px var(--neutralLight);
   }
   .text {
     display: flex;
