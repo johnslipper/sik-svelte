@@ -1,6 +1,6 @@
 <script>
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  import { Label, Textarea, Fieldset, Legend } from "../../ui/Form";
+  import { Label, Textarea, Fieldset, LegendSticky } from "../../ui/Form";
   import SongEditDetails from "./SongEditDetails.svelte";
   import SongEditChords from "./SongEditChords.svelte";
   export let song = {};
@@ -13,7 +13,7 @@
 </style>
 
 <Fieldset>
-  <Legend>Details</Legend>
+  <LegendSticky>Details</LegendSticky>
   <div class="wrapper">
     <SongEditDetails
       title={song.title}
@@ -24,7 +24,7 @@
   </div>
 </Fieldset>
 <Fieldset>
-  <Legend>Lyrics</Legend>
+  <LegendSticky>Lyrics</LegendSticky>
   <div class="wrapper">
     <VisuallyHidden>
       <Label htmlFor="songLyrics">Lyrics</Label>
@@ -33,7 +33,7 @@
   </div>
 </Fieldset>
 <Fieldset>
-  <Legend>Chords</Legend>
+  <LegendSticky>Chords</LegendSticky>
   <div>
     <SongEditChords chordSections={song.chordSections} tuning={song.tuning} />
   </div>
