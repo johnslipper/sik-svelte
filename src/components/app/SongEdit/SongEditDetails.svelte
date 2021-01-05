@@ -4,6 +4,7 @@
   import ArtworkSearch from "../Artwork/ArtworkSearch.svelte";
   import ArtworkView from "../Artwork/ArtworkView.svelte";
   import AddArea from "../../ui/AddArea.svelte";
+  import SongEditTuning from "./SongEditTuning.svelte";
   import { Button } from "../../ui/Button";
   import { Input, FormGroup, LabelDefault } from "../../ui/Form";
   export let title;
@@ -100,9 +101,6 @@
       <Input id="songAlbum" bind:value={album} />
     </FormGroup>
 
-    <FormGroup>
-      <Label htmlFor="songTuning">Tuning</Label>
-      <Input id="songTuning" bind:value={tuning} placeholder="E A D G B E" />
-    </FormGroup>
+    <SongEditTuning bind:tuning />
   </div>
 </div>
