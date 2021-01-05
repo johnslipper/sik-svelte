@@ -1,5 +1,5 @@
 <script>
-  import { fly } from "svelte/transition";
+  import { fly, slide } from "svelte/transition";
   import { elasticOut } from "svelte/easing";
   import songs from "../../../songs.js";
   import SongHeader from "../SongView/SongViewHeader.svelte";
@@ -55,7 +55,10 @@
         <SongChords chords={song.chordSections} tuning={song.tuning} />
       </TabPanel>
     </div>
-    <div class="tabList">
+    <div
+      class="tabList"
+      in:slide={{ duration: 250, delay: 300 }}
+      out:slide={{ duration: 100 }}>
       <TabList>
         <Tab>
           <div class="icon" in:fly={iconTransition}>

@@ -1,7 +1,3 @@
-<script>
-  import { slide } from "svelte/transition";
-</script>
-
 <style>
   .tab-list {
     display: grid;
@@ -10,9 +6,6 @@
   }
 </style>
 
-<div
-  class="tab-list"
-  in:slide={{ duration: 250, delay: 300 }}
-  out:slide={{ duration: 100 }}>
+<div class="tab-list">
   <slot />
 </div>
