@@ -61,12 +61,6 @@
     text-transform: uppercase;
     color: var(--neutralMedium);
   }
-  .album {
-    margin-top: 0.25em;
-    font-size: 0.75em;
-    color: var(--neutralDark);
-    font-style: italic;
-  }
 </style>
 
 <div class="list-item">
