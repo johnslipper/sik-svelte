@@ -5,7 +5,7 @@
   import ArtworkView from "../Artwork/ArtworkView.svelte";
   import AddArea from "../../ui/AddArea.svelte";
   import { Button } from "../../ui/Button";
-  import { Input, FormGroup, Label } from "../../ui/Form";
+  import { Input, FormGroup, LabelDefault } from "../../ui/Form";
   export let title;
   export let artist;
   export let album;
@@ -86,17 +86,17 @@
   </div>
   <div class="fields">
     <FormGroup>
-      <Label htmlFor="songTitle">Title</Label>
+      <LabelDefault htmlFor="songTitle">Title</LabelDefault>
       <Input id="songTitle" bind:value={title} />
     </FormGroup>
 
     <FormGroup>
-      <Label htmlFor="songArtist">Artist</Label>
+      <LabelDefault htmlFor="songArtist">Artist</LabelDefault>
       <Input id="songArtist" bind:value={artist} />
     </FormGroup>
 
     <FormGroup>
-      <Label htmlFor="songAlbum">Album</Label>
+      <LabelDefault htmlFor="songAlbum">Album</LabelDefault>
       <Input id="songAlbum" bind:value={album} />
     </FormGroup>
 

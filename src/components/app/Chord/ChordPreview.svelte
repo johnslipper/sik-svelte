@@ -2,7 +2,7 @@
   import { fade } from "svelte/transition";
   import ChordVisualised from "./ChordVisualised.svelte";
   import { ButtonPrimary, ButtonDefault } from "../../ui/Button";
-  import { Form, FormGroup, Input, Label } from "../../ui/Form";
+  import { Form, FormGroup, Input, LabelDefault } from "../../ui/Form";
   import ChordPreviewPlaceholder from "./ChordPreviewPlaceholder.svelte";
   import ChordEditFieldset from "./ChordEditFieldset.svelte";
   import ChordEditFret from "./ChordEditFret.svelte";
@@ -82,7 +82,7 @@
     <div class="chord">
       <div class="fields">
         <FormGroup>
-          <Label htmlFor="chordEditName">Name</Label>
+          <LabelDefault htmlFor="chordEditName">Name</LabelDefault>
           <Input
             id="chordEditName"
             bind:value={chord.name}

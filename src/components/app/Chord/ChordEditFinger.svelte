@@ -1,5 +1,5 @@
 <script>
-  import { FormGroup, Label, Select, Option } from "../../ui/Form";
+  import { FormGroup, LabelDefault, Select, Option } from "../../ui/Form";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   export let string;
   export let key;
@@ -24,10 +24,10 @@
 </script>
 
 <FormGroup>
-  <Label htmlFor="finger{key}">
+  <LabelDefault htmlFor="finger{key}">
     <VisuallyHidden>{string} string</VisuallyHidden>
     Finger
-  </Label>
+  </LabelDefault>
   <Select id="finger{key}" bind:value disabled={!fretValid}>
     <Option value="" />
     {#each fingeringOptions as option}

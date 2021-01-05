@@ -2,7 +2,7 @@
   import { artworkSearch } from "./artworkSearch.js";
   import ArtworkSearchResults from "./ArtworkSearchResults.svelte";
   import ArtworkSearchSelected from "./ArtworkSearchSelected.svelte";
-  import { Form, FormGroup, Input, Label } from "../../ui/Form";
+  import { Form, FormGroup, Input, LabelDefault } from "../../ui/Form";
   import Heading from "../../ui/Heading.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import { ButtonPrimary } from "../../ui/Button";
@@ -67,7 +67,7 @@
     <div class="search">
       <FormGroup>
         <VisuallyHidden>
-          <Label htmlFor="searchArtwork">Search term</Label>
+          <LabelDefault htmlFor="searchArtwork">Search term</LabelDefault>
         </VisuallyHidden>
         <Input id="searchArtwork" bind:value={queryInput} />
       </FormGroup>

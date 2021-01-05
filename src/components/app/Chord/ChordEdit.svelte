@@ -3,7 +3,7 @@
   import { onMount } from "svelte";
   import { chordSearch } from "./chordSearch.js";
   import { ButtonPrimary, ButtonDefault } from "../../ui/Button";
-  import { Form, FormGroup, Input, Label } from "../../ui/Form";
+  import { Form, FormGroup, Input, LabelDefault } from "../../ui/Form";
   import Heading from "../../ui/Heading.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import ChordPreview from "./ChordPreview.svelte";
@@ -96,7 +96,7 @@
     <Form onSubmit={handleChooseSearch}>
       <div class="search">
         <FormGroup>
-          <Label htmlFor="chordNameSearch">Name</Label>
+          <LabelDefault htmlFor="chordNameSearch">Name</LabelDefault>
           <Input
             id="chordNameSearch"
             bind:value={searchInput}

@@ -3,7 +3,7 @@
   import AddArea from "../../ui/AddArea.svelte";
   import SongEditChord from "./SongEditChord.svelte";
   import ChordEdit from "../Chord/ChordEdit.svelte";
-  import { Input, FormGroup, Label } from "../../ui/Form";
+  import { Input, FormGroup, LabelDefault } from "../../ui/Form";
   import { Button, ButtonDefault } from "../../ui/Button";
   export let chordSection;
   export let tuning;
@@ -77,7 +77,7 @@
 <div class="wrapper">
   <div class="title">
     <FormGroup>
-      <Label htmlFor="chordSectionTitle{key}">Title</Label>
+      <LabelDefault htmlFor="chordSectionTitle{key}">Title</LabelDefault>
       <Input id="chordSectionTitle{key}" bind:value={chordSection.title} />
     </FormGroup>
     <ButtonDefault on:click={() => onRemove(chordSection)}>

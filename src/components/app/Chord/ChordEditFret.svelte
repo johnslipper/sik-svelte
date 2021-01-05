@@ -1,5 +1,5 @@
 <script>
-  import { FormGroup, Label, Select, Option } from "../../ui/Form";
+  import { FormGroup, LabelDefault, Select, Option } from "../../ui/Form";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   export let value;
   export let string;
@@ -24,10 +24,10 @@
 </script>
 
 <FormGroup>
-  <Label htmlFor="fret{key}">
+  <LabelDefault htmlFor="fret{key}">
     <VisuallyHidden>{string} string</VisuallyHidden>
     Fret
-  </Label>
+  </LabelDefault>
   <Select id="fret{key}" bind:value required on:blur={() => onBlur(value, key)}>
     <Option value="" />
     {#each fretOptions as option}

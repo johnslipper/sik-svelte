@@ -1,6 +1,11 @@
 <script>
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  import { Label, Textarea, Fieldset, LegendSticky } from "../../ui/Form";
+  import {
+    LabelDefault,
+    Textarea,
+    Fieldset,
+    LegendSticky,
+  } from "../../ui/Form";
   import SongEditDetails from "./SongEditDetails.svelte";
   import SongEditChords from "./SongEditChords.svelte";
   export let song = {};
@@ -27,7 +32,7 @@
   <LegendSticky>Lyrics</LegendSticky>
   <div class="wrapper">
     <VisuallyHidden>
-      <Label htmlFor="songLyrics">Lyrics</Label>
+      <LabelDefault htmlFor="songLyrics">Lyrics</LabelDefault>
     </VisuallyHidden>
     <Textarea id="songLyrics" bind:value={song.lyrics} />
   </div>
