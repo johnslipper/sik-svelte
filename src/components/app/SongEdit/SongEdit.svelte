@@ -1,5 +1,4 @@
 <script>
-  import { fade } from "svelte/transition";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import { Label, Textarea, Fieldset, Legend } from "../../ui/Form";
   import SongEditDetails from "./SongEditDetails.svelte";
@@ -15,7 +14,7 @@
 
 <Fieldset>
   <Legend>Details</Legend>
-  <div class="wrapper" in:fade>
+  <div class="wrapper">
     <SongEditDetails
       title={song.title}
       artist={song.artist}
@@ -26,7 +25,7 @@
 </Fieldset>
 <Fieldset>
   <Legend>Lyrics</Legend>
-  <div class="wrapper" in:fade>
+  <div class="wrapper">
     <VisuallyHidden>
       <Label htmlFor="songLyrics">Lyrics</Label>
     </VisuallyHidden>
@@ -35,7 +34,7 @@
 </Fieldset>
 <Fieldset>
   <Legend>Chords</Legend>
-  <div in:fade>
+  <div>
     <SongEditChords chordSections={song.chordSections} tuning={song.tuning} />
   </div>
 </Fieldset>
