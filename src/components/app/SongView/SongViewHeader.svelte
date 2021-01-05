@@ -48,6 +48,7 @@
   }
   .artwork {
     z-index: 1;
+    width: 5.5rem;
     height: 5.5rem;
     border-radius: 50%;
     border: 0.25rem solid var(--primaryContrast);
