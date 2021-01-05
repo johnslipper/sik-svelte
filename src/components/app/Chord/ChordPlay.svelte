@@ -1,6 +1,6 @@
 <script>
   import { getContext } from "svelte";
-  import { playChord } from "../../../ChordAudio.js";
+  import { playChord } from "./ChordAudio.js";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import Dialogue from "../../ui/Modal/Dialogue.svelte";
   import { Button } from "../../ui/Button";
