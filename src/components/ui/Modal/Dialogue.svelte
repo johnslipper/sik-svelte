@@ -30,6 +30,9 @@
     padding-right: 2rem;
     padding-bottom: 1rem;
   }
+  .buttons :global(button) {
+    min-width: 4rem;
+  }
 </style>
 
 {#if title}
