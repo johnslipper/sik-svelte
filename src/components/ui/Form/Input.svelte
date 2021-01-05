@@ -31,4 +31,5 @@
   {maxlength}
   {disabled}
   {required}
-  bind:value />
+  bind:value
+  on:blur />
