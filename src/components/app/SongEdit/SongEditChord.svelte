@@ -1,5 +1,6 @@
 <script>
   import ChordView from "../Chord/ChordView.svelte";
+  import ChordPlay from "../Chord/ChordPlay.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import Dropdown from "../../ui/Dropdown.svelte";
   import { crossIcon, pencilIcon, speakerIcon } from "../../ui/Icons/icons.js";
@@ -10,7 +11,6 @@
   export let tuning;
   export let onEdit;
   export let onRemove;
-  export let onPlay;
 </script>
 
 <style>
@@ -52,11 +52,7 @@
           <div>Edit</div>
           <VisuallyHidden>chord</VisuallyHidden>
         </Button>
-        <Button on:click={() => onPlay(chord)}>
-          <Icon path={speakerIcon} size="1.5rem" />
-          <div>Play</div>
-          <VisuallyHidden>chord</VisuallyHidden>
-        </Button>
+        <ChordPlay {chord} {tuning} />
         <div class="danger">
           <Button on:click={() => onRemove(chordSection, chord)}>
             <Icon path={crossIcon} size="1.5rem" />

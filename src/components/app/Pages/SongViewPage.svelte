@@ -1,6 +1,7 @@
 <script>
   import { fly, slide } from "svelte/transition";
   import { elasticOut } from "svelte/easing";
+  import Modal from "svelte-simple-modal";
   import songs from "../../../songs.js";
   import SongHeader from "../SongView/SongViewHeader.svelte";
   import SongLyrics from "../SongView/SongViewLyrics.svelte";
@@ -39,7 +40,7 @@
   }
 </style>
 
-<div>
+<Modal>
   <SongHeader
     id={song.id}
     title={song.title}
@@ -75,4 +76,4 @@
       </TabList>
     </div>
   </Tabs>
-</div>
+</Modal>

@@ -33,10 +33,6 @@
     openChordModal(chord);
   }
 
-  function handlePlayChord(chord) {
-    // TODO
-  }
-
   function handleSaveChord(chord) {
     // TODO
     close();
@@ -97,8 +93,7 @@
             {tuning}
             {chord}
             onEdit={handleEditChord}
-            onRemove={handleRemoveChord}
-            onPlay={handlePlayChord} />
+            onRemove={handleRemoveChord} />
         </li>
       {/each}
     {/if}

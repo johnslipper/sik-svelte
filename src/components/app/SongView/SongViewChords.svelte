@@ -3,16 +3,10 @@
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import Dropdown from "../../ui/Dropdown.svelte";
   import ChordView from "../Chord/ChordView.svelte";
+  import ChordPlay from "../Chord/ChordPlay.svelte";
   import Heading from "../../ui/Heading.svelte";
-  import { speakerIcon } from "../../ui/Icons/icons.js";
-  import Icon from "../../ui/Icons/Icon.svelte";
-  import { Button } from "../../ui/Button";
   export let chords;
   export let tuning;
-
-  function handleOnPlay(chord) {
-    // TODO
-  }
 </script>
 
 <style>
@@ -75,7 +69,7 @@
         </div>
         {#if section.chords}
           <ul class="chords">
-            {#each section.chords as chord}
+            {#each section.chords as chord, i}
               <li class="chord">
                 <Dropdown position="center">
                   <ChordView {chord} {tuning} />
@@ -84,11 +78,7 @@
                       <VisuallyHidden>
                         <div id="viewChordActionsMenu">Chord actions</div>
                       </VisuallyHidden>
-                      <Button on:click={() => handleOnPlay(chord)}>
-                        <Icon path={speakerIcon} size="1.5rem" />
-                        <div>Play</div>
-                        <VisuallyHidden>chord</VisuallyHidden>
-                      </Button>
+                      <ChordPlay {chord} {tuning} />
                     </div>
                   </div>
                 </Dropdown>
