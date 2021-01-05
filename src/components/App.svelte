@@ -18,8 +18,6 @@
   }
   :global(main) {
     color: var(--bodyColor);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   }
   :global(a) {
     text-decoration: none;
