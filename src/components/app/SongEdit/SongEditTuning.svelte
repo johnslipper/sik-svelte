@@ -18,7 +18,10 @@
   let enableCustomTuning = false;
 
   onMount(() => {
-    strings = tuning && tuning.length ? tuning.split(" ") : [];
+    if (tuning && tuning.length) {
+      strings = tuning.split(" ");
+      enableCustomTuning = true;
+    }
   });
 
   function handleStringChanged() {
