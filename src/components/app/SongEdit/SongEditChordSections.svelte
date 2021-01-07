@@ -35,7 +35,7 @@
   }
 
   function handleSaveChord(chord) {
-    // TODO
+    chordSection.chords = [...chordSection.chords, chord];
     close();
   }
 </script>
