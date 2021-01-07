@@ -44,7 +44,7 @@
 
   function onSubmit() {
     chord.frets = previewFrets;
-    chord.fingering = previewFingering;
+    chord.fingering = previewFingerings;
     onSave(chord);
   }
 </script>
