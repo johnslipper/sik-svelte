@@ -6,20 +6,7 @@
   export let chordSections = [];
   export let tuning;
 
-  const { open, close } = getContext("simple-modal");
-
-  const openSearchModal = () => {
-    open(
-      ArtworkSearch,
-      {
-        queryInput: getInputQuery(song),
-        onSelected: handleSelected,
-      },
-      {
-        styleContent: { padding: 0, borderRadius: "0.5rem" },
-      }
-    );
-  };
+  const { open } = getContext("simple-modal");
 
   function handleAddSection() {
     chordSections = chordSections || [];
