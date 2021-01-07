@@ -5,7 +5,7 @@
   import songs from "../../../songs.js";
   import SongHeader from "../SongView/SongViewHeader.svelte";
   import SongLyrics from "../SongView/SongViewLyrics.svelte";
-  import SongChords from "../SongView/SongViewChords.svelte";
+  import SongViewChords from "../SongView/SongViewChords.svelte";
   import { Tab, Tabs, TabList, TabPanel } from "../../ui/Tabs";
   import Icon from "../../ui/Icons/Icon.svelte";
   import {
@@ -53,7 +53,7 @@
         <SongLyrics lyrics={song.lyrics} />
       </TabPanel>
       <TabPanel>
-        <SongChords chords={song.chordSections} tuning={song.tuning} />
+        <SongViewChords chords={song.chordSections} tuning={song.tuning} />
       </TabPanel>
     </div>
     <div
