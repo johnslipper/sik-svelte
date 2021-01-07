@@ -1,10 +1,11 @@
 <script>
   import { fly, fade } from "svelte/transition";
   import { backOut } from "svelte/easing";
-  import HomeLink from "../Links/HomeLink.svelte";
-  import SongEditLink from "../Links/SongEditLink.svelte";
   import ArtworkView from "../Artwork/ArtworkView.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
+  import Icon from "../../ui/Icons/Icon.svelte";
+  import { leftArrowIcon, pencilIcon } from "../../ui/Icons/icons.js";
+  import ButtonLink from "../../ui/Button/ButtonLink.svelte";
   export let id;
   export let title;
   export let artist;
@@ -59,6 +60,10 @@
     margin-top: 1rem;
   }
 
+  .start :global(.link a) {
+    padding: 0.5rem;
+  }
+
   .end {
     display: flex;
     justify-content: flex-end;
@@ -69,9 +74,10 @@
 
 <header>
   <div class="start" in:fade={{ delay: animationDelay + 50 }}>
-    <HomeLink>
+    <ButtonLink to="/">
+      <Icon path={leftArrowIcon} size="1.1rem" />
       <VisuallyHidden>back to songs</VisuallyHidden>
-    </HomeLink>
+    </ButtonLink>
   </div>
   <div class="wrapper">
     <div
@@ -93,9 +99,10 @@
       {/if}
     </div>
     <div class="end" in:fade={{ delay: animationDelay + 50 }}>
-      <SongEditLink {id}>
+      <ButtonLink to="/song/{id}/edit">
+        <Icon path={pencilIcon} size="1.1rem" />
         <VisuallyHidden>Edit song</VisuallyHidden>
-      </SongEditLink>
+      </ButtonLink>
     </div>
   </div>
 </header>
