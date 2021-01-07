@@ -123,20 +123,20 @@ export class ChordAudio {
     this.isPlaying = false;
   }
 
-  /* Adjust fret values to compensate for a cappo */
-  cappoAdjust(frets, cappo) {
-    if (cappo > 0) {
+  /* Adjust fret values to compensate for a capo */
+  capoAdjust(frets, capo) {
+    if (capo > 0) {
       var adjusted = frets.map((fret) => {
         fret = parseInt(fret);
-        return fret > -1 ? fret + cappo : fret;
+        return fret > -1 ? fret + capo : fret;
       });
       return adjusted;
     } else return frets;
   }
 
-  /* Play frets array and optional cappo offset */
-  play(frets, cappo) {
-    if (cappo) this.startStrings(this.cappoAdjust(frets, parseInt(cappo)));
+  /* Play frets array and optional capo offset */
+  play(frets, capo) {
+    if (capo) this.startStrings(this.capoAdjust(frets, parseInt(capo)));
     else this.startStrings(frets);
   }
 }
