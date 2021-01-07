@@ -98,10 +98,7 @@ const songs = [
       url:
         "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/93/4d/68/934d68d1-1a7c-42a0-f14d-3e5f72fd824e/source/100x100bb.jpg",
     },
-    notes: {
-      text: "Cappo on 2nd fret",
-      type: "info",
-    },
+    capoAdjustment: 2,
     chordSections: [
       {
         title: "Verse",
@@ -148,6 +145,7 @@ const songs = [
       url:
         "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/93/4d/68/934d68d1-1a7c-42a0-f14d-3e5f72fd824e/source/100x100bb.jpg",
     },
+    capoAdjustment: 2,
     chordSections: [
       {
         title: "Verse",
@@ -195,10 +193,6 @@ const songs = [
         ],
       },
     ],
-    notes: {
-      text: "Cappo on 2nd fret",
-      type: "info",
-    },
   },
   {
     id: 3,
@@ -213,10 +207,7 @@ const songs = [
       url:
         "https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/b6/4a/61/b64a616d-e295-8832-fe0b-59f3cf6ed48c/source/100x100bb.jpg",
     },
-    notes: {
-      text: "Cappo on 7th fret",
-      type: "info",
-    },
+    capoAdjustment: 7,
     chordSections: [
       {
         title: "Verse",
@@ -369,10 +360,7 @@ const songs = [
       url:
         "https://is2-ssl.mzstatic.com/image/thumb/Music128/v4/16/50/d3/1650d3f1-9c0d-1756-bd93-064a2ea0406e/source/100x100bb.jpg",
     },
-    notes: {
-      text: "Cappo on 5th fret",
-      type: "info",
-    },
+    capoAdjustment: 5,
     chordSections: [
       {
         title: "Verse",
@@ -1002,10 +990,7 @@ const songs = [
       url:
         "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/a9/1b/d9/a91bd92b-ed9b-c345-327c-4dbe0e5d327f/source/100x100bb.jpg",
     },
-    notes: {
-      text: "Cappo 5th fret",
-      type: "info",
-    },
+    capoAdjustment: 5,
     chordSections: [
       {
         title: "Intro",
@@ -1072,10 +1057,7 @@ const songs = [
       url:
         "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/c8/a5/79/c8a5793d-c0d6-d707-fc9b-4c4fdfee6352/source/100x100bb.jpg",
     },
-    notes: {
-      text: "Cappo 3rd fret",
-      type: "info",
-    },
+    capoAdjustment: 3,
     chordSections: [
       {
         title: "Verse",
