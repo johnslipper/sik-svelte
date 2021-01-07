@@ -21,12 +21,12 @@
   <LegendSticky>Details</LegendSticky>
   <div class="wrapper">
     <SongEditDetails
-      title={song.title}
-      artist={song.artist}
-      album={song.album}
-      artwork={song.artwork}
-      tuning={song.tuning}
-      capoAdjustment={song.capoAdjustment} />
+      bind:title={song.title}
+      bind:artist={song.artist}
+      bind:album={song.album}
+      bind:artwork={song.artwork}
+      bind:tuning={song.tuning}
+      bind:capoAdjustment={song.capoAdjustment} />
   </div>
 </Fieldset>
 <Fieldset>
