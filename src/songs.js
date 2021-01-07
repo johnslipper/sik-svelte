@@ -427,10 +427,6 @@ const songs = [
       url:
         "https://is2-ssl.mzstatic.com/image/thumb/Music1/v4/55/98/7d/55987da8-e519-0e5e-a994-0494c1da47ad/source/100x100bb.jpg",
     },
-    notes: {
-      text: "DADGAD tuning",
-      type: "warning",
-    },
     tuning: "D A D G A D",
     chordSections: [
       {
