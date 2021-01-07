@@ -39,7 +39,6 @@
     artworkUrl100,
   }) {
     artwork = {
-      title: trackName,
       artist: artistName,
       album: collectionName,
       url: artworkUrl100,
