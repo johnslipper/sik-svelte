@@ -100,7 +100,7 @@
           <Input
             id="chordNameSearch"
             bind:value={searchInput}
-            placeholder="e.g. Fmaj7"
+            placeholder="e.g. Bbmaj7"
             disabled={isSearching} />
           {#if noResults}
             <div class="noResults" in:fade>No results</div>
