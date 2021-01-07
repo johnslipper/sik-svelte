@@ -7,6 +7,7 @@
   import { Button, ButtonDefault } from "../../ui/Button";
   export let chordSection;
   export let tuning;
+  export let capoAdjustment;
   export let key;
   export let onRemove;
 
@@ -91,6 +92,7 @@
           <SongEditChord
             {chordSection}
             {tuning}
+            {capoAdjustment}
             {chord}
             onEdit={handleEditChord}
             onRemove={handleRemoveChord} />

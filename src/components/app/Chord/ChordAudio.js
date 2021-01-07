@@ -142,13 +142,13 @@ export class ChordAudio {
 }
 
 /* Initialise, play and destroy a single chord instance */
-export function playChord(frets, duration = 1000) {
+export function playChord(frets, capoAdjustment, duration = 1000) {
   const chordFrets = frets
     .split(" ")
     .map((fret) => (fret === "X" ? undefined : parseInt(fret)));
   if (chordFrets && chordFrets.length) {
     let chordAudio = new ChordAudio(duration);
-    chordAudio.play(chordFrets);
+    chordAudio.play(chordFrets, capoAdjustment);
     window.setTimeout(() => (chordAudio = null), duration);
   }
 }

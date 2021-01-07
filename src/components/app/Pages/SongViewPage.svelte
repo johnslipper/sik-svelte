@@ -53,7 +53,10 @@
         <SongLyrics lyrics={song.lyrics} />
       </TabPanel>
       <TabPanel>
-        <SongViewChords chords={song.chordSections} tuning={song.tuning} />
+        <SongViewChords
+          chords={song.chordSections}
+          tuning={song.tuning}
+          capoAdjustment={song.capoAdjustment} />
       </TabPanel>
     </div>
     <div

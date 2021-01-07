@@ -8,6 +8,7 @@
   import Icon from "../../ui/Icons/Icon.svelte";
   export let chord;
   export let tuning;
+  export let capoAdjustment;
 
   const { open } = getContext("simple-modal");
 
@@ -19,7 +20,7 @@
           message: "Cannot play chords with custom tuning yet sorry",
         });
       } else {
-        playChord(chord.frets);
+        playChord(chord.frets, capoAdjustment);
       }
     } else {
       open(Dialogue, {

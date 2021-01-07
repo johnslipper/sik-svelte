@@ -5,6 +5,7 @@
   import { ButtonDefault } from "../../ui/Button";
   export let chordSections = [];
   export let tuning;
+  export let capoAdjustment;
 
   const { open } = getContext("simple-modal");
 
@@ -64,6 +65,7 @@
       <SongEditChordSections
         {chordSection}
         {tuning}
+        {capoAdjustment}
         key={i}
         onRemove={handleRemoveSection} />
     </div>

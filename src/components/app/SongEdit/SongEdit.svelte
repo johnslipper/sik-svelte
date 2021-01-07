@@ -25,7 +25,8 @@
       artist={song.artist}
       album={song.album}
       artwork={song.artwork}
-      tuning={song.tuning} />
+      tuning={song.tuning}
+      capoAdjustment={song.capoAdjustment} />
   </div>
 </Fieldset>
 <Fieldset>
@@ -40,6 +41,9 @@
 <Fieldset>
   <LegendSticky>Chords</LegendSticky>
   <div>
-    <SongEditChords chordSections={song.chordSections} tuning={song.tuning} />
+    <SongEditChords
+      chordSections={song.chordSections}
+      tuning={song.tuning}
+      capoAdjustment={song.capoAdjustment} />
   </div>
 </Fieldset>

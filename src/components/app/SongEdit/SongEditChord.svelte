@@ -9,6 +9,7 @@
   export let chord;
   export let chordSection;
   export let tuning;
+  export let capoAdjustment;
   export let onEdit;
   export let onRemove;
 </script>
@@ -52,7 +53,7 @@
           <div>Edit</div>
           <VisuallyHidden>chord</VisuallyHidden>
         </Button>
-        <ChordPlay {chord} {tuning} />
+        <ChordPlay {chord} {tuning} {capoAdjustment} />
         <div class="danger">
           <Button on:click={() => onRemove(chordSection, chord)}>
             <Icon path={crossIcon} size="1.5rem" />

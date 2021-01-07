@@ -7,6 +7,11 @@
   import Heading from "../../ui/Heading.svelte";
   export let chords;
   export let tuning;
+  export let capoAdjustment;
+
+  function getSectionTitle(title) {
+    return capoAdjustment ? `${title} (capo ${capoAdjustment})` : title;
+  }
 </script>
 
 <style>
@@ -16,10 +21,10 @@
     padding: 0.5rem 1rem;
     position: sticky;
     top: 5rem;
-    font-size: 0.85rem;
     background-color: var(--neutralLightest);
     z-index: 1;
     text-align: center;
+    text-transform: uppercase;
   }
   .chords {
     display: grid;
@@ -65,7 +70,10 @@
     {#each chords as section}
       <section>
         <div class="sectionHeading">
-          <Heading text={section.title} level="3" fontSize="1rem" />
+          <Heading
+            text={getSectionTitle(section.title)}
+            level="3"
+            fontSize="0.85rem" />
         </div>
         {#if section.chords}
           <ul class="chords">
@@ -78,7 +86,7 @@
                       <VisuallyHidden>
                         <div id="viewChordActionsMenu">Chord actions</div>
                       </VisuallyHidden>
-                      <ChordPlay {chord} {tuning} />
+                      <ChordPlay {chord} {tuning} {capoAdjustment} />
                     </div>
                   </div>
                 </Dropdown>

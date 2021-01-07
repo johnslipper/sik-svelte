@@ -12,6 +12,7 @@
   export let album;
   export let artwork;
   export let tuning;
+  export let capoAdjustment;
 
   const { open, close } = getContext("simple-modal");
 
@@ -101,5 +102,10 @@
     </FormGroup>
 
     <SongEditTuning bind:tuning />
+
+    <FormGroup>
+      <LabelDefault htmlFor="songAlbum">Capo adjustment</LabelDefault>
+      <Input type="number" id="songAlbum" bind:value={capoAdjustment} />
+    </FormGroup>
   </div>
 </div>
