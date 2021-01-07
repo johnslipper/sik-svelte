@@ -7,17 +7,16 @@
     color: inherit;
     background: none;
     border: none;
-    padding: 0;
+    padding: var(--buttonPadding);
+    text-transform: uppercase;
+    font-size: var(--buttonFontSize);
+    transition: transform 150ms;
   }
   button:focus {
     outline: var(--focusOutline);
   }
-  button:hover,
   button:active {
-    text-decoration: underline;
-  }
-  button:active {
-    color: var(--primary);
+    transform: scale(0.95);
   }
 </style>
 
