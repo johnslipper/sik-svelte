@@ -1,4 +1,5 @@
 <script>
+  export let type = "text";
   export let id;
   export let name = "";
   export let placeholder = "";
@@ -23,13 +24,26 @@
   }
 </style>
 
-<input
-  type="text"
-  {id}
-  {name}
-  {placeholder}
-  {maxlength}
-  {disabled}
-  {required}
-  bind:value
-  on:blur />
+{#if type === 'number'}
+  <input
+    type="number"
+    {id}
+    {name}
+    {placeholder}
+    {maxlength}
+    {disabled}
+    {required}
+    bind:value
+    on:blur />
+{:else}
+  <input
+    type="text"
+    {id}
+    {name}
+    {placeholder}
+    {maxlength}
+    {disabled}
+    {required}
+    bind:value
+    on:blur />
+{/if}
