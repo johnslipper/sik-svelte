@@ -26,7 +26,6 @@
 
   function handleStringChanged() {
     tuning = strings.join(" ");
-    console.log("strings changed:", strings, tuning);
   }
   function handleDisableCustomTuning() {
     if (!enableCustomTuning) {
