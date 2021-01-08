@@ -15,12 +15,15 @@
 </script>
 
 <style>
+  section {
+    --headerTopOffset: 4.25rem;
+  }
   .sectionHeading {
     display: block;
     width: 100%;
     padding: 0.5rem 1rem;
     position: sticky;
-    top: 5rem;
+    top: var(--headerTopOffset);
     background-color: var(--neutralLightest);
     z-index: 1;
     text-align: center;

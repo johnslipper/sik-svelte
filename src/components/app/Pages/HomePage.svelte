@@ -15,6 +15,12 @@
   onMount(() => window.setTimeout(() => (simulatedSongs = songs), 1000));
 </script>
 
+<style>
+  .songsList {
+    --headerTopOffset: 3.5rem;
+  }
+</style>
+
 <AppHeader>
   <Logo />
   <div slot="end" in:fade>
@@ -24,4 +30,6 @@
     </ButtonLink>
   </div>
 </AppHeader>
-<SongsList songs={simulatedSongs} />
+<div class="songsList">
+  <SongsList songs={simulatedSongs} />
+</div>
