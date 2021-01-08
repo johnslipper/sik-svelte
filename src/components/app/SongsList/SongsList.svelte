@@ -1,7 +1,10 @@
 <script>
   import { fade } from "svelte/transition";
   import SongsListItem from "./SongsListItem.svelte";
-  export let songs = [];
+  import PlaceholderItem from "./PlaceholderItem.svelte";
+  export let songs;
+
+  let placeholderCount = 10;
 </script>
 
 <style>
@@ -10,17 +13,31 @@
     padding: 0;
     margin: 0;
   }
+  .placeholders {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - var(--headerTopOffset));
+    overflow: hidden;
+  }
 </style>
 
-<ul>
-  {#each songs as song}
-    <li in:fade>
-      <SongsListItem
-        id={song.id}
-        title={song.title}
-        artist={song.artist}
-        album={song.album}
-        artwork={song.artwork} />
-    </li>
-  {/each}
-</ul>
+{#if songs}
+  <ul>
+    {#each songs as song}
+      <li in:fade>
+        <SongsListItem
+          id={song.id}
+          title={song.title}
+          artist={song.artist}
+          album={song.album}
+          artwork={song.artwork} />
+      </li>
+    {/each}
+  </ul>
+{:else}
+  <div class="placeholders">
+    {#each Array(placeholderCount) as _placeholder}
+      <PlaceholderItem />
+    {/each}
+  </div>
+{/if}
