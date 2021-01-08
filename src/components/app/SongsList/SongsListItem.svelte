@@ -51,6 +51,7 @@
     height: 3.5rem;
     border-radius: 50%;
     overflow: hidden;
+    flex-shrink: 0;
     box-shadow: 0px 0px 0px 2px var(--neutralLight);
   }
   .text {
