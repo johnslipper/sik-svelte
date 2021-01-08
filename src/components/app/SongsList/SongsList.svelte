@@ -1,5 +1,6 @@
 <script>
-  import { fade } from "svelte/transition";
+  import { fly } from "svelte/transition";
+  import { backOut } from "svelte/easing";
   import SongsListItem from "./SongsListItem.svelte";
   import PlaceholderItem from "./PlaceholderItem.svelte";
   export let songs;
@@ -12,6 +13,7 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+    overflow: hidden;
   }
   .placeholders {
     display: flex;
@@ -23,8 +25,8 @@
 
 {#if songs}
   <ul>
-    {#each songs as song}
-      <li in:fade>
+    {#each songs as song, i}
+      <li in:fly={{ x: -20, delay: i * 75, easing: backOut, duration: 750 }}>
         <SongsListItem
           id={song.id}
           title={song.title}
