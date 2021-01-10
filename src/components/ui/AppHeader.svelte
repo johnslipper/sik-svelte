@@ -15,10 +15,6 @@
     color: var(--primaryContrast);
     align-items: center;
   }
-  header :global(a) {
-    padding: 1rem var(--contentPaddingHorizontal);
-    display: inline-block;
-  }
 
   .start {
     grid-column: 1;
