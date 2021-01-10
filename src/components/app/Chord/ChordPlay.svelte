@@ -18,6 +18,7 @@
         open(Dialogue, {
           CancelText: undefined,
           message: "Cannot play chords with custom tuning yet sorry",
+          showCancelButton: false,
         });
       } else {
         playChord(chord.frets, capoAdjustment);
