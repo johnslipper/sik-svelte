@@ -1,5 +1,6 @@
 <script>
   import { getContext } from "svelte";
+  import { fade } from "svelte/transition";
   import AddArea from "../../ui/AddArea.svelte";
   import SongEditChord from "./SongEditChord.svelte";
   import ChordEdit from "../Chord/ChordEdit.svelte";
@@ -87,8 +88,8 @@
   </div>
   <ul class="chords">
     {#if chordSection.chords}
-      {#each chordSection.chords as chord}
-        <li>
+      {#each chordSection.chords as chord, i}
+        <li in:fade={{ delay: i * 100 }}>
           <SongEditChord
             {chordSection}
             {tuning}

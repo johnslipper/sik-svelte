@@ -1,5 +1,6 @@
 <script>
   import { getContext } from "svelte";
+  import { fade } from "svelte/transition";
   import SongEditChordSections from "./SongEditChordSections.svelte";
   import Dialogue from "../../ui/Modal/Dialogue.svelte";
   import { ButtonDefault } from "../../ui/Button";
@@ -61,7 +62,7 @@
 
 {#if chordSections && chordSections.length}
   {#each chordSections as chordSection, i}
-    <div class="chordSection">
+    <div class="chordSection" in:fade={{ delay: i * 50 }}>
       <SongEditChordSections
         {chordSection}
         {tuning}

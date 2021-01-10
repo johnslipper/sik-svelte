@@ -81,7 +81,7 @@
         {#if section.chords}
           <ul class="chords">
             {#each section.chords as chord, i}
-              <li class="chord">
+              <li class="chord" in:fade={{ delay: i * 50 }}>
                 <Dropdown position="center">
                   <ChordView {chord} {tuning} />
                   <div slot="content">
