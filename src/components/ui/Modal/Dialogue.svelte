@@ -3,6 +3,8 @@
   import { ButtonPrimary, ButtonDefault } from "../Button";
   export let message;
   export let title = "";
+  export let showOkayButton = true;
+  export let showCancelButton = true;
   export let okayText = "OK";
   export let cancelText = "Cancel";
   export let onCancel = () => {};
@@ -42,10 +44,10 @@
 <div class="message">{message}</div>
 
 <div class="buttons">
-  {#if okayText}
+  {#if showOkayButton}
     <ButtonPrimary on:click={_onOkay}>{okayText}</ButtonPrimary>
   {/if}
-  {#if cancelText}
+  {#if showCancelButton}
     <ButtonDefault on:click={_onCancel}>{cancelText}</ButtonDefault>
   {/if}
 </div>
