@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
+  import { Link } from "svelte-routing";
   import AppHeader from "../../ui/AppHeader.svelte";
   import SongsList from "../SongsList/SongsList.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
@@ -22,7 +23,9 @@
 </style>
 
 <AppHeader>
-  <LogoCompact />
+  <Link to="/">
+    <LogoCompact />
+  </Link>
   <div slot="end" in:fade>
     <ButtonLink to="/add">
       <Icon path={plusIcon} size="1.1rem" />

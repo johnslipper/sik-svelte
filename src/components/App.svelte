@@ -1,6 +1,7 @@
 <script>
   import { Router, Route } from "svelte-routing";
   import HomePage from "./app/Pages/HomePage.svelte";
+  import IntroPage from "./app/Pages/IntroPage.svelte";
   import SongAddPage from "./app/Pages/SongAddPage.svelte";
   import SongEditPage from "./app/Pages/SongEditPage.svelte";
   import SongViewPage from "./app/Pages/SongViewPage.svelte";
@@ -31,8 +32,12 @@
 
 <Router {url}>
   <main style={cssVarStyles}>
-    <Route path="/">
+    <Route path="/songs">
       <HomePage />
+    </Route>
+
+    <Route path="/">
+      <IntroPage />
     </Route>
 
     <Route path="/song/:id" let:params>
