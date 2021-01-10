@@ -4,7 +4,7 @@
   import AppHeader from "../../ui/AppHeader.svelte";
   import SongsList from "../SongsList/SongsList.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  import Logo from "../../app/Logo.svelte";
+  import LogoCompact from "../Logo/LogoCompact.svelte";
   import Icon from "../../ui/Icons/Icon.svelte";
   import { plusIcon } from "../../ui/Icons/icons.js";
   import { ButtonLink } from "../../ui/Button";
@@ -22,7 +22,7 @@
 </style>
 
 <AppHeader>
-  <Logo />
+  <LogoCompact />
   <div slot="end" in:fade>
     <ButtonLink to="/add">
       <Icon path={plusIcon} size="1.1rem" />
