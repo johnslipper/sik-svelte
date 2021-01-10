@@ -18,6 +18,9 @@
   }
   :global(main) {
     color: var(--bodyColor);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
   }
   :global(a) {
     text-decoration: none;
