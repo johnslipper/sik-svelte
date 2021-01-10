@@ -10,7 +10,7 @@
 <Modal>
   <AppHeader title="Add song">
     <div slot="start" in:fade>
-      <ButtonLink to="/">
+      <ButtonLink to="/songs">
         <span>Cancel</span>
         <VisuallyHidden>adding song</VisuallyHidden>
       </ButtonLink>

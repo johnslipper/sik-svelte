@@ -74,7 +74,7 @@
 <header>
   <div class="content">
     <div class="start" in:fade={{ delay: animationDelay + 50 }}>
-      <ButtonLink to="/">
+      <ButtonLink to="/songs">
         <Icon path={leftArrowIcon} size="1.1rem" />
         <VisuallyHidden>back to songs</VisuallyHidden>
       </ButtonLink>
