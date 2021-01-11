@@ -12,6 +12,7 @@ const colors = {
   neutralDark: getColor(colorBases.neutral, 27),
   neutralMedium: getColor(colorBases.neutral),
   neutralLight: getColor(colorBases.neutral, 80),
+  neutralLighter: getColor(colorBases.neutral, 87),
   neutralLightest: getColor(colorBases.neutral, 95),
   danger: getColor(colorBases.danger),
 };
@@ -29,6 +30,7 @@ export const theme = {
   neutralDark: colors.neutralDark,
   neutralMedium: colors.neutralMedium,
   neutralLight: colors.neutralLight,
+  neutralLighter: colors.neutralLighter,
   neutralLightest: colors.neutralLightest,
   danger: colors.danger,
   /* General */
