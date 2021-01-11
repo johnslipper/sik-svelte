@@ -28,9 +28,9 @@
     align-items: center;
   }
   .wrapper {
-    display: flex;
+    display: grid;
     gap: 0.75rem;
-    width: 100%;
+    grid-template-columns: 5rem 1fr;
     margin-bottom: -2.5rem;
     margin-top: -1rem;
   }
@@ -38,6 +38,14 @@
     padding-top: 0.25rem;
     display: flex;
     flex-direction: column;
+    min-width: 0;
+  }
+  .title,
+  .artist,
+  .album {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
   .title {
     font-size: 0.85em;
