@@ -1,5 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
+  import { navigate } from "svelte-routing";
   import Modal from "svelte-simple-modal";
   import AppHeader from "../../ui/AppHeader.svelte";
   import SongEdit from "../SongEdit/SongEdit.svelte";
@@ -7,10 +8,12 @@
   export let id;
   import songs from "../../../songs.js";
   import { ButtonText, ButtonLink } from "../../ui/Button";
-  const song = songs[id];
+  let song = songs[id];
 
-  function handleSave() {
+  function handleSave(song) {
     // TODO
+    console.log(song);
+    navigate(`/song/${id}`);
   }
 </script>
 
@@ -23,10 +26,10 @@
       </ButtonLink>
     </div>
     <div slot="end" in:fade>
-      <ButtonText on:click={handleSave}>Save</ButtonText>
+      <ButtonText on:click={() => handleSave(song)}>Save</ButtonText>
     </div>
   </AppHeader>
   <div class="page" in:fade>
-    <SongEdit {song} />
+    <SongEdit bind:song />
   </div>
 </Modal>
