@@ -13,14 +13,14 @@
   function handleSave(song) {
     // TODO
     console.log(song);
-    navigate(`/song/${id}`);
+    navigate(`/songs/${id}`);
   }
 </script>
 
 <Modal>
   <AppHeader title="Edit song">
     <div slot="start" in:fade>
-      <ButtonLink to="/song/{id}">
+      <ButtonLink to="/songs/{id}">
         <span>Cancel</span>
         <VisuallyHidden>editing song</VisuallyHidden>
       </ButtonLink>

@@ -108,7 +108,7 @@
       </div>
     </div>
     <div class="end" in:fade={{ delay: animationDelay + 50 }}>
-      <ButtonLink to="/song/{id}/edit">
+      <ButtonLink to="/songs/{id}/edit">
         <Icon path={pencilIcon} size="1.1rem" />
         <VisuallyHidden>Edit song</VisuallyHidden>
       </ButtonLink>

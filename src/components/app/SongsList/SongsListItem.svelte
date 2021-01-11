@@ -67,7 +67,7 @@
 </style>
 
 <div class="list-item">
-  <Link to="/song/{id}" on:click={handleClick}>
+  <Link to="/songs/{id}" on:click={handleClick}>
     <div class="artwork" out:transitionOut={{ x: -50 }}>
       <ArtworkView {album} {artwork} />
     </div>

@@ -40,7 +40,7 @@
       <IntroPage />
     </Route>
 
-    <Route path="/song/:id" let:params>
+    <Route path="/songs/:id" let:params>
       <SongViewPage id={params.id} />
     </Route>
 
@@ -48,7 +48,7 @@
       <SongAddPage />
     </Route>
 
-    <Route path="/song/:id/edit" let:params>
+    <Route path="/songs/:id/edit" let:params>
       <SongEditPage id={params.id} />
     </Route>
   </main>
