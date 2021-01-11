@@ -39,7 +39,10 @@
   </div>
 </Fieldset>
 <Fieldset>
-  <LegendSticky>Chords</LegendSticky>
+  <LegendSticky>
+    Chords
+    {song.capoAdjustment ? `(capo ${song.capoAdjustment})` : ''}
+  </LegendSticky>
   <div>
     <SongEditChords
       chordSections={song.chordSections}
