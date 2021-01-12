@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from "svelte";
   import { fade } from "svelte/transition";
   import { Link } from "svelte-routing";
   import AppHeader from "../../ui/AppHeader.svelte";
@@ -9,11 +8,7 @@
   import Icon from "../../ui/Icons/Icon.svelte";
   import { plusIcon } from "../../ui/Icons/icons.js";
   import { ButtonLink } from "../../ui/Button";
-  import songs from "../../../songs.js";
-
-  let simulatedSongs;
-
-  onMount(() => window.setTimeout(() => (simulatedSongs = songs), 1000));
+  import { songs } from "../../../songs.js";
 </script>
 
 <style>
@@ -34,5 +29,5 @@
   </div>
 </AppHeader>
 <div class="songsList">
-  <SongsList songs={simulatedSongs} />
+  <SongsList songs={$songs} />
 </div>
