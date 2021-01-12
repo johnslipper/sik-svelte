@@ -1,6 +1,6 @@
 const colorBases = {
   primary: [329, 78, 44],
-  neutral: [236, 8, 50],
+  neutral: [236, 8, 48],
   danger: [343, 100, 41],
 };
 
