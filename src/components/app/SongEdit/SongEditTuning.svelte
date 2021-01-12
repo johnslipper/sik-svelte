@@ -4,7 +4,8 @@
     FieldsetDefault,
     LegendDefault,
     FormGroup,
-    Input,
+    Select,
+    Option,
     Label,
     LabelDefault,
   } from "../../ui/Form";
@@ -13,7 +14,7 @@
   export let tuning;
 
   let stringCount = 6;
-  let placeholders = ["E", "A", "D", "G", "B", "E"];
+  let notes = ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"];
   let strings = [];
   let enableCustomTuning = false;
 
@@ -55,20 +56,30 @@
         on:change={handleDisableCustomTuning} />
       Enable custom tuning
     </Label>
-    <div class="fields">
-      {#each Array(stringCount) as _string, i}
-        <FormGroup>
-          <VisuallyHidden>
-            <LabelDefault htmlFor="string{i + 1}">String {i + 1}</LabelDefault>
-          </VisuallyHidden>
-          <Input
-            id="string{i + 1}"
-            disabled={!enableCustomTuning}
-            placeholder={placeholders[i]}
-            bind:value={strings[i]}
-            on:blur={handleStringChanged} />
-        </FormGroup>
-      {/each}
-    </div>
+    {#if enableCustomTuning}
+      <div class="fields">
+        {#each Array(stringCount) as _string, i}
+          <FormGroup>
+            <VisuallyHidden>
+              <LabelDefault htmlFor="string{i + 1}">
+                String
+                {i + 1}
+              </LabelDefault>
+            </VisuallyHidden>
+            <Select
+              id="string{i + 1}"
+              disabled={!enableCustomTuning}
+              required
+              bind:value={strings[i]}
+              on:blur={handleStringChanged}>
+              <Option value="" />
+              {#each notes as note}
+                <Option value={note}>{note}</Option>
+              {/each}
+            </Select>
+          </FormGroup>
+        {/each}
+      </div>
+    {/if}
   </div>
 </FieldsetDefault>
