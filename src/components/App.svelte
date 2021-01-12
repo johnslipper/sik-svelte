@@ -5,6 +5,7 @@
   import SongAddPage from "./app/Pages/SongAddPage.svelte";
   import SongEditPage from "./app/Pages/SongEditPage.svelte";
   import SongViewPage from "./app/Pages/SongViewPage.svelte";
+  import SettingsPage from "./app/Pages/SettingsPage.svelte";
   import { theme } from "../theme.js";
   export let url = ""; //This property is necessary declare to avoid ignore the Router
 
@@ -50,6 +51,10 @@
 
     <Route path="/songs/:id/edit" let:params>
       <SongEditPage id={params.id} />
+    </Route>
+
+    <Route path="/settings">
+      <SettingsPage />
     </Route>
   </main>
 </Router>
