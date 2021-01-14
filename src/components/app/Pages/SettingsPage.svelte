@@ -6,7 +6,7 @@
   import { ButtonDefault, ButtonLink } from "../../ui/Button/";
   import Icon from "../../ui/Icons/Icon.svelte";
   import { leftArrowIcon } from "../../ui/Icons/icons.js";
-  import Heading from "../../ui/Heading.svelte";
+  import Heading from "../../ui/Heading/Heading.svelte";
   import { songs } from "../../../songs.js";
 
   function handleExport() {

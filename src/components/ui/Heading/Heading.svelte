@@ -1,5 +1,5 @@
 <script>
-  import { theme } from "../../theme.js";
+  import { theme } from "../../../theme.js";
   export let text = "Heading";
   export let level = 1;
   export let fontSize = "1.2rem";

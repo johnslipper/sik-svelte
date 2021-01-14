@@ -4,7 +4,7 @@
   import Dropdown from "../../ui/Dropdown.svelte";
   import ChordView from "../Chord/ChordView.svelte";
   import ChordPlay from "../Chord/ChordPlay.svelte";
-  import Heading from "../../ui/Heading.svelte";
+  import Heading from "../../ui/Heading/Heading.svelte";
   export let chords;
   export let tuning;
   export let capoAdjustment;

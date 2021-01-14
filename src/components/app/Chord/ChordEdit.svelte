@@ -4,7 +4,7 @@
   import { chordSearch } from "./chordSearch.js";
   import { ButtonPrimary, ButtonDefault } from "../../ui/Button";
   import { Form, FormGroup, Input, LabelDefault } from "../../ui/Form";
-  import Heading from "../../ui/Heading.svelte";
+  import Heading from "../../ui/Heading/Heading.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import ChordPreview from "./ChordPreview.svelte";
 
@@ -70,25 +70,6 @@
   }
 </script>
 
-<style>
-  .wrapper,
-  .search {
-    display: grid;
-    gap: 0.5rem;
-  }
-  .buttons {
-    display: flex;
-    gap: 0.25rem;
-  }
-  .custom {
-    margin-left: auto;
-  }
-  .noResults {
-    margin: 0.5rem 0;
-    color: var(--bodyColorMuted);
-  }
-</style>
-
 <div class="wrapper">
   {#if !showChord}
     <div class="heading">
@@ -102,7 +83,8 @@
             id="chordNameSearch"
             bind:value={searchInput}
             placeholder="e.g. Bbmaj7"
-            disabled={isSearching} />
+            disabled={isSearching}
+          />
           {#if noResults}
             <div class="noResults" in:fade>No results</div>
           {/if}
@@ -137,6 +119,26 @@
       {tuning}
       {onSave}
       {capoAdjustment}
-      onCancel={handleChooseBack} />
+      onCancel={handleChooseBack}
+    />
   {/if}
 </div>
+
+<style>
+  .wrapper,
+  .search {
+    display: grid;
+    gap: 0.5rem;
+  }
+  .buttons {
+    display: flex;
+    gap: 0.25rem;
+  }
+  .custom {
+    margin-left: auto;
+  }
+  .noResults {
+    margin: 0.5rem 0;
+    color: var(--bodyColorMuted);
+  }
+</style>

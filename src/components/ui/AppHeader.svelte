@@ -1,6 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import Heading from "../ui/Heading.svelte";
+  import Heading from "./Heading/Heading.svelte";
   export let title = "";
 </script>
 

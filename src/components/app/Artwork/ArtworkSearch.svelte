@@ -3,7 +3,7 @@
   import ArtworkSearchResults from "./ArtworkSearchResults.svelte";
   import ArtworkSearchSelected from "./ArtworkSearchSelected.svelte";
   import { Form, FormGroup, Input, LabelDefault } from "../../ui/Form";
-  import Heading from "../../ui/Heading.svelte";
+  import Heading from "../../ui/Heading/Heading.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import { ButtonPrimary } from "../../ui/Button";
   export let queryInput;
