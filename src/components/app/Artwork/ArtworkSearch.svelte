@@ -35,8 +35,8 @@
     background-color: var(--primaryContrast);
   }
   .search {
-    display: flex;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: 1fr auto;
     gap: 0.25rem;
     margin-top: 0.5rem;
   }

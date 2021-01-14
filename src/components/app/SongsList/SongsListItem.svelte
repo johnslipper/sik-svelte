@@ -39,8 +39,9 @@
   }
   .list-item > :global(a) {
     padding: 1rem;
-    display: flex;
+    display: grid;
     gap: 1rem;
+    grid-template-columns: auto 1fr;
     transition: background-color 150ms;
   }
   .list-item > :global(a):focus {

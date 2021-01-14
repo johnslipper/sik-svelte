@@ -64,9 +64,10 @@
     gap: 1rem;
   }
   .details {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
     gap: 1.5rem;
+    grid-template-columns: auto 1fr;
+    max-width: 34rem;
   }
   .artwork :global(button) {
     /* iTunes artwork size */

@@ -8,7 +8,6 @@
     display: flex;
     align-items: center;
     padding: var(--buttonPadding);
-    gap: 0.25rem;
     font-size: var(--buttonFontSize);
     transition: transform 150ms;
     text-transform: uppercase;

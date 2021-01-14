@@ -42,8 +42,9 @@
     gap: 0.5rem;
   }
   .fields {
-    display: flex;
+    display: grid;
     gap: 0.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(2rem, 1fr));
   }
 </style>
 
