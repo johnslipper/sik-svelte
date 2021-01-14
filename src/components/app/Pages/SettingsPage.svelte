@@ -8,6 +8,7 @@
   import { leftArrowIcon } from "../../ui/Icons/icons.js";
   import Heading from "../../ui/Heading/Heading.svelte";
   import { songs } from "../../../songs.js";
+  import HeadingSticky from "../../ui/Heading/HeadingSticky.svelte";
 
   function handleExport() {
     const exportName = `SIK Songs Export (${getDateString()})`;
@@ -32,6 +33,12 @@
   }
 </script>
 
+<style>
+  .wrapper {
+    padding: var(--contentPaddingHorizontal);
+  }
+</style>
+
 <Modal>
   <AppHeader title="Settings">
     <div slot="start" in:fade>
@@ -42,7 +49,11 @@
     </div>
   </AppHeader>
   <div class="page" in:fly={{ y: 1000 }}>
-    <Heading text="Import/Export songs" />
-    <ButtonDefault on:click={handleExport}>Export songs</ButtonDefault>
+    <HeadingSticky>
+      <Heading text="Import/Export songs" fontSize="inherit" />
+    </HeadingSticky>
+    <div class="wrapper">
+      <ButtonDefault on:click={handleExport}>Export songs</ButtonDefault>
+    </div>
   </div>
 </Modal>
