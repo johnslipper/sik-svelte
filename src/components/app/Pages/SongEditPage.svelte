@@ -31,7 +31,7 @@
       </div>
     </AppHeader>
     <div class="page" in:fade>
-      <SongEdit bind:song />
+      <SongEdit bind:song isEdit="true"/>
     </div>
   </Modal>
 {:else}Loading...{/if}
