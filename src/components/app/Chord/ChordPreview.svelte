@@ -7,8 +7,11 @@
   import ChordEditFieldset from "./ChordEditFieldset.svelte";
   import ChordEditFret from "./ChordEditFret.svelte";
   import ChordEditFinger from "./ChordEditFinger.svelte";
+  import ChordPlay from "./ChordPlay.svelte";
+  import Dropdown from "../../ui/Dropdown.svelte";
   export let chord;
   export let tuning = "E A D G B E";
+  export let capoAdjustment;
   export let onSave;
   export let onCancel;
 
@@ -22,6 +25,7 @@
   $: isPreviewPossible =
     Object.values(frets).filter((fret) => fret.toString().length).length === 6;
   $: tuningFormatted = tuning.split(" ");
+  $: previewFrets && handleChordUpdate();
 
   function processChordEntries(entries, key) {
     return Object.fromEntries(
@@ -42,9 +46,12 @@
     }
   }
 
-  function onSubmit() {
+  function handleChordUpdate() {
     chord.frets = previewFrets;
     chord.fingering = previewFingerings;
+  }
+
+  function onSubmit() {
     onSave(chord);
   }
 </script>
@@ -74,6 +81,12 @@
     max-width: 12rem;
     margin-left: auto;
     margin-right: auto;
+  }
+  .actions :global(button) {
+    display: grid;
+    gap: 0.5rem;
+    justify-items: center;
+    padding: 0.75rem;
   }
 </style>
 
@@ -169,10 +182,17 @@
       <div class="preview">
         {#if isPreviewPossible}
           <div class="visualised">
-            <ChordVisualised
-              frets={previewFrets}
-              fingering={previewFingerings}
-              {tuning} />
+            <Dropdown position="center">
+              <ChordVisualised
+                frets={previewFrets}
+                fingering={previewFingerings}
+                {tuning} />
+              <div slot="content">
+                <div class="actions" aria-label="Chord actions">
+                  <ChordPlay {chord} {tuning} {capoAdjustment} />
+                </div>
+              </div>
+            </Dropdown>
           </div>
         {:else}
           <div class="placeholder">

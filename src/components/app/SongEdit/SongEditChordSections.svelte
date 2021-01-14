@@ -18,6 +18,7 @@
     open(ChordEdit, {
       chord,
       tuning,
+      capoAdjustment,
       onSave: handleSaveChord,
       onCancel: () => close(),
     });

@@ -10,6 +10,7 @@
 
   export let chord;
   export let tuning = "E A D G B E";
+  export let capoAdjustment;
   export let onSave;
   export let onCancel;
 
@@ -131,6 +132,11 @@
     <div class="heading">
       <Heading text="Edit chord" level="2" fontSize="1.25rem" />
     </div>
-    <ChordPreview {chord} {tuning} {onSave} onCancel={handleChooseBack} />
+    <ChordPreview
+      bind:chord
+      {tuning}
+      {onSave}
+      {capoAdjustment}
+      onCancel={handleChooseBack} />
   {/if}
 </div>
