@@ -6,13 +6,15 @@
   import AddArea from "../../ui/AddArea.svelte";
   import SongEditTuning from "./SongEditTuning.svelte";
   import { Button } from "../../ui/Button";
-  import { Input, FormGroup, LabelDefault } from "../../ui/Form";
+  import { Input, FormGroup, LabelDefault, Select, Option } from "../../ui/Form";
   export let title;
   export let artist;
   export let album;
   export let artwork;
   export let tuning;
   export let capoAdjustment;
+
+  const capoOptions = new Array(25)
 
   const { open, close } = getContext("simple-modal");
 
@@ -105,8 +107,13 @@
     <SongEditTuning bind:tuning />
 
     <FormGroup>
-      <LabelDefault htmlFor="songAlbum">Capo adjustment</LabelDefault>
-      <Input type="number" id="songAlbum" bind:value={capoAdjustment} />
+      <LabelDefault htmlFor="songCapo">Capo adjustment</LabelDefault>
+      <Select id="songCapo" bind:value={capoAdjustment}>
+        <Option value="">0</Option>
+          {#each capoOptions as _option, i}
+            <Option value={i+1}>{i+1}</Option>
+          {/each}
+        </Select>
     </FormGroup>
   </div>
 </div>
