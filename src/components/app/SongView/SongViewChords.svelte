@@ -5,6 +5,7 @@
   import ChordView from "../Chord/ChordView.svelte";
   import ChordPlay from "../Chord/ChordPlay.svelte";
   import Heading from "../../ui/Heading/Heading.svelte";
+  import HeadingSticky from "../../ui/Heading/HeadingSticky.svelte";
   export let chords;
   export let tuning;
   export let capoAdjustment;
@@ -17,17 +18,7 @@
 <style>
   section {
     --headerTopOffset: 4.25rem;
-  }
-  .sectionHeading {
-    display: block;
-    width: 100%;
-    padding: 0.5rem 1rem;
-    position: sticky;
-    top: var(--headerTopOffset);
-    background-color: var(--neutralLightest);
-    z-index: 1;
     text-align: center;
-    text-transform: uppercase;
   }
   .chords {
     display: grid;
@@ -72,12 +63,12 @@
   {#if chords && chords.length}
     {#each chords as section}
       <section>
-        <div class="sectionHeading">
+        <HeadingSticky>
           <Heading
             text={getSectionTitle(section.title)}
             level="3"
-            fontSize="0.85rem" />
-        </div>
+            fontSize="inherit" />
+        </HeadingSticky>
         {#if section.chords}
           <ul class="chords">
             {#each section.chords as chord, i}
