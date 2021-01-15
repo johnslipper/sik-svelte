@@ -6,7 +6,13 @@
   import AddArea from "../../ui/AddArea.svelte";
   import SongEditTuning from "./SongEditTuning.svelte";
   import { Button } from "../../ui/Button";
-  import { Input, FormGroup, LabelDefault, Select, Option } from "../../ui/Form";
+  import {
+    Input,
+    FormGroup,
+    LabelDefault,
+    Select,
+    Option,
+  } from "../../ui/Form";
   export let title;
   export let artist;
   export let album;
@@ -14,7 +20,7 @@
   export let tuning;
   export let capoAdjustment;
 
-  const capoOptions = new Array(25)
+  const capoOptions = new Array(25);
 
   const { open, close } = getContext("simple-modal");
 
@@ -35,28 +41,20 @@
     return `${artist} ${title} ${album}`.trim();
   }
 
-  function handleSelected({
-    trackName,
-    artistName,
-    collectionName,
-    artworkUrl100,
-  }) {
-    artwork = {
-      artist: artistName,
-      album: collectionName,
-      url: artworkUrl100,
-    };
-
+  function handleSelected(selected) {
+    artwork = selected;
     close();
 
-    open(Dialogue, {
-      message: "Use details of selected artwork for song?",
-      onOkay: () => {
-        title = trackName;
-        artist = artistName;
-        album = collectionName;
-      },
-    });
+    if (selected.album) {
+      open(Dialogue, {
+        message: "Use details of selected artwork for song?",
+        onOkay: () => {
+          title = selected.title;
+          artist = selected.artist;
+          album = selected.album;
+        },
+      });
+    }
   }
 </script>
 
@@ -110,10 +108,10 @@
       <LabelDefault htmlFor="songCapo">Capo adjustment</LabelDefault>
       <Select id="songCapo" bind:value={capoAdjustment}>
         <Option value="">0</Option>
-          {#each capoOptions as _option, i}
-            <Option value={i+1}>{i+1}</Option>
-          {/each}
-        </Select>
+        {#each capoOptions as _option, i}
+          <Option value={i + 1}>{i + 1}</Option>
+        {/each}
+      </Select>
     </FormGroup>
   </div>
 </div>
