@@ -34,18 +34,19 @@
     return false;
   }
 
-  function handleChooseCustomChord() {
+  function handleSelectCustomChord() {
     showChord = true;
     chord = {};
   }
 
-  function handleChooseBack() {
+  function handleSelectBack() {
     searchInput = searchInput || chord.name;
     showChord = false;
     chord = undefined;
   }
 
-  function handleChooseSearch() {
+
+  function handleSubmitSearch() {
     if (!searchInput) {
       return;
     }
@@ -75,7 +76,7 @@
     <div class="heading">
       <Heading text="Add chord" level="2" fontSize="1.25rem" />
     </div>
-    <Form onSubmit={handleChooseSearch}>
+    <Form onSubmit={handleSubmitSearch}>
       <div class="search">
         <FormGroup>
           <LabelDefault htmlFor="chordNameSearch">Name</LabelDefault>
@@ -90,7 +91,7 @@
           {/if}
         </FormGroup>
         <div class="buttons">
-          <ButtonPrimary type="submit" on:click={handleChooseSearch}>
+          <ButtonPrimary type="submit" on:click={handleSubmitSearch}>
             {#if isSearching}
               Searching...
             {:else}
@@ -100,7 +101,7 @@
           </ButtonPrimary>
           <ButtonDefault on:click={onCancel}>Cancel</ButtonDefault>
           <div class="custom">
-            <ButtonDefault on:click={handleChooseCustomChord}>
+            <ButtonDefault on:click={handleSelectCustomChord}>
               Custom
               <VisuallyHidden>chord</VisuallyHidden>
             </ButtonDefault>
@@ -119,7 +120,7 @@
       {tuning}
       {onSave}
       {capoAdjustment}
-      onCancel={handleChooseBack}
+      onCancel={handleSelectBack}
     />
   {/if}
 </div>
