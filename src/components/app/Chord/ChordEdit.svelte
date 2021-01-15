@@ -7,6 +7,7 @@
   import Heading from "../../ui/Heading/Heading.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import ChordPreview from "./ChordPreview.svelte";
+  import ChordSearchResults from "./ChordSearchResults.svelte";
 
   export let chord;
   export let tuning = "E A D G B E";
@@ -17,7 +18,7 @@
   let showChord = false;
   let isSearching = false;
   let searchInput = "";
-  let noResults = false;
+  let results;
 
   onMount(() => {
     searchInput = isChordNameOnly() ? chord.name : "";
@@ -50,15 +51,9 @@
       return;
     }
     isSearching = true;
-    noResults = false;
     chordSearch(searchInput)
-      .then((results) => {
-        if (results.length) {
-          chord = formatChordResponse(results[0]);
-          showChord = true;
-        } else {
-          noResults = true;
-        }
+      .then((response = []) => {
+        results = response.map((chord) => formatChordResponse(chord));
       })
       .finally(() => (isSearching = false));
   }
@@ -70,6 +65,11 @@
       frets: strings,
       fingering,
     };
+  }
+
+  function handleSelectedResult(selected) {
+    chord = selected;
+    showChord = true;
   }
 </script>
 
@@ -88,7 +88,7 @@
             placeholder="e.g. Bbmaj7"
             disabled={isSearching}
           />
-          {#if noResults}
+          {#if results && !results.length}
             <div class="noResults" in:fade>No results</div>
           {/if}
         </FormGroup>
@@ -111,6 +111,14 @@
         </div>
       </div>
     </Form>
+    {#if results && results.length}
+      <ChordSearchResults
+        {results}
+        {tuning}
+        {capoAdjustment}
+        onSelect={handleSelectedResult}
+      />
+    {/if}
   {/if}
 
   {#if showChord}
