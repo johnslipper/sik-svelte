@@ -45,7 +45,6 @@
     chord = undefined;
   }
 
-
   function handleSubmitSearch() {
     if (!searchInput) {
       return;
@@ -55,19 +54,22 @@
     chordSearch(searchInput)
       .then((results) => {
         if (results.length) {
-          const { chordName, strings, fingering } = results[0];
-          const formattedName = chordName.replaceAll(",", "");
-          chord = {
-            name: formattedName,
-            frets: strings,
-            fingering,
-          };
+          chord = formatChordResponse(results[0]);
           showChord = true;
         } else {
           noResults = true;
         }
       })
       .finally(() => (isSearching = false));
+  }
+
+  function formatChordResponse({ chordName, strings, fingering }) {
+    const formattedName = chordName.replaceAll(",", "");
+    return {
+      name: formattedName,
+      frets: strings,
+      fingering,
+    };
   }
 </script>
 
