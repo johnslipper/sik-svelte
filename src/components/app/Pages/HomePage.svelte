@@ -6,7 +6,7 @@
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import LogoCompact from "../Logo/LogoCompact.svelte";
   import Icon from "../../ui/Icons/Icon.svelte";
-  import { plusIcon } from "../../ui/Icons/icons.js";
+  import { plusIcon, cogIcon } from "../../ui/Icons/icons.js";
   import { ButtonLink } from "../../ui/Button";
   import { songs } from "../../../songs.js";
 </script>
@@ -18,6 +18,12 @@
 </style>
 
 <AppHeader>
+  <div slot="start" in:fade>
+    <ButtonLink to="/settings">
+      <Icon path={cogIcon} size="1.1rem" />
+      <VisuallyHidden>Settings</VisuallyHidden>
+    </ButtonLink>
+  </div>
   <Link to="/">
     <LogoCompact />
   </Link>
