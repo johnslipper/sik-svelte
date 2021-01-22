@@ -1,18 +1,19 @@
 <script>
-  import { Router, Route } from "svelte-routing";
-  import HomePage from "./app/Pages/HomePage.svelte";
-  import IntroPage from "./app/Pages/IntroPage.svelte";
-  import SongAddPage from "./app/Pages/SongAddPage.svelte";
-  import SongEditPage from "./app/Pages/SongEditPage.svelte";
-  import SongViewPage from "./app/Pages/SongViewPage.svelte";
-  import SettingsPage from "./app/Pages/SettingsPage.svelte";
+  import { Router } from "svelte-routing";
   import { theme } from "../theme.js";
+  import Routes from "./app/Routes.svelte";
   export let url = ""; //This property is necessary declare to avoid ignore the Router
 
   $: cssVarStyles = Object.entries(theme)
     .map(([key, value]) => `--${key}:${value}`)
     .join(";");
 </script>
+
+<Router {url}>
+  <main style={cssVarStyles}>
+    <Routes />
+  </main>
+</Router>
 
 <style>
   :global(*) {
@@ -30,31 +31,3 @@
     display: block;
   }
 </style>
-
-<Router {url}>
-  <main style={cssVarStyles}>
-    <Route path="/songs">
-      <HomePage />
-    </Route>
-
-    <Route path="/">
-      <IntroPage />
-    </Route>
-
-    <Route path="/songs/:id" let:params>
-      <SongViewPage id={params.id} />
-    </Route>
-
-    <Route path="/add">
-      <SongAddPage />
-    </Route>
-
-    <Route path="/songs/:id/edit" let:params>
-      <SongEditPage id={params.id} />
-    </Route>
-
-    <Route path="/settings">
-      <SettingsPage />
-    </Route>
-  </main>
-</Router>
