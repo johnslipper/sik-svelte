@@ -1,6 +1,6 @@
 <script>
   import { Router } from "svelte-routing";
-  
+
   import { FirebaseApp } from "sveltefire";
   import { config } from "../firebase.js";
   import firebase from "firebase/app";
@@ -18,11 +18,11 @@
 </script>
 
 <FirebaseApp {firebase}>
-<Router {url}>
-  <main style={cssVarStyles}>
-    <Routes />
-  </main>
-</Router>
+  <Router {url}>
+    <main style={cssVarStyles}>
+      <Routes />
+    </main>
+  </Router>
 </FirebaseApp>
 
 <style>
@@ -38,6 +38,5 @@
   :global(a) {
     text-decoration: none;
     color: inherit;
-    display: block;
   }
 </style>
