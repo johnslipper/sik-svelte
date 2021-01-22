@@ -4,3 +4,9 @@ export const config = {
   databaseURL: "https://songs-i-know-2020.firebaseio.com",
   projectId: "songs-i-know-2020",
 };
+
+export function stripRefs(refsObject) {
+  return refsObject.map(({ ref, ...rest }) => {
+    return { ...rest };
+  });
+}
