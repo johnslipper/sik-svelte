@@ -1,7 +1,7 @@
 <script>
   import { Route } from "svelte-routing";
   import {
-    HomePage,
+    SongsPage,
     IntroPage,
     SettingsPage,
     SongAddPage,
@@ -11,7 +11,7 @@
 </script>
 
 <Route path="/songs">
-  <HomePage />
+  <SongsPage />
 </Route>
 
 <Route path="/">
