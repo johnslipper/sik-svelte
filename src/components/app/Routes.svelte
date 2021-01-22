@@ -7,6 +7,7 @@
     SongAddPage,
     SongEditPage,
     SongViewPage,
+    LoginPage,
   } from "./Pages";
 </script>
 
@@ -32,4 +33,8 @@
 
 <Route path="/settings">
   <SettingsPage />
+</Route>
+
+<Route path="/login">
+  <LoginPage />
 </Route>
