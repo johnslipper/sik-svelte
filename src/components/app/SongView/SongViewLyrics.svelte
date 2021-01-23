@@ -6,7 +6,7 @@
     return text.replaceAll("\n", "<br>");
   }
 
-  $: formattedLyrics = nl2br(lyrics);
+  $: formattedLyrics = lyrics ? nl2br(lyrics) : "";
 </script>
 
 <section class="wrapper" in:fade={{ delay: 150 }}>
