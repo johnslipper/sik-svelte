@@ -13,9 +13,9 @@
     Select,
     Option,
   } from "../../ui/Form";
-  export let title;
-  export let artist;
-  export let album;
+  export let title = "";
+  export let artist = "";
+  export let album = "";
   export let artwork;
   export let tuning;
   export let capoAdjustment;

@@ -2,7 +2,7 @@
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import { LabelDefault, Textarea } from "../../ui/Form";
 
-  export let lyrics;
+  export let lyrics = "";
 </script>
 
 <VisuallyHidden>
