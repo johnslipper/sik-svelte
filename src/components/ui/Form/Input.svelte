@@ -24,9 +24,9 @@
   }
 </style>
 
-{#if type === 'number'}
+{#if type === 'password'}
   <input
-    type="number"
+    type="password"
     {id}
     {name}
     {placeholder}

@@ -111,7 +111,6 @@
         <ArtworkSearchResults
           {searchResults}
           onSelected={handleSelected}
-          {selected}
         />
       {:catch error}
         <p style="color: red">{error.message}</p>

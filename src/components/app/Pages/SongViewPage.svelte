@@ -2,7 +2,7 @@
   import { fly, slide } from "svelte/transition";
   import { elasticOut } from "svelte/easing";
   import Modal from "svelte-simple-modal";
-  import { songs } from "../../../songs.js";
+  import { User, Doc } from "sveltefire";
   import SongHeader from "../SongView/SongViewHeader.svelte";
   import SongLyrics from "../SongView/SongViewLyrics.svelte";
   import SongViewChords from "../SongView/SongViewChords.svelte";
@@ -13,7 +13,6 @@
     microphoneOutlinedIcon,
   } from "../../ui/Icons/icons.js";
   export let id;
-  $: song = $songs && $songs[id];
 
   const iconTransition = {
     duration: 300,
@@ -40,45 +39,48 @@
   }
 </style>
 
-{#if $songs}
-  <Modal>
-    <SongHeader
-      id={song.id}
-      title={song.title}
-      artist={song.artist}
-      album={song.album}
-      artwork={song.artwork} />
-    <Tabs>
-      <div class="panels">
-        <TabPanel>
-          <SongLyrics lyrics={song.lyrics} />
-        </TabPanel>
-        <TabPanel>
-          <SongViewChords
-            chords={song.chordSections}
-            tuning={song.tuning}
-            capoAdjustment={song.capoAdjustment} />
-        </TabPanel>
-      </div>
-      <div
-        class="tabList"
-        in:slide={{ duration: 250, delay: 300 }}
-        out:slide={{ duration: 100 }}>
-        <TabList>
-          <Tab>
-            <div class="icon" in:fly={iconTransition}>
-              <Icon path={microphoneOutlinedIcon} size="1.85rem" />
-            </div>
-            <div class="text">Lyrics</div>
-          </Tab>
-          <Tab>
-            <div class="icon" in:fly={iconTransition}>
-              <Icon path={musicNoteOutlinedIcon} size="1.85rem" />
-            </div>
-            <div class="text">Chords</div>
-          </Tab>
-        </TabList>
-      </div>
-    </Tabs>
-  </Modal>
-{:else}Loading...{/if}
+<Modal>
+  <User persist={sessionStorage} let:user>
+    <Doc path={`/users/${user.uid}/songs/${id}`} let:data={song}>
+      <div slot="loading">Loading...</div>
+      <div slot="fallback">Unable to display song, please refresh...</div>
+      <SongHeader
+        {id}
+        title={song.title}
+        artist={song.artist}
+        album={song.album}
+        artwork={song.artwork}
+      />
+      <Tabs>
+        <div class="panels">
+          <TabPanel>
+            <SongLyrics lyrics={song.lyrics} />
+          </TabPanel>
+          <TabPanel>
+            <SongViewChords
+              chords={song.chordSections}
+              tuning={song.tuning}
+              capoAdjustment={song.capoAdjustment}
+            />
+          </TabPanel>
+        </div>
+        <div class="tabList" in:slide={{ duration: 250, delay: 300 }}>
+          <TabList>
+            <Tab>
+              <div class="icon" in:fly={iconTransition}>
+                <Icon path={microphoneOutlinedIcon} size="1.85rem" />
+              </div>
+              <div class="text">Lyrics</div>
+            </Tab>
+            <Tab>
+              <div class="icon" in:fly={iconTransition}>
+                <Icon path={musicNoteOutlinedIcon} size="1.85rem" />
+              </div>
+              <div class="text">Chords</div>
+            </Tab>
+          </TabList>
+        </div>
+      </Tabs>
+    </Doc>
+  </User>
+</Modal>
