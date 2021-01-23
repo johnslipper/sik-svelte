@@ -4,6 +4,7 @@
   import ButtonDefault from "../../ui/Button/ButtonDefault.svelte";
   import Heading from "../../ui/Heading/Heading.svelte";
   import Dialogue from "../../ui/Modal/Dialogue.svelte";
+  import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
 
   export let docRef;
 
@@ -24,22 +25,19 @@
 </script>
 
 <div class="wrapper">
-  <Heading text="Actions:" level="2" fontSize="1rem" />
+  <VisuallyHidden>
+    <Heading text="Actions:" level="2" fontSize="1rem" />
+  </VisuallyHidden>
   <ButtonDefault on:click={handleDelete}>Delete song</ButtonDefault>
 </div>
 
 <style>
   .wrapper {
-    display: flex;
+    display: grid;
     align-items: center;
-    padding: 1rem;
+    padding: 3rem;
+    text-align: center;
     background-color: var(--neutralLight);
     box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.25);
-  }
-
-  .wrapper :global(button) {
-    --buttonColor: var(--danger);
-    --buttonBorderColor: var(--danger);
-    margin-left: 1rem;
   }
 </style>
