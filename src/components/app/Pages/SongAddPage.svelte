@@ -13,7 +13,7 @@
 
   function handleSave(song, songsRef, user) {
     songsRef.add({ ...cleanDoc(song), uid: user.uid }).then(
-      () => navigate("/songs"),
+      (docRef) => navigate(`/songs/${docRef.id}`),
       (error) => console.error(error)
     );
   }
