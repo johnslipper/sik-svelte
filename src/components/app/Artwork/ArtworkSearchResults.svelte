@@ -2,7 +2,7 @@
   import { fade } from "svelte/transition";
   export let searchResults;
   export let onSelected;
-  export let selected;
+  let selected;
 
   function handleSelect(result) {
     selected = result;
