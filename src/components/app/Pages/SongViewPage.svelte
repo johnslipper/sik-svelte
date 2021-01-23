@@ -40,8 +40,8 @@
 </style>
 
 <Modal>
-  <User persist={sessionStorage}>
-    <Doc path={`/songs/${id}`} let:data={song}>
+  <User persist={sessionStorage} let:user>
+    <Doc path={`/users/${user.uid}/songs/${id}`} let:data={song}>
       <div slot="loading">Loading...</div>
       <div slot="fallback">Unable to display song, please refresh...</div>
       <SongHeader

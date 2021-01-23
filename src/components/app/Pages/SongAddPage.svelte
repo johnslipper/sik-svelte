@@ -20,7 +20,8 @@
 
 <Modal>
   <User let:user persist={sessionStorage}>
-    <Collection path={"/songs"} let:ref={songsRef}>
+    <Collection
+      path={`/users/${user.uid}/songs`} let:ref={songsRef}>
       <AppHeader title="Add song">
         <div slot="start" in:fade>
           <ButtonLink to="/songs">

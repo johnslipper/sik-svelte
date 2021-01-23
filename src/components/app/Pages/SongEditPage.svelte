@@ -18,8 +18,8 @@
 </script>
 
 <Modal>
-  <User persist={sessionStorage}>
-    <Doc path={`/songs/${id}`} let:data={song} let:ref={songRef}>
+  <User persist={sessionStorage} let:user>
+    <Doc path={`/users/${user.uid}/songs/${id}`} let:data={song} let:ref={songRef}>
       <AppHeader title="Edit song">
         <div slot="start" in:fade>
           <ButtonLink to="/songs/{id}">

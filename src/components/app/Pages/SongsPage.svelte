@@ -42,9 +42,9 @@
 <div class="songsList">
   <User let:user persist={sessionStorage}>
     <Collection
-      path={"/songs"}
+      path={`/users/${user.uid}/songs`}
       let:data={songs}
-      query={(ref) => ref.where("uid", "==", user.uid).orderBy("artist")}
+      query={(ref) => ref.orderBy("artist")}
     >
       <SongsList {songs} />
       <div slot="loading">
