@@ -10,3 +10,13 @@ export function stripRefs(refsObject) {
     return { ...rest };
   });
 }
+
+export function cleanDoc(sourceObject) {
+  return Object.fromEntries(
+    Object.entries(sourceObject).filter(([key, value]) => {
+      if (value !== null && value !== undefined) {
+        return [key, value];
+      }
+    })
+  );
+}

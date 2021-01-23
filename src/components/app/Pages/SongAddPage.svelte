@@ -3,6 +3,7 @@
   import { navigate } from "svelte-routing";
   import Modal from "svelte-simple-modal";
   import { User, Collection } from "sveltefire";
+  import { cleanDoc } from "../../../firebase.js";
   import AppHeader from "../../ui/AppHeader.svelte";
   import SongEdit from "../SongEdit/SongEdit.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
@@ -11,7 +12,7 @@
   let song = {};
 
   function handleSave(song, songsRef, user) {
-    songsRef.add({ ...song, uid: user.uid }).then(
+    songsRef.add({ ...cleanDoc(song), uid: user.uid }).then(
       () => navigate("/songs"),
       (error) => console.error(error)
     );
