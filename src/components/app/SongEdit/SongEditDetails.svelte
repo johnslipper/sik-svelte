@@ -47,7 +47,9 @@
 
     if (selected.album) {
       open(Dialogue, {
-        message: "Use details of selected artwork for song?",
+        message: "Use artwork title, artist & album for song?",
+        okayText: "Yes",
+        cancelText: "No",
         onOkay: () => {
           title = selected.title;
           artist = selected.artist;
@@ -57,24 +59,6 @@
     }
   }
 </script>
-
-<style>
-  .fields {
-    display: grid;
-    gap: 1rem;
-  }
-  .details {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: auto 1fr;
-    max-width: 34rem;
-  }
-  .artwork :global(button) {
-    /* iTunes artwork size */
-    width: 100px;
-    height: 100px;
-  }
-</style>
 
 <div class="details">
   <div class="artwork">
@@ -115,3 +99,21 @@
     </FormGroup>
   </div>
 </div>
+
+<style>
+  .fields {
+    display: grid;
+    gap: 1rem;
+  }
+  .details {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: auto 1fr;
+    max-width: 34rem;
+  }
+  .artwork :global(button) {
+    /* iTunes artwork size */
+    width: 100px;
+    height: 100px;
+  }
+</style>
