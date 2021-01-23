@@ -3,6 +3,12 @@
   export let type = "button";
 </script>
 
+<div class="buttonPrimary">
+  <ButtonDefault {type} on:click>
+    <slot>Button</slot>
+  </ButtonDefault>
+</div>
+
 <style>
   .buttonPrimary {
     display: inline-block;
@@ -16,9 +22,3 @@
     --buttonActiveColor: var(--buttonPrimaryActiveColor);
   }
 </style>
-
-<div class="buttonPrimary">
-  <ButtonDefault {type} on:click>
-    <slot>Button</slot>
-  </ButtonDefault>
-</div>

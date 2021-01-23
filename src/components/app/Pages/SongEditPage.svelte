@@ -20,7 +20,11 @@
 
 <Modal>
   <User persist={sessionStorage} let:user>
-    <Doc path={`/users/${user.uid}/songs/${id}`} let:data={song} let:ref={docRef}>
+    <Doc
+      path={`/users/${user.uid}/songs/${id}`}
+      let:data={song}
+      let:ref={docRef}
+    >
       <AppHeader title="Edit song">
         <div slot="start" in:fade>
           <ButtonLink to="/songs/{id}">
@@ -29,8 +33,7 @@
           </ButtonLink>
         </div>
         <div slot="end" in:fade>
-          <ButtonText on:click={() => handleSave(song, docRef)}
-            >Save</ButtonText
+          <ButtonText on:click={() => handleSave(song, docRef)}>Save</ButtonText
           >
         </div>
       </AppHeader>

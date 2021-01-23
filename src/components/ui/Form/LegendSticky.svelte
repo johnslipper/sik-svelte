@@ -1,3 +1,7 @@
+<legend>
+  <slot />
+</legend>
+
 <style>
   legend {
     display: block;
@@ -11,7 +15,3 @@
     z-index: 1;
   }
 </style>
-
-<legend>
-  <slot />
-</legend>

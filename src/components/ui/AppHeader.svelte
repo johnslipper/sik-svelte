@@ -4,6 +4,23 @@
   export let title = "";
 </script>
 
+<header>
+  <div class="start">
+    <slot name="start" />
+  </div>
+  <div class="center">
+    {#if title}
+      <div in:fade>
+        <Heading text={title} fontSize={"1.2rem"} />
+      </div>
+    {/if}
+    <slot />
+  </div>
+  <div class="end">
+    <slot name="end" />
+  </div>
+</header>
+
 <style>
   header {
     display: grid;
@@ -32,20 +49,3 @@
     justify-self: end;
   }
 </style>
-
-<header>
-  <div class="start">
-    <slot name="start" />
-  </div>
-  <div class="center">
-    {#if title}
-      <div in:fade>
-        <Heading text={title} fontSize={'1.2rem'} />
-      </div>
-    {/if}
-    <slot />
-  </div>
-  <div class="end">
-    <slot name="end" />
-  </div>
-</header>

@@ -14,6 +14,55 @@
   let animationDelay = 250;
 </script>
 
+<header>
+  <div class="content">
+    <div class="start" in:fade={{ delay: animationDelay + 50 }}>
+      <ButtonLink to="/songs">
+        <Icon path={leftArrowIcon} size="1.1rem" />
+        <VisuallyHidden>back to songs</VisuallyHidden>
+      </ButtonLink>
+    </div>
+    <div class="wrapper">
+      <div
+        class="artwork"
+        in:fly={{
+          delay: animationDelay,
+          duration: 300,
+          x: -100,
+          easing: backOut,
+        }}
+      >
+        <ArtworkView {album} {artwork} />
+      </div>
+      <div
+        class="text"
+        in:fly={{
+          delay: animationDelay + 250,
+          duration: 200,
+          x: 50,
+          easing: backOut,
+        }}
+      >
+        {#if title}
+          <div class="title">{title}</div>
+        {/if}
+        {#if artist}
+          <div class="artist">{artist}</div>
+        {/if}
+        {#if album}
+          <div class="album">{album}</div>
+        {/if}
+      </div>
+    </div>
+    <div class="end" in:fade={{ delay: animationDelay + 50 }}>
+      <ButtonLink to="/songs/{id}/edit">
+        <Icon path={pencilIcon} size="1.1rem" />
+        <VisuallyHidden>Edit song</VisuallyHidden>
+      </ButtonLink>
+    </div>
+  </div>
+</header>
+
 <style>
   header {
     position: sticky;
@@ -78,40 +127,3 @@
     flex-grow: 1;
   }
 </style>
-
-<header>
-  <div class="content">
-    <div class="start" in:fade={{ delay: animationDelay + 50 }}>
-      <ButtonLink to="/songs">
-        <Icon path={leftArrowIcon} size="1.1rem" />
-        <VisuallyHidden>back to songs</VisuallyHidden>
-      </ButtonLink>
-    </div>
-    <div class="wrapper">
-      <div
-        class="artwork"
-        in:fly={{ delay: animationDelay, duration: 300, x: -100, easing: backOut }}>
-        <ArtworkView {album} {artwork} />
-      </div>
-      <div
-        class="text"
-        in:fly={{ delay: animationDelay + 250, duration: 200, x: 50, easing: backOut }}>
-        {#if title}
-          <div class="title">{title}</div>
-        {/if}
-        {#if artist}
-          <div class="artist">{artist}</div>
-        {/if}
-        {#if album}
-          <div class="album">{album}</div>
-        {/if}
-      </div>
-    </div>
-    <div class="end" in:fade={{ delay: animationDelay + 50 }}>
-      <ButtonLink to="/songs/{id}/edit">
-        <Icon path={pencilIcon} size="1.1rem" />
-        <VisuallyHidden>Edit song</VisuallyHidden>
-      </ButtonLink>
-    </div>
-  </div>
-</header>

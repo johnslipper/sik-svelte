@@ -4,6 +4,22 @@
   export let tuning;
 </script>
 
+{#if chord.fingering && chord.frets}
+  <div class="visualised">
+    <ChordVisualised
+      fingering={chord.fingering}
+      frets={chord.frets}
+      position={chord.position}
+      {tuning}
+    />
+  </div>
+  {#if chord.name}
+    <div class="name">{chord.name}</div>
+  {/if}
+{:else}
+  <div class="nameOnly">{chord.name}</div>
+{/if}
+
 <style>
   .name,
   .nameOnly {
@@ -27,18 +43,3 @@
     justify-content: flex-start;
   }
 </style>
-
-{#if chord.fingering && chord.frets}
-  <div class="visualised">
-    <ChordVisualised
-      fingering={chord.fingering}
-      frets={chord.frets}
-      position={chord.position}
-      {tuning} />
-  </div>
-  {#if chord.name}
-    <div class="name">{chord.name}</div>
-  {/if}
-{:else}
-  <div class="nameOnly">{chord.name}</div>
-{/if}

@@ -12,6 +12,20 @@
   }
 </script>
 
+{#if searchResults.resultCount}
+  <ul class="grid">
+    {#each searchResults.results as result, i}
+      <li in:fade={{ delay: i * 100 }} class:selected={result === selected}>
+        <button on:click={() => handleSelect(result)}>
+          <img src={result.artworkUrl100} alt={result.collectionName} />
+        </button>
+      </li>
+    {/each}
+  </ul>
+{:else}
+  <p class="noResults">No results found</p>
+{/if}
+
 <style>
   .grid {
     display: grid;
@@ -53,17 +67,3 @@
     color: var(--bodyColorMuted);
   }
 </style>
-
-{#if searchResults.resultCount}
-  <ul class="grid">
-    {#each searchResults.results as result, i}
-      <li in:fade={{ delay: i * 100 }} class:selected={result === selected}>
-        <button on:click={() => handleSelect(result)}>
-          <img src={result.artworkUrl100} alt={result.collectionName} />
-        </button>
-      </li>
-    {/each}
-  </ul>
-{:else}
-  <p class="noResults">No results found</p>
-{/if}

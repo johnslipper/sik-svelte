@@ -1,3 +1,7 @@
+<div class="tab-list">
+  <slot />
+</div>
+
 <style>
   .tab-list {
     display: grid;
@@ -5,7 +9,3 @@
     font-size: 0.85rem;
   }
 </style>
-
-<div class="tab-list">
-  <slot />
-</div>

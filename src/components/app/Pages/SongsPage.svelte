@@ -12,12 +12,6 @@
   import { User, Collection } from "sveltefire";
 </script>
 
-<style>
-  .songsList {
-    --headerTopOffset: 3.5rem;
-  }
-</style>
-
 <AppHeader>
   <div slot="start" in:fade>
     <User persist={sessionStorage}>
@@ -57,3 +51,9 @@
     </div>
   </User>
 </div>
+
+<style>
+  .songsList {
+    --headerTopOffset: 3.5rem;
+  }
+</style>

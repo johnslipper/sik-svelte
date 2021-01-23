@@ -9,6 +9,32 @@
   export let value;
 </script>
 
+{#if type === "password"}
+  <input
+    type="password"
+    {id}
+    {name}
+    {placeholder}
+    {maxlength}
+    {disabled}
+    {required}
+    bind:value
+    on:blur
+  />
+{:else}
+  <input
+    type="text"
+    {id}
+    {name}
+    {placeholder}
+    {maxlength}
+    {disabled}
+    {required}
+    bind:value
+    on:blur
+  />
+{/if}
+
 <style>
   input {
     outline: none;
@@ -23,27 +49,3 @@
     box-shadow: var(--focusOutlineShadow);
   }
 </style>
-
-{#if type === 'password'}
-  <input
-    type="password"
-    {id}
-    {name}
-    {placeholder}
-    {maxlength}
-    {disabled}
-    {required}
-    bind:value
-    on:blur />
-{:else}
-  <input
-    type="text"
-    {id}
-    {name}
-    {placeholder}
-    {maxlength}
-    {disabled}
-    {required}
-    bind:value
-    on:blur />
-{/if}

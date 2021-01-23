@@ -1,3 +1,7 @@
+<div class="wrapper">
+  <slot />
+</div>
+
 <style>
   .wrapper {
     display: block;
@@ -11,7 +15,3 @@
     z-index: 1;
   }
 </style>
-
-<div class="wrapper">
-  <slot />
-</div>

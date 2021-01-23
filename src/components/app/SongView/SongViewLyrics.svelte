@@ -9,6 +9,19 @@
   $: formattedLyrics = nl2br(lyrics);
 </script>
 
+<section class="wrapper" in:fade={{ delay: 150 }}>
+  <VisuallyHidden>
+    <h2>Lyrics</h2>
+  </VisuallyHidden>
+  <div class="lyrics">
+    {#if lyrics}
+      {@html formattedLyrics}
+    {:else}
+      <div class="empty">No lyrics saved</div>
+    {/if}
+  </div>
+</section>
+
 <style>
   .lyrics {
     color: var(--neutralDark);
@@ -23,16 +36,3 @@
     color: var(--bodyColorMuted);
   }
 </style>
-
-<section class="wrapper" in:fade={{ delay: 150 }}>
-  <VisuallyHidden>
-    <h2>Lyrics</h2>
-  </VisuallyHidden>
-  <div class="lyrics">
-    {#if lyrics}
-      {@html formattedLyrics}
-    {:else}
-      <div class="empty">No lyrics saved</div>
-    {/if}
-  </div>
-</section>

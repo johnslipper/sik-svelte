@@ -56,6 +56,138 @@
   }
 </script>
 
+<div in:fade>
+  <Form {onSubmit}>
+    <div class="chord">
+      <div class="fields">
+        <FormGroup>
+          <LabelDefault htmlFor="chordEditName">Name</LabelDefault>
+          <Input
+            id="chordEditName"
+            bind:value={chord.name}
+            placeholder="e.g. Fmaj7"
+          />
+        </FormGroup>
+
+        <div class="fieldsets">
+          <ChordEditFieldset string={tuningFormatted[0]}>
+            <ChordEditFret
+              onBlur={handleFretChange}
+              bind:value={frets.fret1}
+              key="1"
+              string={tuningFormatted[0]}
+            />
+            <ChordEditFinger
+              bind:value={fingering.fingering1}
+              fret={frets.fret1}
+              key="1"
+              string={tuningFormatted[0]}
+            />
+          </ChordEditFieldset>
+          <ChordEditFieldset string={tuningFormatted[1]}>
+            <ChordEditFret
+              onBlur={handleFretChange}
+              bind:value={frets.fret2}
+              key="2"
+              string={tuningFormatted[1]}
+            />
+            <ChordEditFinger
+              bind:value={fingering.fingering2}
+              fret={frets.fret2}
+              key="2"
+              string={tuningFormatted[1]}
+            />
+          </ChordEditFieldset>
+          <ChordEditFieldset string={tuningFormatted[2]}>
+            <ChordEditFret
+              onBlur={handleFretChange}
+              bind:value={frets.fret3}
+              key="3"
+              string={tuningFormatted[2]}
+            />
+            <ChordEditFinger
+              bind:value={fingering.fingering3}
+              fret={frets.fret3}
+              key="3"
+              string={tuningFormatted[2]}
+            />
+          </ChordEditFieldset>
+        </div>
+        <div class="fieldsets">
+          <ChordEditFieldset string={tuningFormatted[3]}>
+            <ChordEditFret
+              onBlur={handleFretChange}
+              bind:value={frets.fret4}
+              key="4"
+              string={tuningFormatted[3]}
+            />
+            <ChordEditFinger
+              bind:value={fingering.fingering4}
+              fret={frets.fret4}
+              key="4"
+              string={tuningFormatted[3]}
+            />
+          </ChordEditFieldset>
+          <ChordEditFieldset string={tuningFormatted[4]}>
+            <ChordEditFret
+              onBlur={handleFretChange}
+              bind:value={frets.fret5}
+              key="5"
+              string={tuningFormatted[4]}
+            />
+            <ChordEditFinger
+              bind:value={fingering.fingering5}
+              fret={frets.fret5}
+              key="5"
+              string={tuningFormatted[4]}
+            />
+          </ChordEditFieldset>
+          <ChordEditFieldset string={tuningFormatted[5]}>
+            <ChordEditFret
+              onBlur={handleFretChange}
+              bind:value={frets.fret6}
+              key="6"
+              string={tuningFormatted[5]}
+            />
+            <ChordEditFinger
+              bind:value={fingering.fingering6}
+              fret={frets.fret6}
+              key="6"
+              string={tuningFormatted[5]}
+            />
+          </ChordEditFieldset>
+        </div>
+      </div>
+      <div class="preview">
+        {#if isPreviewPossible}
+          <div class="visualised">
+            <Dropdown position="center">
+              <ChordVisualised
+                frets={previewFrets}
+                fingering={previewFingerings}
+                {tuning}
+              />
+              <div slot="content">
+                <div class="actions" aria-label="Chord actions">
+                  <ChordPlay {chord} {tuning} {capoAdjustment} />
+                </div>
+              </div>
+            </Dropdown>
+          </div>
+        {:else}
+          <div class="placeholder">
+            <ChordPreviewPlaceholder {tuning} />
+          </div>
+        {/if}
+      </div>
+    </div>
+    <div class="buttons">
+      <ButtonDefault on:click={onCancel}>Back</ButtonDefault>
+      <ButtonPrimary type="submit">Save</ButtonPrimary>
+    </div>
+  </Form>
+</div>
+
 <style>
   .fields {
     display: grid;
@@ -89,121 +221,3 @@
     padding: 0.75rem;
   }
 </style>
-
-<div in:fade>
-  <Form {onSubmit}>
-    <div class="chord">
-      <div class="fields">
-        <FormGroup>
-          <LabelDefault htmlFor="chordEditName">Name</LabelDefault>
-          <Input
-            id="chordEditName"
-            bind:value={chord.name}
-            placeholder="e.g. Fmaj7" />
-        </FormGroup>
-
-        <div class="fieldsets">
-          <ChordEditFieldset string={tuningFormatted[0]}>
-            <ChordEditFret
-              onBlur={handleFretChange}
-              bind:value={frets.fret1}
-              key="1"
-              string={tuningFormatted[0]} />
-            <ChordEditFinger
-              bind:value={fingering.fingering1}
-              fret={frets.fret1}
-              key="1"
-              string={tuningFormatted[0]} />
-          </ChordEditFieldset>
-          <ChordEditFieldset string={tuningFormatted[1]}>
-            <ChordEditFret
-              onBlur={handleFretChange}
-              bind:value={frets.fret2}
-              key="2"
-              string={tuningFormatted[1]} />
-            <ChordEditFinger
-              bind:value={fingering.fingering2}
-              fret={frets.fret2}
-              key="2"
-              string={tuningFormatted[1]} />
-          </ChordEditFieldset>
-          <ChordEditFieldset string={tuningFormatted[2]}>
-            <ChordEditFret
-              onBlur={handleFretChange}
-              bind:value={frets.fret3}
-              key="3"
-              string={tuningFormatted[2]} />
-            <ChordEditFinger
-              bind:value={fingering.fingering3}
-              fret={frets.fret3}
-              key="3"
-              string={tuningFormatted[2]} />
-          </ChordEditFieldset>
-        </div>
-        <div class="fieldsets">
-          <ChordEditFieldset string={tuningFormatted[3]}>
-            <ChordEditFret
-              onBlur={handleFretChange}
-              bind:value={frets.fret4}
-              key="4"
-              string={tuningFormatted[3]} />
-            <ChordEditFinger
-              bind:value={fingering.fingering4}
-              fret={frets.fret4}
-              key="4"
-              string={tuningFormatted[3]} />
-          </ChordEditFieldset>
-          <ChordEditFieldset string={tuningFormatted[4]}>
-            <ChordEditFret
-              onBlur={handleFretChange}
-              bind:value={frets.fret5}
-              key="5"
-              string={tuningFormatted[4]} />
-            <ChordEditFinger
-              bind:value={fingering.fingering5}
-              fret={frets.fret5}
-              key="5"
-              string={tuningFormatted[4]} />
-          </ChordEditFieldset>
-          <ChordEditFieldset string={tuningFormatted[5]}>
-            <ChordEditFret
-              onBlur={handleFretChange}
-              bind:value={frets.fret6}
-              key="6"
-              string={tuningFormatted[5]} />
-            <ChordEditFinger
-              bind:value={fingering.fingering6}
-              fret={frets.fret6}
-              key="6"
-              string={tuningFormatted[5]} />
-          </ChordEditFieldset>
-        </div>
-      </div>
-      <div class="preview">
-        {#if isPreviewPossible}
-          <div class="visualised">
-            <Dropdown position="center">
-              <ChordVisualised
-                frets={previewFrets}
-                fingering={previewFingerings}
-                {tuning} />
-              <div slot="content">
-                <div class="actions" aria-label="Chord actions">
-                  <ChordPlay {chord} {tuning} {capoAdjustment} />
-                </div>
-              </div>
-            </Dropdown>
-          </div>
-        {:else}
-          <div class="placeholder">
-            <ChordPreviewPlaceholder {tuning} />
-          </div>
-        {/if}
-      </div>
-    </div>
-    <div class="buttons">
-      <ButtonDefault on:click={onCancel}>Back</ButtonDefault>
-      <ButtonPrimary type="submit">Save</ButtonPrimary>
-    </div>
-  </Form>
-</div>

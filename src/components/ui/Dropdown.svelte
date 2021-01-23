@@ -33,6 +33,30 @@
   });
 </script>
 
+<div class="wrapper" bind:this={menu}>
+  <div class="button">
+    <Button on:click={() => (show = !show)}>
+      <slot />
+    </Button>
+  </div>
+
+  {#if show}
+    <div
+      class="
+        content
+        {position === 'top'
+        ? 'top'
+        : ''}
+        {position === 'center' ? 'center' : ''}
+        "
+      in:scale={{ duration: 100, start: 0.95 }}
+      out:scale={{ duration: 75, start: 0.95 }}
+    >
+      <slot name="content" />
+    </div>
+  {/if}
+</div>
+
 <style>
   .wrapper {
     position: relative;
@@ -63,24 +87,3 @@
     left: 50%;
   }
 </style>
-
-<div class="wrapper" bind:this={menu}>
-  <div class="button">
-    <Button on:click={() => (show = !show)}>
-      <slot />
-    </Button>
-  </div>
-
-  {#if show}
-    <div
-      class="
-        content
-        {position === 'top' ? 'top' : ''}
-        {position === 'center' ? 'center' : ''}
-        "
-      in:scale={{ duration: 100, start: 0.95 }}
-      out:scale={{ duration: 75, start: 0.95 }}>
-      <slot name="content" />
-    </div>
-  {/if}
-</div>

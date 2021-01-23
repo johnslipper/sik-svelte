@@ -3,6 +3,12 @@
   export let placeholderCount = 10;
 </script>
 
+<div class="placeholders">
+  {#each Array(placeholderCount) as _placeholder}
+    <PlaceholderItem />
+  {/each}
+</div>
+
 <style>
   .placeholders {
     display: flex;
@@ -11,9 +17,3 @@
     overflow: hidden;
   }
 </style>
-
-<div class="placeholders">
-  {#each Array(placeholderCount) as _placeholder}
-    <PlaceholderItem />
-  {/each}
-</div>

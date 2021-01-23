@@ -14,32 +14,6 @@
   export let onRemove;
 </script>
 
-<style>
-  .chord {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    text-align: center;
-  }
-  .actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
-    padding: 0.25rem;
-  }
-
-  .actions :global(button) {
-    display: grid;
-    gap: 0.5rem;
-    justify-items: center;
-    padding: 0.75rem;
-  }
-  .danger {
-    color: var(--danger);
-  }
-</style>
-
 <div class="chord">
   <Dropdown position="center">
     <ChordView {chord} {tuning} />
@@ -65,3 +39,29 @@
     </div>
   </Dropdown>
 </div>
+
+<style>
+  .chord {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+  }
+  .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem;
+  }
+
+  .actions :global(button) {
+    display: grid;
+    gap: 0.5rem;
+    justify-items: center;
+    padding: 0.75rem;
+  }
+  .danger {
+    color: var(--danger);
+  }
+</style>

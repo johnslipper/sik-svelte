@@ -9,6 +9,10 @@
   });
 </script>
 
+<div class="wrapper" in:fade out:fade>
+  <Logo />
+</div>
+
 <style>
   .wrapper {
     display: flex;
@@ -18,7 +22,3 @@
     width: 100%;
   }
 </style>
-
-<div class="wrapper" in:fade out:fade>
-  <Logo />
-</div>

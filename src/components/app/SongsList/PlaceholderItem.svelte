@@ -1,3 +1,8 @@
+<div class="placeholder">
+  <div class="artwork" />
+  <div class="text" />
+</div>
+
 <style>
   .placeholder {
     --phAnimationDuration: 1.2s;
@@ -76,8 +81,3 @@
     }
   }
 </style>
-
-<div class="placeholder">
-  <div class="artwork" />
-  <div class="text" />
-</div>

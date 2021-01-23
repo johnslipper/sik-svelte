@@ -42,6 +42,39 @@
   }
 </script>
 
+<div class="wrapper">
+  <div class="title">
+    <FormGroup>
+      <LabelDefault htmlFor="chordSectionTitle{key}">Title</LabelDefault>
+      <Input id="chordSectionTitle{key}" bind:value={chordSection.title} />
+    </FormGroup>
+    <ButtonDefault on:click={() => onRemove(chordSection)}>
+      Remove
+    </ButtonDefault>
+  </div>
+  <ul class="chords">
+    {#if chordSection.chords}
+      {#each chordSection.chords as chord, i}
+        <li in:fade={{ delay: i * 100 }}>
+          <SongEditChord
+            {chordSection}
+            {tuning}
+            {capoAdjustment}
+            {chord}
+            onEdit={handleEditChord}
+            onRemove={handleRemoveChord}
+          />
+        </li>
+      {/each}
+    {/if}
+    <li class="add">
+      <Button on:click={() => openChordModal()}>
+        <AddArea text="Add chord" />
+      </Button>
+    </li>
+  </ul>
+</div>
+
 <style>
   .wrapper {
     padding: 1rem;
@@ -76,35 +109,3 @@
     justify-content: center;
   }
 </style>
-
-<div class="wrapper">
-  <div class="title">
-    <FormGroup>
-      <LabelDefault htmlFor="chordSectionTitle{key}">Title</LabelDefault>
-      <Input id="chordSectionTitle{key}" bind:value={chordSection.title} />
-    </FormGroup>
-    <ButtonDefault on:click={() => onRemove(chordSection)}>
-      Remove
-    </ButtonDefault>
-  </div>
-  <ul class="chords">
-    {#if chordSection.chords}
-      {#each chordSection.chords as chord, i}
-        <li in:fade={{ delay: i * 100 }}>
-          <SongEditChord
-            {chordSection}
-            {tuning}
-            {capoAdjustment}
-            {chord}
-            onEdit={handleEditChord}
-            onRemove={handleRemoveChord} />
-        </li>
-      {/each}
-    {/if}
-    <li class="add">
-      <Button on:click={() => openChordModal()}>
-        <AddArea text="Add chord" />
-      </Button>
-    </li>
-  </ul>
-</div>

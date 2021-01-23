@@ -5,15 +5,6 @@
   export let songs;
 </script>
 
-<style>
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-  }
-</style>
-
 <ul>
   {#each songs as song, i}
     <li in:fly={{ x: -20, delay: i * 75, easing: backOut, duration: 750 }}>
@@ -22,7 +13,17 @@
         title={song.title}
         artist={song.artist}
         album={song.album}
-        artwork={song.artwork} />
+        artwork={song.artwork}
+      />
     </li>
   {/each}
 </ul>
+
+<style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+</style>

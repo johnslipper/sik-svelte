@@ -41,6 +41,30 @@
   }
 </script>
 
+{#if chordSections && chordSections.length}
+  {#each chordSections as chordSection, i}
+    <div class="chordSection" in:fade={{ delay: i * 50 }}>
+      <SongEditChordSections
+        {chordSection}
+        {tuning}
+        {capoAdjustment}
+        key={i}
+        onRemove={handleRemoveSection}
+      />
+    </div>
+  {/each}
+  <div id="endOfChordSections" />
+{:else}
+  <div class="wrapper">
+    <p class="empty">No sections saved</p>
+  </div>
+{/if}
+<div class="add">
+  <div class="wrapper">
+    <ButtonDefault on:click={handleAddSection}>Add section</ButtonDefault>
+  </div>
+</div>
+
 <style>
   .wrapper {
     padding: 1rem;
@@ -59,26 +83,3 @@
     color: var(--bodyColorMuted);
   }
 </style>
-
-{#if chordSections && chordSections.length}
-  {#each chordSections as chordSection, i}
-    <div class="chordSection" in:fade={{ delay: i * 50 }}>
-      <SongEditChordSections
-        {chordSection}
-        {tuning}
-        {capoAdjustment}
-        key={i}
-        onRemove={handleRemoveSection} />
-    </div>
-  {/each}
-  <div id="endOfChordSections" />
-{:else}
-  <div class="wrapper">
-    <p class="empty">No sections saved</p>
-  </div>
-{/if}
-<div class="add">
-  <div class="wrapper">
-    <ButtonDefault on:click={handleAddSection}>Add section</ButtonDefault>
-  </div>
-</div>

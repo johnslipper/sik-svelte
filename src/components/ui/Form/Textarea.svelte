@@ -7,6 +7,18 @@
   export let value;
 </script>
 
+<div class="growWrap">
+  <textarea
+    {id}
+    {name}
+    {placeholder}
+    {maxlength}
+    {disabled}
+    bind:value
+    onInput="this.parentNode.dataset.replicatedValue = this.value"
+  />
+</div>
+
 <style>
   textarea {
     outline: none;
@@ -55,14 +67,3 @@
     grid-area: 1 / 1 / 2 / 2;
   }
 </style>
-
-<div class="growWrap">
-  <textarea
-    {id}
-    {name}
-    {placeholder}
-    {maxlength}
-    {disabled}
-    bind:value
-    onInput="this.parentNode.dataset.replicatedValue = this.value" />
-</div>

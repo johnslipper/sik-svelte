@@ -23,20 +23,6 @@
   }
 </script>
 
-<style>
-  h2 {
-    font-size: 2rem;
-  }
-
-  .message {
-    padding-right: 2rem;
-    padding-bottom: 1rem;
-  }
-  .buttons :global(button) {
-    min-width: 4rem;
-  }
-</style>
-
 {#if title}
   <h2>{title}</h2>
 {/if}
@@ -51,3 +37,17 @@
     <ButtonDefault on:click={_onCancel}>{cancelText}</ButtonDefault>
   {/if}
 </div>
+
+<style>
+  h2 {
+    font-size: 2rem;
+  }
+
+  .message {
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+  }
+  .buttons :global(button) {
+    min-width: 4rem;
+  }
+</style>

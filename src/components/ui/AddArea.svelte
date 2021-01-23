@@ -5,6 +5,15 @@
   export let text = "";
 </script>
 
+<div class="add">
+  {#if SLOTS && SLOTS.default}
+    <slot />
+  {:else}
+    <Icon path={plusIcon} size="1.25rem" />
+    {text}
+  {/if}
+</div>
+
 <style>
   .add {
     display: grid;
@@ -21,12 +30,3 @@
     font-size: 1em;
   }
 </style>
-
-<div class="add">
-  {#if SLOTS && SLOTS.default}
-    <slot />
-  {:else}
-    <Icon path={plusIcon} size="1.25rem" />
-    {text}
-  {/if}
-</div>

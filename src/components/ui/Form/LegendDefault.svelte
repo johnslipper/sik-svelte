@@ -1,3 +1,7 @@
+<legend>
+  <slot />
+</legend>
+
 <style>
   legend {
     text-transform: uppercase;
@@ -7,7 +11,3 @@
     padding: 0.25rem 0.5rem;
   }
 </style>
-
-<legend>
-  <slot />
-</legend>

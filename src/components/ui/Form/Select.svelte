@@ -6,6 +6,10 @@
   export let value;
 </script>
 
+<select {id} {name} {disabled} {required} on:blur bind:value>
+  <slot />
+</select>
+
 <style>
   select {
     appearance: none;
@@ -25,7 +29,3 @@
     background-color: var(--neutralLightest);
   }
 </style>
-
-<select {id} {name} {disabled} {required} on:blur bind:value>
-  <slot />
-</select>

@@ -15,6 +15,46 @@
   }
 </script>
 
+<section in:fade={{ delay: 150 }}>
+  <VisuallyHidden>
+    <Heading text="Chords" level="2" />
+  </VisuallyHidden>
+  {#if chords && chords.length}
+    {#each chords as section}
+      <section>
+        <HeadingSticky>
+          <Heading
+            text={getSectionTitle(section.title)}
+            level="3"
+            fontSize="inherit"
+          />
+        </HeadingSticky>
+        {#if section.chords}
+          <ul class="chords">
+            {#each section.chords as chord, i}
+              <li class="chord" in:fade={{ delay: i * 50 }}>
+                <Dropdown position="center">
+                  <ChordView {chord} {tuning} />
+                  <div slot="content">
+                    <div class="actions" aria-labelledby="viewChordActionsMenu">
+                      <VisuallyHidden>
+                        <div id="viewChordActionsMenu">Chord actions</div>
+                      </VisuallyHidden>
+                      <ChordPlay {chord} {tuning} {capoAdjustment} />
+                    </div>
+                  </div>
+                </Dropdown>
+              </li>
+            {/each}
+          </ul>
+        {/if}
+      </section>
+    {/each}
+  {:else}
+    <div class="empty">No chords saved</div>
+  {/if}
+</section>
+
 <style>
   section {
     --headerTopOffset: 4.25rem;
@@ -55,42 +95,3 @@
     padding: 0.75rem;
   }
 </style>
-
-<section in:fade={{ delay: 150 }}>
-  <VisuallyHidden>
-    <Heading text="Chords" level="2" />
-  </VisuallyHidden>
-  {#if chords && chords.length}
-    {#each chords as section}
-      <section>
-        <HeadingSticky>
-          <Heading
-            text={getSectionTitle(section.title)}
-            level="3"
-            fontSize="inherit" />
-        </HeadingSticky>
-        {#if section.chords}
-          <ul class="chords">
-            {#each section.chords as chord, i}
-              <li class="chord" in:fade={{ delay: i * 50 }}>
-                <Dropdown position="center">
-                  <ChordView {chord} {tuning} />
-                  <div slot="content">
-                    <div class="actions" aria-labelledby="viewChordActionsMenu">
-                      <VisuallyHidden>
-                        <div id="viewChordActionsMenu">Chord actions</div>
-                      </VisuallyHidden>
-                      <ChordPlay {chord} {tuning} {capoAdjustment} />
-                    </div>
-                  </div>
-                </Dropdown>
-              </li>
-            {/each}
-          </ul>
-        {/if}
-      </section>
-    {/each}
-  {:else}
-    <div class="empty">No chords saved</div>
-  {/if}
-</section>

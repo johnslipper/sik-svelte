@@ -2,6 +2,10 @@
   export let htmlFor;
 </script>
 
+<label for={htmlFor}>
+  <slot />
+</label>
+
 <style>
   label {
     text-transform: uppercase;
@@ -12,7 +16,3 @@
     line-height: 1.5;
   }
 </style>
-
-<label for={htmlFor}>
-  <slot />
-</label>

@@ -8,15 +8,9 @@
   } from "../../ui/Form";
   import SongEditDetails from "./SongEditDetails.svelte";
   import SongEditChords from "./SongEditChords.svelte";
-  
+
   export let song = {};
 </script>
-
-<style>
-  .wrapper {
-    padding: 1rem;
-  }
-</style>
 
 <Fieldset>
   <LegendSticky>Details</LegendSticky>
@@ -27,7 +21,8 @@
       bind:album={song.album}
       bind:artwork={song.artwork}
       bind:tuning={song.tuning}
-      bind:capoAdjustment={song.capoAdjustment} />
+      bind:capoAdjustment={song.capoAdjustment}
+    />
   </div>
 </Fieldset>
 <Fieldset>
@@ -42,12 +37,19 @@
 <Fieldset>
   <LegendSticky>
     Chords
-    {song.capoAdjustment ? `(capo ${song.capoAdjustment})` : ''}
+    {song.capoAdjustment ? `(capo ${song.capoAdjustment})` : ""}
   </LegendSticky>
   <div>
     <SongEditChords
       chordSections={song.chordSections}
       tuning={song.tuning}
-      capoAdjustment={song.capoAdjustment} />
+      capoAdjustment={song.capoAdjustment}
+    />
   </div>
 </Fieldset>
+
+<style>
+  .wrapper {
+    padding: 1rem;
+  }
+</style>

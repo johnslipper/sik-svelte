@@ -1,3 +1,7 @@
+<div class="visuallyHidden">
+  <slot />
+</div>
+
 <style>
   .visuallyHidden {
     clip-path: inset(50%);
@@ -8,7 +12,3 @@
     width: 1px;
   }
 </style>
-
-<div class="visuallyHidden">
-  <slot />
-</div>

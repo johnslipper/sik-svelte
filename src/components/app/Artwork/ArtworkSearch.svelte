@@ -51,6 +51,52 @@
   }
 </script>
 
+{#if !fromUrl}
+  <header>
+    <Form onSubmit={handleSubmitSearch}>
+      <Heading text="Artwork search" level="2" fontSize="1.25rem" />
+      <div class="search">
+        <FormGroup>
+          <VisuallyHidden>
+            <LabelDefault htmlFor="searchArtwork">Search term</LabelDefault>
+          </VisuallyHidden>
+          <Input id="searchArtwork" bind:value={queryInput} />
+        </FormGroup>
+        <ButtonPrimary type="submit">Search</ButtonPrimary>
+      </div>
+    </Form>
+  </header>
+
+  {#if query}
+    <div class="results">
+      {#await search}
+        <p>loading...</p>
+      {:then searchResults}
+        <ArtworkSearchResults {searchResults} onSelected={handleSelected} />
+      {:catch error}
+        <p style="color: red">{error.message}</p>
+      {/await}
+    </div>
+    {#if selected}
+      <div class="selection">
+        <Form onSubmit={handleSubmitSelected}>
+          <div class="content">
+            <ArtworkSearchSelected
+              title={selected.title}
+              artist={selected.artist}
+              album={selected.album}
+            />
+            <ButtonPrimary type="submit">Select</ButtonPrimary>
+          </div>
+        </Form>
+      </div>
+    {/if}
+  {/if}
+  <ButtonText on:click={handleSelectUrl}>Link to image</ButtonText>
+{:else}
+  <ArtworkFromUrl onSelect={handleSelectedUrl} onBack={handleBack} />
+{/if}
+
 <style>
   header {
     position: sticky;
@@ -86,52 +132,3 @@
     display: flex;
   }
 </style>
-
-{#if !fromUrl}
-  <header>
-    <Form onSubmit={handleSubmitSearch}>
-      <Heading text="Artwork search" level="2" fontSize="1.25rem" />
-      <div class="search">
-        <FormGroup>
-          <VisuallyHidden>
-            <LabelDefault htmlFor="searchArtwork">Search term</LabelDefault>
-          </VisuallyHidden>
-          <Input id="searchArtwork" bind:value={queryInput} />
-        </FormGroup>
-        <ButtonPrimary type="submit">Search</ButtonPrimary>
-      </div>
-    </Form>
-  </header>
-
-  {#if query}
-    <div class="results">
-      {#await search}
-        <p>loading...</p>
-      {:then searchResults}
-        <ArtworkSearchResults
-          {searchResults}
-          onSelected={handleSelected}
-        />
-      {:catch error}
-        <p style="color: red">{error.message}</p>
-      {/await}
-    </div>
-    {#if selected}
-      <div class="selection">
-        <Form onSubmit={handleSubmitSelected}>
-          <div class="content">
-            <ArtworkSearchSelected
-              title={selected.title}
-              artist={selected.artist}
-              album={selected.album}
-            />
-            <ButtonPrimary type="submit">Select</ButtonPrimary>
-          </div>
-        </Form>
-      </div>
-    {/if}
-  {/if}
-  <ButtonText on:click={handleSelectUrl}>Link to image</ButtonText>
-{:else}
-  <ArtworkFromUrl onSelect={handleSelectedUrl} onBack={handleBack} />
-{/if}

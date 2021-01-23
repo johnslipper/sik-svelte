@@ -25,12 +25,6 @@
   }
 </script>
 
-<style>
-  .wrapper {
-    padding: var(--contentPaddingHorizontal);
-  }
-</style>
-
 <Modal>
   <AppHeader title="Settings">
     <div slot="start" in:fade>
@@ -71,3 +65,9 @@
     </User>
   </div>
 </Modal>
+
+<style>
+  .wrapper {
+    padding: var(--contentPaddingHorizontal);
+  }
+</style>

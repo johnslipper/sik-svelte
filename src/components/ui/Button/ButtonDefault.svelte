@@ -2,6 +2,10 @@
   export let type = "button";
 </script>
 
+<button {type} on:click>
+  <slot>Button</slot>
+</button>
+
 <style>
   button {
     display: inline-block;
@@ -24,7 +28,3 @@
     transform: scale(0.95);
   }
 </style>
-
-<button {type} on:click>
-  <slot>Button</slot>
-</button>

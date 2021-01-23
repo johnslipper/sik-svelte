@@ -8,6 +8,10 @@
   registerTab(tab);
 </script>
 
+<button class:selected={$selectedTab === tab} on:click={() => selectTab(tab)}>
+  <slot />
+</button>
+
 <style>
   button {
     position: relative;
@@ -45,7 +49,3 @@
     transition: transform 150ms ease-in;
   }
 </style>
-
-<button class:selected={$selectedTab === tab} on:click={() => selectTab(tab)}>
-  <slot />
-</button>

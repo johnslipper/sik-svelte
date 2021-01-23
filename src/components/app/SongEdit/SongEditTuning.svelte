@@ -36,25 +36,14 @@
   }
 </script>
 
-<style>
-  .wrapper {
-    display: grid;
-    gap: 0.5rem;
-  }
-  .fields {
-    display: grid;
-    gap: 0.25rem;
-    grid-template-columns: repeat(auto-fill, minmax(2rem, 1fr));
-  }
-</style>
-
 <FieldsetDefault>
   <LegendDefault>Custom tuning</LegendDefault>
   <div class="wrapper">
     <Label>
       <Checkbox
         bind:checked={enableCustomTuning}
-        on:change={handleDisableCustomTuning} />
+        on:change={handleDisableCustomTuning}
+      />
       Enable custom tuning
     </Label>
     {#if enableCustomTuning}
@@ -72,7 +61,8 @@
               disabled={!enableCustomTuning}
               required
               bind:value={strings[i]}
-              on:blur={handleStringChanged}>
+              on:blur={handleStringChanged}
+            >
               <Option value="" />
               {#each notes as note}
                 <Option value={note}>{note}</Option>
@@ -84,3 +74,15 @@
     {/if}
   </div>
 </FieldsetDefault>
+
+<style>
+  .wrapper {
+    display: grid;
+    gap: 0.5rem;
+  }
+  .fields {
+    display: grid;
+    gap: 0.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(2rem, 1fr));
+  }
+</style>

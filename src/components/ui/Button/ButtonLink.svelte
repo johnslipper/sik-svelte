@@ -3,6 +3,12 @@
   export let to;
 </script>
 
+<div class="link">
+  <Link {to}>
+    <slot />
+  </Link>
+</div>
+
 <style>
   .link :global(a) {
     display: flex;
@@ -20,9 +26,3 @@
     transform: scale(0.95);
   }
 </style>
-
-<div class="link">
-  <Link {to}>
-    <slot />
-  </Link>
-</div>

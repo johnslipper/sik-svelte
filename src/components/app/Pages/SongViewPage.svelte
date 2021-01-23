@@ -23,22 +23,6 @@
   };
 </script>
 
-<style>
-  .panels {
-    padding-bottom: 5rem;
-  }
-  .tabList {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-  }
-  .text {
-    text-transform: uppercase;
-  }
-</style>
-
 <Modal>
   <User persist={sessionStorage} let:user>
     <Doc path={`/users/${user.uid}/songs/${id}`} let:data={song}>
@@ -84,3 +68,19 @@
     </Doc>
   </User>
 </Modal>
+
+<style>
+  .panels {
+    padding-bottom: 5rem;
+  }
+  .tabList {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .text {
+    text-transform: uppercase;
+  }
+</style>
