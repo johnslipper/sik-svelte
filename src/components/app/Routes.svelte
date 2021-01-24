@@ -8,6 +8,7 @@
     SongEditPage,
     SongViewPage,
     LoginPage,
+    PasswordResetPage,
   } from "./Pages";
 </script>
 
@@ -37,4 +38,8 @@
 
 <Route path="/login">
   <LoginPage />
+</Route>
+
+<Route path="/password-reset">
+  <PasswordResetPage />
 </Route>

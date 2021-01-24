@@ -36,7 +36,6 @@
 <AppHeader>Login</AppHeader>
 <User
   let:auth
-  let:user
   persist={sessionStorage}
   on:user={(e) => handleUser(e.detail.user)}
 >
@@ -63,10 +62,10 @@
               required="true"
             />
           </FormGroup>
-          <ButtonPrimary type="submit">Login</ButtonPrimary>
-          <ButtonLink on:click={() => auth.sendPasswordResetEmail(email)}
-            >Reset</ButtonLink
-          >
+          <div class="buttons">
+            <ButtonPrimary type="submit">Login</ButtonPrimary>
+            <ButtonLink to="/password-reset">Forgotten password?</ButtonLink>
+          </div>
           {#if error}
             <FormError message={error} />
           {/if}
@@ -83,5 +82,10 @@
   .form {
     display: grid;
     gap: 0.75rem;
+  }
+  .buttons {
+    display: flex;
+    gap: 0.25rem;
+    justify-content: space-between;
   }
 </style>

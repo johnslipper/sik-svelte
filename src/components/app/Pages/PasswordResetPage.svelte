@@ -1,0 +1,91 @@
+<script>
+  import { User } from "sveltefire";
+  import { navigate } from "svelte-routing";
+  import AppHeader from "../../ui/AppHeader.svelte";
+  import {
+    ButtonPrimary,
+    ButtonLink,
+    ButtonLinkDefault,
+  } from "../../ui/Button";
+  import {
+    Form,
+    FormGroup,
+    LabelDefault,
+    Input,
+    FormError,
+  } from "../../ui/Form/";
+
+  let email;
+  let error = "";
+  let isSent = false;
+
+  function handleUser(user) {
+    if (user && user.uid) {
+      navigate(`/songs`);
+    }
+  }
+
+  function handleSubmit(auth) {
+    resetError();
+    auth.sendPasswordResetEmail(email).then(
+      () => (isSent = true),
+      ({ message }) => (error = message)
+    );
+  }
+
+  function resetError() {
+    error = "";
+  }
+</script>
+
+<AppHeader>Reset password</AppHeader>
+<User
+  let:auth
+  persist={sessionStorage}
+  on:user={(e) => handleUser(e.detail.user)}
+>
+  <div slot="signed-out">
+    <div class="wrapper">
+      {#if isSent}
+        <p>A password reset email has been sent, check your inbox</p>
+        <ButtonLinkDefault to="/login">To login page</ButtonLinkDefault>
+      {:else}
+        <Form onSubmit={() => handleSubmit(auth)}>
+          <div class="form">
+            <FormGroup>
+              <LabelDefault htmlFor="resetEmail">Email</LabelDefault>
+              <Input
+                id="resetEmail"
+                required="true"
+                bind:value={email}
+                on:blur={resetError}
+              />
+            </FormGroup>
+            <div class="buttons">
+              <ButtonPrimary type="submit">Reset password</ButtonPrimary>
+              <ButtonLink to="/login">To login</ButtonLink>
+            </div>
+            {#if error}
+              <FormError message={error} />
+            {/if}
+          </div>
+        </Form>
+      {/if}
+    </div>
+  </div>
+</User>
+
+<style>
+  .wrapper {
+    padding: 1rem;
+  }
+  .form {
+    display: grid;
+    gap: 0.75rem;
+  }
+  .buttons {
+    display: flex;
+    gap: 0.25rem;
+    justify-content: space-between;
+  }
+</style>
