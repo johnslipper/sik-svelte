@@ -2,7 +2,7 @@
   import { User } from "sveltefire";
   import { navigate } from "svelte-routing";
   import AppHeader from "../../ui/AppHeader.svelte";
-  import { ButtonDefault, ButtonPrimary } from "../../ui/Button";
+  import { ButtonPrimary, ButtonLink } from "../../ui/Button";
   import {
     Form,
     FormGroup,
@@ -40,12 +40,6 @@
   persist={sessionStorage}
   on:user={(e) => handleUser(e.detail.user)}
 >
-  <div class="wrapper">
-    Howdy 😀! <em>{user.email}</em>
-  </div>
-  <div class="wrapper">
-    <ButtonDefault on:click={() => auth.signOut()}>Log out</ButtonDefault>
-  </div>
   <div slot="signed-out">
     <div class="wrapper">
       <Form onSubmit={() => handleSubmit(auth)}>
@@ -70,6 +64,9 @@
             />
           </FormGroup>
           <ButtonPrimary type="submit">Login</ButtonPrimary>
+          <ButtonLink on:click={() => auth.sendPasswordResetEmail(email)}
+            >Reset</ButtonLink
+          >
           {#if error}
             <FormError message={error} />
           {/if}
