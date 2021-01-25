@@ -45,6 +45,6 @@
   <PasswordResetPage />
 </Route>
 
-<Route path="/signup">
+<Route path="/sign-up">
   <SignupPage />
 </Route>
