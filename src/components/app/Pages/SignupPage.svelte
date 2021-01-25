@@ -67,7 +67,7 @@
           </FormGroup>
           <div class="buttons">
             <ButtonPrimary type="submit" disabled={isLoading}>
-              {isLoading ? "Signing up..." : "Sign in"}
+              {isLoading ? "Signing up..." : "Sign up"}
             </ButtonPrimary>
             <ButtonLink to="/sign-in">To sign in</ButtonLink>
           </div>
