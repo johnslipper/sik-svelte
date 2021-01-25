@@ -14,6 +14,7 @@
   let email;
   let password;
   let error = "";
+  let isLoading = false;
 
   function handleUser(user) {
     if (user && user.uid) {
@@ -23,9 +24,11 @@
 
   function handleSubmit(auth) {
     clearError();
+    isLoading = true;
     auth
       .createUserWithEmailAndPassword(email, password)
-      .then(null, ({ message }) => (error = message));
+      .then(null, ({ message }) => (error = message))
+      .finally(() => (isLoading = false));
   }
 
   function clearError() {
@@ -63,7 +66,9 @@
             />
           </FormGroup>
           <div class="buttons">
-            <ButtonPrimary type="submit">Sign up</ButtonPrimary>
+            <ButtonPrimary type="submit" disabled={isLoading}>
+              {isLoading ? "Signing up..." : "Sign in"}
+            </ButtonPrimary>
             <ButtonLink to="/sign-in">To sign in</ButtonLink>
           </div>
           {#if error}
