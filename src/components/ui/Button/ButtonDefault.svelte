@@ -1,8 +1,9 @@
 <script>
   export let type = "button";
+  export let disabled = false;
 </script>
 
-<button {type} on:click>
+<button {type} {disabled} on:click>
   <slot>Button</slot>
 </button>
 
@@ -26,5 +27,10 @@
     color: var(--buttonActiveColor);
     border-color: var(--buttonActiveBorderColor);
     transform: scale(0.95);
+  }
+  button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 </style>

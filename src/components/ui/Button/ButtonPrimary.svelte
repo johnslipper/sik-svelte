@@ -1,10 +1,11 @@
 <script>
   import ButtonDefault from "./ButtonDefault.svelte";
   export let type = "button";
+  export let disabled = false;
 </script>
 
 <div class="buttonPrimary">
-  <ButtonDefault {type} on:click>
+  <ButtonDefault {type} {disabled} on:click>
     <slot>Button</slot>
   </ButtonDefault>
 </div>

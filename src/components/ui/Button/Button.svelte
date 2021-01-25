@@ -1,8 +1,9 @@
 <script>
   export let type = "button";
+  export let disabled = false;
 </script>
 
-<button {type} on:click>
+<button {type} {disabled} on:click>
   <slot>Button</slot>
 </button>
 
@@ -20,5 +21,9 @@
   }
   button:active {
     transform: scale(0.95);
+  }
+  button[disabled] {
+    cursor: not-allowed;
+    pointer-events: none;
   }
 </style>
