@@ -48,7 +48,7 @@
     <div class="wrapper">
       {#if isSent}
         <p>A password reset email has been sent, check your inbox</p>
-        <ButtonLinkDefault to="/login">To login page</ButtonLinkDefault>
+        <ButtonLinkDefault to="/sign-in">To sign in page</ButtonLinkDefault>
       {:else}
         <Form onSubmit={() => handleSubmit(auth)}>
           <div class="form">
@@ -63,7 +63,7 @@
             </FormGroup>
             <div class="buttons">
               <ButtonPrimary type="submit">Reset password</ButtonPrimary>
-              <ButtonLink to="/login">To login</ButtonLink>
+              <ButtonLink to="/sign-in">To sign in</ButtonLink>
             </div>
             {#if error}
               <FormError message={error} />

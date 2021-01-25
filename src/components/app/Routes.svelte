@@ -7,7 +7,7 @@
     SongAddPage,
     SongEditPage,
     SongViewPage,
-    LoginPage,
+    SignInPage,
     PasswordResetPage,
     SignupPage,
   } from "./Pages";
@@ -37,8 +37,8 @@
   <SettingsPage />
 </Route>
 
-<Route path="/login">
-  <LoginPage />
+<Route path="/sign-in">
+  <SignInPage />
 </Route>
 
 <Route path="/password-reset">

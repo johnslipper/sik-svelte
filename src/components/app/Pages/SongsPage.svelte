@@ -47,7 +47,7 @@
     </Collection>
 
     <div slot="signed-out">
-      Please <Link to="/login">login</Link> to start using the app
+      Please <Link to="/sign-in">sign in</Link> to start using the app
     </div>
   </User>
 </div>

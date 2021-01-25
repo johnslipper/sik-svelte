@@ -44,18 +44,18 @@
       <Form onSubmit={() => handleSubmit(auth)}>
         <div class="form">
           <FormGroup>
-            <LabelDefault htmlFor="loginEmail">Email</LabelDefault>
+            <LabelDefault htmlFor="signInEmail">Email</LabelDefault>
             <Input
-              id="loginEmail"
+              id="signInEmail"
               required="true"
               bind:value={email}
               on:blur={clearError}
             />
           </FormGroup>
           <FormGroup>
-            <LabelDefault htmlFor="loginPassword">Password</LabelDefault>
+            <LabelDefault htmlFor="signInPassword">Password</LabelDefault>
             <Input
-              id="loginPassword"
+              id="signInPassword"
               type="password"
               bind:value={password}
               on:blur={clearError}
@@ -64,7 +64,7 @@
           </FormGroup>
           <div class="buttons">
             <ButtonPrimary type="submit">Sign up</ButtonPrimary>
-            <ButtonLink to="/login">To login</ButtonLink>
+            <ButtonLink to="/sign-in">To sign in</ButtonLink>
           </div>
           {#if error}
             <FormError message={error} />

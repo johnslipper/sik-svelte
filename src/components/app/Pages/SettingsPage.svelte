@@ -15,7 +15,7 @@
 
   function handleUser(user) {
     if (!user || !user.uid) {
-      navigate(`/login`);
+      navigate(`/sign-in`);
     }
   }
 
@@ -45,7 +45,7 @@
         <Heading text="User" fontSize="inherit" />
       </HeadingSticky>
       <div class="wrapper">
-        <ButtonDefault on:click={() => auth.signOut()}>Log out</ButtonDefault>
+        <ButtonDefault on:click={() => auth.signOut()}>Sign out</ButtonDefault>
       </div>
       <HeadingSticky>
         <Heading text="Import/Export songs" fontSize="inherit" />
