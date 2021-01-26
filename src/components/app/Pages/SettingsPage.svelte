@@ -38,7 +38,13 @@
       <Heading text="User" fontSize="inherit" />
     </HeadingSticky>
     <div class="wrapper">
-      <ButtonDefault on:click={() => auth.signOut()}>Sign out</ButtonDefault>
+      <div class="user">
+        <div>
+          <div>You are logged in as</div>
+          <strong>{user.email}</strong>
+        </div>
+        <ButtonDefault on:click={() => auth.signOut()}>Sign out</ButtonDefault>
+      </div>
     </div>
     <HeadingSticky>
       <Heading text="Import/Export songs" fontSize="inherit" />
@@ -58,5 +64,10 @@
 <style>
   .wrapper {
     padding: var(--contentPaddingHorizontal);
+  }
+  .user {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 1fr auto;
   }
 </style>
