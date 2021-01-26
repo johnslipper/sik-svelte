@@ -41,4 +41,7 @@
     text-decoration: none;
     color: inherit;
   }
+  :global(p) {
+    margin-top: 0;
+  }
 </style>
