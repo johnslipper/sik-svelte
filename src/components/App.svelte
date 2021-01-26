@@ -1,6 +1,6 @@
 <script>
   import { Router } from "svelte-routing";
-
+  import Modal from "svelte-simple-modal";
   import { FirebaseApp } from "sveltefire";
   import { config } from "../firebase.js";
   import firebase from "firebase/app";
@@ -20,7 +20,9 @@
 <FirebaseApp {firebase}>
   <Router {url}>
     <main style={cssVarStyles}>
-      <Routes />
+      <Modal>
+        <Routes />
+      </Modal>
     </main>
   </Router>
 </FirebaseApp>

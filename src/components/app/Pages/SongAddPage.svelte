@@ -1,7 +1,6 @@
 <script>
   import { fade, fly } from "svelte/transition";
   import { navigate } from "svelte-routing";
-  import Modal from "svelte-simple-modal";
   import { User, Collection } from "sveltefire";
   import { cleanDoc } from "../../../firebase.js";
   import AppHeader from "../../ui/AppHeader.svelte";
@@ -19,26 +18,24 @@
   }
 </script>
 
-<Modal>
-  <User let:user persist={sessionStorage}>
-    <Collection path={`/users/${user.uid}/songs`} let:ref={songsRef}>
-      <AppHeader title="Add song">
-        <div slot="start" in:fade>
-          <ButtonLink to="/songs">
-            <span>Cancel</span>
-            <VisuallyHidden>adding song</VisuallyHidden>
-          </ButtonLink>
-        </div>
-        <div slot="end" in:fade>
-          <ButtonText on:click={() => handleSave(song, songsRef, user)}>
-            <span>Save</span>
-            <VisuallyHidden>song</VisuallyHidden>
-          </ButtonText>
-        </div>
-      </AppHeader>
-      <div class="page" in:fly={{ y: 1000 }}>
-        <SongEdit bind:song />
+<User let:user persist={sessionStorage}>
+  <Collection path={`/users/${user.uid}/songs`} let:ref={songsRef}>
+    <AppHeader title="Add song">
+      <div slot="start" in:fade>
+        <ButtonLink to="/songs">
+          <span>Cancel</span>
+          <VisuallyHidden>adding song</VisuallyHidden>
+        </ButtonLink>
       </div>
-    </Collection>
-  </User>
-</Modal>
+      <div slot="end" in:fade>
+        <ButtonText on:click={() => handleSave(song, songsRef, user)}>
+          <span>Save</span>
+          <VisuallyHidden>song</VisuallyHidden>
+        </ButtonText>
+      </div>
+    </AppHeader>
+    <div class="page" in:fly={{ y: 1000 }}>
+      <SongEdit bind:song />
+    </div>
+  </Collection>
+</User>
