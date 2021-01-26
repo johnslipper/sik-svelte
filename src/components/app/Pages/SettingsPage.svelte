@@ -54,7 +54,7 @@
         <Collection
           path={`/users/${user.uid}/songs`}
           let:data={songs}
-          query={(ref) => ref.where("uid", "==", user.uid).orderBy("artist")}
+          query={(ref) => ref.orderBy("artist")}
         >
           <ButtonDefault on:click={() => handleExport(songs)}
             >Export songs</ButtonDefault
