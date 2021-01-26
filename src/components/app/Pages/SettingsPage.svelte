@@ -9,8 +9,11 @@
   import { leftArrowIcon } from "../../ui/Icons/icons.js";
   import Heading from "../../ui/Heading/Heading.svelte";
   import HeadingSticky from "../../ui/Heading/HeadingSticky.svelte";
-  import SettingsExportSongs from "../Settings/SettingsExportSongs.svelte";
-  import SettingsDelete from "../Settings/SettingsDelete.svelte";
+  import {
+    SettingsExportSongs,
+    SettingsDelete,
+    SettingsAbout,
+  } from "../Settings";
 
   function handleUser(user) {
     if (!user || !user.uid) {
@@ -59,6 +62,12 @@
       <SettingsDelete {auth} {user} />
     </div>
   </User>
+  <HeadingSticky>
+    <Heading text="About" fontSize="inherit" />
+  </HeadingSticky>
+  <div class="wrapper">
+    <SettingsAbout />
+  </div>
 </div>
 
 <style>
