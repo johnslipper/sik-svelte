@@ -9,6 +9,7 @@
   import { leftArrowIcon } from "../../ui/Icons/icons.js";
   import Heading from "../../ui/Heading/Heading.svelte";
   import HeadingSticky from "../../ui/Heading/HeadingSticky.svelte";
+  import SettingsDelete from "../Settings/SettingsDelete.svelte";
   import { downloadObjectAsJson, getDateString } from "../../../helpers.js";
   import { stripRefs } from "../../../firebase.js";
 
@@ -59,6 +60,12 @@
         >
         <div slot="loading">Loading songs for export...</div>
       </Collection>
+    </div>
+    <HeadingSticky>
+      <Heading text="Clear data" fontSize="inherit" />
+    </HeadingSticky>
+    <div class="wrapper">
+      <SettingsDelete {auth} {user} />
     </div>
   </User>
 </div>

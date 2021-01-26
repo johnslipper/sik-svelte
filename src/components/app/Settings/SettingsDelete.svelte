@@ -1,0 +1,90 @@
+<script>
+  import { getContext } from "svelte";
+  import { Collection } from "sveltefire";
+  import { navigate } from "svelte-routing";
+  import { ButtonDefault } from "../../ui/Button";
+  import FormError from "../../ui/Form/FormError.svelte";
+  import { Dialogue, SensitiveConfirmation } from "../../ui/Modal";
+
+  export let user;
+  export let auth;
+
+  const { open } = getContext("simple-modal");
+  let error = "";
+
+  function handleDeleteSongs(songs) {
+    clearError();
+    if (songs.length) {
+      open(SensitiveConfirmation, {
+        message:
+          "Are you sure you want to delete ALL the songs stored? ...Make sure you've exported anything you want to keep first!",
+        confirmationText: "songs",
+        onOkay: () => {
+          Promise.all(songs.map((song) => song.ref.delete())).then(
+            () => console.log("All songs deleted!"),
+            ({ message }) => (error = message)
+          );
+        },
+      });
+    } else {
+      open(Dialogue, {
+        message: "You don't currently have any songs to delete",
+        showCancelButton: false,
+      });
+    }
+  }
+
+  function handleDeleteUser(songs) {
+    clearError();
+    if (songs.length) {
+      open(Dialogue, {
+        message: "Please first delete all songs first",
+        showCancelButton: false,
+      });
+    } else {
+      open(SensitiveConfirmation, {
+        message:
+          "Are you sure you want to remove yourself and all data entirely from the app? ...There's no going back, you'll be starting from scratch!",
+        confirmationText: "everything",
+        onOkay: () => {
+          auth.currentUser.delete().then(
+            () => navigate("/"),
+            ({ message }) => (error = message)
+          );
+        },
+      });
+    }
+  }
+
+  function clearError() {
+    error = "";
+  }
+</script>
+
+<div class="wrapper">
+  <div class="actions">
+    <Collection path={`/users/${user.uid}/songs`} let:data={songs}>
+      <div slot="loading">Loading...</div>
+      <ButtonDefault on:click={() => handleDeleteSongs(songs)}
+        >Delete all songs</ButtonDefault
+      >
+      <ButtonDefault on:click={() => handleDeleteUser(songs)}
+        >Delete user</ButtonDefault
+      >
+    </Collection>
+  </div>
+  {#if error}
+    <FormError message={error} />
+  {/if}
+</div>
+
+<style>
+  .wrapper {
+    display: grid;
+    gap: 0.5rem;
+  }
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+</style>
