@@ -1,0 +1,93 @@
+<script>
+  import { getContext } from "svelte";
+  import { ButtonPrimary, ButtonDefault } from "../Button";
+  import { Form, FormError, FormGroup, Input, LabelDefault } from "../Form";
+  export let message;
+  export let title = "";
+  export let okayText = "OK";
+  export let cancelText = "Cancel";
+  export let onCancel = () => {};
+  export let onOkay = () => {};
+  export let confirmationText = "";
+
+  let confirmationInput;
+  let error;
+  const { close } = getContext("simple-modal");
+
+  $: confirmationValid = confirmationInput === confirmationText;
+
+  function _onCancel() {
+    onCancel();
+    close();
+  }
+
+  function _onOkay() {
+    if (confirmationValid) {
+      onOkay();
+      close();
+    } else {
+      error = `Please type "${confirmationText}" into the box to confirm`;
+    }
+  }
+
+  function clearError() {
+    error = "";
+  }
+</script>
+
+{#if title}
+  <h2>{title}</h2>
+{/if}
+
+<div class="message">{message}</div>
+
+<Form onSubmit={_onOkay}>
+  <div class="form">
+    <div class="fields">
+      <FormGroup>
+        <LabelDefault htmlFor="confirmationText"
+          >Confirm by typing "<strong>{confirmationText}</strong>" below</LabelDefault
+        >
+        <Input
+          id="confirmationText"
+          bind:value={confirmationInput}
+          placeholder={confirmationText}
+          on:blur={clearError}
+        />
+      </FormGroup>
+    </div>
+
+    {#if error}
+      <FormError message={error} />
+    {/if}
+
+    <div class="buttons">
+      <ButtonPrimary type="submit">{okayText}</ButtonPrimary>
+      <ButtonDefault on:click={_onCancel}>{cancelText}</ButtonDefault>
+    </div>
+  </div>
+</Form>
+
+<style>
+  h2 {
+    font-size: 2rem;
+  }
+
+  .message {
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .form {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .buttons :global(button) {
+    min-width: 4rem;
+  }
+
+  strong {
+    text-transform: none;
+  }
+</style>
