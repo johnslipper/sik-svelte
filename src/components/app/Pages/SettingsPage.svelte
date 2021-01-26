@@ -1,6 +1,5 @@
 <script>
   import { fade, fly } from "svelte/transition";
-  import Modal from "svelte-simple-modal";
   import { navigate } from "svelte-routing";
   import { User, Collection } from "sveltefire";
   import AppHeader from "../../ui/AppHeader.svelte";
@@ -25,46 +24,44 @@
   }
 </script>
 
-<Modal>
-  <AppHeader title="Settings">
-    <div slot="start" in:fade>
-      <ButtonLink to="/songs">
-        <Icon path={leftArrowIcon} size="1.1rem" />
-        <VisuallyHidden>back to songs</VisuallyHidden>
-      </ButtonLink>
-    </div>
-  </AppHeader>
-  <div class="page" in:fly={{ y: 1000 }}>
-    <User
-      let:user
-      persist={sessionStorage}
-      let:auth
-      on:user={(e) => handleUser(e.detail.user)}
-    >
-      <HeadingSticky>
-        <Heading text="User" fontSize="inherit" />
-      </HeadingSticky>
-      <div class="wrapper">
-        <ButtonDefault on:click={() => auth.signOut()}>Sign out</ButtonDefault>
-      </div>
-      <HeadingSticky>
-        <Heading text="Import/Export songs" fontSize="inherit" />
-      </HeadingSticky>
-      <div class="wrapper">
-        <Collection
-          path={`/users/${user.uid}/songs`}
-          let:data={songs}
-          query={(ref) => ref.orderBy("artist")}
-        >
-          <ButtonDefault on:click={() => handleExport(songs)}
-            >Export songs</ButtonDefault
-          >
-          <div slot="loading">Loading songs for export...</div>
-        </Collection>
-      </div>
-    </User>
+<AppHeader title="Settings">
+  <div slot="start" in:fade>
+    <ButtonLink to="/songs">
+      <Icon path={leftArrowIcon} size="1.1rem" />
+      <VisuallyHidden>back to songs</VisuallyHidden>
+    </ButtonLink>
   </div>
-</Modal>
+</AppHeader>
+<div class="page" in:fly={{ y: 1000 }}>
+  <User
+    let:user
+    persist={sessionStorage}
+    let:auth
+    on:user={(e) => handleUser(e.detail.user)}
+  >
+    <HeadingSticky>
+      <Heading text="User" fontSize="inherit" />
+    </HeadingSticky>
+    <div class="wrapper">
+      <ButtonDefault on:click={() => auth.signOut()}>Sign out</ButtonDefault>
+    </div>
+    <HeadingSticky>
+      <Heading text="Import/Export songs" fontSize="inherit" />
+    </HeadingSticky>
+    <div class="wrapper">
+      <Collection
+        path={`/users/${user.uid}/songs`}
+        let:data={songs}
+        query={(ref) => ref.orderBy("artist")}
+      >
+        <ButtonDefault on:click={() => handleExport(songs)}
+          >Export songs</ButtonDefault
+        >
+        <div slot="loading">Loading songs for export...</div>
+      </Collection>
+    </div>
+  </User>
+</div>
 
 <style>
   .wrapper {
