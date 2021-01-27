@@ -9,7 +9,7 @@
   });
 </script>
 
-<div class="wrapper" in:fade out:fade>
+<div class="wrapper" in:fade>
   <Logo />
 </div>
 

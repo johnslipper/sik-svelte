@@ -48,7 +48,7 @@
         </div>
       </Collection>
 
-      <div class="welcome" slot="signed-out">
+      <div class="welcome" slot="signed-out" in:fade>
         <Welcome />
       </div>
     </User>
