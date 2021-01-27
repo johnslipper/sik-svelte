@@ -3,6 +3,9 @@
   import { backOut } from "svelte/easing";
   import SongsListItem from "./SongsListItem.svelte";
   import LogoMark from "../Logo/LogoMark.svelte";
+  import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
+  import Icon from "../../ui/Icons/Icon.svelte";
+  import { plusIcon } from "../../ui/Icons/icons.js";
   export let songs;
 </script>
 
@@ -27,7 +30,9 @@
         <LogoMark />
       </div>
       <p>
-        No songs currently saved. <br />Use the plus button to get started.
+        No songs currently saved. <br />
+        Use the <Icon path={plusIcon} size="0.8rem" />
+        <VisuallyHidden>plus</VisuallyHidden> button to get started.
       </p>
     </div>
   {/if}
