@@ -60,6 +60,9 @@
 <style>
   .wrapper {
     position: relative;
+    --dropdownZndex: 2;
+    --dropdownBackgroundColor: var(--primaryContrast);
+    --dropdownBorderColor: var(--neutralLightest);
   }
   .button {
     display: flex;
@@ -75,7 +78,7 @@
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
       0 10px 10px -2px rgba(0, 0, 0, 0.04);
     border-radius: 0.5rem;
-    border: 1px solid var(--neutralLightest);
+    border: 1px solid var(--dropdownBorderColor);
   }
   .top {
     top: 0;

@@ -49,9 +49,6 @@ export const theme = {
   inputPadding: "0.5rem",
   inputBorderRadius: "0.15rem",
   inputBorderColor: colors.neutralMedium,
-  /* Dropdown */
-  dropdownZndex: 2,
-  dropdownBackgroundColor: "white",
   /* Button (Default) */
   buttonPadding: "0.6rem 1rem",
   buttonBorderRadius: "0.25rem",
