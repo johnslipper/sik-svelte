@@ -99,7 +99,7 @@
   .wrapper {
     position: relative;
     --logoStroke: var(--neutralDark);
-    --logoFill: var(--neutralLightest);
+    --logoFill: var(--neutralLighter);
   }
   svg {
     width: 100%;
