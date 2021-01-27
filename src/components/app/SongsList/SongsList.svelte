@@ -48,11 +48,14 @@
     padding: 0 var(--contentPaddingHorizontal);
   }
   .logo {
-    opacity: 0.25;
+    opacity: 0.1;
     padding: 1rem 0;
     max-width: 10rem;
     margin-left: auto;
     margin-right: auto;
+  }
+  .logo :global(svg) {
+    --logoStroke: var(--primaryDark);
   }
   p {
     color: var(--bodyColorMuted);
