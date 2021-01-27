@@ -33,7 +33,7 @@
     </User>
   </div>
 </AppHeader>
-<div class="songsList">
+<div class="list">
   <User let:user persist={sessionStorage}>
     <Collection
       path={`/users/${user.uid}/songs`}
@@ -53,7 +53,10 @@
 </div>
 
 <style>
-  .songsList {
+  .list {
     --headerTopOffset: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 </style>
