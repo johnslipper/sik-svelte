@@ -44,7 +44,7 @@
       <div class="user">
         <div>
           <div>You are logged in as</div>
-          <strong>{user.email}</strong>
+          <strong class="email">{user.email}</strong>
         </div>
         <ButtonDefault on:click={() => auth.signOut()}>Sign out</ButtonDefault>
       </div>
@@ -78,5 +78,8 @@
     display: grid;
     gap: 0.5rem;
     grid-template-columns: 1fr auto;
+  }
+  .email {
+    word-wrap: anywhere;
   }
 </style>
