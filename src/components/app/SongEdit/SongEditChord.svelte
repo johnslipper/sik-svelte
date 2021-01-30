@@ -3,7 +3,7 @@
   import ChordPlay from "../Chord/ChordPlay.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import Dropdown from "../../ui/Dropdown.svelte";
-  import { crossIcon, pencilIcon, speakerIcon } from "../../ui/Icons/icons.js";
+  import { crossIcon, pencilIcon } from "../../ui/Icons/icons.js";
   import Icon from "../../ui/Icons/Icon.svelte";
   import { Button } from "../../ui/Button";
   export let chord;
