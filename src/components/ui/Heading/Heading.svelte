@@ -4,8 +4,8 @@
   export let fontSize = "1.2rem";
   let displayText = `<h${level} style="
         font-size:${fontSize}; 
-        color: var(--headingColor);
-        font-weight: var(--headingWeight);
+        color: inherit;
+        font-weight: normal;
         margin: 0;
         ">${text}</h${level}>`;
 </script>

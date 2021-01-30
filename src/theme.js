@@ -42,9 +42,6 @@ export const theme = {
   /* Body text */
   bodyColor: colors.neutralDark,
   bodyColorMuted: colors.neutralMedium,
-  /* Headings */
-  headingColor: "inherit",
-  headingWeight: "normal",
   /* Input */
   inputPadding: "0.5rem",
   inputBorderRadius: "0.15rem",
