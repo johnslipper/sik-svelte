@@ -182,8 +182,8 @@
       </div>
     </div>
     <div class="buttons">
-      <ButtonDefault on:click={onCancel}>Back</ButtonDefault>
       <ButtonPrimary type="submit">Save</ButtonPrimary>
+      <ButtonDefault on:click={onCancel}>Back</ButtonDefault>
     </div>
   </Form>
 </div>
