@@ -33,7 +33,7 @@
   </LegendSticky>
   <div>
     <SongEditChords
-      chordSections={song.chordSections}
+      bind:chordSections={song.chordSections}
       tuning={song.tuning}
       capoAdjustment={song.capoAdjustment}
     />
