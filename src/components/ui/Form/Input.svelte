@@ -1,4 +1,6 @@
 <script>
+  // Type not allowed to be dynamic alongside value binding
+  // TODO: Currently duplicating element per type, needs a better solution
   export let type = "text";
   export let id;
   export let name = "";
@@ -12,6 +14,18 @@
 {#if type === "password"}
   <input
     type="password"
+    {id}
+    {name}
+    {placeholder}
+    {maxlength}
+    {disabled}
+    {required}
+    bind:value
+    on:blur
+  />
+{:else if type === "email"}
+  <input
+    type="email"
     {id}
     {name}
     {placeholder}
