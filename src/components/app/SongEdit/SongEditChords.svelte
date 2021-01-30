@@ -45,7 +45,7 @@
   {#each chordSections as chordSection, i}
     <div class="chordSection" in:fade={{ delay: i * 50 }}>
       <SongEditChordSections
-        {chordSection}
+        bind:chordSection
         {tuning}
         {capoAdjustment}
         key={i}

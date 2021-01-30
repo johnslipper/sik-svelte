@@ -7,7 +7,6 @@
   import Icon from "../../ui/Icons/Icon.svelte";
   import { Button } from "../../ui/Button";
   export let chord;
-  export let chordSection;
   export let tuning;
   export let capoAdjustment;
   export let onEdit;
@@ -29,7 +28,7 @@
         </Button>
         <ChordPlay {chord} {tuning} {capoAdjustment} />
         <div class="danger">
-          <Button on:click={() => onRemove(chordSection, chord)}>
+          <Button on:click={() => onRemove(chord)}>
             <Icon path={crossIcon} size="1.5rem" />
             <div>Remove</div>
             <VisuallyHidden>chord</VisuallyHidden>

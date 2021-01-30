@@ -24,12 +24,8 @@
     });
   };
 
-  function handleRemoveChord(chordSection, chord) {
-    // TODO: Not working
-    chordSection = {
-      ...chordSection,
-      chords: chordSection.chords.filter((c) => c !== chord),
-    };
+  function handleRemoveChord(chord) {
+    chordSection.chords = chordSection.chords.filter((c) => c !== chord);
   }
 
   function handleEditChord(chord) {
@@ -57,7 +53,6 @@
       {#each chordSection.chords as chord, i}
         <li in:fade={{ delay: i * 100 }}>
           <SongEditChord
-            {chordSection}
             {tuning}
             {capoAdjustment}
             {chord}
