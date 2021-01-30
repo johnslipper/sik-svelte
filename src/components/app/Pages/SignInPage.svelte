@@ -51,6 +51,7 @@
             <Input
               id="signInEmail"
               required="true"
+              type="email"
               bind:value={email}
               on:blur={clearError}
             />

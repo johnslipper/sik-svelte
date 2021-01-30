@@ -57,6 +57,7 @@
               <Input
                 id="resetEmail"
                 required="true"
+                type="email"
                 bind:value={email}
                 on:blur={resetError}
               />
