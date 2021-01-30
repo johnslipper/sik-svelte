@@ -41,7 +41,7 @@
 <AppHeader>Reset password</AppHeader>
 <User
   let:auth
-  persist={sessionStorage}
+  persist={localStorage}
   on:user={(e) => handleUser(e.detail.user)}
 >
   <div slot="signed-out">

@@ -18,7 +18,7 @@
   }
 </script>
 
-<User persist={sessionStorage} let:user>
+<User persist={localStorage} let:user>
   <Doc path={`/users/${user.uid}/songs/${id}`} let:data={song} let:ref={docRef}>
     <AppHeader title="Edit song">
       <div slot="start" in:fade>
@@ -32,7 +32,7 @@
       </div>
     </AppHeader>
     <div class="page" in:fade>
-      <SongEdit {song} isEdit="true" />
+      <SongEdit {song} />
       <SongEditActions {docRef} />
     </div>
     <div slot="loading">Loading...</div>

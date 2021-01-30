@@ -33,7 +33,7 @@
 <div class="page" in:fly={{ y: 1000 }}>
   <User
     let:user
-    persist={sessionStorage}
+    persist={localStorage}
     let:auth
     on:user={(e) => handleUser(e.detail.user)}
   >

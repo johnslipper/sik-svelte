@@ -16,7 +16,7 @@
 <div class="wrapper">
   <AppHeader>
     <div slot="start" in:fade>
-      <User persist={sessionStorage}>
+      <User persist={localStorage}>
         <ButtonLink to="/settings">
           <Icon path={cogIcon} size="1.1rem" />
           <VisuallyHidden>Settings</VisuallyHidden>
@@ -27,7 +27,7 @@
       <LogoCompact />
     </Link>
     <div slot="end" in:fade>
-      <User persist={sessionStorage}>
+      <User persist={localStorage}>
         <ButtonLink to="/add">
           <Icon path={plusIcon} size="1.1rem" />
           <VisuallyHidden>Add song</VisuallyHidden>
@@ -36,7 +36,7 @@
     </div>
   </AppHeader>
   <div class="list">
-    <User let:user persist={sessionStorage}>
+    <User let:user persist={localStorage}>
       <Collection
         path={`/users/${user.uid}/songs`}
         let:data={songs}

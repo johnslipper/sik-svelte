@@ -18,7 +18,7 @@
   }
 </script>
 
-<User let:user persist={sessionStorage}>
+<User let:user persist={localStorage}>
   <Collection path={`/users/${user.uid}/songs`} let:ref={songsRef}>
     <AppHeader title="Add song">
       <div slot="start" in:fade>
