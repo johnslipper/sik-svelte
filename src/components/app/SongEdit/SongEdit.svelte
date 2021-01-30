@@ -21,7 +21,15 @@
   </div>
 </Fieldset>
 <Fieldset>
-  <LegendSticky>Lyrics</LegendSticky>
+  <LegendSticky>
+    <div class="titleAction">
+      Lyrics <a
+        href="https://duckduckgo.com/?q={song.title} {song.artist} {song.album} lyrics"
+        target="_blank"
+        rel="noopener">Web search</a
+      >
+    </div>
+  </LegendSticky>
   <div class="wrapper">
     <SongEditLyrics bind:lyrics={song.lyrics} />
   </div>
@@ -43,5 +51,14 @@
 <style>
   .wrapper {
     padding: 1rem;
+  }
+
+  .titleAction {
+    display: flex;
+    justify-content: space-between;
+  }
+  .titleAction a {
+    color: var(--primary);
+    text-transform: initial;
   }
 </style>
