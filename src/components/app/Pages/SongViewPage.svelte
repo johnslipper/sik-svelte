@@ -2,6 +2,7 @@
   import { fly, slide } from "svelte/transition";
   import { elasticOut } from "svelte/easing";
   import { User, Doc } from "sveltefire";
+  import { redirectIfNoUser } from "../../../firebase.js";
   import SongHeader from "../SongView/SongViewHeader.svelte";
   import SongLyrics from "../SongView/SongViewLyrics.svelte";
   import SongViewChords from "../SongView/SongViewChords.svelte";
@@ -22,7 +23,11 @@
   };
 </script>
 
-<User persist={localStorage} let:user>
+<User
+  persist={localStorage}
+  let:user
+  on:user={(e) => redirectIfNoUser(e.detail.user)}
+>
   <Doc path={`/users/${user.uid}/songs/${id}`} let:data={song}>
     <div slot="loading">Loading...</div>
     <div slot="fallback">Unable to display song, please refresh...</div>

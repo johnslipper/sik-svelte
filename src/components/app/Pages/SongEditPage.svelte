@@ -2,7 +2,7 @@
   import { fade } from "svelte/transition";
   import { navigate } from "svelte-routing";
   import { User, Doc } from "sveltefire";
-  import { cleanDoc } from "../../../firebase.js";
+  import { cleanDoc, redirectIfNoUser } from "../../../firebase.js";
   import AppHeader from "../../ui/AppHeader.svelte";
   import SongEdit from "../SongEdit/SongEdit.svelte";
   import SongEditActions from "../SongEdit/SongEditActions.svelte";
@@ -18,7 +18,11 @@
   }
 </script>
 
-<User persist={localStorage} let:user>
+<User
+  persist={localStorage}
+  let:user
+  on:user={(e) => redirectIfNoUser(e.detail.user)}
+>
   <Doc path={`/users/${user.uid}/songs/${id}`} let:data={song} let:ref={docRef}>
     <AppHeader title="Edit song">
       <div slot="start" in:fade>
