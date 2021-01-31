@@ -1,6 +1,6 @@
 <script>
   import { User } from "sveltefire";
-  import { navigate } from "svelte-routing";
+  import { redirectIfUser } from "../../../firebase.js";
   import AppHeader from "../../ui/AppHeader.svelte";
   import { ButtonPrimary, ButtonLink } from "../../ui/Button";
   import {
@@ -15,12 +15,6 @@
   let password;
   let error = "";
   let isLoading = false;
-
-  function handleUser(user) {
-    if (user && user.uid) {
-      navigate(`/songs`);
-    }
-  }
 
   function handleSubmit(auth) {
     clearError();
@@ -40,7 +34,7 @@
 <User
   let:auth
   persist={localStorage}
-  on:user={(e) => handleUser(e.detail.user)}
+  on:user={(e) => redirectIfUser(e.detail.user)}
 >
   <div slot="signed-out">
     <div class="wrapper">

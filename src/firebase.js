@@ -1,3 +1,4 @@
+import { navigate } from "svelte-routing";
 export const config = {
   apiKey: "AIzaSyAI1_JN9QSnvyPc53GskQ0t0DHCiUSmL-E",
   authDomain: "songs-i-know-2020.firebaseapp.com",
@@ -19,4 +20,16 @@ export function cleanDoc(sourceObject) {
       }
     })
   );
+}
+
+export function redirectIfUser(user) {
+  if (user && user.uid) {
+    navigate(`/songs`);
+  }
+}
+
+export function redirectIfNoUser(user) {
+  if (!user || !user.uid) {
+    navigate(`/sign-in`);
+  }
 }

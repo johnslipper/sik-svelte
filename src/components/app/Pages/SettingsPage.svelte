@@ -1,6 +1,6 @@
 <script>
   import { fade, fly } from "svelte/transition";
-  import { navigate } from "svelte-routing";
+  import { redirectIfNoUser } from "../../../firebase.js";
   import { User } from "sveltefire";
   import AppHeader from "../../ui/AppHeader.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
@@ -14,12 +14,6 @@
     SettingsDelete,
     SettingsAbout,
   } from "../Settings";
-
-  function handleUser(user) {
-    if (!user || !user.uid) {
-      navigate(`/sign-in`);
-    }
-  }
 </script>
 
 <AppHeader title="Settings">
@@ -35,7 +29,7 @@
     let:user
     persist={localStorage}
     let:auth
-    on:user={(e) => handleUser(e.detail.user)}
+    on:user={(e) => redirectIfNoUser(e.detail.user)}
   >
     <HeadingSticky>
       <Heading text="User" fontSize="inherit" />
