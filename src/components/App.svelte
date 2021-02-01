@@ -6,6 +6,7 @@
   import firebase from "firebase/app";
   import "firebase/firestore";
   import "firebase/auth";
+  import { SvelteToast } from "@zerodevx/svelte-toast";
 
   firebase.initializeApp(config);
   import { theme } from "../theme.js";
@@ -26,6 +27,7 @@
     </main>
   </Router>
 </FirebaseApp>
+<SvelteToast />
 
 <style>
   :global(*) {
@@ -43,5 +45,10 @@
   }
   :global(p) {
     margin-top: 0;
+  }
+
+  :root {
+    --toastContainerTop: auto;
+    --toastContainerBottom: 1.5rem;
   }
 </style>
