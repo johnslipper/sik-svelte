@@ -3,6 +3,8 @@
   import { navigate } from "svelte-routing";
   import { User, Doc } from "sveltefire";
   import { cleanDoc, redirectIfNoUser } from "../../../firebase.js";
+  import { toast } from "@zerodevx/svelte-toast";
+  import { infoToast, errorToast } from "../../ui/toasts.js";
   import AppHeader from "../../ui/AppHeader.svelte";
   import LoadingEllipsis from "../../ui/LoadingEllipsis.svelte";
   import SongEdit from "../SongEdit/SongEdit.svelte";
@@ -13,8 +15,11 @@
 
   function handleSave(song, songRef) {
     songRef.set(cleanDoc(song)).then(
-      () => navigate(`/songs/${id}`),
-      (error) => console.error(error)
+      () => {
+        toast.push("Song saved", infoToast);
+        navigate(`/songs/${id}`);
+      },
+      (error) => toast.push(`Song deletion failed: ${error}`, errorToast)
     );
   }
 </script>

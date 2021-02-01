@@ -3,6 +3,8 @@
   import { navigate } from "svelte-routing";
   import { User, Collection } from "sveltefire";
   import { cleanDoc } from "../../../firebase.js";
+  import { toast } from "@zerodevx/svelte-toast";
+  import { infoToast, errorToast } from "../../ui/toasts.js";
   import AppHeader from "../../ui/AppHeader.svelte";
   import SongEdit from "../SongEdit/SongEdit.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
@@ -12,8 +14,11 @@
 
   function handleSave(song, songsRef, user) {
     songsRef.add({ ...cleanDoc(song), uid: user.uid }).then(
-      (docRef) => navigate(`/songs/${docRef.id}`),
-      (error) => console.error(error)
+      (docRef) => {
+        toast.push("Song saved", infoToast);
+        navigate(`/songs/${docRef.id}`);
+      },
+      (error) => toast.push(`Song saving failed: ${error}`, errorToast)
     );
   }
 </script>
