@@ -93,7 +93,9 @@
       </div>
     {/if}
   {/if}
-  <ButtonText on:click={handleSelectUrl}>Link to image</ButtonText>
+  <div class="link-button">
+    <ButtonText on:click={handleSelectUrl}>Link to image</ButtonText>
+  </div>
 {:else}
   <ArtworkFromUrl onSelect={handleSelectedUrl} onBack={handleBack} />
 {/if}
@@ -131,5 +133,15 @@
 
   .content :global(.buttonPrimary) {
     display: flex;
+  }
+
+  .link-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .link-button :global(button) {
+    text-transform: initial;
+    color: var(--primary);
   }
 </style>
