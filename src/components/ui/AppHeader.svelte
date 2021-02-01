@@ -28,7 +28,11 @@
     position: sticky;
     top: 0;
     z-index: 2;
-    background-color: var(--primary);
+    background-image: linear-gradient(
+      142deg,
+      var(--primaryDark) 0%,
+      var(--primary) 100%
+    );
     color: var(--primaryContrast);
     align-items: center;
   }

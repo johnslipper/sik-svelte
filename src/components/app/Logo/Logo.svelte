@@ -12,10 +12,7 @@
   let animateBackground = false;
 </script>
 
-<div
-  class="wrapper"
-  style={animateBackground ? `background-color: var(--primary)` : ""}
->
+<div class="wrapper {animateBackground ? 'showGradient' : ''}">
   <svg
     width="690"
     height="132"
@@ -231,12 +228,29 @@
     padding: 1rem;
     width: 100%;
     height: 100%;
-    background-color: var(--primaryContrast);
-    transition: background-color 250ms 500ms;
 
     --logoInnerStroke: var(--neutralDark);
     --logoOuterStroke: var(--primaryContrast);
     --logoFill: var(--neutralLighter);
+  }
+  .wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-image: linear-gradient(
+      142deg,
+      var(--primaryDark) 0%,
+      var(--primary) 100%
+    );
+    transition: opacity 250ms 500ms;
+    opacity: 0;
+  }
+  .wrapper.showGradient::before {
+    opacity: 1;
   }
   svg {
     max-width: 100%;
