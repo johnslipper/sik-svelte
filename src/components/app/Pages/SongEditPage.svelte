@@ -4,6 +4,7 @@
   import { User, Doc } from "sveltefire";
   import { cleanDoc, redirectIfNoUser } from "../../../firebase.js";
   import AppHeader from "../../ui/AppHeader.svelte";
+  import LoadingEllipsis from "../../ui/LoadingEllipsis.svelte";
   import SongEdit from "../SongEdit/SongEdit.svelte";
   import SongEditActions from "../SongEdit/SongEditActions.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
@@ -39,6 +40,8 @@
       <SongEdit {song} />
       <SongEditActions {docRef} />
     </div>
-    <div slot="loading">Loading...</div>
+    <div slot="loading">
+      <LoadingEllipsis />
+    </div>
   </Doc>
 </User>

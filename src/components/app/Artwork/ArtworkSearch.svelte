@@ -5,6 +5,7 @@
   import ArtworkFromUrl from "./ArtworkFromUrl.svelte";
   import { Form, FormGroup, Input, LabelDefault } from "../../ui/Form";
   import Heading from "../../ui/Heading/Heading.svelte";
+  import LoadingEllipsis from "../../ui/LoadingEllipsis.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import { ButtonPrimary, ButtonText } from "../../ui/Button";
   export let queryInput;
@@ -70,7 +71,7 @@
   {#if query}
     <div class="results">
       {#await search}
-        <p>loading...</p>
+        <LoadingEllipsis />
       {:then searchResults}
         <ArtworkSearchResults {searchResults} onSelected={handleSelected} />
       {:catch error}

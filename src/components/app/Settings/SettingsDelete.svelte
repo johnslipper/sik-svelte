@@ -5,6 +5,7 @@
   import { ButtonDefault } from "../../ui/Button";
   import FormError from "../../ui/Form/FormError.svelte";
   import { Dialogue, SensitiveConfirmation } from "../../ui/Modal";
+  import LoadingEllipsis from "../../ui/LoadingEllipsis.svelte";
 
   export let user;
   export let auth;
@@ -64,7 +65,9 @@
 <div class="wrapper">
   <div class="actions">
     <Collection path={`/users/${user.uid}/songs`} let:data={songs}>
-      <div slot="loading">Loading...</div>
+      <div slot="loading">
+        <LoadingEllipsis />
+      </div>
       <ButtonDefault on:click={() => handleDeleteSongs(songs)}
         >Delete all songs</ButtonDefault
       >

@@ -7,6 +7,7 @@
   import SongLyrics from "../SongView/SongViewLyrics.svelte";
   import SongViewChords from "../SongView/SongViewChords.svelte";
   import { Tab, Tabs, TabList, TabPanel } from "../../ui/Tabs";
+  import LoadingEllipsis from "../../ui/LoadingEllipsis.svelte";
   import Icon from "../../ui/Icons/Icon.svelte";
   import {
     musicNoteOutlinedIcon,
@@ -29,7 +30,9 @@
   on:user={(e) => redirectIfNoUser(e.detail.user)}
 >
   <Doc path={`/users/${user.uid}/songs/${id}`} let:data={song}>
-    <div slot="loading">Loading...</div>
+    <div slot="loading">
+      <LoadingEllipsis />
+    </div>
     <div slot="fallback">Unable to display song, please refresh...</div>
     <SongHeader
       {id}

@@ -24,7 +24,7 @@
   $: isPreviewPossible =
     frets.filter((fret) => fret.toString().length).length === stringCount;
   $: tuningFormatted = tuning.split(" ");
-  $: previewFrets && handleChordUpdate();
+  $: (previewFrets, previewFingerings) && handleChordUpdate();
 
   function processChordEntries(entries) {
     return entries.split(" ").map((entry) => {
