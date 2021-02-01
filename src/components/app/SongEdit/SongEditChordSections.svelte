@@ -14,12 +14,27 @@
 
   const { open, close } = getContext("simple-modal");
 
-  const openChordModal = (chord) => {
+  const addChordModal = () => {
+    open(ChordEdit, {
+      tuning,
+      capoAdjustment,
+      onSave: (chord) => {
+        chordSection.chords = [...chordSection.chords, chord];
+        close();
+      },
+      onCancel: () => close(),
+    });
+  };
+
+  const editChordModal = (chord) => {
     open(ChordEdit, {
       chord,
       tuning,
       capoAdjustment,
-      onSave: handleSaveChord,
+      onSave: (chord) => {
+        chordSection.chords[chordSection.chords.indexOf(chord)] = chord;
+        close();
+      },
       onCancel: () => close(),
     });
   };
@@ -29,12 +44,7 @@
   }
 
   function handleEditChord(chord) {
-    openChordModal(chord);
-  }
-
-  function handleSaveChord(chord) {
-    chordSection.chords = [...chordSection.chords, chord];
-    close();
+    editChordModal(chord);
   }
 </script>
 
@@ -63,7 +73,7 @@
       {/each}
     {/if}
     <li class="add">
-      <Button on:click={() => openChordModal()}>
+      <Button on:click={() => addChordModal()}>
         <AddArea text="Add chord" />
       </Button>
     </li>
