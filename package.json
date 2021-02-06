@@ -19,7 +19,8 @@
     "svelte": "^3.0.0",
     "svelte-routing": "^1.4.2",
     "svelte-simple-modal": "^0.6.1",
-    "vexchords": "^1.2.0"
+    "vexchords": "^1.2.0",
+    "yup": "^0.32.8"
   },
   "dependencies": {
     "firebase": "^8.2.3",
