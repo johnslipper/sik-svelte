@@ -2,7 +2,9 @@
   export let message = "";
 </script>
 
-<div class="error">{message}</div>
+{#if message}
+  <div class="error">{message}</div>
+{/if}
 
 <style>
   .error {

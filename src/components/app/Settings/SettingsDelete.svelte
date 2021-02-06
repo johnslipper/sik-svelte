@@ -77,9 +77,7 @@
       >
     </Collection>
   </div>
-  {#if error}
-    <FormError message={error} />
-  {/if}
+  <FormError message={error} />
 </div>
 
 <style>

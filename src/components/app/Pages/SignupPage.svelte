@@ -66,9 +66,7 @@
             </ButtonPrimary>
             <ButtonLink to="/sign-in">To sign in</ButtonLink>
           </div>
-          {#if error}
-            <FormError message={error} />
-          {/if}
+          <FormError message={error} />
         </div>
       </Form>
     </div>

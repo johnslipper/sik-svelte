@@ -57,9 +57,7 @@
       </FormGroup>
     </div>
 
-    {#if error}
-      <FormError message={error} />
-    {/if}
+    <FormError message={error} />
 
     <div class="buttons">
       <ButtonPrimary type="submit">{okayText}</ButtonPrimary>

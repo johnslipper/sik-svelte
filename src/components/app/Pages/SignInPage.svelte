@@ -66,9 +66,7 @@
             </ButtonPrimary>
             <ButtonLink to="/password-reset">Forgotten password?</ButtonLink>
           </div>
-          {#if error}
-            <FormError message={error} />
-          {/if}
+          <FormError message={error} />
         </div>
       </Form>
     </div>
