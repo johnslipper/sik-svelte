@@ -1,5 +1,6 @@
 <script>
   import { User } from "sveltefire";
+  import { string, object } from "yup";
   import { redirectIfUser } from "../../../firebase.js";
   import AppHeader from "../../ui/AppHeader.svelte";
   import { ButtonPrimary, ButtonLink } from "../../ui/Button";
@@ -11,12 +12,19 @@
     FormError,
   } from "../../ui/Form/";
 
-  let email;
-  let password;
+  let values = {};
   let error = "";
   let isLoading = false;
 
+  const schema = object().shape({
+    email: string()
+      .required("Please provide your email")
+      .email("That email doesn't look right"),
+    password: string().min(6, "Password must be at least 6 characters"),
+  });
+
   function handleSubmit(auth) {
+    const { email, password } = values;
     clearError();
     isLoading = true;
     auth
@@ -38,27 +46,27 @@
 >
   <div slot="signed-out">
     <div class="wrapper">
-      <Form onSubmit={() => handleSubmit(auth)}>
+      <Form onSubmit={() => handleSubmit(auth)} {schema} {values} let:errors>
         <div class="form">
           <FormGroup>
             <LabelDefault htmlFor="signInEmail">Email</LabelDefault>
             <Input
               id="signInEmail"
-              required="true"
               type="email"
-              bind:value={email}
+              bind:value={values.email}
               on:blur={clearError}
             />
+            <div slot="feedback"><FormError message={errors.email} /></div>
           </FormGroup>
           <FormGroup>
             <LabelDefault htmlFor="signInPassword">Password</LabelDefault>
             <Input
               id="signInPassword"
               type="password"
-              bind:value={password}
+              bind:value={values.password}
               on:blur={clearError}
-              required="true"
             />
+            <div slot="feedback"><FormError message={errors.password} /></div>
           </FormGroup>
           <div class="buttons">
             <ButtonPrimary type="submit" disabled={isLoading}>
