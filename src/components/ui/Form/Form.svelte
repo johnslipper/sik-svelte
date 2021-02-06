@@ -27,6 +27,6 @@
   }
 </script>
 
-<form on:submit={handleSubmit} {autocomplete}>
+<form novalidate on:submit={handleSubmit} {autocomplete}>
   <slot {errors} />
 </form>
