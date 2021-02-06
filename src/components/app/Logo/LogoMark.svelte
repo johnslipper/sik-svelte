@@ -181,11 +181,14 @@
   }
 
   @keyframes pegRotate {
+    20% {
+      transform: rotateX(1turn);
+    }
     80% {
-      transform: rotateX(0turn);
+      transform: rotateX(1turn);
     }
     100% {
-      transform: rotateX(1turn);
+      transform: rotateX(0turn);
     }
   }
 </style>
