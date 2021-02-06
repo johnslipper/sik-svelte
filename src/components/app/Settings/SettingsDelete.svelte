@@ -2,8 +2,7 @@
   import { getContext } from "svelte";
   import { Collection } from "sveltefire";
   import { navigate } from "svelte-routing";
-  import { toast } from "@zerodevx/svelte-toast";
-  import { infoToast } from "../../ui/toasts.js";
+  import { infoToast } from "../../ui/Toasts/toasts.js";
   import { ButtonDefault } from "../../ui/Button";
   import FormError from "../../ui/Form/FormError.svelte";
   import { Dialogue, SensitiveConfirmation } from "../../ui/Modal";
@@ -24,7 +23,7 @@
         confirmationText: "songs",
         onOkay: () => {
           Promise.all(songs.map((song) => song.ref.delete())).then(
-            () => toast.push("Song saved", infoToast),
+            () => infoToast("Song saved"),
             ({ message }) => (error = message)
           );
         },

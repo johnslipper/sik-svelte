@@ -1,6 +1,7 @@
-import { theme } from "../../theme.js";
+import { theme } from "../../../theme.js";
+import { toast } from "@zerodevx/svelte-toast";
 
-export const infoToast = {
+const infoToastConfig = {
   theme: {
     "--toastBackground": theme.neutralDark,
     "--toastColor": theme.neutralLighter,
@@ -8,7 +9,7 @@ export const infoToast = {
   },
 };
 
-export const errorToast = {
+const errorToastConfig = {
   initial: 0,
   theme: {
     "--toastBackground": theme.danger,
@@ -16,3 +17,11 @@ export const errorToast = {
     "--toastProgressBackground": theme.primaryContrast,
   },
 };
+
+export function infoToast(message) {
+  toast.push(message, infoToastConfig);
+}
+
+export function errorToast(message) {
+  toast.push(message, errorToastConfig);
+}

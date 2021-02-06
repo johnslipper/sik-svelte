@@ -1,8 +1,7 @@
 <script>
   import { getContext } from "svelte";
   import { navigate } from "svelte-routing";
-  import { toast } from "@zerodevx/svelte-toast";
-  import { infoToast, errorToast } from "../../ui/toasts.js";
+  import { infoToast, errorToast } from "../../ui/Toasts/toasts.js";
   import ButtonDefault from "../../ui/Button/ButtonDefault.svelte";
   import Heading from "../../ui/Heading/Heading.svelte";
   import Dialogue from "../../ui/Modal/Dialogue.svelte";
@@ -20,10 +19,10 @@
       onOkay: () =>
         docRef.delete().then(
           () => {
-            toast.push("Song deleted", infoToast);
+            infoToast("Song deleted");
             navigate("/songs");
           },
-          () => toast.push(`Song deletion failed: ${error}`, errorToast)
+          () => errorToast(`Song deletion failed: ${error}`)
         ),
     });
   }
