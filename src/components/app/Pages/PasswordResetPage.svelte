@@ -2,7 +2,7 @@
   import { User } from "sveltefire";
   import { redirectIfUser } from "../../../firebase.js";
   import AppHeader from "../../ui/AppHeader.svelte";
-  import { Button, ButtonLink, ButtonLinkDefault } from "../../ui/Button";
+  import { Button, ButtonLink } from "../../ui/Button";
   import {
     Form,
     FormGroup,
@@ -38,7 +38,7 @@
     <div class="wrapper">
       {#if isSent}
         <p>A password reset email has been sent, check your inbox</p>
-        <ButtonLinkDefault to="/sign-in">To sign in page</ButtonLinkDefault>
+        <ButtonLink variant="default" to="/sign-in">To sign in page</ButtonLink>
       {:else}
         <Form onSubmit={() => handleSubmit(auth)}>
           <div class="form">

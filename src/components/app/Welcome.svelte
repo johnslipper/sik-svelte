@@ -1,5 +1,5 @@
 <script>
-  import { ButtonLinkDefault } from "../ui/Button";
+  import { ButtonLink } from "../ui/Button";
   import Heading from "../ui/Heading/Heading.svelte";
   import LogoMark from "./Logo/LogoMark.svelte";
 </script>
@@ -12,8 +12,8 @@
   <p>Collect songs you've learned to find inspiration when you need it</p>
 
   <div class="actions">
-    <ButtonLinkDefault to="/sign-in">Sign in</ButtonLinkDefault>
-    <ButtonLinkDefault to="/sign-up">Sign up</ButtonLinkDefault>
+    <ButtonLink variant="default" to="/sign-in">Sign in</ButtonLink>
+    <ButtonLink variant="default" to="/sign-up">Sign up</ButtonLink>
   </div>
 </div>
 
