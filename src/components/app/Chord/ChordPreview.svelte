@@ -1,5 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
+  import { string, object } from "yup";
   import ChordVisualised from "./ChordVisualised.svelte";
   import { ButtonPrimary, ButtonDefault } from "../../ui/Button";
   import { Form, FormGroup, Input, LabelDefault } from "../../ui/Form";
@@ -109,7 +110,9 @@
       </div>
     </div>
     <div class="buttons">
-      <ButtonPrimary type="submit">Save</ButtonPrimary>
+      <ButtonPrimary type="submit" disabled={!isPreviewPossible}
+        >Save</ButtonPrimary
+      >
       <ButtonDefault on:click={onCancel}>Back</ButtonDefault>
     </div>
   </Form>
