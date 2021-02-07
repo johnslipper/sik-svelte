@@ -9,6 +9,7 @@
   import {
     Input,
     FormGroup,
+    FormError,
     LabelDefault,
     Select,
     Option,
@@ -19,6 +20,7 @@
   export let artwork;
   export let tuning;
   export let capoAdjustment;
+  export let errors;
 
   const capoOptions = new Array(25);
 
@@ -74,6 +76,7 @@
     <FormGroup>
       <LabelDefault htmlFor="songTitle">Title</LabelDefault>
       <Input id="songTitle" bind:value={title} />
+      <div slot="feedback"><FormError message={errors.title} /></div>
     </FormGroup>
 
     <FormGroup>

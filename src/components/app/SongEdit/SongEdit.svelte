@@ -5,6 +5,7 @@
   import SongEditChords from "./SongEditChords.svelte";
 
   export let song = {};
+  export let errors;
 </script>
 
 <Fieldset>
@@ -17,6 +18,7 @@
       bind:artwork={song.artwork}
       bind:tuning={song.tuning}
       bind:capoAdjustment={song.capoAdjustment}
+      {errors}
     />
   </div>
 </Fieldset>
