@@ -10,6 +10,7 @@
     e.preventDefault();
     if (!schema) {
       onSubmit(e);
+      return;
     }
     try {
       // `abortEarly: false` to get all the errors
