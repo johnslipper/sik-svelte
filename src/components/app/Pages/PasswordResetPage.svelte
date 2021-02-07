@@ -2,11 +2,7 @@
   import { User } from "sveltefire";
   import { redirectIfUser } from "../../../firebase.js";
   import AppHeader from "../../ui/AppHeader.svelte";
-  import {
-    ButtonPrimary,
-    ButtonLink,
-    ButtonLinkDefault,
-  } from "../../ui/Button";
+  import { Button, ButtonLink, ButtonLinkDefault } from "../../ui/Button";
   import {
     Form,
     FormGroup,
@@ -57,7 +53,7 @@
               />
             </FormGroup>
             <div class="buttons">
-              <ButtonPrimary type="submit">Reset password</ButtonPrimary>
+              <Button variant="primary" type="submit">Reset password</Button>
               <ButtonLink to="/sign-in">To sign in</ButtonLink>
             </div>
             <FormError message={error} />

@@ -7,7 +7,7 @@
   import Heading from "../../ui/Heading/Heading.svelte";
   import LoadingEllipsis from "../../ui/LoadingEllipsis.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  import { ButtonPrimary, ButtonText } from "../../ui/Button";
+  import { Button, ButtonText } from "../../ui/Button";
   export let queryInput;
   export let onSelected;
   let query;
@@ -63,7 +63,7 @@
           </VisuallyHidden>
           <Input id="searchArtwork" bind:value={queryInput} />
         </FormGroup>
-        <ButtonPrimary type="submit">Search</ButtonPrimary>
+        <Button variant="primary" type="submit">Search</Button>
       </div>
     </Form>
   </header>
@@ -87,7 +87,7 @@
               artist={selected.artist}
               album={selected.album}
             />
-            <ButtonPrimary type="submit">Select</ButtonPrimary>
+            <Button variant="primary" type="submit">Select</Button>
           </div>
         </Form>
       </div>
@@ -131,7 +131,7 @@
     border-radius: 0;
   }
 
-  .content :global(.buttonPrimary) {
+  .content :global(.Button) {
     display: flex;
   }
 

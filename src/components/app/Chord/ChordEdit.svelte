@@ -2,7 +2,7 @@
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
   import { chordSearch } from "./chordSearch.js";
-  import { ButtonPrimary, ButtonDefault } from "../../ui/Button";
+  import { Button } from "../../ui/Button";
   import { Form, FormGroup, Input, LabelDefault } from "../../ui/Form";
   import Heading from "../../ui/Heading/Heading.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
@@ -93,20 +93,20 @@
           {/if}
         </FormGroup>
         <div class="buttons">
-          <ButtonPrimary type="submit" on:click={handleSubmitSearch}>
+          <Button variant="primary" type="submit" on:click={handleSubmitSearch}>
             {#if isSearching}
               Searching...
             {:else}
               Search
               <VisuallyHidden>chord</VisuallyHidden>
             {/if}
-          </ButtonPrimary>
-          <ButtonDefault on:click={onCancel}>Cancel</ButtonDefault>
+          </Button>
+          <Button variant="default" on:click={onCancel}>Cancel</Button>
           <div class="custom">
-            <ButtonDefault on:click={handleSelectCustomChord}>
+            <Button variant="default" on:click={handleSelectCustomChord}>
               Custom
               <VisuallyHidden>chord</VisuallyHidden>
-            </ButtonDefault>
+            </Button>
           </div>
         </div>
       </div>

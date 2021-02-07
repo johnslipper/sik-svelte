@@ -1,6 +1,6 @@
 <script>
   import { getContext } from "svelte";
-  import { ButtonPrimary, ButtonDefault } from "../Button";
+  import { Button } from "../Button";
   import { Form, FormError, FormGroup, Input, LabelDefault } from "../Form";
   export let message;
   export let title = "";
@@ -60,8 +60,8 @@
     <FormError message={error} />
 
     <div class="buttons">
-      <ButtonPrimary type="submit">{okayText}</ButtonPrimary>
-      <ButtonDefault on:click={_onCancel}>{cancelText}</ButtonDefault>
+      <Button variant="primary" type="submit">{okayText}</Button>
+      <Button variant="default" on:click={_onCancel}>{cancelText}</Button>
     </div>
   </div>
 </Form>

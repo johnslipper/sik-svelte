@@ -3,7 +3,7 @@
   import { Collection } from "sveltefire";
   import { navigate } from "svelte-routing";
   import { infoToast } from "../../ui/Toasts/toasts.js";
-  import { ButtonDefault } from "../../ui/Button";
+  import { Button } from "../../ui/Button";
   import FormError from "../../ui/Form/FormError.svelte";
   import { Dialogue, SensitiveConfirmation } from "../../ui/Modal";
   import LoadingEllipsis from "../../ui/LoadingEllipsis.svelte";
@@ -69,11 +69,11 @@
       <div slot="loading">
         <LoadingEllipsis />
       </div>
-      <ButtonDefault on:click={() => handleDeleteSongs(songs)}
-        >Delete all songs</ButtonDefault
+      <Button variant="default" on:click={() => handleDeleteSongs(songs)}
+        >Delete all songs</Button
       >
-      <ButtonDefault on:click={() => handleDeleteUser(songs)}
-        >Delete user</ButtonDefault
+      <Button variant="default" on:click={() => handleDeleteUser(songs)}
+        >Delete user</Button
       >
     </Collection>
   </div>

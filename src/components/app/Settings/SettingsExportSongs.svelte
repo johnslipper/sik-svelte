@@ -1,6 +1,6 @@
 <script>
   import { Collection } from "sveltefire";
-  import { ButtonDefault } from "../../ui/Button";
+  import { Button } from "../../ui/Button";
   import { downloadObjectAsJson, getDateString } from "../../../helpers.js";
   import { stripRefs } from "../../../firebase.js";
 
@@ -17,8 +17,8 @@
   let:data={songs}
   query={(ref) => ref.orderBy("artist")}
 >
-  <ButtonDefault on:click={() => handleExport(songs)}
-    >Export songs</ButtonDefault
+  <Button variant="default" on:click={() => handleExport(songs)}
+    >Export songs</Button
   >
   <div slot="loading">Loading songs for export...</div>
 </Collection>

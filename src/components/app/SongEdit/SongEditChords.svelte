@@ -3,7 +3,7 @@
   import { fade } from "svelte/transition";
   import SongEditChordSections from "./SongEditChordSections.svelte";
   import Dialogue from "../../ui/Modal/Dialogue.svelte";
-  import { ButtonDefault } from "../../ui/Button";
+  import { Button } from "../../ui/Button";
   export let chordSections = [];
   export let tuning;
   export let capoAdjustment;
@@ -61,7 +61,7 @@
 {/if}
 <div class="add">
   <div class="wrapper">
-    <ButtonDefault on:click={handleAddSection}>Add section</ButtonDefault>
+    <Button variant="default" on:click={handleAddSection}>Add section</Button>
   </div>
 </div>
 

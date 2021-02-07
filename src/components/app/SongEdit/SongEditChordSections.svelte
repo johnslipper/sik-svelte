@@ -5,7 +5,7 @@
   import SongEditChord from "./SongEditChord.svelte";
   import ChordEdit from "../Chord/ChordEdit.svelte";
   import { Input, FormGroup, LabelDefault } from "../../ui/Form";
-  import { Button, ButtonDefault } from "../../ui/Button";
+  import { Button } from "../../ui/Button";
   export let chordSection;
   export let tuning;
   export let capoAdjustment;
@@ -54,9 +54,9 @@
       <LabelDefault htmlFor="chordSectionTitle{key}">Title</LabelDefault>
       <Input id="chordSectionTitle{key}" bind:value={chordSection.title} />
     </FormGroup>
-    <ButtonDefault on:click={() => onRemove(chordSection)}>
+    <Button variant="default" on:click={() => onRemove(chordSection)}>
       Remove
-    </ButtonDefault>
+    </Button>
   </div>
   <ul class="chords">
     {#if chordSection.chords}

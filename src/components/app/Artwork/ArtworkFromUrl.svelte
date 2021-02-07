@@ -2,7 +2,7 @@
   import { Form, FormGroup, Input, LabelDefault } from "../../ui/Form";
   import Heading from "../../ui/Heading/Heading.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  import { ButtonPrimary, ButtonDefault } from "../../ui/Button";
+  import { Button } from "../../ui/Button";
   import ArtworkView from "./ArtworkView.svelte";
 
   export let onBack;
@@ -42,13 +42,13 @@
       </div>
       <div class="buttons">
         {#if url}
-          <ButtonPrimary type="submit">Select</ButtonPrimary>
-          <ButtonDefault on:click={handleClearArtwork}>Clear</ButtonDefault>
+          <Button variant="primary" type="submit">Select</Button>
+          <Button variant="default" on:click={handleClearArtwork}>Clear</Button>
         {:else}
-          <ButtonPrimary type="submit">Get image</ButtonPrimary>
+          <Button variant="primary" type="submit">Get image</Button>
         {/if}
         <div class="last">
-          <ButtonDefault on:click={onBack}>Cancel</ButtonDefault>
+          <Button variant="default" on:click={onBack}>Cancel</Button>
         </div>
       </div>
     </div>

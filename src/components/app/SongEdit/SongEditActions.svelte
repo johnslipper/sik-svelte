@@ -2,7 +2,7 @@
   import { getContext } from "svelte";
   import { navigate } from "svelte-routing";
   import { infoToast, errorToast } from "../../ui/Toasts/toasts.js";
-  import ButtonDanger from "../../ui/Button/ButtonDanger.svelte";
+  import Button from "../../ui/Button/Button.svelte";
   import Heading from "../../ui/Heading/Heading.svelte";
   import Dialogue from "../../ui/Modal/Dialogue.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
@@ -32,7 +32,7 @@
   <VisuallyHidden>
     <Heading text="Actions:" level="2" fontSize="1rem" />
   </VisuallyHidden>
-  <ButtonDanger on:click={handleDelete}>Delete song</ButtonDanger>
+  <Button variant="danger" on:click={handleDelete}>Delete song</Button>
 </div>
 
 <style>

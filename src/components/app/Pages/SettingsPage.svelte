@@ -4,7 +4,7 @@
   import { User } from "sveltefire";
   import AppHeader from "../../ui/AppHeader.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  import { ButtonDefault, ButtonLink } from "../../ui/Button/";
+  import { Button, ButtonLink } from "../../ui/Button/";
   import Icon from "../../ui/Icons/Icon.svelte";
   import { leftArrowIcon } from "../../ui/Icons/icons.js";
   import Heading from "../../ui/Heading/Heading.svelte";
@@ -40,7 +40,9 @@
           <div>You are logged in as</div>
           <strong class="email">{user.email}</strong>
         </div>
-        <ButtonDefault on:click={() => auth.signOut()}>Sign out</ButtonDefault>
+        <Button variant="default" on:click={() => auth.signOut()}
+          >Sign out</Button
+        >
       </div>
     </div>
     <HeadingSticky>

@@ -2,7 +2,7 @@
   import { fade } from "svelte/transition";
   import { string, object } from "yup";
   import ChordVisualised from "./ChordVisualised.svelte";
-  import { ButtonPrimary, ButtonDefault } from "../../ui/Button";
+  import { Button } from "../../ui/Button";
   import { Form, FormGroup, Input, LabelDefault } from "../../ui/Form";
   import ChordPreviewPlaceholder from "./ChordPreviewPlaceholder.svelte";
   import ChordEditFieldset from "./ChordEditFieldset.svelte";
@@ -110,10 +110,10 @@
       </div>
     </div>
     <div class="buttons">
-      <ButtonPrimary type="submit" disabled={!isPreviewPossible}
-        >Save</ButtonPrimary
+      <Button variant="primary" type="submit" disabled={!isPreviewPossible}
+        >Save</Button
       >
-      <ButtonDefault on:click={onCancel}>Back</ButtonDefault>
+      <Button variant="default" on:click={onCancel}>Back</Button>
     </div>
   </Form>
 </div>

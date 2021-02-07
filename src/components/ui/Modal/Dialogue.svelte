@@ -1,6 +1,6 @@
 <script>
   import { getContext } from "svelte";
-  import { ButtonPrimary, ButtonDefault } from "../Button";
+  import { Button } from "../Button";
   export let message;
   export let title = "";
   export let showOkayButton = true;
@@ -31,10 +31,10 @@
 
 <div class="buttons">
   {#if showOkayButton}
-    <ButtonPrimary on:click={_onOkay}>{okayText}</ButtonPrimary>
+    <Button variant="primary" on:click={_onOkay}>{okayText}</Button>
   {/if}
   {#if showCancelButton}
-    <ButtonDefault on:click={_onCancel}>{cancelText}</ButtonDefault>
+    <Button variant="default" on:click={_onCancel}>{cancelText}</Button>
   {/if}
 </div>
 

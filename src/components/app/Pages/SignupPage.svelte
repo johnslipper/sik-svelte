@@ -3,7 +3,7 @@
   import { string, object } from "yup";
   import { redirectIfUser } from "../../../firebase.js";
   import AppHeader from "../../ui/AppHeader.svelte";
-  import { ButtonPrimary, ButtonLink } from "../../ui/Button";
+  import { Button, ButtonLink } from "../../ui/Button";
   import {
     Form,
     FormGroup,
@@ -69,9 +69,9 @@
             <div slot="feedback"><FormError message={errors.password} /></div>
           </FormGroup>
           <div class="buttons">
-            <ButtonPrimary type="submit" disabled={isLoading}>
+            <Button variant="primary" type="submit" disabled={isLoading}>
               {isLoading ? "Signing up..." : "Sign up"}
-            </ButtonPrimary>
+            </Button>
             <ButtonLink to="/sign-in">To sign in</ButtonLink>
           </div>
           <FormError message={error} />
