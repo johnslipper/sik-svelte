@@ -26,6 +26,7 @@
   button:active {
     color: var(--buttonActiveColor);
     border-color: var(--buttonActiveBorderColor);
+    background: var(--buttonActiveBackgroundColor);
     transform: scale(0.95);
   }
   button[disabled] {
