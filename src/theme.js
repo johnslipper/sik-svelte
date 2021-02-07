@@ -15,6 +15,7 @@ const colors = {
   neutralLighter: getColor(colorBases.neutral, 87),
   neutralLightest: getColor(colorBases.neutral, 95),
   danger: getColor(colorBases.danger),
+  dangerDark: getColor(colorBases.danger, 20),
 };
 
 function getColor([h, s, l, a], lightness, alpha) {
@@ -33,6 +34,7 @@ export const theme = {
   neutralLighter: colors.neutralLighter,
   neutralLightest: colors.neutralLightest,
   danger: colors.danger,
+  dangerDark: colors.dangerDark,
   /* General */
   contentPaddingHorizontal: "1rem",
   headerTopOffset: "3rem",
