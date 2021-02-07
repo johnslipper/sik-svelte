@@ -15,11 +15,11 @@
     display: inline-block;
   }
   .buttonPrimary :global(button) {
-    --buttonBorderColor: var(--buttonPrimaryBorderColor);
-    --buttonBackgroundColor: var(--buttonPrimaryBackgroundColor);
-    --buttonColor: var(--buttonPrimaryColor);
-    --buttonActiveBorderColor: var(--buttonPrimaryActiveBorderColor);
-    --buttonActiveBackgroundColor: var(--buttonPrimaryActiveBackgroundColor);
-    --buttonActiveColor: var(--buttonPrimaryActiveColor);
+    --buttonBorderColor: transparent;
+    --buttonBackgroundColor: var(--primary);
+    --buttonColor: var(--primaryContrast);
+    --buttonActiveBorderColor: transparent;
+    --buttonActiveBackgroundColor: var(--primaryDark);
+    --buttonActiveColor: var(--primaryContrast);
   }
 </style>

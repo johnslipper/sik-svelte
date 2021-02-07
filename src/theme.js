@@ -46,7 +46,7 @@ export const theme = {
   inputPadding: "0.5rem",
   inputBorderRadius: "0.15rem",
   inputBorderColor: colors.neutralMedium,
-  /* Button (Default) */
+  /* Button */
   buttonPadding: "0.6rem 1rem",
   buttonBorderRadius: "0.25rem",
   buttonFontSize: "0.85rem",
@@ -56,11 +56,4 @@ export const theme = {
   buttonActiveBorderColor: colors.primary,
   buttonActiveBackgroundColor: colors.primaryContrast,
   buttonActiveColor: colors.primary,
-  /* Button (Primary) */
-  buttonPrimaryBorderColor: "transparent",
-  buttonPrimaryBackgroundColor: colors.primary,
-  buttonPrimaryColor: colors.primaryContrast,
-  buttonPrimaryActiveBorderColor: "transparent",
-  buttonPrimaryActiveBackgroundColor: colors.primaryDark,
-  buttonPrimaryActiveColor: colors.primaryContrast,
 };
