@@ -7,7 +7,7 @@
   import Heading from "../../ui/Heading/Heading.svelte";
   import LoadingEllipsis from "../../ui/LoadingEllipsis.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  import { Button, ButtonText } from "../../ui/Button";
+  import { Button } from "../../ui/Button";
   export let queryInput;
   export let onSelected;
   let query;
@@ -94,7 +94,7 @@
     {/if}
   {/if}
   <div class="link-button">
-    <ButtonText on:click={handleSelectUrl}>Link to image</ButtonText>
+    <Button variant="text" on:click={handleSelectUrl}>Link to image</Button>
   </div>
 {:else}
   <ArtworkFromUrl onSelect={handleSelectedUrl} onBack={handleBack} />

@@ -8,7 +8,7 @@
   import AppHeader from "../../ui/AppHeader.svelte";
   import SongEdit from "../SongEdit/SongEdit.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  import { ButtonText, ButtonLink } from "../../ui/Button/";
+  import { Button, ButtonLink } from "../../ui/Button/";
   import { Form } from "../../ui/Form/";
 
   let song = {};
@@ -48,10 +48,10 @@
           </ButtonLink>
         </div>
         <div slot="end" in:fade>
-          <ButtonText type="submit">
+          <Button variant="text" type="submit">
             <span>Save</span>
             <VisuallyHidden>song</VisuallyHidden>
-          </ButtonText>
+          </Button>
         </div>
       </AppHeader>
       <div class="page" in:fly={{ y: 1000 }}>

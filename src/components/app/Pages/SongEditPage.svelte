@@ -11,7 +11,7 @@
   import SongEditActions from "../SongEdit/SongEditActions.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   export let id;
-  import { ButtonText, ButtonLink } from "../../ui/Button";
+  import { Button, ButtonLink } from "../../ui/Button";
   import { Form } from "../../ui/Form";
 
   const schema = object().shape({
@@ -49,7 +49,7 @@
           </ButtonLink>
         </div>
         <div slot="end" in:fade>
-          <ButtonText type="submit">Save</ButtonText>
+          <Button variant="text" type="submit">Save</Button>
         </div>
       </AppHeader>
       <div class="page" in:fade>

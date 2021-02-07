@@ -50,6 +50,11 @@
     pointer-events: none;
   }
 
+  button.text {
+    --buttonPadding: 0.6rem 1rem;
+    --buttonActiveColor: var(--primaryContrast);
+  }
+
   button.default {
     --buttonPadding: 0.6rem 1rem;
     --buttonBorderRadius: 0.25rem;
