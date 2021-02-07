@@ -2,7 +2,7 @@
   import { fade, fly } from "svelte/transition";
   import { navigate } from "svelte-routing";
   import { User, Collection } from "sveltefire";
-  import { cleanDoc } from "../../../firebase.js";
+  import { cleanDoc, redirectIfNoUser } from "../../../firebase.js";
   import { string, object } from "yup";
   import { infoToast, errorToast } from "../../ui/Toasts/toasts.js";
   import AppHeader from "../../ui/AppHeader.svelte";
@@ -28,7 +28,11 @@
   }
 </script>
 
-<User let:user persist={localStorage}>
+<User
+  let:user
+  persist={localStorage}
+  on:user={(e) => redirectIfNoUser(e.detail.user)}
+>
   <Collection path={`/users/${user.uid}/songs`} let:ref={songsRef}>
     <Form
       onSubmit={() => handleSave(song, songsRef, user)}
