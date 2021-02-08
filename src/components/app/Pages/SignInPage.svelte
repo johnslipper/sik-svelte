@@ -4,6 +4,7 @@
   import { string, object } from "yup";
   import AppHeader from "../../ui/AppHeader.svelte";
   import { Button, ButtonLink } from "../../ui/Button";
+  import LoadingEllipsis from "../../ui/LoadingEllipsis.svelte";
   import {
     Form,
     FormGroup,
@@ -70,7 +71,11 @@
           </FormGroup>
           <div class="buttons">
             <Button variant="primary" type="submit" disabled={isLoading}>
-              {isLoading ? "Signing in..." : "Sign in"}
+              {#if isLoading}
+                <LoadingEllipsis text="Signing in" />
+              {:else}
+                Sign in
+              {/if}
             </Button>
             <ButtonLink to="/password-reset">Forgotten password?</ButtonLink>
           </div>

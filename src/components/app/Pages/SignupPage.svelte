@@ -4,6 +4,7 @@
   import { redirectIfUser } from "../../../firebase.js";
   import AppHeader from "../../ui/AppHeader.svelte";
   import { Button, ButtonLink } from "../../ui/Button";
+  import LoadingEllipsis from "../../ui/LoadingEllipsis.svelte";
   import {
     Form,
     FormGroup,
@@ -70,7 +71,11 @@
           </FormGroup>
           <div class="buttons">
             <Button variant="primary" type="submit" disabled={isLoading}>
-              {isLoading ? "Signing up..." : "Sign up"}
+              {#if isLoading}
+                <LoadingEllipsis text="Signing up" />
+              {:else}
+                Sign up
+              {/if}
             </Button>
             <ButtonLink to="/sign-in">To sign in</ButtonLink>
           </div>
