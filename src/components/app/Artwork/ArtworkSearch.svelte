@@ -71,7 +71,9 @@
   {#if query}
     <div class="results">
       {#await search}
-        <LoadingEllipsis />
+        <div class="loading">
+          <LoadingEllipsis />
+        </div>
       {:then searchResults}
         <ArtworkSearchResults {searchResults} onSelected={handleSelected} />
       {:catch error}
@@ -101,6 +103,9 @@
 {/if}
 
 <style>
+  .loading {
+    padding: 1rem;
+  }
   header {
     position: sticky;
     top: 0;

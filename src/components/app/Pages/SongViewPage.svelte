@@ -31,7 +31,9 @@
 >
   <Doc path={`/users/${user.uid}/songs/${id}`} let:data={song}>
     <div slot="loading">
-      <LoadingEllipsis />
+      <div class="loading">
+        <LoadingEllipsis />
+      </div>
     </div>
     <div slot="fallback">Unable to display song, please refresh...</div>
     <SongHeader
@@ -87,5 +89,8 @@
   }
   .text {
     text-transform: uppercase;
+  }
+  .loading {
+    padding: 1rem;
   }
 </style>

@@ -17,7 +17,9 @@
   </div>
 
   <div slot="loading">
-    <LoadingEllipsis />
+    <div class="loading">
+      <LoadingEllipsis />
+    </div>
   </div>
 </Collection>
 
@@ -25,5 +27,8 @@
   .wrapper {
     display: flex;
     gap: 0.5rem;
+  }
+  .loading {
+    padding: 1rem;
   }
 </style>

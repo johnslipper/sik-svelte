@@ -10,9 +10,6 @@
 </span>
 
 <style>
-  .wrapper {
-    padding: 1rem;
-  }
   .wrapper > span {
     font-size: 1.5em;
     animation: pulse 2s infinite linear;

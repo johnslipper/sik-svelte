@@ -57,8 +57,16 @@
         <SongEditActions {docRef} />
       </div>
       <div slot="loading">
-        <LoadingEllipsis />
+        <div class="loading">
+          <LoadingEllipsis />
+        </div>
       </div>
     </Form>
   </Doc>
 </User>
+
+<style>
+  .loading {
+    padding: 1rem;
+  }
+</style>
