@@ -23,7 +23,7 @@
         confirmationText: "songs",
         onOkay: () => {
           Promise.all(songs.map((song) => song.ref.delete())).then(
-            () => infoToast("Song saved"),
+            () => infoToast("All songs deleted"),
             ({ message }) => (error = message)
           );
         },
