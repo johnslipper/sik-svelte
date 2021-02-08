@@ -10,7 +10,7 @@
   import Heading from "../../ui/Heading/Heading.svelte";
   import HeadingSticky from "../../ui/Heading/HeadingSticky.svelte";
   import {
-    SettingsExportSongs,
+    SettingsImportExportSongs,
     SettingsDelete,
     SettingsAbout,
   } from "../Settings";
@@ -49,7 +49,7 @@
       <Heading text="Import/Export songs" fontSize="inherit" />
     </HeadingSticky>
     <div class="wrapper">
-      <SettingsExportSongs {user} />
+      <SettingsImportExportSongs {user} />
     </div>
     <HeadingSticky>
       <Heading text="Clear data" fontSize="inherit" />

@@ -1,0 +1,29 @@
+<script>
+  import { Collection } from "sveltefire";
+  import { SettingsExportSongs, SettingsImportSongs } from "./index.js";
+  import LoadingEllipsis from "../../ui/LoadingEllipsis.svelte";
+  export let user;
+</script>
+
+<Collection
+  path={`/users/${user.uid}/songs`}
+  let:data={songs}
+  query={(ref) => ref.orderBy("artist")}
+  let:ref={songsRef}
+>
+  <div class="wrapper">
+    <SettingsExportSongs {songs} />
+    <SettingsImportSongs {songsRef} />
+  </div>
+
+  <div slot="loading">
+    <LoadingEllipsis />
+  </div>
+</Collection>
+
+<style>
+  .wrapper {
+    display: flex;
+    gap: 0.5rem;
+  }
+</style>
