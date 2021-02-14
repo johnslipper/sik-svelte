@@ -39,6 +39,7 @@
   .wrapper {
     display: grid;
     align-items: center;
+    justify-content: center;
     padding: 3rem;
     text-align: center;
     background-color: var(--neutralLight);
