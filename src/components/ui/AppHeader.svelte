@@ -28,9 +28,10 @@
     position: sticky;
     top: 0;
     z-index: 2;
+    background-color: var(--primaryDark);
     background-image: linear-gradient(
-      142deg,
-      var(--primaryDark) 0%,
+      177deg,
+      transparent 50%,
       var(--primary) 100%
     );
     color: var(--primaryContrast);

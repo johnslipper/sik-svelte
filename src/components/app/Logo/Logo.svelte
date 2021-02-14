@@ -241,9 +241,10 @@
     left: 0;
     right: 0;
     z-index: -1;
+    background-color: var(--primaryDark);
     background-image: linear-gradient(
-      142deg,
-      var(--primaryDark) 0%,
+      177deg,
+      transparent 20%,
       var(--primary) 100%
     );
     transition: opacity 250ms 500ms;
