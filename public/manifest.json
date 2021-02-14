@@ -3,8 +3,8 @@
   "short_name": "SIK",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#c81973",
-  "theme_color": "#c81973",
+  "background_color": "#9f145c",
+  "theme_color": "#9f145c",
   "orientation": "any",
   "description": "Collect songs you've learned to find inspiration when you need it",
   "icons": [
