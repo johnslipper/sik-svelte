@@ -25,6 +25,7 @@
   .nameOnly {
     font-weight: bold;
     font-size: 1.5rem;
+    text-transform: initial;
   }
   .name {
     margin-bottom: 0.5em;
