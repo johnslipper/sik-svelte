@@ -15,4 +15,8 @@
     display: grid;
     gap: 0.25rem;
   }
+
+  .fields :global(select) {
+    padding: 0.2rem 0.1rem;
+  }
 </style>
