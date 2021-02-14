@@ -30,7 +30,7 @@
     isLoading = true;
     auth
       .signInWithEmailAndPassword(email, password)
-      .then(null, ({ message }) => (error = message))
+      .catch(({ message }) => (error = message))
       .finally(() => (isLoading = false));
   }
 
