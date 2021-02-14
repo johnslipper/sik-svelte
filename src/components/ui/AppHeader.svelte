@@ -29,11 +29,6 @@
     top: 0;
     z-index: 2;
     background-color: var(--primaryDark);
-    background-image: linear-gradient(
-      177deg,
-      transparent 50%,
-      var(--primary) 100%
-    );
     color: var(--primaryContrast);
     align-items: center;
   }

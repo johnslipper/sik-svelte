@@ -70,11 +70,6 @@
     z-index: 2;
     padding: 1rem 0.5rem;
     background-color: var(--primaryDark);
-    background-image: linear-gradient(
-      177deg,
-      transparent 50%,
-      var(--primary) 100%
-    );
     color: var(--primaryContrast);
   }
   .content {
