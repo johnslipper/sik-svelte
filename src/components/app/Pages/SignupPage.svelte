@@ -5,6 +5,7 @@
   import AppHeader from "../../ui/AppHeader.svelte";
   import { Button, ButtonLink } from "../../ui/Button";
   import LoadingEllipsis from "../../ui/LoadingEllipsis.svelte";
+  import { infoToast } from "../../ui/Toasts/toasts.js";
   import {
     Form,
     FormGroup,
@@ -30,7 +31,15 @@
     isLoading = true;
     auth
       .createUserWithEmailAndPassword(email, password)
-      .then(null, ({ message }) => (error = message))
+      .then(
+        (newUserCredential) => {
+          return newUserCredential.user.sendEmailVerification().then(
+            () => infoToast(`A verification email has been sent to ${email}`),
+            ({ message }) => (error = message)
+          );
+        },
+        ({ message }) => (error = message)
+      )
       .finally(() => (isLoading = false));
   }
 

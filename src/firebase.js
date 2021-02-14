@@ -24,12 +24,20 @@ export function cleanDoc(sourceObject) {
 
 export function redirectIfUser(user) {
   if (user && user.uid) {
-    navigate(`/songs`);
+    if (user.emailVerified) {
+      navigate(`/songs`);
+    } else {
+      navigate(`/verify`);
+    }
   }
 }
 
 export function redirectIfNoUser(user) {
-  if (!user || !user.uid) {
+  if (user && user.uid) {
+    if (!user.emailVerified) {
+      navigate(`/verify`);
+    }
+  } else {
     navigate(`/sign-in`);
   }
 }

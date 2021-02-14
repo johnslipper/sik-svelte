@@ -10,6 +10,7 @@
     SignInPage,
     PasswordResetPage,
     SignupPage,
+    VerifyPage,
   } from "./Pages";
 </script>
 
@@ -47,4 +48,8 @@
 
 <Route path="/sign-up">
   <SignupPage />
+</Route>
+
+<Route path="/verify">
+  <VerifyPage />
 </Route>

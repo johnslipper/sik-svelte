@@ -7,3 +7,4 @@ export { default as SongViewPage } from "./SongViewPage.svelte";
 export { default as SignInPage } from "./SignInPage.svelte";
 export { default as PasswordResetPage } from "./PasswordResetPage.svelte";
 export { default as SignupPage } from "./SignupPage.svelte";
+export { default as VerifyPage } from "./VerifyPage.svelte";
