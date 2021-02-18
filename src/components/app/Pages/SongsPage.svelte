@@ -40,14 +40,15 @@
     <User let:user persist={localStorage}>
       <Collection
         path={`/users/${user.uid}/songs`}
-        let:data={songs}
         query={(ref) => ref.orderBy("artist")}
+        let:data={songs}
+        let:ref={songsRef}
       >
         {#if songs}
           {#if songs.length}
             <SongsList {songs} />
           {:else}
-            <SongsListEmpty />
+            <SongsListEmpty {songsRef} {user} />
           {/if}
         {/if}
 
