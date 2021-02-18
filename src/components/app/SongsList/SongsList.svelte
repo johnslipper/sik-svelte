@@ -2,41 +2,22 @@
   import { fly } from "svelte/transition";
   import { backOut } from "svelte/easing";
   import SongsListItem from "./SongsListItem.svelte";
-  import LogoMark from "../Logo/LogoMark.svelte";
-  import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  import Icon from "../../ui/Icons/Icon.svelte";
-  import { plusIcon } from "../../ui/Icons/icons.js";
   export let songs;
 </script>
 
-{#if songs}
-  {#if songs.length}
-    <ul>
-      {#each songs as song, i}
-        <li in:fly={{ x: -20, delay: i * 75, easing: backOut, duration: 750 }}>
-          <SongsListItem
-            id={song.id}
-            title={song.title}
-            artist={song.artist}
-            album={song.album}
-            artwork={song.artwork}
-          />
-        </li>
-      {/each}
-    </ul>
-  {:else}
-    <div class="empty">
-      <div class="logo">
-        <LogoMark />
-      </div>
-      <p>
-        No songs currently saved. <br />
-        Use the <Icon path={plusIcon} size="0.8rem" />
-        <VisuallyHidden>plus</VisuallyHidden> button to get started.
-      </p>
-    </div>
-  {/if}
-{/if}
+<ul>
+  {#each songs as song, i}
+    <li in:fly={{ x: -20, delay: i * 75, easing: backOut, duration: 750 }}>
+      <SongsListItem
+        id={song.id}
+        title={song.title}
+        artist={song.artist}
+        album={song.album}
+        artwork={song.artwork}
+      />
+    </li>
+  {/each}
+</ul>
 
 <style>
   ul {
@@ -44,26 +25,5 @@
     padding: 0;
     margin: 0;
     overflow: hidden;
-  }
-  .empty {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: center;
-    padding: 0 var(--contentPaddingHorizontal);
-  }
-  .logo {
-    opacity: 0.1;
-    padding: 1rem 0;
-    max-width: 10rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .logo :global(svg) {
-    --logoStroke: var(--primaryDark);
-  }
-  p {
-    color: var(--bodyColorMuted);
-    text-align: center;
   }
 </style>

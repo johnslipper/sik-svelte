@@ -4,6 +4,7 @@
   import AppHeader from "../../ui/AppHeader.svelte";
   import SongsList from "../SongsList/SongsList.svelte";
   import SongsListPlaceholders from "../SongsList/SongsListPlaceholders.svelte";
+  import SongsListEmpty from "../SongsList/SongsListEmpty.svelte";
   import Welcome from "../Welcome.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import LogoCompact from "../Logo/LogoCompact.svelte";
@@ -42,7 +43,14 @@
         let:data={songs}
         query={(ref) => ref.orderBy("artist")}
       >
-        <SongsList {songs} />
+        {#if songs}
+          {#if songs.length}
+            <SongsList {songs} />
+          {:else}
+            <SongsListEmpty />
+          {/if}
+        {/if}
+
         <div slot="loading">
           <SongsListPlaceholders />
         </div>
