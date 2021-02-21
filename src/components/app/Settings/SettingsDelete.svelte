@@ -20,7 +20,7 @@
       open(SensitiveConfirmation, {
         message:
           "Are you sure you want to delete ALL the songs stored? ...Make sure you've exported anything you want to keep first!",
-        confirmationText: "songs",
+        confirmationText: "SONGS",
         onOkay: () => {
           Promise.all(songs.map((song) => song.ref.delete())).then(
             () => infoToast("All songs deleted"),
@@ -47,7 +47,7 @@
       open(SensitiveConfirmation, {
         message:
           "Are you sure you want to remove yourself and all data entirely from the app? ...There's no going back, you'll be starting from scratch!",
-        confirmationText: "everything",
+        confirmationText: "EVERYTHING",
         onOkay: () => {
           auth.currentUser.delete().then(
             () => navigate("/"),

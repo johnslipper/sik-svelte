@@ -60,7 +60,7 @@
     <FormError message={error} />
 
     <div class="buttons">
-      <Button variant="primary" type="submit">{okayText}</Button>
+      <Button variant="danger" type="submit">{okayText}</Button>
       <Button variant="default" on:click={_onCancel}>{cancelText}</Button>
     </div>
   </div>
@@ -79,6 +79,15 @@
   .form {
     display: grid;
     gap: 0.75rem;
+  }
+
+  .fields :global(label) {
+    background-color: var(--danger);
+    font-size: 0.85em;
+  }
+
+  .fields :global(input) {
+    --inputBorderColor: var(--danger);
   }
 
   .buttons :global(button) {
