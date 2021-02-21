@@ -8,7 +8,19 @@
   import "firebase/auth";
   import Toasts from "../components/ui/Toasts/Toasts.svelte";
 
-  firebase.initializeApp(config);
+  firebase
+    .initializeApp(config)
+    .firestore()
+    .enablePersistence()
+    .catch((err) => {
+      if (err.code === "failed-precondition") {
+        alert("Multiple app tabs are open, offine mode disabled");
+      } else if (err.code === "unimplemented") {
+        alert(
+          "The current browser does not support all of the features required to enable offline mode"
+        );
+      }
+    });
   import { theme } from "../theme.js";
   import Routes from "./app/Routes.svelte";
   export let url = ""; //This property is necessary declare to avoid ignore the Router
