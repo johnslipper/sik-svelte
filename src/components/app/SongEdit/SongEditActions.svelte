@@ -16,6 +16,7 @@
       message: "Are you sure you want to delete this song? No backsies",
       okayText: "Delete song",
       cancelText: "Keep song",
+      okayButtonVariation: "danger",
       onOkay: () =>
         docRef.delete().then(
           () => {
