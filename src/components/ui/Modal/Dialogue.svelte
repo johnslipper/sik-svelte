@@ -7,6 +7,7 @@
   export let showCancelButton = true;
   export let okayText = "OK";
   export let cancelText = "Cancel";
+  export let okayButtonVariation = "primary";
   export let onCancel = () => {};
   export let onOkay = () => {};
 
@@ -31,7 +32,7 @@
 
 <div class="buttons">
   {#if showOkayButton}
-    <Button variant="primary" on:click={_onOkay}>{okayText}</Button>
+    <Button variant={okayButtonVariation} on:click={_onOkay}>{okayText}</Button>
   {/if}
   {#if showCancelButton}
     <Button variant="default" on:click={_onCancel}>{cancelText}</Button>
