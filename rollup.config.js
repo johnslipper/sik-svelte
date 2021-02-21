@@ -4,6 +4,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import css from "rollup-plugin-css-only";
+import { generateSW } from "rollup-plugin-workbox";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -73,6 +74,17 @@ export default {
     // If we're building for production (npm run build
     // instead of npm run dev), minify
     production && terser(),
+
+    // Generate service worker
+    generateSW({
+      globDirectory: "public/",
+      globPatterns: [
+        "**/*.{css,js,svg,png,html,json}",
+        "https://fonts.gstatic.com/s/quicksand/v22/6xKtdSZaM9iE8KbpRA_hK1QNYuDyPw.woff2",
+      ],
+      swDest: "public/service-worker.js",
+      maximumFileSizeToCacheInBytes: 5000000,
+    }),
   ],
   watch: {
     clearScreen: false,
