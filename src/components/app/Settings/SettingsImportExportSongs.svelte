@@ -1,7 +1,8 @@
 <script>
   import { Collection } from "sveltefire";
-  import { SettingsExportSongs, SettingsImportSongs } from "./index.js";
   import LoadingEllipsis from "../../ui/LoadingEllipsis.svelte";
+  import SettingsExportSongs from "./SettingsExportSongs.svelte";
+  import SettingsImportSongs from "./SettingsImportSongs.svelte";
   export let user;
 </script>
 
