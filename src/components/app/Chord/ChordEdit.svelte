@@ -1,6 +1,7 @@
 <script>
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
+  import { addChord } from "../../../localStorage.js";
   import { chordSearch } from "./chordSearch.js";
   import { Button } from "../../ui/Button";
   import { Form, FormGroup, Input, LabelDefault } from "../../ui/Form";
@@ -8,6 +9,7 @@
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
   import ChordPreview from "./ChordPreview.svelte";
   import ChordSearchResults from "./ChordSearchResults.svelte";
+  import ChordRecent from "./ChordRecent.svelte";
 
   export let chord;
   export let tuning = "E A D G B E";
@@ -71,6 +73,11 @@
     chord = selected;
     showChord = true;
   }
+
+  function onSaveChord(chord) {
+    addChord(chord);
+    onSave(chord);
+  }
 </script>
 
 <div class="wrapper">
@@ -111,13 +118,17 @@
         </div>
       </div>
     </Form>
-    {#if results && results.length}
-      <ChordSearchResults
-        {results}
-        {tuning}
-        {capoAdjustment}
-        onSelect={handleSelectedResult}
-      />
+    {#if results}
+      {#if results.length}
+        <ChordSearchResults
+          {results}
+          {tuning}
+          {capoAdjustment}
+          onSelect={handleSelectedResult}
+        />
+      {/if}
+    {:else}
+      <ChordRecent onSelect={handleSelectedResult} />
     {/if}
   {/if}
 
@@ -128,7 +139,7 @@
     <ChordPreview
       bind:chord
       {tuning}
-      {onSave}
+      onSave={onSaveChord}
       {capoAdjustment}
       onCancel={handleSelectBack}
     />
