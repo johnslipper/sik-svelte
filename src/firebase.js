@@ -7,7 +7,7 @@ export const config = {
 };
 
 export function stripRefs(refsObject) {
-  return refsObject.map(({ ref, ...rest }) => {
+  return refsObject.map(({ ref, id, uid, ...rest }) => {
     return { ...rest };
   });
 }
