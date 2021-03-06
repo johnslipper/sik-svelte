@@ -51,5 +51,6 @@
     --buttonActiveBorderColor: var(--primary);
     --buttonActiveBackgroundColor: var(--primaryContrast);
     --buttonActiveColor: var(--primary);
+    justify-content: center;
   }
 </style>
