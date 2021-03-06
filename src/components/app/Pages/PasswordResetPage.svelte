@@ -38,7 +38,11 @@
     <div class="wrapper">
       {#if isSent}
         <p>A password reset email has been sent, check your inbox</p>
-        <ButtonLink variant="default" to="/sign-in">To sign in page</ButtonLink>
+        <div class="actions">
+          <ButtonLink variant="default" to="/sign-in"
+            >To sign in page</ButtonLink
+          >
+        </div>
       {:else}
         <Form onSubmit={() => handleSubmit(auth)}>
           <div class="form">
@@ -76,5 +80,8 @@
     display: flex;
     gap: 0.25rem;
     justify-content: space-between;
+  }
+  .actions {
+    display: inline-block;
   }
 </style>
