@@ -1,6 +1,15 @@
+<script>
+  function generateRandomPercentage(min = 50, max = 100) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+</script>
+
 <div class="placeholder">
   <div class="artwork" />
-  <div class="text" />
+  <div class="text">
+    <div class="line" style="width: {generateRandomPercentage()}%" />
+    <div class="line" style="width: {generateRandomPercentage()}%" />
+  </div>
 </div>
 
 <style>
@@ -50,8 +59,7 @@
   }
 
   .artwork,
-  .text::before,
-  .text::after {
+  .line {
     background-color: var(--phColor);
   }
 
@@ -66,9 +74,7 @@
     gap: 0.5rem;
   }
 
-  .text::before,
-  .text::after {
-    content: "";
+  .line {
     height: 0.75rem;
   }
 
