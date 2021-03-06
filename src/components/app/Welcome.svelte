@@ -41,6 +41,6 @@
     display: grid;
     gap: 0.75rem;
     justify-content: center;
-    grid-template-columns: repeat(2, 5.4rem);
+    grid-template-columns: repeat(2, 5.5rem);
   }
 </style>
