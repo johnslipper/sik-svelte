@@ -17,11 +17,14 @@
   let notes = ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"];
   let strings = [];
   let enableCustomTuning = false;
+  const standardTuning = "E A D G B E";
 
   onMount(() => {
-    if (tuning && tuning.length) {
+    if (tuning && tuning !== standardTuning) {
       strings = tuning.split(" ");
       enableCustomTuning = true;
+    } else {
+      tuning = standardTuning;
     }
   });
 
@@ -31,7 +34,7 @@
   function handleDisableCustomTuning() {
     if (!enableCustomTuning) {
       strings = [];
-      tuning = undefined;
+      tuning = standardTuning;
     }
   }
 </script>
