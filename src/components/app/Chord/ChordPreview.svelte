@@ -1,6 +1,5 @@
 <script>
   import { fade } from "svelte/transition";
-  import { string, object } from "yup";
   import ChordVisualised from "./ChordVisualised.svelte";
   import { Button } from "../../ui/Button";
   import { Form, FormGroup, Input, LabelDefault } from "../../ui/Form";
