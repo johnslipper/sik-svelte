@@ -61,7 +61,7 @@
   <ul class="chords">
     {#if chordSection.chords}
       {#each chordSection.chords as chord, i}
-        <li in:fade={{ delay: i * 100 }}>
+        <li class="chord" in:fade={{ delay: i * 100 }}>
           <SongEditChord
             {tuning}
             {capoAdjustment}
@@ -99,6 +99,10 @@
     list-style: none;
     padding: var(--contentPaddingHorizontal);
     color: var(--neutralMedium);
+  }
+  .chord,
+  .add {
+    max-width: 10rem;
   }
   .add {
     display: grid;

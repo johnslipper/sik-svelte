@@ -73,6 +73,7 @@
   .chord {
     display: flex;
     flex-direction: column;
+    max-width: 10rem;
     text-align: center;
   }
   .empty {
