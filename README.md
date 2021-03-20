@@ -1,5 +1,7 @@
 # Songs I know
 
+![Songs I know guitar logo](https://github.com/johnslipper/sik-svelte/blob/main/public/icons/icon-180x180.png?raw=true)
+
 Created by [@johnslipper](https://twitter.com/johnslipper) to get inspiration when holding a guitar and nothing comes to mind.
 
 Start storing your own songs on the live app at [sik.app](https://sik.app).
@@ -16,6 +18,12 @@ Start storing your own songs on the live app at [sik.app](https://sik.app).
 - Capo adjustment
 - Song export
 - Remove your song and user data completely when you no longer want to use the app
+
+## Screenshots
+
+![Stored songs list alongside the album artwork](https://github.com/johnslipper/sik-svelte/blob/main/public/screenshots/sik-svelte-app-1.jpg?raw=true)
+![Viewing the lyrics of a song](https://github.com/johnslipper/sik-svelte/blob/main/public/screenshots/sik-svelte-app-2.jpg?raw=true)
+![Selecting a chord and hearing how it sounds](https://github.com/johnslipper/sik-svelte/blob/main/public/screenshots/sik-svelte-app-3.jpg?raw=true)
 
 ## Roadmap
 
