@@ -54,5 +54,22 @@
       "type": "image/png"
     }
   ],
-  "splash_pages": null
+  "splash_pages": null,
+  "screenshots": [
+    {
+      "src": "/screenshots/sik-svelte-app-1.jpg",
+      "sizes": "540x1200",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/screenshots/sik-svelte-app-2.jpg",
+      "sizes": "540x1200",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/screenshots/sik-svelte-app-3.jpg",
+      "sizes": "540x1200",
+      "type": "image/jpeg"
+    }
+  ]
 }
