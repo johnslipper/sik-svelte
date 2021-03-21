@@ -4,9 +4,6 @@
   export let string;
   export let key;
   export let value;
-  export let fret;
-
-  $: fretValid = fret > 0;
 
   let fingeringOptions = getFingeringOptions();
 
@@ -28,7 +25,7 @@
     <VisuallyHidden>{string} string</VisuallyHidden>
     Finger
   </LabelDefault>
-  <Select id="finger{key}" bind:value disabled={!fretValid}>
+  <Select id="finger{key}" bind:value>
     <Option value="" />
     {#each fingeringOptions as option}
       <Option value={option.value}>{option.name}</Option>

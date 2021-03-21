@@ -78,7 +78,6 @@
               />
               <ChordEditFinger
                 bind:value={fingering[i]}
-                fret={frets[i]}
                 key={i}
                 string={tuningFormatted[i]}
               />
