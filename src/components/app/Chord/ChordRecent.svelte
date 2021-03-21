@@ -13,7 +13,9 @@
     <ul>
       {#each recentChords as chord}
         <li>
-          <Button on:click={() => onSelect(chord)}>{chord.name}</Button>
+          <Button on:click={() => onSelect(chord)}
+            >{chord.name || "Untitled chord"}</Button
+          >
         </li>
       {/each}
     </ul>
