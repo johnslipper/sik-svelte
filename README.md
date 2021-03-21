@@ -76,6 +76,10 @@ npm run build
 
 You can run the newly built app with `npm run start`.
 
+## Service worker
+
+When run in production mode a workbox service worker is installed that caches all app assets using a "stale while revalidate" strategy (see `rollup.config.js` `generateSW` function for further information).
+
 ## Deploying to the web
 
 Currently deployed on Firebase hosting. Any PRs merged into the `main` branch within github will be automatically deployed to production.
