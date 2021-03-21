@@ -17,14 +17,12 @@
     chordElement.innerHTML = "";
     chordbox = null;
     const tuningSplit = tuning ? tuning.split(" ") : null;
-    const fingeringArray = fingering.split(" ");
-    const fretsArray = processFrets(frets.split(" "));
-    const calculatedPosition = position || getPositionFromFrets(fretsArray);
-    const adjustedFrets = adjustFrets(fretsArray, calculatedPosition);
+    const calculatedPosition = position || getPositionFromFrets(frets);
+    const adjustedFrets = adjustFrets(frets, calculatedPosition);
 
     chordbox = new ChordBox(chordElement, { defaultColor: theme.bodyColor });
     chordbox.draw({
-      chord: getChord(fingeringArray, adjustedFrets),
+      chord: getChord(fingering, adjustedFrets),
       tuning: tuningSplit,
       position: calculatedPosition,
     });
@@ -34,16 +32,6 @@
     svgElement.setAttribute("viewBox", "0 10 100 100");
     svgElement.setAttribute("width", "100%");
     svgElement.setAttribute("height", "100%");
-  }
-
-  // Process frets to be integers and lowercase "X"
-  function processFrets(frets) {
-    return frets.map((fret) => {
-      if (fret === "X") {
-        return fret.toLowerCase();
-      }
-      return parseInt(fret);
-    });
   }
 
   // Adjust valid fret numbers to start from neck position
@@ -57,7 +45,7 @@
   function getChord(fingering, frets) {
     return frets.map((fret, i) => {
       const fingerFormatted =
-        fingering[i] === "X" || fret === 0 ? null : fingering[i];
+        fingering[i] === "x" || fret === 0 ? null : fingering[i];
       return [frets.length - i, fret, fingerFormatted];
     });
   }

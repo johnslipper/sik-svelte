@@ -12,7 +12,7 @@
     const options = new Array(totalFrets);
     for (let i = 0; i < options.length; i++) {
       if (i === 0) {
-        options[i] = { name: "N/A", value: "X" };
+        options[i] = { name: "N/A", value: "x" };
       } else if (i === 1) {
         options[i] = { name: "Open", value: 0 };
       } else {

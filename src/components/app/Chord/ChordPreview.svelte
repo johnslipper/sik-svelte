@@ -9,6 +9,7 @@
   import ChordEditFinger from "./ChordEditFinger.svelte";
   import ChordPlay from "./ChordPlay.svelte";
   import Dropdown from "../../ui/Dropdown.svelte";
+  import { chordEntriesToArray, chordEntriesToString } from "./helpers.js";
   export let chord;
   export let tuning = "E A D G B E";
   export let capoAdjustment;
@@ -16,36 +17,36 @@
   export let onCancel;
 
   let stringCount = 6;
-  let frets = chord.frets ? processChordEntries(chord.frets) : [];
-  let fingering = chord.fingering ? processChordEntries(chord.fingering) : [];
-
-  $: previewFrets = frets.join(" ").trim();
-  $: previewFingerings = fingering.join(" ").trim();
-  $: isPreviewPossible =
-    frets.filter((fret) => fret.toString().length).length === stringCount;
+  let frets = chord.frets ? chordEntriesToArray(chord.frets) : [];
+  let fingering = chord.fingering ? chordEntriesToArray(chord.fingering) : [];
+  let fretsComplete = false;
+  let fingeringComplete = false;
+  let enablePreview = false;
+  $: (frets, fingering) && handleEntriesUpdate();
   $: tuningFormatted = tuning.split(" ");
-  $: (previewFrets, previewFingerings) && handleChordUpdate();
-
-  function processChordEntries(entries) {
-    return entries.split(" ").map((entry) => {
-      return processChordEntry(entry);
-    });
-  }
-
-  function processChordEntry(entry) {
-    return entry === "X" ? entry : parseInt(entry);
-  }
 
   function handleFretChange(value, key) {
     // TODO: Probably a better way to achieve this
     if (typeof value === "string" || value < 1) {
-      fingering[key] = "X";
+      fingering[key] = "x";
+    }
+  }
+
+  function handleEntriesUpdate() {
+    enablePreview = false;
+    fretsComplete =
+      frets.filter((fret) => fret.toString()).length === stringCount;
+    fingeringComplete =
+      fingering.filter((finger) => finger.toString()).length === stringCount;
+    if (fretsComplete && fingeringComplete) {
+      handleChordUpdate();
+      setTimeout(() => (enablePreview = true));
     }
   }
 
   function handleChordUpdate() {
-    chord.frets = previewFrets;
-    chord.fingering = previewFingerings;
+    chord.frets = chordEntriesToString(frets);
+    chord.fingering = chordEntriesToString(fingering);
   }
 
   function onSubmit() {
@@ -86,14 +87,10 @@
         </div>
       </div>
       <div class="preview">
-        {#if isPreviewPossible}
+        {#if enablePreview}
           <div class="visualised">
             <Dropdown position="center">
-              <ChordVisualised
-                frets={previewFrets}
-                fingering={previewFingerings}
-                {tuning}
-              />
+              <ChordVisualised {frets} {fingering} {tuning} />
               <div slot="content">
                 <div class="actions" aria-label="Chord actions">
                   <ChordPlay {chord} {tuning} {capoAdjustment} />
@@ -109,7 +106,7 @@
       </div>
     </div>
     <div class="buttons">
-      <Button variant="primary" type="submit" disabled={!isPreviewPossible}
+      <Button variant="primary" type="submit" disabled={!enablePreview}
         >Save</Button
       >
       <Button variant="default" on:click={onCancel}>Back</Button>

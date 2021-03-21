@@ -1,14 +1,17 @@
 <script>
+  import { chordEntriesToArray } from "./helpers.js";
   import ChordVisualised from "./ChordVisualised.svelte";
   export let chord;
   export let tuning;
+  let fingeringArray = chordEntriesToArray(chord.fingering);
+  let fretsArray = chordEntriesToArray(chord.frets);
 </script>
 
-{#if chord.fingering && chord.frets}
+{#if fingeringArray && fretsArray}
   <div class="visualised">
     <ChordVisualised
-      fingering={chord.fingering}
-      frets={chord.frets}
+      fingering={fingeringArray}
+      frets={fretsArray}
       position={chord.position}
       {tuning}
     />

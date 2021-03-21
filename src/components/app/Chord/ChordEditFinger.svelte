@@ -14,7 +14,7 @@
     const options = new Array(totalFingerOptions);
     for (let i = 0; i < options.length; i++) {
       if (i === 0) {
-        options[i] = { name: "N/A", value: "X" };
+        options[i] = { name: "N/A", value: "x" };
       } else {
         options[i] = { name: i.toString(), value: i };
       }
