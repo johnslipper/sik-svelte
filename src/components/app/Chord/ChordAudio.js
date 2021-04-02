@@ -1,295 +1,105 @@
-export class ChordAudio {
-  constructor(duration = 1000) {
-    this.guitarFretFrequencies = guitarFretFrequencies;
+const noteLength = 2000;
 
-    this.strings = new Array(6); // Six string positions
-    this.audioContext; // Audio context
-    this.isPlaying; // True while audio playing
-    this.duration = duration; // Chord playback duration in ms
+// Returns a AudioNode object that will produce a plucking sound
+function pluck(frequency, context) {
+  // Signal dampening amount
+  let dampening = 0.99;
+  // We create a script processor that will enable
+  // low-level signal sample access
+  const pluck = context.createScriptProcessor(4096, 0, 1);
 
-    return this.initAudio(); // Initialize the audio context
+  // N is the period of our signal in samples
+  const N = Math.round(context.sampleRate / frequency);
+
+  // y is the signal presently
+  const y = new Float32Array(N);
+  for (let i = 0; i < N; i++) {
+    // We fill this with gaussian noise between [-1, 1]
+    y[i] = Math.random() * 2 - 1;
   }
 
-  /* Create Audio Context */
-  initAudio() {
-    if (this.audioContext) {
-      return false;
+  // This callback produces the sound signal
+  let n = 0;
+  pluck.onaudioprocess = function (e) {
+    // We get a reference to the outputBuffer
+    const output = e.outputBuffer.getChannelData(0);
+
+    // We fill the outputBuffer with our generated signal
+    for (let i = 0; i < e.outputBuffer.length; i++) {
+      // This averages the current sample with the next one
+      // Effectively, this is a lowpass filter with a
+      // frequency exactly half of sampling rate
+      y[n] = (y[n] + y[(n + 1) % N]) / 2;
+
+      // Put the actual sample into the buffer
+      output[i] = y[n];
+
+      // Hasten the signal decay by applying dampening.
+      y[n] *= dampening;
+
+      // Counting variables to help us read our current
+      // signal y
+      n++;
+      if (n >= N) n = 0;
     }
-    this.audioContext = this.createContext();
-    /* Initialise string audio nodes */
-    for (var i = 0; i < this.strings.length; i++) {
-      this.strings[i] = this.createString(i);
-    }
-    return this;
-  }
+  };
 
-  /* Create audio context. NOTE: Includes iOS Sample Rate Fix */
-  createContext(desiredSampleRate) {
-    var AudioCtor = window.AudioContext || window.webkitAudioContext;
+  // The resulting signal is not as clean as it should be.
+  // In lower frequencies, aliasing is producing sharp sounding
+  // noise, making the signal sound like a harpsichord. We
+  // apply a bandpass centred on our target frequency to remove
+  // these unwanted noise.
+  const bandpass = context.createBiquadFilter();
+  bandpass.type = "bandpass";
+  bandpass.frequency.value = frequency;
+  bandpass.Q.value = 1;
 
-    desiredSampleRate =
-      typeof desiredSampleRate === "number" ? desiredSampleRate : 44100;
-    var context = new AudioCtor();
+  // We connect the ScriptProcessorNode to the BiquadFilterNode
+  pluck.connect(bandpass);
 
-    // Check if hack is necessary. Only occurs in iOS6+ devices
-    // and only when you first boot the iPhone, or play a audio/video
-    // with a different sample rate
-    if (
-      /(iPhone|iPad)/i.test(navigator.userAgent) &&
-      context.sampleRate !== desiredSampleRate
-    ) {
-      var buffer = context.createBuffer(1, 1, desiredSampleRate);
-      var dummy = context.createBufferSource();
-      dummy.buffer = buffer;
-      dummy.connect(context.destination);
-      dummy.start(0);
-      dummy.disconnect();
+  // Our signal would have died down by 2s, so we automatically
+  // disconnect eventually to prevent leaking memory.
+  setTimeout(() => {
+    pluck.disconnect();
+  }, noteLength);
+  setTimeout(() => {
+    bandpass.disconnect();
+    // Reset dampening to the natural state
+    dampening = 0.99;
+  }, noteLength);
 
-      context.close(); // dispose old context
-      context = new AudioCtor();
-    }
-
-    return context;
-  }
-
-  /* Create a string object with gain/panner */
-  createString(i) {
-    let string = {
-      gainNode: this.audioContext.createGain(),
-      panner: this.audioContext.createPanner(),
-    };
-
-    var pan = (2 / this.strings.length) * i + 1 - 2;
-    string.panner.panningModel = "equalpower";
-    string.panner.setPosition(pan, 0, 0);
-    string.gainNode.gain.value = 0;
-    string.gainNode.gain.toValue = 0.16;
-
-    string.panner.connect(this.audioContext.destination);
-    string.gainNode.connect(string.panner);
-
-    return string;
-  }
-
-  /* Get frequency from guitar frequency array based on string & fret */
-  getFrequency(string, fret) {
-    let freq = 0;
-    freq = this.guitarFretFrequencies[string][fret];
-    return freq;
-  }
-
-  /* Start string playing */
-  noteOn(note, string) {
-    if (!note || !string) return false;
-
-    string.oscillator = this.audioContext.createOscillator();
-    string.oscillator.type = "triangle";
-    string.oscillator.frequency.value = note;
-    string.oscillator.connect(string.gainNode);
-
-    string.oscillator.start(0);
-    string.gainNode.gain.value = string.gainNode.gain.toValue;
-
-    window.setTimeout(function () {
-      string.gainNode.gain.value = 0; // mute string
-    }, this.duration - 50);
-    window.setTimeout(this.stopStrings.bind(this), this.duration); // stop oscillator node
-  }
-
-  /* Stops and destroys string oscillator node */
-  noteOff(string) {
-    if (!string) return false;
-    if (!string.oscillator) return false;
-    string.oscillator.stop(0);
-    string.oscillator = null;
-  }
-
-  /* Plays a chord from an array of 6 fret positions */
-  startStrings(frets) {
-    if (this.isPlaying) return false;
-    for (var i = 0; i < this.strings.length; i++) {
-      if (frets[i] > -1) {
-        this.noteOn(this.getFrequency(i, frets[i]), this.strings[i]);
-      }
-    }
-    this.isPlaying = true;
-  }
-
-  /* Trigger noteOff() for each string */
-  stopStrings() {
-    for (var i = 0; i < this.strings.length; i++) {
-      this.noteOff(this.strings[i]);
-    }
-    this.isPlaying = false;
-  }
-
-  /* Adjust fret values to compensate for a capo */
-  capoAdjust(frets, capo) {
-    if (capo > 0) {
-      var adjusted = frets.map((fret) => {
-        fret = parseInt(fret);
-        return fret > -1 ? fret + capo : fret;
-      });
-      return adjusted;
-    } else return frets;
-  }
-
-  /* Play frets array and optional capo offset */
-  play(frets, capo) {
-    if (capo) this.startStrings(this.capoAdjust(frets, parseInt(capo)));
-    else this.startStrings(frets);
-  }
+  // The bandpass is last AudioNode in the chain, so we return
+  // it as the "pluck"
+  return bandpass;
 }
 
-/* Initialise, play and destroy a single chord instance */
-export function playChord(frets, capoAdjustment, duration = 1000) {
-  const chordFrets = frets
-    .split(" ")
-    .map((fret) => (fret === "X" ? undefined : parseInt(fret)));
-  if (chordFrets && chordFrets.length) {
-    let chordAudio = new ChordAudio(duration);
-    chordAudio.play(chordFrets, capoAdjustment);
-    window.setTimeout(() => (chordAudio = null), duration);
+// Fret is an array of finger positions
+// e.g. [-1, 3, 5, 5, -1, -1];
+// 0 is an open string
+export function playChord(frets, capo = 0, tuning = []) {
+  const context = new AudioContext();
+  const stringCount = 6;
+  const stagger = 25;
+
+  // Connect our strings to the sink
+  const dst = context.destination;
+  for (let index = 0; index < stringCount; index++) {
+    if (Number.isFinite(frets[index])) {
+      const offset = (tuning[index] || 0) + capo;
+      setTimeout(() => {
+        pluck(getFrequency(index, frets[index], offset), context).connect(dst);
+      }, stagger * index);
+    }
   }
+  setTimeout(() => context.close(), noteLength);
 }
 
-const guitarFretFrequencies = [
-  /* E */ [
-    82.41,
-    87.31,
-    92.5,
-    98.0,
-    103.8,
-    110.0,
-    116.5,
-    123.5,
-    130.8,
-    138.6,
-    146.8,
-    155.6,
-    164.8,
-    174.6,
-    185.0,
-    196.0,
-    207.7,
-    220.0,
-    233.1,
-    246.9,
-    261.6,
-  ],
-  /* A */ [
-    110.0,
-    116.5,
-    123.5,
-    130.8,
-    138.6,
-    146.8,
-    155.6,
-    164.8,
-    174.6,
-    185.0,
-    196.0,
-    207.7,
-    220.0,
-    233.1,
-    246.9,
-    261.6,
-    277.2,
-    293.7,
-    311.1,
-    329.6,
-    349.2,
-  ],
-  /* D */ [
-    146.8,
-    155.6,
-    164.8,
-    174.6,
-    185.0,
-    196.0,
-    207.7,
-    220.0,
-    233.1,
-    246.9,
-    261.6,
-    277.2,
-    293.7,
-    311.1,
-    329.6,
-    349.2,
-    370.0,
-    392.0,
-    415.3,
-    440.0,
-    466.2,
-  ],
-  /* G */ [
-    196.0,
-    207.7,
-    220.0,
-    233.1,
-    246.9,
-    261.6,
-    277.2,
-    293.7,
-    311.1,
-    329.6,
-    349.2,
-    370.0,
-    392.0,
-    415.3,
-    440.0,
-    466.2,
-    493.9,
-    523.3,
-    554.4,
-    587.3,
-    622.3,
-  ],
-  /* B */ [
-    246.9,
-    261.6,
-    277.2,
-    293.7,
-    311.1,
-    329.6,
-    349.2,
-    370.0,
-    392.0,
-    415.3,
-    440.0,
-    466.2,
-    493.9,
-    523.3,
-    554.4,
-    587.3,
-    622.3,
-    659.3,
-    698.5,
-    740.0,
-    784.0,
-  ],
-  /* E */ [
-    329.6,
-    349.2,
-    370.0,
-    392.0,
-    415.3,
-    440.0,
-    466.2,
-    493.9,
-    523.3,
-    554.4,
-    587.3,
-    622.3,
-    659.3,
-    698.5,
-    740.0,
-    784.0,
-    830.6,
-    880.0,
-    932.3,
-    987.8,
-    1047,
-  ],
-];
+function getFrequency(string, frets, offset = 0) {
+  // Concert A frequency
+  const A = 110;
+
+  // These are how far guitar strings are tuned apart from A
+  const offsets = [-5, 0, 5, 10, 14, 19];
+
+  return A * Math.pow(2, (frets + offsets[string] + offset) / 12);
+}
