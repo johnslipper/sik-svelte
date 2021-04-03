@@ -122,7 +122,6 @@
       {#if results.length}
         <ChordSearchResults
           {results}
-          {tuning}
           {capoAdjustment}
           onSelect={handleSelectedResult}
         />
