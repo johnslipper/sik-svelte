@@ -2,7 +2,7 @@
   import { onMount, onDestroy, afterUpdate } from "svelte";
   import { ChordBox } from "vexchords";
   import { theme } from "../../../theme.js";
-  export let tuning;
+  export let tuning = ["E", "A", "D", "G", "B", "E"];
   export let fingering;
   export let frets;
   export let position = 0;
@@ -16,14 +16,13 @@
   function drawChord() {
     chordElement.innerHTML = "";
     chordbox = null;
-    const tuningSplit = tuning ? tuning.split(" ") : null;
     const calculatedPosition = position || getPositionFromFrets(frets);
     const adjustedFrets = adjustFrets(frets, calculatedPosition);
 
     chordbox = new ChordBox(chordElement, { defaultColor: theme.bodyColor });
     chordbox.draw({
       chord: getChord(fingering, adjustedFrets),
-      tuning: tuningSplit,
+      tuning,
       position: calculatedPosition,
     });
 

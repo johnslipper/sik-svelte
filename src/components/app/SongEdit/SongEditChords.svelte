@@ -5,7 +5,7 @@
   import Dialogue from "../../ui/Modal/Dialogue.svelte";
   import { Button } from "../../ui/Button";
   export let chordSections = [];
-  export let tuning;
+  export let stringOffsets;
   export let capoAdjustment;
 
   const { open } = getContext("simple-modal");
@@ -46,7 +46,7 @@
     <div class="chordSection" in:fade={{ delay: i * 50 }}>
       <SongEditChordSections
         bind:chordSection
-        {tuning}
+        {stringOffsets}
         {capoAdjustment}
         key={i}
         onRemove={handleRemoveSection}

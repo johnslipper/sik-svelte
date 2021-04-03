@@ -76,7 +76,8 @@ function pluck(frequency, context) {
 // Fret is an array of finger positions
 // e.g. [-1, 3, 5, 5, -1, -1];
 // 0 is an open string
-export function playChord(frets, capo = 0, tuning = []) {
+export function playChord(frets, capo, tuning = []) {
+  capo = capo || 0;
   const context = new AudioContext();
   const stringCount = 6;
   const stagger = 25;

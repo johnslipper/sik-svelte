@@ -7,7 +7,7 @@
   import Icon from "../../ui/Icons/Icon.svelte";
   import { Button } from "../../ui/Button";
   export let chord;
-  export let tuning;
+  export let stringOffsets;
   export let capoAdjustment;
   export let onEdit;
   export let onRemove;
@@ -15,7 +15,7 @@
 
 <div class="chord">
   <Dropdown position="center">
-    <ChordView {chord} {tuning} />
+    <ChordView {chord} {stringOffsets} />
     <div slot="content">
       <div class="actions" aria-labelledby="editChordActionsMenu">
         <VisuallyHidden>
@@ -26,7 +26,7 @@
           <div>Edit</div>
           <VisuallyHidden>chord</VisuallyHidden>
         </Button>
-        <ChordPlay {chord} {tuning} {capoAdjustment} />
+        <ChordPlay {chord} {stringOffsets} {capoAdjustment} />
         <div class="danger">
           <Button on:click={() => onRemove(chord)}>
             <Icon path={crossIcon} size="1.5rem" />

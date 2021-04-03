@@ -7,7 +7,7 @@
   import Heading from "../../ui/Heading/Heading.svelte";
   import HeadingSticky from "../../ui/Heading/HeadingSticky.svelte";
   export let chords;
-  export let tuning;
+  export let stringOffsets;
   export let capoAdjustment;
 
   function getSectionTitle(title) {
@@ -34,13 +34,13 @@
             {#each section.chords as chord, i}
               <li class="chord" in:fade={{ delay: i * 50 }}>
                 <Dropdown position="center">
-                  <ChordView {chord} {tuning} />
+                  <ChordView {chord} {stringOffsets} />
                   <div slot="content">
                     <div class="actions" aria-labelledby="viewChordActionsMenu">
                       <VisuallyHidden>
                         <div id="viewChordActionsMenu">Chord actions</div>
                       </VisuallyHidden>
-                      <ChordPlay {chord} {tuning} {capoAdjustment} />
+                      <ChordPlay {chord} {stringOffsets} {capoAdjustment} />
                     </div>
                   </div>
                 </Dropdown>

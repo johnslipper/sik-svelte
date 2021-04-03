@@ -11,30 +11,21 @@
   } from "../../ui/Form";
   import Checkbox from "../../ui/Form/Checkbox.svelte";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  export let tuning;
-
-  let stringCount = 6;
-  let notes = ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"];
-  let strings = [];
+  import { standardTuningOffsets } from "../Chord/helpers.js";
+  export let stringOffsets;
   let enableCustomTuning = false;
-  const standardTuning = "E A D G B E";
 
   onMount(() => {
-    if (tuning && tuning !== standardTuning) {
-      strings = tuning.split(" ");
+    if (stringOffsets) {
       enableCustomTuning = true;
-    } else {
-      tuning = standardTuning;
     }
   });
 
-  function handleStringChanged() {
-    tuning = strings.join(" ");
-  }
-  function handleDisableCustomTuning() {
-    if (!enableCustomTuning) {
-      strings = [];
-      tuning = standardTuning;
+  function handleToggleCustomTuning() {
+    if (enableCustomTuning) {
+      stringOffsets = [0, 0, 0, 0, 0, 0];
+    } else {
+      stringOffsets = undefined;
     }
   }
 </script>
@@ -45,13 +36,13 @@
     <Label>
       <Checkbox
         bind:checked={enableCustomTuning}
-        on:change={handleDisableCustomTuning}
+        on:change={handleToggleCustomTuning}
       />
       Enable custom tuning
     </Label>
-    {#if enableCustomTuning}
+    {#if enableCustomTuning && stringOffsets}
       <div class="fields">
-        {#each Array(stringCount) as _string, i}
+        {#each standardTuningOffsets as string, i}
           <FormGroup>
             <VisuallyHidden>
               <LabelDefault htmlFor="string{i + 1}">
@@ -63,12 +54,10 @@
               id="string{i + 1}"
               disabled={!enableCustomTuning}
               required
-              bind:value={strings[i]}
-              on:blur={handleStringChanged}
+              bind:value={stringOffsets[i]}
             >
-              <Option value="" />
-              {#each notes as note}
-                <Option value={note}>{note}</Option>
+              {#each string as option}
+                <Option value={option.offset}>{option.note}</Option>
               {/each}
             </Select>
           </FormGroup>

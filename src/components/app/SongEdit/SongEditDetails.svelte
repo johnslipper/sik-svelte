@@ -18,7 +18,7 @@
   export let artist = "";
   export let album = "";
   export let artwork;
-  export let tuning;
+  export let stringOffsets;
   export let capoAdjustment;
   export let errors;
 
@@ -89,7 +89,7 @@
       <Input id="songAlbum" bind:value={album} />
     </FormGroup>
 
-    <SongEditTuning bind:tuning />
+    <SongEditTuning bind:stringOffsets />
 
     <FormGroup>
       <LabelDefault htmlFor="songCapo">Capo adjustment</LabelDefault>

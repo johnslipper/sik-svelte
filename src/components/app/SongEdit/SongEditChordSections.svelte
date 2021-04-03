@@ -7,7 +7,7 @@
   import { Input, FormGroup, LabelDefault } from "../../ui/Form";
   import { Button } from "../../ui/Button";
   export let chordSection;
-  export let tuning;
+  export let stringOffsets;
   export let capoAdjustment;
   export let key;
   export let onRemove;
@@ -16,7 +16,7 @@
 
   const addChordModal = () => {
     open(ChordEdit, {
-      tuning,
+      stringOffsets,
       capoAdjustment,
       onSave: (chord) => {
         chordSection.chords = [...chordSection.chords, chord];
@@ -29,7 +29,7 @@
   const editChordModal = (chord) => {
     open(ChordEdit, {
       chord,
-      tuning,
+      stringOffsets,
       capoAdjustment,
       onSave: (chord) => {
         chordSection.chords[chordSection.chords.indexOf(chord)] = chord;
@@ -63,7 +63,7 @@
       {#each chordSection.chords as chord, i}
         <li class="chord" in:fade={{ delay: i * 100 }}>
           <SongEditChord
-            {tuning}
+            {stringOffsets}
             {capoAdjustment}
             {chord}
             onEdit={handleEditChord}

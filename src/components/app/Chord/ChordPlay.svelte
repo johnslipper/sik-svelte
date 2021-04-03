@@ -4,19 +4,19 @@
   import { Button } from "../../ui/Button";
   import { speakerIcon } from "../../ui/Icons/icons.js";
   import Icon from "../../ui/Icons/Icon.svelte";
-  import { infoToast, errorToast } from "../../ui/Toasts/toasts.js";
+  import { errorToast } from "../../ui/Toasts/toasts.js";
   import { chordEntriesToArray } from "./helpers.js";
   export let chord;
-  export let tuning;
+  export let stringOffsets;
   export let capoAdjustment;
 
   function handlePlayChord() {
     if (chord.frets) {
-      if (tuning && tuning !== "E A D G B E") {
-        infoToast("Cannot play chords with custom tuning yet sorry");
-      } else {
-        playChord(chordEntriesToArray(chord.frets), capoAdjustment);
-      }
+      playChord(
+        chordEntriesToArray(chord.frets),
+        capoAdjustment,
+        stringOffsets
+      );
     } else {
       errorToast("Cannot play chord, no fret data");
     }

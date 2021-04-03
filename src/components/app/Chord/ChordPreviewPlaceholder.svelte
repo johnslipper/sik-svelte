@@ -1,8 +1,5 @@
 <script>
-  export let tuning;
-  const tuningSplit = tuning
-    ? tuning.split(" ")
-    : ["E", "A", "D", "G", "B", "E"];
+  export let tuning = ["E", "A", "D", "G", "B", "E"];
 </script>
 
 <div class="wrapper">
@@ -12,7 +9,8 @@
       xmlns="http://www.w3.org/2000/svg"
       width="100%"
       height="100%"
-      viewbox="0 26 100 82">
+      viewbox="0 26 100 82"
+    >
       <title>Chord preview placeholder</title>
       <rect
         width="62.5"
@@ -126,8 +124,9 @@
         font-style="light"
         font-weight="100"
         x="18.84999990463257"
-        y="93.21428571428572">
-        <tspan dy="13" x="18.84999990463257">{tuningSplit[0]}</tspan>
+        y="93.21428571428572"
+      >
+        <tspan dy="13" x="18.84999990463257">{tuning[0]}</tspan>
       </text>
       <text
         stroke="hsla(236, 8%, 35%, 1)"
@@ -137,8 +136,9 @@
         font-style="light"
         font-weight="100"
         x="30.924999952316284"
-        y="93.21428571428572">
-        <tspan dy="13" x="30.924999952316284">{tuningSplit[1]}</tspan>
+        y="93.21428571428572"
+      >
+        <tspan dy="13" x="30.924999952316284">{tuning[1]}</tspan>
       </text>
       <text
         stroke="hsla(236, 8%, 35%, 1)"
@@ -148,8 +148,9 @@
         font-style="light"
         font-weight="100"
         x="43.15000009536743"
-        y="93.21428571428572">
-        <tspan dy="13" x="43.15000009536743">{tuningSplit[2]}</tspan>
+        y="93.21428571428572"
+      >
+        <tspan dy="13" x="43.15000009536743">{tuning[2]}</tspan>
       </text>
       <text
         stroke="hsla(236, 8%, 35%, 1)"
@@ -159,8 +160,9 @@
         font-style="light"
         font-weight="100"
         x="55.59166669845581"
-        y="93.21428571428572">
-        <tspan dy="13" x="55.59166669845581">{tuningSplit[3]}</tspan>
+        y="93.21428571428572"
+      >
+        <tspan dy="13" x="55.59166669845581">{tuning[3]}</tspan>
       </text>
       <text
         stroke="hsla(236, 8%, 35%, 1)"
@@ -170,8 +172,9 @@
         font-style="light"
         font-weight="100"
         x="68.56666660308838"
-        y="93.21428571428572">
-        <tspan dy="13" x="68.56666660308838">{tuningSplit[4]}</tspan>
+        y="93.21428571428572"
+      >
+        <tspan dy="13" x="68.56666660308838">{tuning[4]}</tspan>
       </text>
       <text
         stroke="hsla(236, 8%, 35%, 1)"
@@ -181,8 +184,9 @@
         font-style="light"
         font-weight="100"
         x="81.34999990463257"
-        y="93.21428571428572">
-        <tspan dy="13" x="81.34999990463257">{tuningSplit[5]}</tspan>
+        y="93.21428571428572"
+      >
+        <tspan dy="13" x="81.34999990463257">{tuning[5]}</tspan>
       </text></svg
     >
   </div>

@@ -51,7 +51,7 @@
         <TabPanel>
           <SongViewChords
             chords={song.chordSections}
-            tuning={song.tuning}
+            stringOffsets={song.stringOffsets}
             capoAdjustment={song.capoAdjustment}
           />
         </TabPanel>

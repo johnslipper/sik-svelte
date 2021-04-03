@@ -1,8 +1,9 @@
 <script>
-  import { chordEntriesToArray } from "./helpers.js";
+  import { chordEntriesToArray, getNotesFromOffsets } from "./helpers.js";
   import ChordVisualised from "./ChordVisualised.svelte";
   export let chord;
-  export let tuning;
+  export let stringOffsets;
+  let tuning = stringOffsets ? getNotesFromOffsets(stringOffsets) : undefined;
   let fingeringArray = chordEntriesToArray(chord.fingering);
   let fretsArray = chordEntriesToArray(chord.frets);
 </script>

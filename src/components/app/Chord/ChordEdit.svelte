@@ -12,7 +12,7 @@
   import ChordRecent from "./ChordRecent.svelte";
 
   export let chord;
-  export let tuning = "E A D G B E";
+  export let stringOffsets;
   export let capoAdjustment;
   export let onSave;
   export let onCancel;
@@ -137,9 +137,9 @@
     </div>
     <ChordPreview
       bind:chord
-      {tuning}
-      onSave={onSaveChord}
+      {stringOffsets}
       {capoAdjustment}
+      onSave={onSaveChord}
       onCancel={handleSelectBack}
     />
   {/if}

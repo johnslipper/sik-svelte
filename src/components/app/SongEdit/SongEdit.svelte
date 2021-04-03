@@ -16,7 +16,7 @@
       bind:artist={song.artist}
       bind:album={song.album}
       bind:artwork={song.artwork}
-      bind:tuning={song.tuning}
+      bind:stringOffsets={song.stringOffsets}
       bind:capoAdjustment={song.capoAdjustment}
       {errors}
     />
@@ -44,7 +44,7 @@
   <div>
     <SongEditChords
       bind:chordSections={song.chordSections}
-      tuning={song.tuning}
+      stringOffsets={song.stringOffsets}
       capoAdjustment={song.capoAdjustment}
     />
   </div>

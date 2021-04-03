@@ -9,9 +9,13 @@
   import ChordEditFinger from "./ChordEditFinger.svelte";
   import ChordPlay from "./ChordPlay.svelte";
   import Dropdown from "../../ui/Dropdown.svelte";
-  import { chordEntriesToArray, chordEntriesToString } from "./helpers.js";
+  import {
+    chordEntriesToArray,
+    chordEntriesToString,
+    getNotesFromOffsets,
+  } from "./helpers.js";
   export let chord;
-  export let tuning = "E A D G B E";
+  export let stringOffsets = [0, 0, 0, 0, 0, 0];
   export let capoAdjustment;
   export let onSave;
   export let onCancel;
@@ -22,8 +26,8 @@
   let fretsComplete = false;
   let fingeringComplete = false;
   let enablePreview = false;
+  const tuning = stringOffsets ? getNotesFromOffsets(stringOffsets) : undefined;
   $: (frets, fingering) && handleEntriesUpdate();
-  $: tuningFormatted = tuning.split(" ");
 
   function handleFretChange(value, key) {
     // TODO: Probably a better way to achieve this
@@ -69,17 +73,17 @@
 
         <div class="fieldsets">
           {#each Array(stringCount) as _string, i}
-            <ChordEditFieldset string={tuningFormatted[i]}>
+            <ChordEditFieldset string={tuning[i]}>
               <ChordEditFret
                 onBlur={handleFretChange}
                 bind:value={frets[i]}
                 key={i}
-                string={tuningFormatted[i]}
+                string={tuning[i]}
               />
               <ChordEditFinger
                 bind:value={fingering[i]}
                 key={i}
-                string={tuningFormatted[i]}
+                string={tuning[i]}
               />
             </ChordEditFieldset>
           {/each}
@@ -92,7 +96,7 @@
               <ChordVisualised {frets} {fingering} {tuning} />
               <div slot="content">
                 <div class="actions" aria-label="Chord actions">
-                  <ChordPlay {chord} {tuning} {capoAdjustment} />
+                  <ChordPlay {chord} {stringOffsets} {capoAdjustment} />
                 </div>
               </div>
             </Dropdown>
