@@ -28,7 +28,6 @@ export function addChord(chord) {
   if (!existingChord) {
     chords.push(chord);
   }
-  console.log(chords.length > chordsLimit);
   if (chords.length > chordsLimit) {
     chords = chords.slice(1, chords.length);
   }
