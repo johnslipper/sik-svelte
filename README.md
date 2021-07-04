@@ -28,7 +28,6 @@ Start storing your own songs on the live app at [sik.app](https://sik.app).
 ## Roadmap
 
 - Improve accessibility:
-  - Router
   - Dropdown
   - Tabs
   - Chord summaries
