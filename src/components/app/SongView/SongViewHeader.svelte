@@ -6,6 +6,7 @@
   import Icon from "../../ui/Icons/Icon.svelte";
   import { leftArrowIcon, pencilIcon } from "../../ui/Icons/icons.js";
   import ButtonLink from "../../ui/Button/ButtonLink.svelte";
+  import Heading from "../../ui/Heading/Heading.svelte";
   export let id;
   export let title;
   export let artist;
@@ -43,15 +44,17 @@
           easing: backOut,
         }}
       >
-        {#if title}
-          <div class="title">{title}</div>
-        {/if}
-        {#if artist}
-          <div class="artist">{artist}</div>
-        {/if}
-        {#if album}
-          <div class="album">{album}</div>
-        {/if}
+        <Heading>
+          {#if title}
+            <div class="title">{title}</div>
+          {/if}
+          {#if artist}
+            <div class="artist">{artist}</div>
+          {/if}
+          {#if album}
+            <div class="album">{album}</div>
+          {/if}
+        </Heading>
       </div>
     </div>
     <div class="end" in:fade={{ delay: animationDelay + 50 }}>
