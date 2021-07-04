@@ -1,13 +1,33 @@
 <script>
-  export let text = "Heading";
+  import { useFocus } from "svelte-navigator";
   export let level = 1;
   export let fontSize = "1.2rem";
-  let displayText = `<h${level} style="
-        font-size:${fontSize}; 
-        color: inherit;
-        font-weight: normal;
-        margin: 0;
-        ">${text}</h${level}>`;
+  const registerFocus = useFocus();
 </script>
 
-{@html displayText}
+{#if level === 6}
+  <h6 style="font-size: {fontSize};"><slot /></h6>
+{:else if level === 5}
+  <h5 style="font-size: {fontSize};"><slot /></h5>
+{:else if level === 4}
+  <h4 style="font-size: {fontSize};"><slot /></h4>
+{:else if level === 3}
+  <h3 style="font-size: {fontSize};"><slot /></h3>
+{:else if level === 2}
+  <h2 style="font-size: {fontSize};"><slot /></h2>
+{:else}
+  <h1 style="font-size: {fontSize};" use:registerFocus><slot /></h1>
+{/if}
+
+<style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+    font-weight: normal;
+    margin: 0;
+  }
+</style>

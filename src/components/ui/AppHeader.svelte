@@ -11,7 +11,7 @@
   <div class="center">
     {#if title}
       <div in:fade>
-        <Heading text={title} fontSize={"1.2rem"} />
+        <Heading>{title}</Heading>
       </div>
     {/if}
     <slot />

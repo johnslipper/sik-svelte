@@ -32,7 +32,7 @@
     on:user={(e) => redirectIfNoUser(e.detail.user)}
   >
     <HeadingSticky>
-      <Heading text="User" fontSize="inherit" />
+      <Heading fontSize="inherit">User</Heading>
     </HeadingSticky>
     <div class="wrapper">
       <div class="user">
@@ -46,20 +46,20 @@
       </div>
     </div>
     <HeadingSticky>
-      <Heading text="Import/Export songs" fontSize="inherit" />
+      <Heading fontSize="inherit">Import/Export songs</Heading>
     </HeadingSticky>
     <div class="wrapper">
       <SettingsImportExportSongs {user} />
     </div>
     <HeadingSticky>
-      <Heading text="Clear data" fontSize="inherit" />
+      <Heading fontSize="inherit">Clear data</Heading>
     </HeadingSticky>
     <div class="wrapper">
       <SettingsDelete {auth} {user} />
     </div>
   </User>
   <HeadingSticky>
-    <Heading text="About" fontSize="inherit" />
+    <Heading fontSize="inherit">About</Heading>
   </HeadingSticky>
   <div class="wrapper">
     <SettingsAbout />

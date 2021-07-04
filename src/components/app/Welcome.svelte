@@ -8,7 +8,7 @@
   <div class="logo">
     <LogoMark />
   </div>
-  <Heading text="Welcome to Songs I Know" level="2" fontSize="1.5rem" />
+  <Heading fontSize="1.5rem">Welcome to Songs I Know</Heading>
   <p>Collect songs you've learned to find inspiration when you need it</p>
 
   <div class="actions">
