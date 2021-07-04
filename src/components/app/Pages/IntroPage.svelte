@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
   import Logo from "../Logo/Logo.svelte";
-  import { navigate } from "svelte-routing";
+  import { navigate } from "svelte-navigator";
 
   onMount(() => {
     window.setTimeout(() => navigate("/songs", { replace: true }), 3500);

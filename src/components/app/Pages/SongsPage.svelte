@@ -1,6 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import { Link } from "svelte-routing";
+  import { Link } from "svelte-navigator";
   import AppHeader from "../../ui/AppHeader.svelte";
   import SongsList from "../SongsList/SongsList.svelte";
   import SongsListPlaceholders from "../SongsList/SongsListPlaceholders.svelte";

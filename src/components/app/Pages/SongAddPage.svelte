@@ -1,6 +1,6 @@
 <script>
   import { fade, fly } from "svelte/transition";
-  import { navigate } from "svelte-routing";
+  import { navigate } from "svelte-navigator";
   import { User, Collection } from "sveltefire";
   import { cleanDoc, redirectIfNoUser } from "../../../firebase.js";
   import { string, object } from "yup";

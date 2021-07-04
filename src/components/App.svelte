@@ -1,5 +1,5 @@
 <script>
-  import { Router } from "svelte-routing";
+  import { Router } from "svelte-navigator";
   import Modal from "svelte-simple-modal";
   import { FirebaseApp } from "sveltefire";
   import { config } from "../firebase.js";

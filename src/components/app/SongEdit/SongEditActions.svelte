@@ -1,6 +1,6 @@
 <script>
   import { getContext } from "svelte";
-  import { navigate } from "svelte-routing";
+  import { navigate } from "svelte-navigator";
   import { infoToast, errorToast } from "../../ui/Toasts/toasts.js";
   import Button from "../../ui/Button/Button.svelte";
   import Heading from "../../ui/Heading/Heading.svelte";
