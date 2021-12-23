@@ -6,17 +6,19 @@
 </script>
 
 {#if level === 6}
-  <h6 style="font-size: {fontSize};"><slot /></h6>
+  <h6 class="heading" style="font-size: {fontSize};"><slot /></h6>
 {:else if level === 5}
-  <h5 style="font-size: {fontSize};"><slot /></h5>
+  <h5 class="heading" style="font-size: {fontSize};"><slot /></h5>
 {:else if level === 4}
-  <h4 style="font-size: {fontSize};"><slot /></h4>
+  <h4 class="heading" style="font-size: {fontSize};"><slot /></h4>
 {:else if level === 3}
-  <h3 style="font-size: {fontSize};"><slot /></h3>
+  <h3 class="heading" style="font-size: {fontSize};"><slot /></h3>
 {:else if level === 2}
-  <h2 style="font-size: {fontSize};"><slot /></h2>
+  <h2 class="heading" style="font-size: {fontSize};"><slot /></h2>
 {:else}
-  <h1 style="font-size: {fontSize};" use:registerFocus><slot /></h1>
+  <h1 class="heading" style="font-size: {fontSize};" use:registerFocus>
+    <slot />
+  </h1>
 {/if}
 
 <style>
@@ -29,5 +31,9 @@
     color: inherit;
     font-weight: normal;
     margin: 0;
+  }
+
+  .heading:focus {
+    outline: none;
   }
 </style>
