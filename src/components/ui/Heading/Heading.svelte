@@ -2,7 +2,7 @@
   import { useFocus } from "svelte-navigator";
   export let level = 1;
   export let fontSize = "1.2rem";
-  const registerFocus = useFocus();
+  const registerFocus = level === 1 ? useFocus() : undefined;
 </script>
 
 {#if level === 6}
