@@ -17,13 +17,13 @@
 
 <section in:fade={{ delay: 150 }}>
   <VisuallyHidden>
-    <Heading level="2">Chords</Heading>
+    <Heading level={2}>Chords</Heading>
   </VisuallyHidden>
   {#if chords && chords.length}
     {#each chords as section}
       <section>
         <HeadingSticky>
-          <Heading level="3" fontSize="inherit"
+          <Heading level={3} fontSize="inherit"
             >{getSectionTitle(section.title)}</Heading
           >
         </HeadingSticky>

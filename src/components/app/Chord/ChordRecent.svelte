@@ -9,7 +9,7 @@
 
 {#if recentChords && recentChords.length}
   <div class="wrapper">
-    <Heading level="3">Recent chords</Heading>
+    <Heading level={3}>Recent chords</Heading>
     <ul>
       {#each recentChords as chord}
         <li>

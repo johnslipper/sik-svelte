@@ -55,7 +55,7 @@
 {#if !fromUrl}
   <header>
     <Form onSubmit={handleSubmitSearch}>
-      <Heading level="2" fontSize="1.25rem">Artwork search</Heading>
+      <Heading level={2} fontSize="1.25rem">Artwork search</Heading>
       <div class="search">
         <FormGroup>
           <VisuallyHidden>

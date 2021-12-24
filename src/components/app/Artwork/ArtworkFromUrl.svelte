@@ -25,7 +25,7 @@
 
 <div class="wrapper">
   <Form onSubmit={() => (url ? handleSelected() : handleGetArtwork())}>
-    <Heading level="2" fontSize="1.25rem">Artwork search</Heading>
+    <Heading level={2} fontSize="1.25rem">Artwork search</Heading>
     <div class="form">
       <FormGroup>
         <VisuallyHidden>

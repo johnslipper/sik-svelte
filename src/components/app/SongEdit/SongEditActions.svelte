@@ -31,7 +31,7 @@
 
 <div class="wrapper">
   <VisuallyHidden>
-    <Heading level="2" fontSize="1rem">Actions:</Heading>
+    <Heading level={2} fontSize="1rem">Actions:</Heading>
   </VisuallyHidden>
   <Button variant="danger" on:click={handleDelete}>Delete song</Button>
 </div>
