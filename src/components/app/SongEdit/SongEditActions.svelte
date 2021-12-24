@@ -1,6 +1,6 @@
 <script>
   import { getContext } from "svelte";
-  import { navigate } from "svelte-routing";
+  import { navigate } from "svelte-navigator";
   import { infoToast, errorToast } from "../../ui/Toasts/toasts.js";
   import Button from "../../ui/Button/Button.svelte";
   import Heading from "../../ui/Heading/Heading.svelte";
@@ -31,7 +31,7 @@
 
 <div class="wrapper">
   <VisuallyHidden>
-    <Heading text="Actions:" level="2" fontSize="1rem" />
+    <Heading level={2} fontSize="1rem">Actions:</Heading>
   </VisuallyHidden>
   <Button variant="danger" on:click={handleDelete}>Delete song</Button>
 </div>

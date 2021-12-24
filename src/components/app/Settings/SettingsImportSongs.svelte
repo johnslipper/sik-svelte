@@ -1,6 +1,6 @@
 <script>
   import { getContext } from "svelte";
-  import { navigate } from "svelte-routing";
+  import { navigate } from "svelte-navigator";
   import { infoToast, errorToast } from "../../ui/Toasts/toasts.js";
   import Dialogue from "../../ui/Modal/Dialogue.svelte";
   import FileUpload from "../../ui/FileUpload.svelte";

@@ -10,5 +10,6 @@
     position: absolute;
     white-space: nowrap;
     width: 1px;
+    text-transform: initial;
   }
 </style>

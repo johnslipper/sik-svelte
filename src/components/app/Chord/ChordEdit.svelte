@@ -83,7 +83,7 @@
 <div class="wrapper">
   {#if !showChord}
     <div class="heading">
-      <Heading text="Add chord" level="2" fontSize="1.25rem" />
+      <Heading level={2} fontSize="1.25rem">Add chord</Heading>
     </div>
     <Form onSubmit={handleSubmitSearch}>
       <div class="search">
@@ -133,7 +133,7 @@
 
   {#if showChord}
     <div class="heading">
-      <Heading text="Edit chord" level="2" fontSize="1.25rem" />
+      <Heading level={2} fontSize="1.25rem">Edit chord</Heading>
     </div>
     <ChordPreview
       bind:chord

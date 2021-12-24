@@ -1,7 +1,7 @@
 <script>
   import { getContext } from "svelte";
   import { Collection } from "sveltefire";
-  import { navigate } from "svelte-routing";
+  import { navigate } from "svelte-navigator";
   import { infoToast } from "../../ui/Toasts/toasts.js";
   import { Button } from "../../ui/Button";
   import FormError from "../../ui/Form/FormError.svelte";

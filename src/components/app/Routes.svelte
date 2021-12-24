@@ -1,5 +1,5 @@
 <script>
-  import { Route } from "svelte-routing";
+  import { Route } from "svelte-navigator";
   import {
     SongsPage,
     IntroPage,

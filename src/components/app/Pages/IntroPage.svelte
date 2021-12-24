@@ -1,8 +1,10 @@
 <script>
+  import Heading from "./../../ui/Heading/Heading.svelte";
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
   import Logo from "../Logo/Logo.svelte";
-  import { navigate } from "svelte-routing";
+  import { navigate } from "svelte-navigator";
+  import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
 
   onMount(() => {
     window.setTimeout(() => navigate("/songs", { replace: true }), 3500);
@@ -10,6 +12,9 @@
 </script>
 
 <div class="wrapper" in:fade>
+  <VisuallyHidden>
+    <Heading>Introduction</Heading>
+  </VisuallyHidden>
   <Logo />
 </div>
 
