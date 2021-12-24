@@ -28,10 +28,11 @@ Start storing your own songs on the live app at [sik.app](https://sik.app).
 ## Roadmap
 
 - Improve accessibility:
-  - Dropdown
-  - Tabs
-  - Chord summaries
+  - Routing ✅
   - Toasts
+  - Tabs
+  - Dropdown
+  - Chord summaries
 - Lyrics API
 - Lyrics font size adjust
 - Lyrics auto-scrolling
