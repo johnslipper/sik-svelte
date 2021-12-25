@@ -39,7 +39,7 @@
   }
 </script>
 
-<AppHeader>Sign in</AppHeader>
+<AppHeader title="Sign in" />
 <User
   let:auth
   persist={localStorage}

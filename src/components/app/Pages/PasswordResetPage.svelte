@@ -29,7 +29,7 @@
   }
 </script>
 
-<AppHeader>Reset password</AppHeader>
+<AppHeader title="Reset password" />
 <User
   let:auth
   persist={localStorage}

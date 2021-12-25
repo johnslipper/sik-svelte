@@ -19,7 +19,7 @@
   }
 </script>
 
-<AppHeader>Verify email</AppHeader>
+<AppHeader title="Verify email" />
 <User
   let:auth
   let:user
