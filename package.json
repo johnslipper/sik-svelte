@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
-    "@zerodevx/svelte-toast": "^0.1.4",
+    "@zerodevx/svelte-toast": "^0.6.2",
     "fetch-jsonp": "^1.1.3",
     "firebase": "^8.7.0",
     "sirv-cli": "^1.0.12",
