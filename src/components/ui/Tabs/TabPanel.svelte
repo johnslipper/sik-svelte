@@ -8,8 +8,6 @@
   registerPanel(panel);
 </script>
 
-{#if $selectedPanel === panel}
-  <div role="tabpanel">
-    <slot />
-  </div>
-{/if}
+<div role="tabpanel" hidden={$selectedPanel !== panel || undefined}>
+  <slot />
+</div>
