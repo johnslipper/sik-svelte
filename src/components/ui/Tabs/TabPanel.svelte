@@ -9,5 +9,7 @@
 </script>
 
 {#if $selectedPanel === panel}
-  <slot />
+  <div role="tabpanel">
+    <slot />
+  </div>
 {/if}

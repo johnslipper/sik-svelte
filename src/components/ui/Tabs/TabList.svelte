@@ -1,4 +1,4 @@
-<div class="tab-list">
+<div class="tab-list" role="tablist">
   <slot />
 </div>
 
