@@ -1,13 +1,23 @@
 <script>
   import { getContext } from "svelte";
-  import { TABS } from "./Tabs.svelte";
+  import { tabsContext, panelCount, selectedIndex } from "./Tabs.svelte";
 
-  const panel = {};
-  const { registerPanel, selectedPanel } = getContext(TABS);
+  const { tabKey, panelKey, registerPanel } = getContext(tabsContext);
+  const panelIndex = $panelCount;
+  const panelId = `${panelKey}-${panelIndex}`;
+  const panelLabelledBy = `${tabKey}-${panelIndex}`;
 
-  registerPanel(panel);
+  $: isSelected = $selectedIndex === panelIndex;
+
+  registerPanel();
 </script>
 
-<div role="tabpanel" hidden={$selectedPanel !== panel || undefined}>
+<div
+  id={panelId}
+  role="tabpanel"
+  tabindex={isSelected ? 0 : -1}
+  aria-labelledby={panelLabelledBy}
+  hidden={!isSelected || undefined}
+>
   <slot />
 </div>

@@ -1,55 +1,78 @@
 <script context="module">
-  /* Based on: https://svelte.dev/repl/8e68120858e5322272dc9136c4bb79cc?version=3.7.0 */
-  export const TABS = {};
+  export const tabsContext = {};
+  export const selectedIndex = writable(0);
+  export const tabCount = writable(0);
+  export const panelCount = writable(0);
 </script>
 
 <script>
-  import { setContext, onDestroy } from "svelte";
+  import { setContext, tick, onDestroy } from "svelte";
   import { writable } from "svelte/store";
 
-  const tabs = [];
-  const panels = [];
-  const selectedTab = writable(null);
-  const selectedPanel = writable(null);
+  export let key = `tabs-${new Date().getTime()}`;
+  const keys = {
+    left: 37,
+    right: 39,
+  };
 
-  setContext(TABS, {
-    registerTab: (tab) => {
-      tabs.push(tab);
-      selectedTab.update((current) => current || tab);
+  function keyupEventListener(event) {
+    const key = event.keyCode;
 
-      onDestroy(() => {
-        const i = tabs.indexOf(tab);
-        tabs.splice(i, 1);
-        selectedTab.update((current) =>
-          current === tab ? tabs[i] || tabs[tabs.length - 1] : current
-        );
-      });
+    switch (key) {
+      case keys.left:
+      case keys.right:
+        switchTabOnArrowPress(event);
+        break;
+    }
+  }
+
+  // Either focus the next or previous, tab
+  // depending on key pressed
+  function switchTabOnArrowPress(event) {
+    const pressed = event.keyCode;
+    const direction = pressed === keys.left ? -1 : 1;
+    const tabElements = document.querySelectorAll(`#${key} [role="tab"]`);
+    const currentTab = event.target;
+    const currentTabIndex = Array.from(tabElements).indexOf(currentTab);
+    const destinationTab = tabElements[currentTabIndex + direction];
+
+    destinationTab?.focus();
+  }
+
+  function focusPanel(panelIndex) {
+    const tabElements = document.querySelectorAll(`#${key} [role="tabpanel"]`);
+    const destinationPanel = tabElements[panelIndex];
+    if (destinationPanel) {
+      destinationPanel?.focus();
+    }
+  }
+
+  setContext(tabsContext, {
+    tabKey: `${key}-tab`,
+    panelkey: `${key}-panel`,
+    registerTab: () => {
+      tabCount.update((count) => count + 1);
     },
 
-    registerPanel: (panel) => {
-      panels.push(panel);
-      selectedPanel.update((current) => current || panel);
-
-      onDestroy(() => {
-        const i = panels.indexOf(panel);
-        panels.splice(i, 1);
-        selectedPanel.update((current) =>
-          current === panel ? panels[i] || panels[panels.length - 1] : current
-        );
-      });
+    registerPanel: () => {
+      panelCount.update((count) => count + 1);
     },
 
-    selectTab: (tab) => {
-      const i = tabs.indexOf(tab);
-      selectedTab.set(tab);
-      selectedPanel.set(panels[i]);
+    select: async (index) => {
+      selectedIndex.set(index);
+      await tick();
+      focusPanel(index);
     },
+    keyupEventListener,
+  });
 
-    selectedTab,
-    selectedPanel,
+  onDestroy(() => {
+    tabCount.set(0);
+    panelCount.set(0);
+    selectedIndex.set(0);
   });
 </script>
 
-<div class="tabs">
+<div id={key}>
   <slot />
 </div>

@@ -1,4 +1,4 @@
-<div class="tab-list" role="tablist">
+<div class="tab-list" role="tablist" aria-orientation="horizontal">
   <slot />
 </div>
 
