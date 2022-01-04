@@ -19,5 +19,7 @@
   aria-labelledby={panelLabelledBy}
   hidden={!isSelected || undefined}
 >
-  <slot />
+  {#if isSelected}
+    <slot />
+  {/if}
 </div>
