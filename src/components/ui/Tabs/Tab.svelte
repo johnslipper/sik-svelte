@@ -1,14 +1,28 @@
 <script>
   import { getContext } from "svelte";
-  import { TABS } from "./Tabs.svelte";
+  import { tabsContext, selectedIndex, tabCount } from "./Tabs.svelte";
 
-  const tab = {};
-  const { registerTab, selectTab, selectedTab } = getContext(TABS);
+  const { tabKey, panelKey, registerTab, select, keyupEventListener } =
+    getContext(tabsContext);
+  const tabIndex = $tabCount;
+  const tabId = `${tabKey}-${tabIndex}`;
+  const panelId = `${panelKey}-${tabIndex}`;
 
-  registerTab(tab);
+  $: isSelected = $selectedIndex === tabIndex;
+
+  registerTab();
 </script>
 
-<button class:selected={$selectedTab === tab} on:click={() => selectTab(tab)}>
+<button
+  id={tabId}
+  role="tab"
+  aria-controls={panelId}
+  tabindex={isSelected ? 0 : -1}
+  aria-selected={isSelected}
+  class:selected={isSelected}
+  on:click={() => select(tabIndex)}
+  on:keyup={keyupEventListener}
+>
   <slot />
 </button>
 

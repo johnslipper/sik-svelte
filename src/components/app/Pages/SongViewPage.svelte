@@ -44,18 +44,6 @@
       artwork={song.artwork}
     />
     <Tabs>
-      <div class="panels">
-        <TabPanel>
-          <SongLyrics lyrics={song.lyrics} />
-        </TabPanel>
-        <TabPanel>
-          <SongViewChords
-            chords={song.chordSections}
-            stringOffsets={song.stringOffsets}
-            capoAdjustment={song.capoAdjustment}
-          />
-        </TabPanel>
-      </div>
       <div class="tabList" in:slide={{ duration: 250, delay: 300 }}>
         <TabList>
           <Tab>
@@ -71,6 +59,18 @@
             <div class="text">Chords</div>
           </Tab>
         </TabList>
+      </div>
+      <div class="panels">
+        <TabPanel>
+          <SongLyrics lyrics={song.lyrics} />
+        </TabPanel>
+        <TabPanel>
+          <SongViewChords
+            chords={song.chordSections}
+            stringOffsets={song.stringOffsets}
+            capoAdjustment={song.capoAdjustment}
+          />
+        </TabPanel>
       </div>
     </Tabs>
   </Doc>
