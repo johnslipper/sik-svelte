@@ -12,6 +12,7 @@
   export let artist;
   export let album;
   export let artwork;
+  export let registerFocus;
   let animationDelay = 250;
 </script>
 
@@ -44,7 +45,7 @@
           easing: backOut,
         }}
       >
-        <Heading>
+        <Heading {registerFocus}>
           {#if title}
             <div class="title">{title}</div>
           {/if}

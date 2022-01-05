@@ -2,6 +2,7 @@
   import { fly, slide } from "svelte/transition";
   import { elasticOut } from "svelte/easing";
   import { User, Doc } from "sveltefire";
+  import { useFocus } from "svelte-navigator";
   import { redirectIfNoUser } from "../../../firebase.js";
   import SongHeader from "../SongView/SongViewHeader.svelte";
   import SongLyrics from "../SongView/SongViewLyrics.svelte";
@@ -14,6 +15,8 @@
     microphoneOutlinedIcon,
   } from "../../ui/Icons/icons.js";
   export let id;
+
+  const registerFocus = useFocus();
 
   const iconTransition = {
     duration: 300,
@@ -42,6 +45,7 @@
       artist={song.artist}
       album={song.album}
       artwork={song.artwork}
+      {registerFocus}
     />
     <Tabs>
       <div class="tabList" in:slide={{ duration: 250, delay: 300 }}>
