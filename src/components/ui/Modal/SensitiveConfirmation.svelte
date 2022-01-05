@@ -35,36 +35,38 @@
   }
 </script>
 
-{#if title}
-  <h2>{title}</h2>
-{/if}
+<div role="alertdialog">
+  {#if title}
+    <h2>{title}</h2>
+  {/if}
 
-<div class="message">{message}</div>
+  <div class="message">{message}</div>
 
-<Form onSubmit={_onOkay}>
-  <div class="form">
-    <div class="fields">
-      <FormGroup>
-        <LabelDefault htmlFor="confirmationText"
-          >Confirm by typing "<strong>{confirmationText}</strong>" below</LabelDefault
-        >
-        <Input
-          id="confirmationText"
-          bind:value={confirmationInput}
-          placeholder={confirmationText}
-          on:blur={clearError}
-        />
-      </FormGroup>
+  <Form onSubmit={_onOkay}>
+    <div class="form">
+      <div class="fields">
+        <FormGroup>
+          <LabelDefault htmlFor="confirmationText"
+            >Confirm by typing "<strong>{confirmationText}</strong>" below</LabelDefault
+          >
+          <Input
+            id="confirmationText"
+            bind:value={confirmationInput}
+            placeholder={confirmationText}
+            on:blur={clearError}
+          />
+        </FormGroup>
+      </div>
+
+      <FormError message={error} />
+
+      <div class="buttons">
+        <Button variant="danger" type="submit">{okayText}</Button>
+        <Button variant="default" on:click={_onCancel}>{cancelText}</Button>
+      </div>
     </div>
-
-    <FormError message={error} />
-
-    <div class="buttons">
-      <Button variant="danger" type="submit">{okayText}</Button>
-      <Button variant="default" on:click={_onCancel}>{cancelText}</Button>
-    </div>
-  </div>
-</Form>
+  </Form>
+</div>
 
 <style>
   h2 {
