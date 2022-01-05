@@ -30,7 +30,7 @@ Start storing your own songs on the live app at [sik.app](https://sik.app).
 - Improve accessibility:
   - Routing ✅
   - Tabs ✅
-  - Toasts
+  - Toasts ✅
   - Dropdown
   - Modals
   - Song editing
