@@ -23,7 +23,7 @@
             infoToast("Song deleted");
             navigate("/songs");
           },
-          () => errorToast(`Song deletion failed: ${error}`)
+          (error) => errorToast(`Song deletion failed: ${error}`)
         ),
     });
   }
