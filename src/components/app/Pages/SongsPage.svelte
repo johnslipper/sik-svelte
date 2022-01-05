@@ -12,7 +12,6 @@
   import { plusIcon, cogIcon } from "../../ui/Icons/icons.js";
   import { ButtonLink } from "../../ui/Button";
   import { User, Collection } from "sveltefire";
-  import Heading from "../../ui/Heading/Heading.svelte";
 
   const registerFocus = useFocus();
 </script>
