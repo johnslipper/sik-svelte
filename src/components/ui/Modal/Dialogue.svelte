@@ -24,19 +24,23 @@
   }
 </script>
 
-{#if title}
-  <h2>{title}</h2>
-{/if}
-
-<div class="message">{message}</div>
-
-<div class="buttons">
-  {#if showOkayButton}
-    <Button variant={okayButtonVariation} on:click={_onOkay}>{okayText}</Button>
+<div role="alertdialog">
+  {#if title}
+    <h2>{title}</h2>
   {/if}
-  {#if showCancelButton}
-    <Button variant="default" on:click={_onCancel}>{cancelText}</Button>
-  {/if}
+
+  <div class="message">{message}</div>
+
+  <div class="buttons">
+    {#if showOkayButton}
+      <Button variant={okayButtonVariation} on:click={_onOkay}
+        >{okayText}</Button
+      >
+    {/if}
+    {#if showCancelButton}
+      <Button variant="default" on:click={_onCancel}>{cancelText}</Button>
+    {/if}
+  </div>
 </div>
 
 <style>
