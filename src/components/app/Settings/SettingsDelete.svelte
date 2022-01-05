@@ -40,7 +40,7 @@
     clearError();
     if (songs.length) {
       open(Dialogue, {
-        message: "Please first delete all songs first",
+        message: "To delete the user please delete all songs first",
         showCancelButton: false,
       });
     } else {
