@@ -31,8 +31,8 @@ Start storing your own songs on the live app at [sik.app](https://sik.app).
   - Routing ✅
   - Tabs ✅
   - Toasts ✅
+  - Modals ✅
   - Dropdown
-  - Modals
   - Song editing
 - Lyrics API
 - Lyrics font size adjust
