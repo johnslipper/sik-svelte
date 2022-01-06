@@ -2,6 +2,7 @@
   import { fade } from "svelte/transition";
   import Heading from "./Heading/Heading.svelte";
   export let title = "";
+  export let registerFocus;
 </script>
 
 <header>
@@ -11,7 +12,7 @@
   <div class="center">
     {#if title}
       <div in:fade>
-        <Heading>{title}</Heading>
+        <Heading {registerFocus}>{title}</Heading>
       </div>
     {/if}
     <slot />

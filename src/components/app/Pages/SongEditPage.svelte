@@ -1,6 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import { navigate } from "svelte-navigator";
+  import { navigate, useFocus } from "svelte-navigator";
   import { User, Doc } from "sveltefire";
   import { cleanDoc, redirectIfNoUser } from "../../../firebase.js";
   import { string, object } from "yup";
@@ -13,6 +13,8 @@
   export let id;
   import { Button, ButtonLink } from "../../ui/Button";
   import { Form } from "../../ui/Form";
+
+  const registerFocus = useFocus();
 
   const schema = object().shape({
     title: string().required("Please provide the song title"),
@@ -41,7 +43,7 @@
       {schema}
       let:errors
     >
-      <AppHeader title="Edit song">
+      <AppHeader title="Edit song" {registerFocus}>
         <div slot="start" in:fade>
           <ButtonLink to="/songs/{id}">
             <span>Cancel</span>
