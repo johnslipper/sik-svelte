@@ -32,13 +32,12 @@ Start storing your own songs on the live app at [sik.app](https://sik.app).
   - Tabs ✅
   - Toasts ✅
   - Modals ✅
-  - Dropdown
+  - Dropdown ✅
   - Song editing
 - Lyrics API
 - Lyrics font size adjust
 - Lyrics auto-scrolling
 - Better quality artwork API
-- Custom tuning chord audio
 - Instrument presets (variable strings)?
 - Flexible theming?
 - Locally stored songs option over firebase (if demand)?
