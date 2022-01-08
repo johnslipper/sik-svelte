@@ -8,7 +8,7 @@
   import ChordEditFret from "./ChordEditFret.svelte";
   import ChordEditFinger from "./ChordEditFinger.svelte";
   import ChordPlay from "./ChordPlay.svelte";
-  import Dropdown from "../../ui/Dropdown.svelte";
+  import { Dropdown } from "../../ui/Dropdown";
   import {
     chordEntriesToArray,
     chordEntriesToString,
@@ -94,11 +94,9 @@
           <div class="visualised">
             <Dropdown position="center">
               <ChordVisualised {frets} {fingering} {tuning} />
-              <div slot="content">
-                <div class="actions" aria-label="Chord actions">
-                  <ChordPlay {chord} {stringOffsets} {capoAdjustment} />
-                </div>
-              </div>
+              <svelte:fragment slot="menu">
+                <ChordPlay {chord} {stringOffsets} {capoAdjustment} />
+              </svelte:fragment>
             </Dropdown>
           </div>
         {:else}
@@ -142,11 +140,5 @@
     max-width: 12rem;
     margin-left: auto;
     margin-right: auto;
-  }
-  .actions :global(button) {
-    display: grid;
-    gap: 0.5rem;
-    justify-items: center;
-    padding: 0.75rem;
   }
 </style>

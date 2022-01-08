@@ -1,7 +1,7 @@
 <script>
   import { fade } from "svelte/transition";
   import VisuallyHidden from "../../ui/VisuallyHidden.svelte";
-  import Dropdown from "../../ui/Dropdown.svelte";
+  import { Dropdown } from "../../ui/Dropdown";
   import ChordView from "../Chord/ChordView.svelte";
   import ChordPlay from "../Chord/ChordPlay.svelte";
   import Heading from "../../ui/Heading/Heading.svelte";
@@ -33,14 +33,9 @@
               <li class="chord" in:fade={{ delay: i * 50 }}>
                 <Dropdown position="center">
                   <ChordView {chord} {stringOffsets} />
-                  <div slot="content">
-                    <div class="actions" aria-labelledby="viewChordActionsMenu">
-                      <VisuallyHidden>
-                        <div id="viewChordActionsMenu">Chord actions</div>
-                      </VisuallyHidden>
-                      <ChordPlay {chord} {stringOffsets} {capoAdjustment} />
-                    </div>
-                  </div>
+                  <svelte:fragment slot="menu">
+                    <ChordPlay {chord} {stringOffsets} {capoAdjustment} />
+                  </svelte:fragment>
                 </Dropdown>
               </li>
             {/each}
@@ -77,20 +72,5 @@
   .empty {
     padding: var(--contentPaddingHorizontal);
     color: var(--bodyColorMuted);
-  }
-
-  .actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
-    padding: 0.25rem;
-  }
-
-  .actions :global(button) {
-    display: grid;
-    gap: 0.5rem;
-    justify-items: center;
-    padding: 0.75rem;
   }
 </style>
