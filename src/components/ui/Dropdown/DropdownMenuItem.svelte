@@ -3,7 +3,7 @@
   import { dropdownContext } from "./Dropdown.svelte";
   export let onSelected;
 
-  const { hideMenu, menuItemKeyupListener } = getContext(dropdownContext);
+  const { hideMenu, menuItemKeydownListener } = getContext(dropdownContext);
 
   const keyCodes = {
     enter: 13,
@@ -14,12 +14,12 @@
     onSelected();
   }
 
-  function handleKeyUp(event) {
+  function handleKeydown(event) {
     const keyCode = event.keyCode;
     if (keyCode === keyCodes.enter) {
       handleSelected();
     }
-    menuItemKeyupListener(event);
+    menuItemKeydownListener(event);
   }
 </script>
 
@@ -27,7 +27,7 @@
   on:click={handleSelected}
   role="menuitem"
   tabindex="-1"
-  on:keyup={handleKeyUp}
+  on:keydown={handleKeydown}
 >
   <slot />
 </li>

@@ -72,13 +72,15 @@
     }
   }
 
-  function menuItemKeyupListener(event) {
+  function menuItemKeydownListener(event) {
     const keyCode = event.keyCode;
     switch (keyCode) {
       case keyCodes.down:
+        event.preventDefault();
         focusNextMenuItem();
         break;
       case keyCodes.up:
+        event.preventDefault();
         focusPreviousMenuItem();
       default:
         break;
@@ -89,7 +91,7 @@
     showMenu,
     hideMenu,
     toggleMenu,
-    menuItemKeyupListener,
+    menuItemKeydownListener,
   });
 
   onMount(() => {
