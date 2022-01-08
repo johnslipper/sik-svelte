@@ -5,8 +5,8 @@
 
   const { hideMenu, menuItemKeydownListener } = getContext(dropdownContext);
 
-  const keyCodes = {
-    enter: 13,
+  const keyboardKeys = {
+    enter: "Enter",
   };
 
   function handleSelected() {
@@ -15,8 +15,8 @@
   }
 
   function handleKeydown(event) {
-    const keyCode = event.keyCode;
-    if (keyCode === keyCodes.enter) {
+    const keyboardKey = event.key;
+    if (keyboardKey === keyboardKeys.enter) {
       handleSelected();
     }
     menuItemKeydownListener(event);

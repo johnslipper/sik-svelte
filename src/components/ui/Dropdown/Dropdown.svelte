@@ -15,10 +15,10 @@
   const menuIsVisible = writable(false);
   const focusedMenuItemIndex = writable(-1);
 
-  const keyCodes = {
-    up: 38,
-    down: 40,
-    enter: 13,
+  const keyboardKeys = {
+    up: "ArrowUp",
+    down: "ArrowDown",
+    enter: "Enter",
   };
 
   function showMenu() {
@@ -66,20 +66,20 @@
   }
 
   function menuTriggerKeyupListener(event) {
-    const keyCode = event.keyCode;
-    if (keyCode === keyCodes.down) {
+    const keyboardKey = event.key;
+    if (keyboardKey === keyboardKeys.down) {
       showMenu();
     }
   }
 
   function menuItemKeydownListener(event) {
-    const keyCode = event.keyCode;
-    switch (keyCode) {
-      case keyCodes.down:
+    const keyboardKey = event.key;
+    switch (keyboardKey) {
+      case keyboardKeys.down:
         event.preventDefault();
         focusNextMenuItem();
         break;
-      case keyCodes.up:
+      case keyboardKeys.up:
         event.preventDefault();
         focusPreviousMenuItem();
       default:
