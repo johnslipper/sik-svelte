@@ -10,17 +10,17 @@
   import { writable } from "svelte/store";
 
   export let key = `tabs-${new Date().getTime()}`;
-  const keys = {
-    left: 37,
-    right: 39,
+  const keyboardKeys = {
+    left: "ArrowLeft",
+    right: "ArrowRight",
   };
 
   function keyupEventListener(event) {
-    const key = event.keyCode;
+    const keyboardKey = event.key;
 
-    switch (key) {
-      case keys.left:
-      case keys.right:
+    switch (keyboardKey) {
+      case keyboardKeys.left:
+      case keyboardKeys.right:
         switchTabOnArrowPress(event);
         break;
     }
@@ -29,8 +29,8 @@
   // Either focus the next or previous, tab
   // depending on key pressed
   function switchTabOnArrowPress(event) {
-    const pressed = event.keyCode;
-    const direction = pressed === keys.left ? -1 : 1;
+    const pressed = event.key;
+    const direction = pressed === keyboardKeys.left ? -1 : 1;
     const tabElements = document.querySelectorAll(`#${key} [role="tab"]`);
     const currentTab = event.target;
     const currentTabIndex = Array.from(tabElements).indexOf(currentTab);
