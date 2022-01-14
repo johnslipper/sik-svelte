@@ -4,7 +4,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "check:errors": "svelte-check --tsconfig ./tsconfig.json --threshold error",
+    "check:warnings": "svelte-check --tsconfig ./tsconfig.json --threshold warning"
   },
   "devDependencies": {
     "@macfja/svelte-persistent-store": "^1.2.0",
