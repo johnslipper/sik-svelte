@@ -6,8 +6,13 @@
   import Heading from "ui/Heading/Heading.svelte";
   import Dialogue from "ui/Modal/Dialogue.svelte";
   import VisuallyHidden from "ui/VisuallyHidden.svelte";
+  import { songStorageContext } from "../SongStorage.svelte";
+  import type { Song } from "..";
 
   const { open } = getContext("simple-modal");
+  const { removeSong } = getContext(songStorageContext);
+
+  export let song: Song;
 
   function handleDelete() {
     open(Dialogue, {
@@ -16,7 +21,7 @@
       cancelText: "Keep song",
       okayButtonVariation: "danger",
       onOkay: () => {
-        // TODO: Song deletion
+        removeSong(song);
         infoToast("Song deleted");
         navigate("/songs");
       },

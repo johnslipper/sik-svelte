@@ -14,7 +14,7 @@
   import { songStorageContext } from "../Song/SongStorage.svelte";
 
   export let id: number;
-  const { getSong } = getContext(songStorageContext);
+  const { getSong, updateSong } = getContext(songStorageContext);
   const song: Song = getSong(id);
 
   const registerFocus = useFocus();
@@ -24,7 +24,7 @@
   });
 
   function handleSave() {
-    // TODO: Save song
+    updateSong(song);
     infoToast("Song saved");
     navigate(`/songs/${id}`);
   }
@@ -44,6 +44,6 @@
   </AppHeader>
   <div class="page" in:fade>
     <SongEdit {song} {errors} />
-    <SongEditActions />
+    <SongEditActions {song} />
   </div>
 </Form>

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { getContext } from "svelte";
   import { fade, fly } from "svelte/transition";
   import { navigate } from "svelte-navigator";
   import { string, object } from "yup";
@@ -9,6 +10,9 @@
   import { Button, ButtonLink } from "ui/Button/";
   import { Form } from "ui/Form/";
   import type { Song } from "../Song/index";
+  import { songStorageContext } from "../Song/SongStorage.svelte";
+
+  const { addSong } = getContext(songStorageContext);
 
   let song: Song = {
     title: "",
@@ -19,9 +23,9 @@
   });
 
   function handleSave(song: Song) {
-    // TODO: Save song
+    const { id } = addSong(song);
     infoToast("Song saved");
-    navigate(`/songs/${song.id}`);
+    navigate(`/songs/${id}`);
   }
 </script>
 

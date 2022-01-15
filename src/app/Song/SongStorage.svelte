@@ -16,10 +16,11 @@
   }
 
   function addSong(song: Song) {
-    return songs.update((songs: Song[]) => {
-      const id = songs.length + 1;
-      return [...songs, { ...song, id }];
+    const newSong = { ...song, id: $songs.length + 1 };
+    songs.update((songs: Song[]) => {
+      return [...songs, newSong];
     });
+    return newSong;
   }
 
   function updateSong(song: Song) {

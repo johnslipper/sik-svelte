@@ -13,7 +13,6 @@
   const { addSong } = getContext(songStorageContext);
 
   function handleSampleSong() {
-    // TODO: Add sample song
     addSong(sampleSong);
     infoToast("Sample song added");
   }
