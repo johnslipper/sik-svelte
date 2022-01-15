@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { getContext } from "svelte";
   import { Button } from "ui/Button";
   import Icon from "ui/Icons/Icon.svelte";
   import { plusIcon } from "ui/Icons/icons";
@@ -7,11 +8,14 @@
   import Heading from "ui/Heading/Heading.svelte";
   import LogoMark from "../../Logo/LogoMark.svelte";
   import { infoToast } from "ui/Toasts/toasts";
+  import { songStorageContext } from "../SongStorage.svelte";
+
+  const { addSong } = getContext(songStorageContext);
 
   function handleSampleSong() {
     // TODO: Add sample song
-    console.log(sampleSong);
-    infoToast("Song saved");
+    addSong(sampleSong);
+    infoToast("Sample song added");
   }
 </script>
 
