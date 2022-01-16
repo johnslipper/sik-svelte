@@ -1,5 +1,9 @@
 <script lang="ts" context="module">
-  import { persist, indexedDBStorage } from "@macfja/svelte-persistent-store";
+  import {
+    persist,
+    indexedDBStorage,
+    PersistentStore,
+  } from "@macfja/svelte-persistent-store";
   import { writable } from "svelte/store";
   import { generateId } from "../helpers";
   import type { Song } from "./index";
@@ -12,42 +16,52 @@
 <script lang="ts">
   import { setContext } from "svelte";
 
-  function getSong(id: string) {
-    return $songs.find((song) => song.id === id);
+  async function getSong(id: string): Promise<Song> {
+    const promise = Promise;
+    return promise.resolve($songs.find((song) => song.id === id));
   }
 
-  function addSong(song: Song) {
+  async function addSong(song: Song) {
+    const promise = Promise;
     const newSong = { ...song, id: generateId() };
     songs.update((songs: Song[]) => {
       return [...songs, newSong];
     });
-    return newSong;
+    return promise.resolve(newSong);
   }
 
-  function addSongs(newSongs: Song[]) {
+  async function addSongs(newSongs: Song[]): Promise<void> {
+    const promise = Promise;
     const processedSongs = newSongs.map(({ id, ...rest }: Song) => {
       return { ...rest, id: generateId() };
     });
-    return songs.update((songs: Song[]) => [...songs, ...processedSongs]);
+    songs.update((songs: Song[]) => [...songs, ...processedSongs]);
+    return promise.resolve();
   }
 
-  function updateSong(song: Song) {
-    return songs.update((songs: Song[]) => {
+  async function updateSong(song: Song): Promise<Song> {
+    const promise = Promise;
+    songs.update((songs: Song[]) => {
       const otherSongs = songs.filter(
         (currentSong) => currentSong.id !== song.id
       );
       return [...otherSongs, song];
     });
+    return promise.resolve(song);
   }
 
-  function removeSong({ id }: Song) {
-    return songs.update((songs: Song[]) => {
+  async function removeSong({ id }: Song): Promise<void> {
+    const promise = Promise;
+    songs.update((songs: Song[]) => {
       return songs.filter((song) => song.id !== id);
     });
+    return promise.resolve();
   }
 
-  function removeAllSongs() {
-    return songs.set([]);
+  async function removeAllSongs(): Promise<void> {
+    const promise = Promise;
+    songs.set([]);
+    return promise.resolve();
   }
 
   setContext(songStorageContext, {

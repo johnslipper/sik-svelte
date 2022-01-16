@@ -23,9 +23,10 @@
   });
 
   function handleSave(song: Song) {
-    const { id } = addSong(song);
-    infoToast("Song saved");
-    navigate(`/songs/${id}`);
+    addSong(song).then(({ id }) => {
+      infoToast("Song saved");
+      navigate(`/songs/${id}`);
+    });
   }
 </script>
 

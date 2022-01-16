@@ -15,8 +15,7 @@
           "Are you sure you want to delete ALL the songs stored? ...Make sure you've exported anything you want to keep first!",
         confirmationText: "SONGS",
         onOkay: () => {
-          removeAllSongs();
-          infoToast("All songs deleted");
+          removeAllSongs().then(() => infoToast("All songs deleted"));
         },
       });
     } else {

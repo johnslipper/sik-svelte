@@ -9,6 +9,7 @@
 
   const { open } = getContext("simple-modal");
   const { addSongs } = getContext(songStorageContext);
+
   let reader: FileReader;
 
   function handleUpload(event: Event) {
@@ -32,7 +33,11 @@
         open(Dialogue, {
           message: `${songsToImport.length} songs found for import`,
           okayText: "Import songs",
-          onOkay: () => handleImport(songsToImport),
+          onOkay: () => {
+            // Wait for modal to close before opening next one
+            // TODO: Potentially better way to achieve this?
+            setTimeout(() => handleImport(songsToImport), 500);
+          },
         });
       } else {
         // No songs
@@ -48,12 +53,13 @@
   }
 
   function handleImport(songs: Song[]) {
-    addSongs(songs);
-    open(Dialogue, {
-      message: "Songs imported successfully",
-      okayText: "View songs",
-      cancelText: "Close",
-      onOkay: () => navigate("/songs"),
+    addSongs(songs).then(() => {
+      open(Dialogue, {
+        message: "Songs imported successfully",
+        okayText: "View songs",
+        cancelText: "Close",
+        onOkay: () => navigate("/songs"),
+      });
     });
   }
 </script>

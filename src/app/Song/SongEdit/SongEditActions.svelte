@@ -21,9 +21,10 @@
       cancelText: "Keep song",
       okayButtonVariation: "danger",
       onOkay: () => {
-        removeSong(song);
-        infoToast("Song deleted");
-        navigate("/songs");
+        removeSong(song).then(() => {
+          infoToast("Song deleted");
+          navigate("/songs");
+        });
       },
     });
   }

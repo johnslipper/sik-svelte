@@ -12,10 +12,10 @@
   import { Form } from "ui/Form";
   import type { Song } from "../Song/index";
   import { songStorageContext } from "../Song/SongStorage.svelte";
+  import LoadingEllipsis from "ui/LoadingEllipsis.svelte";
 
   export let id: string;
   const { getSong, updateSong } = getContext(songStorageContext);
-  const song: Song = getSong(id);
 
   const registerFocus = useFocus();
 
@@ -23,27 +23,32 @@
     title: string().required("Please provide the song title"),
   });
 
-  function handleSave() {
-    updateSong(song);
-    infoToast("Song saved");
-    navigate(`/songs/${id}`);
+  function handleSave(song: Song) {
+    updateSong(song).then(({ id }) => {
+      infoToast("Song saved");
+      navigate(`/songs/${id}`);
+    });
   }
 </script>
 
-<Form onSubmit={() => handleSave()} values={song} {schema} let:errors>
-  <AppHeader title="Edit song" {registerFocus}>
-    <div slot="start" in:fade>
-      <ButtonLink to="/songs/{id}">
-        <span>Cancel</span>
-        <VisuallyHidden>editing song</VisuallyHidden>
-      </ButtonLink>
+{#await getSong(id)}
+  <LoadingEllipsis />
+{:then song}
+  <Form onSubmit={() => handleSave(song)} values={song} {schema} let:errors>
+    <AppHeader title="Edit song" {registerFocus}>
+      <div slot="start" in:fade>
+        <ButtonLink to="/songs/{id}">
+          <span>Cancel</span>
+          <VisuallyHidden>editing song</VisuallyHidden>
+        </ButtonLink>
+      </div>
+      <div slot="end" in:fade>
+        <Button variant="text" type="submit">Save</Button>
+      </div>
+    </AppHeader>
+    <div class="page" in:fade>
+      <SongEdit {song} {errors} />
+      <SongEditActions {song} />
     </div>
-    <div slot="end" in:fade>
-      <Button variant="text" type="submit">Save</Button>
-    </div>
-  </AppHeader>
-  <div class="page" in:fade>
-    <SongEdit {song} {errors} />
-    <SongEditActions {song} />
-  </div>
-</Form>
+  </Form>
+{/await}
