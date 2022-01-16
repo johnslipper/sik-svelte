@@ -24,6 +24,13 @@
     return newSong;
   }
 
+  function addSongs(newSongs: Song[]) {
+    const processedSongs = newSongs.map(({ id, ...rest }: Song) => {
+      return { ...rest, id: generateId() };
+    });
+    return songs.update((songs: Song[]) => [...songs, ...processedSongs]);
+  }
+
   function updateSong(song: Song) {
     return songs.update((songs: Song[]) => {
       const otherSongs = songs.filter(
@@ -47,6 +54,7 @@
     songs,
     getSong,
     addSong,
+    addSongs,
     updateSong,
     removeSong,
     removeAllSongs,
