@@ -13,7 +13,7 @@
     microphoneOutlinedIcon,
   } from "ui/Icons/icons";
   import { songStorageContext } from "../Song/SongStorage.svelte";
-  export let id: number;
+  export let id: string;
 
   const { getSong } = getContext(songStorageContext);
   $: song = getSong(id);

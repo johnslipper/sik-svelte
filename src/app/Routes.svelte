@@ -19,7 +19,7 @@
 </Route>
 
 <Route path="/songs/:id" let:params>
-  <SongViewPage id={Number(params.id)} />
+  <SongViewPage id={params.id} />
 </Route>
 
 <Route path="/add">
@@ -27,7 +27,7 @@
 </Route>
 
 <Route path="/songs/:id/edit" let:params>
-  <SongEditPage id={Number(params.id)} />
+  <SongEditPage id={params.id} />
 </Route>
 
 <Route path="/settings">

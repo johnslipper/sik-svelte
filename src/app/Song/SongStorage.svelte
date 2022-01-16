@@ -1,6 +1,7 @@
 <script lang="ts" context="module">
   import { persist, indexedDBStorage } from "@macfja/svelte-persistent-store";
   import { writable } from "svelte/store";
+  import { generateId } from "../helpers";
   import type { Song } from "./index";
 
   const songs = persist(writable([]), indexedDBStorage(), "songs");
@@ -11,12 +12,12 @@
 <script lang="ts">
   import { setContext } from "svelte";
 
-  function getSong(id: number) {
+  function getSong(id: string) {
     return $songs.find((song) => song.id === id);
   }
 
   function addSong(song: Song) {
-    const newSong = { ...song, id: $songs.length + 1 };
+    const newSong = { ...song, id: generateId() };
     songs.update((songs: Song[]) => {
       return [...songs, newSong];
     });

@@ -2,7 +2,7 @@ import type { Artwork } from "../Artwork";
 import type { Chord, ChordSection } from "../Chord";
 
 export type Song = {
-  id?: number;
+  id?: string;
   title: string;
   artist?: string;
   artwork?: Artwork;

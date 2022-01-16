@@ -13,7 +13,7 @@
   import type { Song } from "../Song/index";
   import { songStorageContext } from "../Song/SongStorage.svelte";
 
-  export let id: number;
+  export let id: string;
   const { getSong, updateSong } = getContext(songStorageContext);
   const song: Song = getSong(id);
 

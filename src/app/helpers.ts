@@ -14,3 +14,12 @@ export function downloadObjectAsJson(exportObj = {}, exportName = "") {
   downloadAnchorNode.click();
   downloadAnchorNode.remove();
 }
+
+export function generateId(idLength = 12) {
+  let ID = "";
+  let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  for (var i = 0; i < idLength; i++) {
+    ID += characters.charAt(Math.floor(Math.random() * 36));
+  }
+  return ID;
+}

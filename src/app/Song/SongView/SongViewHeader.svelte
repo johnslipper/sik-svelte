@@ -9,7 +9,7 @@
   import Heading from "ui/Heading/Heading.svelte";
   import type { Artwork } from "../../Artwork/index";
   import type { LocalAction } from "svelte-navigator/types/SvelteInternal";
-  export let id: number;
+  export let id: string;
   export let title: string;
   export let artist: string = undefined;
   export let album: string = undefined;
