@@ -1,16 +1,22 @@
 <script lang="ts">
-  import type { Song } from "../Song/index";
   import { Button } from "ui/Button";
   import { downloadObjectAsJson, getDateString } from "../helpers";
+  import { songStorageContext } from "../Song/SongStorage.svelte";
+  import { getContext } from "svelte";
+  import type { Song } from "../Song/index";
 
-  export let songs = undefined;
+  const { songs } = getContext(songStorageContext);
 
-  function handleExport(songs: Song[]) {
+  function stripSongIds(songs: Song[]) {
+    return songs.map(({ id, ...rest }) => {
+      return { ...rest };
+    });
+  }
+
+  function handleExport() {
     const exportName = `SIK Songs Export (${getDateString()})`;
-    downloadObjectAsJson(songs, exportName);
+    downloadObjectAsJson(stripSongIds($songs), exportName);
   }
 </script>
 
-<Button variant="default" on:click={() => handleExport(songs)}
-  >Export songs</Button
->
+<Button variant="default" on:click={() => handleExport()}>Export songs</Button>
