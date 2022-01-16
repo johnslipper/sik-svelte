@@ -38,12 +38,17 @@
     });
   }
 
+  function removeAllSongs() {
+    return songs.set([]);
+  }
+
   setContext(songStorageContext, {
     songs,
     getSong,
     addSong,
     updateSong,
     removeSong,
+    removeAllSongs,
   });
 </script>
 
