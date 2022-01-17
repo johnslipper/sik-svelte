@@ -27,6 +27,8 @@ Start storing your own songs on the live app at [sik.app](https://sik.app).
 
 ## Roadmap
 
+- TypeScript ✅
+- Switch from firebase storage to in-browser ✅
 - Improve accessibility:
   - Routing ✅
   - Tabs ✅
@@ -34,13 +36,12 @@ Start storing your own songs on the live app at [sik.app](https://sik.app).
   - Modals ✅
   - Dropdown ✅
   - Song editing
+- Re-add offline support
+- Google Drive import/export
 - Lyrics API
 - Lyrics font size adjust
 - Lyrics auto-scrolling
 - Better quality artwork API
-- Instrument presets (variable strings)?
-- Flexible theming?
-- Locally stored songs option over firebase (if demand)?
 
 ## Development
 
@@ -60,6 +61,14 @@ Navigate to [localhost:5000](http://localhost:5000). You should see your app run
 
 If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommend installing the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.
 
+## TypeScript
+
+To start TypeScript checking and watch files for changes:
+
+```bash
+npm run check
+```
+
 ## Building and running in production mode
 
 To create an optimised version of the app:
@@ -71,7 +80,7 @@ npm run build
 You can then run the newly built production app:
 
 ```bash
-npm run build
+npm run preview
 ```
 
 ## Deploying to the web

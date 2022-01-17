@@ -1,20 +1,28 @@
 {
   "name": "sik-svelte",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "check:errors": "svelte-check --tsconfig ./tsconfig.json --threshold error",
+    "check:warnings": "svelte-check --tsconfig ./tsconfig.json --threshold warning"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.34",
+    "@macfja/svelte-persistent-store": "^1.2.0",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
+    "@tsconfig/svelte": "^2.0.1",
     "@zerodevx/svelte-toast": "^0.6.3",
     "fetch-jsonp": "^1.1.3",
-    "firebase": "^8.7.0",
     "svelte": "^3.44.0",
+    "svelte-check": "^2.2.7",
     "svelte-navigator": "^3.1.5",
+    "svelte-preprocess": "^4.9.8",
     "svelte-simple-modal": "^1.2.0",
-    "sveltefire": "^0.1.5",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.4",
     "vexchords": "^1.2.0",
     "vite": "^2.7.2",
     "yup": "^0.32.9"

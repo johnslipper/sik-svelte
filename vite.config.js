@@ -7,4 +7,10 @@ export default defineConfig({
     port: 5000,
   },
   plugins: [svelte()],
+  resolve: {
+    alias: {
+      // UI components alias (also listed within tsconfig.json)
+      ui: "/src/ui",
+    },
+  },
 });
