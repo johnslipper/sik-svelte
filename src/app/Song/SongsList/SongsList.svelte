@@ -6,6 +6,10 @@
   import type { Song } from "../index";
   export let songs: Song[] = [];
   export let registerFocus: Function;
+
+  function calculateDelay(index: number, total = 200, offset = 75): number {
+    return total - offset * index;
+  }
 </script>
 
 <VisuallyHidden>
@@ -13,7 +17,14 @@
 </VisuallyHidden>
 <ul>
   {#each songs as song, i}
-    <li in:fly={{ x: -20, delay: i * 75, easing: backOut, duration: 750 }}>
+    <li
+      in:fly={{
+        x: -20,
+        delay: calculateDelay(i),
+        easing: backOut,
+        duration: 750,
+      }}
+    >
       <SongsListItem {song} />
     </li>
   {/each}
