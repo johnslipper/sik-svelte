@@ -1,9 +1,5 @@
 <script lang="ts" context="module">
-  import {
-    persist,
-    indexedDBStorage,
-    PersistentStore,
-  } from "@macfja/svelte-persistent-store";
+  import { persist, indexedDBStorage } from "@macfja/svelte-persistent-store";
   import { writable } from "svelte/store";
   import { generateId } from "../helpers";
   import type { Song } from "./index";
