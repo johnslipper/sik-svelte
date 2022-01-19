@@ -7,7 +7,7 @@
   import VisuallyHidden from "ui/VisuallyHidden.svelte";
 
   onMount(() => {
-    window.setTimeout(() => navigate("/songs", { replace: true }), 3500);
+    window.setTimeout(() => navigate("/songs", { replace: true }), 1750);
   });
 </script>
 
