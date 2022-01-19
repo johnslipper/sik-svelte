@@ -41,7 +41,10 @@
 
   button:focus {
     z-index: 1;
+    outline: var(--focusOutline);
+    outline-offset: -0.1rem;
     box-shadow: var(--focusOutlineShadow);
+    background-color: var(--primaryDark);
   }
 
   button::after {

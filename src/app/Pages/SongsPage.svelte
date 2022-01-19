@@ -25,9 +25,11 @@
         <VisuallyHidden>Settings</VisuallyHidden>
       </ButtonLink>
     </div>
-    <Link to="/">
-      <LogoCompact />
-    </Link>
+    <div class="logo">
+      <Link to="/">
+        <LogoCompact />
+      </Link>
+    </div>
     <div slot="end" in:fade>
       <ButtonLink to="/add">
         <Icon path={plusIcon} size="1.1rem" />
@@ -57,5 +59,9 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+  }
+  .logo :global(a):focus {
+    background-color: var(--neutralLightest);
+    outline-color: var(--primaryDark);
   }
 </style>

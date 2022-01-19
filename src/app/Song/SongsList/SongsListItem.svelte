@@ -61,6 +61,7 @@
   }
   .list-item > :global(a):focus {
     background-color: var(--neutralLightest);
+    outline-color: var(--primaryDark);
   }
   .artwork {
     width: 3.5rem;

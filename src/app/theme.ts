@@ -40,7 +40,7 @@ export const theme = {
   headerTopOffset: "3rem",
   /* Focus outline */
   focusOutlineShadow: `0 0 0 0.15rem ${getColor(colorBases.primary, 20)}`,
-  focusOutline: `0.15rem solid ${getColor(colorBases.primary, 20)}`,
+  focusOutline: `0.15rem solid currentColor`,
   /* Body text */
   bodyColor: colors.neutralDark,
   bodyColorMuted: colors.neutralMedium,

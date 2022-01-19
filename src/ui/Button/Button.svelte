@@ -18,7 +18,6 @@
 <style>
   button {
     --buttonPadding: 0;
-    --buttonBorderRadius: 0;
     --buttonFontSize: inherit;
     --buttonBorderColor: transparent;
     --buttonBackgroundColor: transparent;

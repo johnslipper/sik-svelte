@@ -13,7 +13,6 @@
 <style>
   .link :global(a) {
     --buttonPadding: 0.6rem 1rem;
-    --buttonBorderRadius: 0;
     --buttonFontSize: inherit;
     --buttonBorderColor: transparent;
     --buttonBackgroundColor: transparent;
