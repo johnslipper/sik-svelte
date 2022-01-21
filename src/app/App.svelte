@@ -25,6 +25,20 @@
 <Toasts />
 
 <style>
+  :global(html, body) {
+    height: 100%;
+  }
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+  :global(body) {
+    margin: 0;
+    padding: 0;
+    font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-weight: 500;
+  }
+
   :global(*) {
     box-sizing: border-box;
   }
@@ -40,5 +54,14 @@
   }
   :global(p) {
     margin-top: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001s !important;
+      transition-duration: 0.001s !important;
+    }
   }
 </style>
