@@ -25,6 +25,7 @@
     "typescript": "^4.4.4",
     "vexchords": "^1.2.0",
     "vite": "^2.7.2",
+    "vite-plugin-pwa": "^0.11.13",
     "yup": "^0.32.9"
   }
 }
