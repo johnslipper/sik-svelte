@@ -27,5 +27,17 @@
     "vite": "^2.7.2",
     "vite-plugin-pwa": "^0.11.13",
     "yup": "^0.32.9"
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11"
+  ],
+  "hintConfig": {
+    "extends": [
+      "accessibility",
+      "web-recommended",
+      "development",
+      "progressive-web-apps"
+    ]
   }
 }
