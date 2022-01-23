@@ -16,8 +16,8 @@ Start storing your own songs on the live app at [sik.app](https://sik.app).
 - Hear the chords you add
 - Custom tunings
 - Capo adjustment
-- Song export
-- Remove your song and user data completely when you no longer want to use the app
+- Song import/export/clear
+- Offline support
 
 ## Screenshots
 
@@ -36,7 +36,6 @@ Start storing your own songs on the live app at [sik.app](https://sik.app).
   - Modals ✅
   - Dropdown ✅
   - Song editing
-- Re-add offline support
 - Google Drive import/export
 - Lyrics API
 - Lyrics font size adjust
@@ -86,3 +85,5 @@ npm run preview
 ## Deploying to the web
 
 Currently deployed on Firebase hosting. Any PRs merged into the `main` branch within github will be automatically deployed to production.
+
+Creating a pull request will also generate a preview site for checking prior to merging.
