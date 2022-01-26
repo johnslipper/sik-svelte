@@ -43,7 +43,9 @@
       {#if sortedSongs.length}
         <SongsList songs={sortedSongs} {registerFocus} />
       {:else}
-        <SongsListEmpty />
+        <div in:fade={{ delay: 100 }}>
+          <SongsListEmpty />
+        </div>
       {/if}
     {:else}
       <SongsListPlaceholders />
