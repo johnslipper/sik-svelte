@@ -1,10 +1,11 @@
-const sampleSong = {
+import type { Song } from ".";
+
+const sampleSong: Song = {
   artist: "Green Day",
   artwork: {
     album: "Nimrod",
     artist: "Green Day",
-    url:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music71/v4/f5/5b/e7/f55be77d-b252-49e6-4890-4a063cde42d6/source/100x100bb.jpg",
+    url: "https://is1-ssl.mzstatic.com/image/thumb/Music71/v4/f5/5b/e7/f55be77d-b252-49e6-4890-4a063cde42d6/source/100x100bb.jpg",
     title: "Good Riddance (Time of Your Life)",
   },
   album: "Nimrod",
@@ -46,7 +47,6 @@ const sampleSong = {
     },
   ],
   title: "Good Riddance (Time of Your Life)",
-  capoAdjustment: "",
 };
 
 export default sampleSong;

@@ -11,10 +11,11 @@
   import Icon from "ui/Icons/Icon.svelte";
   import { plusIcon, cogIcon } from "ui/Icons/icons";
   import { ButtonLink } from "ui/Button";
-  import { songStorageContext } from "../Song/SongStorage.svelte";
+  import { songStoreContext } from "../Song/SongStoreContext.svelte";
+  const { songs } = getContext(songStoreContext);
 
   const registerFocus = useFocus();
-  const { songs } = getContext(songStorageContext);
+  $: sortedSongs = songs.sortBy($songs, "title");
 </script>
 
 <div class="wrapper">
@@ -38,9 +39,9 @@
     </div>
   </AppHeader>
   <div class="list">
-    {#if $songs}
-      {#if $songs.length}
-        <SongsList songs={$songs} {registerFocus} />
+    {#if sortedSongs}
+      {#if sortedSongs.length}
+        <SongsList songs={sortedSongs} {registerFocus} />
       {:else}
         <SongsListEmpty />
       {/if}

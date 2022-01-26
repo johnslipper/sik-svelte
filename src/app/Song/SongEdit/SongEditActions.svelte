@@ -6,11 +6,11 @@
   import Heading from "ui/Heading/Heading.svelte";
   import Dialogue from "ui/Modal/Dialogue.svelte";
   import VisuallyHidden from "ui/VisuallyHidden.svelte";
-  import { songStorageContext } from "../SongStorage.svelte";
+  import { songStoreContext } from "../SongStoreContext.svelte";
+  const { songs } = getContext(songStoreContext);
   import type { Song } from "..";
 
   const { open } = getContext("simple-modal");
-  const { removeSong } = getContext(songStorageContext);
 
   export let song: Song;
 
@@ -21,10 +21,9 @@
       cancelText: "Keep song",
       okayButtonVariation: "danger",
       onOkay: () => {
-        removeSong(song).then(() => {
-          infoToast("Song deleted");
-          navigate("/songs");
-        });
+        songs.remove(song);
+        infoToast("Song deleted");
+        navigate("/songs");
       },
     });
   }

@@ -8,12 +8,12 @@
   import Heading from "ui/Heading/Heading.svelte";
   import LogoMark from "../../Logo/LogoMark.svelte";
   import { infoToast } from "ui/Toasts/toasts";
-  import { songStorageContext } from "../SongStorage.svelte";
+  import { songStoreContext } from "../SongStoreContext.svelte";
 
-  const { addSong } = getContext(songStorageContext);
+  const { songs } = getContext(songStoreContext);
 
   function handleSampleSong() {
-    addSong(sampleSong);
+    songs.add(sampleSong);
     infoToast("Sample song added");
   }
 </script>
