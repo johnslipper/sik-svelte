@@ -12,11 +12,10 @@
     musicNoteOutlinedIcon,
     microphoneOutlinedIcon,
   } from "ui/Icons/icons";
-  import { songStorageContext } from "../Song/SongStorage.svelte";
-  import LoadingEllipsis from "ui/LoadingEllipsis.svelte";
+  import { songStoreContext } from "../Song/SongStoreContext.svelte";
+  const { songs } = getContext(songStoreContext);
   export let id: string;
-
-  const { getSong } = getContext(songStorageContext);
+  const song = songs.get($songs, id);
 
   const registerFocus = useFocus();
 
@@ -29,48 +28,44 @@
   };
 </script>
 
-{#await getSong(id)}
-  <LoadingEllipsis />
-{:then song}
-  <SongHeader
-    {id}
-    title={song.title}
-    artist={song.artist}
-    album={song.album}
-    artwork={song.artwork}
-    {registerFocus}
-  />
-  <Tabs>
-    <div class="tabList" in:slide={{ duration: 250, delay: 300 }}>
-      <TabList>
-        <Tab>
-          <div class="icon" in:fly={iconTransition}>
-            <Icon path={microphoneOutlinedIcon} size="1.85rem" />
-          </div>
-          <div class="text">Lyrics</div>
-        </Tab>
-        <Tab>
-          <div class="icon" in:fly={iconTransition}>
-            <Icon path={musicNoteOutlinedIcon} size="1.85rem" />
-          </div>
-          <div class="text">Chords</div>
-        </Tab>
-      </TabList>
-    </div>
-    <div class="panels">
-      <TabPanel>
-        <SongLyrics lyrics={song.lyrics} />
-      </TabPanel>
-      <TabPanel>
-        <SongViewChords
-          chordSections={song.chordSections}
-          stringOffsets={song.stringOffsets}
-          capoAdjustment={song.capoAdjustment}
-        />
-      </TabPanel>
-    </div>
-  </Tabs>
-{/await}
+<SongHeader
+  {id}
+  title={song.title}
+  artist={song.artist}
+  album={song.album}
+  artwork={song.artwork}
+  {registerFocus}
+/>
+<Tabs>
+  <div class="tabList" in:slide={{ duration: 250, delay: 300 }}>
+    <TabList>
+      <Tab>
+        <div class="icon" in:fly={iconTransition}>
+          <Icon path={microphoneOutlinedIcon} size="1.85rem" />
+        </div>
+        <div class="text">Lyrics</div>
+      </Tab>
+      <Tab>
+        <div class="icon" in:fly={iconTransition}>
+          <Icon path={musicNoteOutlinedIcon} size="1.85rem" />
+        </div>
+        <div class="text">Chords</div>
+      </Tab>
+    </TabList>
+  </div>
+  <div class="panels">
+    <TabPanel>
+      <SongLyrics lyrics={song.lyrics} />
+    </TabPanel>
+    <TabPanel>
+      <SongViewChords
+        chordSections={song.chordSections}
+        stringOffsets={song.stringOffsets}
+        capoAdjustment={song.capoAdjustment}
+      />
+    </TabPanel>
+  </div>
+</Tabs>
 
 <style>
   .panels {

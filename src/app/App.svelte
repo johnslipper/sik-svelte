@@ -5,7 +5,7 @@
 
   import { theme } from "./theme";
   import Routes from "./Routes.svelte";
-  import SongStorage from "./Song/SongStorage.svelte";
+  import SongStoreContext from "./Song/SongStoreContext.svelte";
   export let url = ""; //This property is necessary declare to avoid ignore the Router
 
   $: cssVarStyles = Object.entries(theme)
@@ -15,11 +15,11 @@
 
 <Router {url}>
   <main style={cssVarStyles}>
-    <SongStorage>
+    <SongStoreContext>
       <Modal>
         <Routes />
       </Modal>
-    </SongStorage>
+    </SongStoreContext>
   </main>
 </Router>
 <Toasts />

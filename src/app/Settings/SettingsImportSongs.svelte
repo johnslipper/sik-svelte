@@ -4,11 +4,12 @@
   import { infoToast, errorToast } from "ui/Toasts/toasts";
   import Dialogue from "ui/Modal/Dialogue.svelte";
   import FileUpload from "ui/FileUpload.svelte";
-  import { songStorageContext } from "../Song/SongStorage.svelte";
+  import { songStoreContext } from "../Song/SongStoreContext.svelte";
   import type { Song } from "../Song/index";
 
+  const { songs } = getContext(songStoreContext);
+
   const { open } = getContext("simple-modal");
-  const { addSongs } = getContext(songStorageContext);
 
   let reader: FileReader;
 
@@ -52,14 +53,13 @@
     errorToast("Error getting songs to import from file");
   }
 
-  function handleImport(songs: Song[]) {
-    addSongs(songs).then(() => {
-      open(Dialogue, {
-        message: "Songs imported successfully",
-        okayText: "View songs",
-        cancelText: "Close",
-        onOkay: () => navigate("/songs"),
-      });
+  function handleImport(songsToImport: Song[]) {
+    songs.addBulk(songsToImport);
+    open(Dialogue, {
+      message: "Songs imported successfully",
+      okayText: "View songs",
+      cancelText: "Close",
+      onOkay: () => navigate("/songs"),
     });
   }
 </script>

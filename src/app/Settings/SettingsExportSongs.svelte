@@ -1,11 +1,11 @@
 <script lang="ts">
   import { Button } from "ui/Button";
   import { downloadObjectAsJson, getDateString } from "../helpers";
-  import { songStorageContext } from "../Song/SongStorage.svelte";
   import { getContext } from "svelte";
+  import { songStoreContext } from "../Song/SongStoreContext.svelte";
   import type { Song } from "../Song/index";
 
-  const { songs } = getContext(songStorageContext);
+  const { songs } = getContext(songStoreContext);
 
   function stripSongIds(songs: Song[]) {
     return songs.map(({ id, ...rest }) => {

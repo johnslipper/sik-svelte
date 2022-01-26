@@ -10,9 +10,8 @@
   import { Button, ButtonLink } from "ui/Button/";
   import { Form } from "ui/Form/";
   import type { Song } from "../Song/index";
-  import { songStorageContext } from "../Song/SongStorage.svelte";
-
-  const { addSong } = getContext(songStorageContext);
+  import { songStoreContext } from "../Song/SongStoreContext.svelte";
+  const { songs } = getContext(songStoreContext);
 
   let song: Song = {
     title: "",
@@ -23,10 +22,9 @@
   });
 
   function handleSave(song: Song) {
-    addSong(song).then(({ id }) => {
-      infoToast("Song saved");
-      navigate(`/songs/${id}`);
-    });
+    const { id } = songs.add(song);
+    infoToast("Song saved");
+    navigate(`/songs/${id}`);
   }
 </script>
 

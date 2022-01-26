@@ -3,9 +3,9 @@
   import { infoToast } from "ui/Toasts/toasts";
   import { Button } from "ui/Button";
   import { Dialogue, SensitiveConfirmation } from "ui/Modal";
-  import { songStorageContext } from "../Song/SongStorage.svelte";
+  import { songStoreContext } from "../Song/SongStoreContext.svelte";
+  const { songs } = getContext(songStoreContext);
 
-  const { songs, removeAllSongs } = getContext(songStorageContext);
   const { open } = getContext("simple-modal");
 
   function handleDeleteSongs() {
@@ -15,7 +15,8 @@
           "Are you sure you want to delete ALL the songs stored? ...Make sure you've exported anything you want to keep first!",
         confirmationText: "SONGS",
         onOkay: () => {
-          removeAllSongs().then(() => infoToast("All songs deleted"));
+          songs.clear();
+          infoToast("All songs deleted");
         },
       });
     } else {
