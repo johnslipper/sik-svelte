@@ -4,7 +4,7 @@
 
 Created by [@johnslipper](https://twitter.com/johnslipper) to get inspiration when holding a guitar and nothing comes to mind.
 
-Start storing your own songs on the live app at [sik.app](https://sik.app).
+Start storing your own songs on the live app at [songs-i-know-2020.web.app](https://songs-i-know-2020.web.app).
 
 ## Features
 
@@ -36,7 +36,6 @@ Start storing your own songs on the live app at [sik.app](https://sik.app).
   - Modals ✅
   - Dropdown ✅
   - Song editing
-- Google Drive import/export
 - Lyrics API
 - Lyrics font size adjust
 - Lyrics auto-scrolling
